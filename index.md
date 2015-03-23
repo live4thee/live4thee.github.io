@@ -1,36 +1,35 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: live4thee
+tagline: Something like a blog
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+For the last decade, I have been writing blogs, frequently or
+occasionally. To me, writing is remembering, is to keep a record of my
+ideas, feelings and thoughts. I would like to keep the habit of
+reading and writing as a lifetime endeavor.
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+Before switching to [GitHub](https://pages.github.com/), I was writing
+at [colorfulwe](http://live4thee.colorfulwe.com), a *WordPress* site
+maintained by my friend [Yechun](http://yechun.colorfulwe.com/). I
+have been using it 5 years since moving from
+[Blogger](http://live4thee.blogspot.com/). Thanks a lot to Yechun!
+Almost every post I have written was also formatted in a local LaTeX
+file, so that I can easily compile it into a PDF book.  Switching to
+GitHub, I can handle all these things with `git`, `emacs`, `markdown`,
+really convenient.
 
-## Update Author Attributes
+When *Bilbo Baggins* handed over the book of his adventure to *Frodo
+Baggins*, I saw peace from his elderly face. As prophesied by
+*Galadriel*: "Even the smallest person can change the course of the
+future." We, ordinary people, at least, can live a meaningful life, if
+not gorgeous. If one day, when my son grows up, and come to me for
+answers, I hope that the records I have kept for years,  will help.
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+## Latest Posts
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
+Here are my latest blog posts.
 
 <ul class="posts">
   {% for post in site.posts %}
@@ -38,9 +37,8 @@ Here's a sample "posts list".
   {% endfor %}
 </ul>
 
-## To-Do
+## Quotes about Remembering
 
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
-
+* The key to immortality is first living a life worth remembering. - *Bruce Lee*
+* Remembering is only a new form of suffering. - *Charles Baudelaire*
+* Remembering is painful, it's difficult, but it can be inspiring and it can give wisdom. - *Paul Greengrass*
