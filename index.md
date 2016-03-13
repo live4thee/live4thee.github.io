@@ -1,7 +1,7 @@
 ---
 layout: page
 title: live4thee
-tagline: Something like a blog
+tagline: Sth. like a blog
 ---
 {% include JB/setup %}
 
