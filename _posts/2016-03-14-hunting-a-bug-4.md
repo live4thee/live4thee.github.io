@@ -3,7 +3,7 @@ layout: post
 title: "Hunting a Bug (4)"
 description: ""
 category: work
-tags: [C#，Azure]
+tags: [C#, Azure]
 ---
 {% include JB/setup %}
 
