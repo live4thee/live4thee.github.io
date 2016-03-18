@@ -2,7 +2,7 @@
 layout: post
 title: "Using OpenWrt"
 description: "A introduction to OpenWrt"
-category: Linux
+category: linux
 tags: [networking]
 ---
 {% include JB/setup %}
