@@ -15,7 +15,7 @@ tags: [vm, xfce]
 2. 把分割的虚拟机镜像合并起来：
    `vmware-vdiskmanager -r "Fedora 64bit.vmdk" -t 0 fc64.vmdk`
 
-3. 把合并后的虚拟机文件拷贝到 Linux 里面，在转换成 qcow2 格式：
+3. 把合并后的虚拟机文件拷贝到 Linux 里面，再转换成 qcow2 格式：
    `qemu-img convert -f vmdk -O qcow2 fc64.vmdk fc64.qcow2`
 
 启动虚拟机的脚本如下：

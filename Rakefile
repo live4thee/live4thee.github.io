@@ -62,6 +62,7 @@ end
 desc "Generate and publish blog to gh-pages"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
+    cp_r "robots.txt", tmp
     cp_r "_site/.", tmp
 
     pwd = Dir.pwd
