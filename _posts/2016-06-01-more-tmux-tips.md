@@ -13,5 +13,5 @@ tags: [tmux]
 
 ## Detach Pane
 
-`C-b !` (detach-pane) 使得当前窗口脱离所在，移动到新创建的 pane 中。
-`join-pane` 可以把当前窗口并到指定 pane 中。
+`C-b !` (detach-pane) 使当前窗口脱离所在 pane，移动到新创建的 pane 中。
+反之，`join-pane` 可以把当前窗口合并到指定 pane 中。
