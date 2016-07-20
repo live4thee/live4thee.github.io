@@ -16,7 +16,7 @@ tags: [startup]
 {% highlight shell %}
 $ for r in $repos; do
     cd $r
-    git log --since '3 months go' --author live4thee | grep -c ^commit
+    git log --since '3 months ago' --author live4thee | grep -c ^commit
     cd - > /dev/null
 done
 {% endhighlight %}
