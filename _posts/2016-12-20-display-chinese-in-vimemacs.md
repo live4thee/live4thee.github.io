@@ -18,6 +18,7 @@ tags: [vim, misc]
 Emacs 下面可以 `M-x revert-buffer-with-coding-system` 修改当前缓冲区的
 字符编码。
 
+{:.table-bordered}
 | 快捷键   | 命令 |
 |----------|------|
 |C-x RET r | revert-buffer-with-coding-system |
