@@ -2,8 +2,8 @@
 layout: post
 title: "Shell Programming"
 description: ""
-category: linux
-tags: [shell]
+category: Windows
+tags: [git]
 ---
 {% include JB/setup %}
 
