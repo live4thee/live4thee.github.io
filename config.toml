@@ -10,7 +10,7 @@ hasCJKLanguage = true
 [params]
   name = "live4thee"
   description = ""
-  bio = "Something like a blog"
+  bio = "`Simplicity is prerequisite for reliability.' - EWD"
   # Enter optionally your twitter account
   twitter = "live4thee"
   enableRSS = false
