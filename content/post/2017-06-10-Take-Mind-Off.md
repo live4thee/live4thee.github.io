@@ -4,7 +4,7 @@ date = "2017-06-10T21:55:07+08:00"
 description = ""
 tags = ["friends"]
 title = "Take Mind Off"
-url = "/2017/06/10/take-mind-off"
+url = "/2017/06/10/take-mind-off/"
 +++
 
 前几天，同事对我说：“（你的博客）好久没更新了”。
