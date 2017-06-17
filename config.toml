@@ -13,7 +13,7 @@ hasCJKLanguage = true
   bio = "`Simplicity is prerequisite for reliability.' - EWD"
   # Enter optionally your twitter account
   twitter = "live4thee"
-  enableRSS = false
+  enableRSS = true
 
   # Disqus comment
   disqusShortname = "live4thee"
