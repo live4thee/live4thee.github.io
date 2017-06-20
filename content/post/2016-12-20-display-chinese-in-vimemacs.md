@@ -20,13 +20,12 @@ url: /2016/12/20/display-chinese-in-vimemacs/
 Emacs 下面可以 `M-x revert-buffer-with-coding-system` 修改当前缓冲区的
 字符编码。
 
-{:.table-bordered}
-| 快捷键   | 命令 |
-|----------|------|
-|C-x RET r | revert-buffer-with-coding-system |
-|C-x RET f | set-buffer-file-coding-system |
-|C-x RET c | universal-coding-system-argument |
-|C-u C-x = | describe-char |
-|C-h C     | describe-coding-system |
+<!--{:.table-bordered}-->
 
-
+ 快捷键   | 命令
+----------|------
+C-x RET r | revert-buffer-with-coding-system
+C-x RET f | set-buffer-file-coding-system
+C-x RET c | universal-coding-system-argument
+C-u C-x = | describe-char
+C-h C     | describe-coding-system
