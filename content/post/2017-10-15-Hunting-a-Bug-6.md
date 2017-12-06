@@ -3,8 +3,8 @@ categories = ["work"]
 date = "2017-10-15T22:07:53+08:00"
 description = ""
 tags = ["python", "CherryPy"]
-title = "Hunting a Bug (6)"
-url = "/2017/10/15/hunting-a-bug-6/"
+title = "Hunting a Bug (7)"
+url = "/2017/10/15/hunting-a-bug/"
 +++
 
 最近几天被一个 bug 折磨得不要不要的，经过诸多分析后，最终发现它藏在

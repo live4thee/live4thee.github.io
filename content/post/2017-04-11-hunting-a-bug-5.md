@@ -5,8 +5,8 @@ date: 2017-04-11T00:00:00Z
 description: ""
 tags:
 - java
-title: Hunting a Bug (5)
-url: /2017/04/11/hunting-a-bug-5/
+title: Hunting a Bug (6)
+url: /2017/04/11/hunting-a-bug/
 ---
 
 
