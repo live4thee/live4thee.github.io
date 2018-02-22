@@ -2,9 +2,10 @@
 categories = ["life"]
 date = "2017-04-12T23:47:47+08:00"
 description = ""
-tags = ["family"]
+tags = ["friends"]
 title = "About"
-
+[blackfriday]
+  extensionsmask = [ "joinLines" ]
 +++
 
 For the last decade, I have been writing blogs, frequently or

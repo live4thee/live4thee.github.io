@@ -59,3 +59,6 @@ hasCJKLanguage = true
   facebook-square = "https://www.facebook.com/live4thee"
   twitter-square = "https://twitter.com/live4thee"
   github-square = "https://github.com/live4thee"
+
+[blackfriday]
+  extensions = ["joinLines"]
