@@ -25,7 +25,7 @@ add-auto-load-safe-path /usr/share/go-1.6/src/runtime/runtime-gdb.py
 
 ## godebug
 
-这个不依赖 gdb，是个可移植的方案。但是比较若，没有 `stepin` 之类。
+这个不依赖 gdb，是个可移植的方案。但是比较弱，没有 `stepin` 之类。
 
 - 安装之 `go get github.com/mailgun/godebug`
 - 在需要断电的地方加上 `_ = "breakpoint"`
