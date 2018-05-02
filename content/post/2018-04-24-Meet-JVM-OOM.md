@@ -51,7 +51,7 @@ OpenJDK 64-Bit Server VM (build 25.131-b12, mixed mode)
 ### Groovy!
 
 `jhat`的内存对比引向了问题所在：[Groovy caches meta-methods](https://stackoverflow.com/questions/5815952).
-StackOverflow的帖子里解释了原因。我在下一篇文章里面再详细解释。
+ StackOverflow的帖子里解释了原因。我在下一篇文章里面再详细解释。
 
 ## 工具
 
