@@ -1,5 +1,5 @@
 +++
-title = "Debugging a Refrigerator"
+title = "Debugging a Washer"
 description = ""
 date = "2019-03-02T22:31:26+08:00"
 tags = ["family"]
