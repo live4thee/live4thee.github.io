@@ -60,5 +60,7 @@ hasCJKLanguage = true
   twitter-square = "https://twitter.com/live4thee"
   github-square = "https://github.com/live4thee"
 
-[blackfriday]
-  extensions = ["joinLines"]
+[markup]
+  defaultMarkdownHandler = "blackfriday"
+  [markup.blackFriday]
+    extensions = ["joinLines"]
