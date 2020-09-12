@@ -2,7 +2,7 @@
 title = "ramblings"
 description = ""
 date = "2019-11-04T20:35:06+08:00"
-tags = ["family", "sysadmin", "photograph"]
+tags = ["family", "sysadmin", "photography"]
 categories = ["linux"]
 +++
 
