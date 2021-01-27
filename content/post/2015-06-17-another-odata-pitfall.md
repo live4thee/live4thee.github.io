@@ -6,7 +6,7 @@ description: ""
 tags:
 - OData
 - WebApi
-- C#
+- .Net
 title: Another OData Pitfall
 url: /2015/06/17/another-odata-pitfall/
 ---

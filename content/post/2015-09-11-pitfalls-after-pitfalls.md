@@ -4,7 +4,7 @@ categories:
 date: 2015-09-11T00:00:00Z
 description: ""
 tags:
-- C#
+- .Net
 - Unity
 title: Pitfalls after Pitfalls
 url: /2015/09/11/pitfalls-after-pitfalls/

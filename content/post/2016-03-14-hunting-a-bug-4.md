@@ -4,7 +4,7 @@ categories:
 date: 2016-03-14T00:00:00Z
 description: ""
 tags:
-- C#
+- .Net
 - Azure
 title: Hunting a Bug (4)
 url: /2016/03/14/hunting-a-bug-4/

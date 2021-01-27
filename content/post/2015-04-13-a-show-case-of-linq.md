@@ -4,7 +4,7 @@ categories:
 date: 2015-04-13T00:00:00Z
 description: A show case of the LINQ in C#
 tags:
-- C#
+- .Net
 title: A Show case of LINQ
 url: /2015/04/13/a-show-case-of-linq/
 ---
