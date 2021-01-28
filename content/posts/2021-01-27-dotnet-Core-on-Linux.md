@@ -117,3 +117,7 @@ $ dotnet sln list  # list projects
 
 运行 `dotnet new sln -n xxx` 或者 `dotnet new console` 可能会挂住，有
 些时候还可能不响应 `CTRL-C`，这时候只能找到进程号并`kill -TERM`。
+
+- [dotnet/issues/1239](https://github.com/microsoft/dotnet/issues/1239)
+- [dotnet/templating/pull/2307](https://github.com/dotnet/templating/pull/2307)
+- [dotnet/templating/pull/2341](https://github.com/dotnet/templating/pull/2341)
