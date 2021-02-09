@@ -63,4 +63,4 @@ hasCJKLanguage = true
 [markup]
   defaultMarkdownHandler = "blackfriday"
   [markup.blackFriday]
-    extensions = ["joinLines"]
+     #extensions = ["joinLines"]
