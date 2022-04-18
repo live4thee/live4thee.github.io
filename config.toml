@@ -61,6 +61,4 @@ hasCJKLanguage = true
   github-square = "https://github.com/live4thee"
 
 [markup]
-  defaultMarkdownHandler = "blackfriday"
-  [markup.blackFriday]
-     #extensions = ["joinLines"]
+  defaultMarkdownHandler = "goldmark"
