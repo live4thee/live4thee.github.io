@@ -4,7 +4,7 @@ baseurl = "https://live4thee.github.io/"
 languageCode = "en"
 title = "Life as a Programmer"
 theme = "cactus-plus"
-# Enter your tracking code to enable Google Analytics
+
 hasCJKLanguage = true
 
 [params]
