@@ -26,7 +26,7 @@ Future & Promise 本质上是同一个计算的两个方面：[^ans]
   结果后填入 Future 中的 promise 对象。
 
 对于调用者，Future 只读；对于实现者，promise 可写（通常只写一次）。
-[这里](http://dist-prog-book.com/chapter/2/futures.html)有更详细的讨论。
+[这里](http://dist-prog-book.com/chapter/2/futures.html)和[这里](http://www.labviewcraftsmen.com/blog/futures-promises-and-continuations-oh-my)有更详细的讨论。
 
 
 [^ans]: [What's the difference between a Future and a Promise?](https://stackoverflow.com/questions/14541975/whats-the-difference-between-a-future-and-a-promise)
