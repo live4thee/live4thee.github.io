@@ -22,7 +22,7 @@ url: /2017/03/25/what-a-programmer-does/
 
 > "No one has seen a program which the machine could not comprehend but which humans did."
 
-如果把编程看作是建造稳固、有组织的机体，那么 `bug` 的意味着组织的崩塌。
+如果把编程看作是建造稳固、有组织的机体，那么 `bug` 的存在意味着组织的崩塌。
 如果把 `debug` 看作是驱魔的仪式，那么非常不幸，程序员本人正是恶魔的使
 作蛹者。
 
