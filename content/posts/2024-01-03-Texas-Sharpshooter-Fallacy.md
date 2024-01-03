@@ -20,6 +20,7 @@ Steven Pinker 在《[理性](https://book.douban.com/subject/36427751/)》一书
 > simple, and wrong."
 
 究其本质，面对复杂问题，很多时候先要把问题本身涉及的因素搞懂。
+而且很多时候问题并不复杂，只是需要一点求知的勇气。
 
 ![butter](/media/butter.gif)
 {width="200" height="300" class="center"}
