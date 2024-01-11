@@ -2,7 +2,7 @@
 categories = ["life"]
 date = "2017-04-13T20:56:03+08:00"
 description = ""
-tags = ["jekyll"]
+tags = ["jekyll", "hugo" ]
 title = "Jekyll to Hugo"
 url = "/2017/04/13/Jekyll-to-Hugo/"
 +++
