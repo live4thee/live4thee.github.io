@@ -1,7 +1,7 @@
 +++
 title = "A Trip to Suzhou"
 date = 2023-12-17T21:20:24+08:00
-tags = ["sport"]
+tags = ["sport", "travel"]
 categories = ["life"]
 draft = false
 +++

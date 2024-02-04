@@ -2,8 +2,8 @@
 title = "A Trip to An-Ji"
 description = ""
 date = "2019-03-17T21:56:46+08:00"
-tags = ["life"]
-categories = ["family"]
+tags = ["travel"]
+categories = ["life"]
 +++
 
 周末去了趟安吉。

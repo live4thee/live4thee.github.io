@@ -1,8 +1,8 @@
 +++
 title = "A Trip to Wuxi"
 date = 2023-11-20T11:39:15+08:00
-tags = ["life"]
-categories = ["family"]
+tags = ["travel"]
+categories = ["life"]
 draft = false
 +++
 

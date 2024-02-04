@@ -2,7 +2,7 @@
 title = "A Trip to Hangzhou"
 description = ""
 date = "2018-04-10T19:48:59+08:00"
-tags = ["family"]
+tags = ["travel"]
 categories = ["life"]
 +++
 

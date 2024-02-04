@@ -2,7 +2,7 @@
 title = "A Trip to Okinawa"
 description = ""
 date = "2018-06-23T22:35:46+08:00"
-tags = ["family"]
+tags = ["travel"]
 categories = ["life"]
 +++
 
