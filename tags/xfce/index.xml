@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xfce on Life as a Programmer</title>
+    <link>https://live4thee.github.io/tags/xfce/</link>
+    <description>Recent content in xfce on Life as a Programmer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 16 May 2022 16:14:08 +0800</lastBuildDate><atom:link href="https://live4thee.github.io/tags/xfce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Back to Focal</title>
+      <link>https://live4thee.github.io/posts/2022-05-16-back-to-focal/</link>
+      <pubDate>Mon, 16 May 2022 16:14:08 +0800</pubDate>
+      
+      <guid>https://live4thee.github.io/posts/2022-05-16-back-to-focal/</guid>
+      <description>20.04 升级到 22.04 后用了一个月出头，突然某次重启后发现无线网络死活连 不上了。 Wi-Fi issue 🔗现象：NetworkManager 没有任何可用的设备，不但没有 Wi</description>
+    </item>
+    
+    <item>
+      <title>Firefox PPA for Ubuntu 22.04</title>
+      <link>https://live4thee.github.io/posts/2022-04-24-firefox-ppa-for-ubuntu-22-04/</link>
+      <pubDate>Sun, 24 Apr 2022 20:55:26 +0800</pubDate>
+      
+      <guid>https://live4thee.github.io/posts/2022-04-24-firefox-ppa-for-ubuntu-22-04/</guid>
+      <description>内容来自 https://balintreczey.hu/ 22.04 里搭载的 firefox 是用 snap 打包的，不过还是有用回 deb 的方法：使 用 Mozilla 团队维护的 PPA (Personal Package Archive) 仓库。 $ cat /etc/apt/preferences.d/firefox-no-snap Package: firefox* Pin: release o=Ubuntu* Pin-Priority: -1 然后，删掉已有的 firefox</description>
+    </item>
+    
+    <item>
+      <title>Fcitx Icon Issue</title>
+      <link>https://live4thee.github.io/posts/2022-04-18-fix-fcitx-icon-issue/</link>
+      <pubDate>Mon, 18 Apr 2022 19:39:33 +0800</pubDate>
+      
+      <guid>https://live4thee.github.io/posts/2022-04-18-fix-fcitx-icon-issue/</guid>
+      <description>最近把 20.04 升级到 22.04 后发现切换输入法的时候，图标比例有点怪，像是 大图标原样（非按比例）显示在了 panel 上。 查了一下，xfce 的 panel references 里面设置了： ‘ico</description>
+    </item>
+    
+    <item>
+      <title>Xfce Again</title>
+      <link>https://live4thee.github.io/posts/2020-04-29-xfce-again/</link>
+      <pubDate>Wed, 29 Apr 2020 22:38:24 +0800</pubDate>
+      
+      <guid>https://live4thee.github.io/posts/2020-04-29-xfce-again/</guid>
+      <description>分析了大半天 crash dump, 有点晕。 VMware player 🔗本机有个 VMware Player, 从 Kubuntu 18.04 升级到 20.04 后，内核模块编译 失败。仔细找了一下，原来代码都放到 /usr/lib/vmware/modules/source/ 里去了，以 tar 包的形式存在。升级 vmplayer</description>
+    </item>
+    
+    <item>
+      <title>Xfce Tips</title>
+      <link>https://live4thee.github.io/2016/03/24/xfce-tips/</link>
+      <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://live4thee.github.io/2016/03/24/xfce-tips/</guid>
+      <description>关闭 Guest Session 🔗在目录 /etc/lightdm/lightdm.conf.d 下创建一个文本文件，比如 50-my-custom-config.conf，输入以下内容： [SeatDefaults] allow-guest=false 重启即可。 fcitx 的选词问题 🔗我的 fcitx</description>
+    </item>
+    
+    <item>
+      <title>Benifits of VMs (2)</title>
+      <link>https://live4thee.github.io/2016/03/20/benifits-of-vms-2/</link>
+      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://live4thee.github.io/2016/03/20/benifits-of-vms-2/</guid>
+      <description>由于我的 vmdk 文件是分割过的，把虚拟机从 vmdk 迁移到 KVM 下稍微有点麻烦。 从 VMware 官方下载 vmware-vdiskmanager1，解开后拷贝到VMware</description>
+    </item>
+    
+    <item>
+      <title>Linux Desktop</title>
+      <link>https://live4thee.github.io/2016/03/18/linux-desktop/</link>
+      <pubDate>Fri, 18 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://live4thee.github.io/2016/03/18/linux-desktop/</guid>
+      <description>Xubuntu 安装好后发现一些问题，解决方法记录在此。 默认分辨率 1920x1080 下，偶尔有闪屏的情况，降低分辨率后没有发生过。 默认的视频播放器 Parole 播放时画面没有按比例调</description>
+    </item>
+    
+    <item>
+      <title>Xubuntu on XPS 13</title>
+      <link>https://live4thee.github.io/2016/03/17/xubuntu-on-xps-13/</link>
+      <pubDate>Thu, 17 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://live4thee.github.io/2016/03/17/xubuntu-on-xps-13/</guid>
+      <description>拿了一台 Dell XPS 13 9350，作为以后的开发机。自带的 Windows 10 Home 10240 被我我改装为 Xubuntu，省得装虚拟机，另外也方便 dogfood。 由于是新机器，也</description>
+    </item>
+    
+  </channel>
+</rss>

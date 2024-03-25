@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>paper on Life as a Programmer</title>
+    <link>https://live4thee.github.io/tags/paper/</link>
+    <description>Recent content in paper on Life as a Programmer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 29 Feb 2024 16:44:40 +0800</lastBuildDate><atom:link href="https://live4thee.github.io/tags/paper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HovercRaft</title>
+      <link>https://live4thee.github.io/posts/2024-02-29-hovercraft/</link>
+      <pubDate>Thu, 29 Feb 2024 16:44:40 +0800</pubDate>
+      
+      <guid>https://live4thee.github.io/posts/2024-02-29-hovercraft/</guid>
+      <description>一起读论文：HovercRaft: Achieving Scalability and Fault-tolerance for microsecond-scale Datacenter Services. 来自 EPFL（洛桑联邦理工学院），发表在 EuroSys &amp;lsquo;20. slides 背景简介 🔗云平台的服务一般需要满足三个基本需</description>
+    </item>
+    
+    <item>
+      <title>Parallel All the Time</title>
+      <link>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</link>
+      <pubDate>Tue, 05 Dec 2023 13:35:33 +0800</pubDate>
+      
+      <guid>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</guid>
+      <description>一起读论文：Parallel All The Time, 2019。该论文有一个改进版本，发表在 IEEE TPDS 2020 的九月刊。标题也有所更改，强调充分利用并发，去掉了“All The T</description>
+    </item>
+    
+  </channel>
+</rss>

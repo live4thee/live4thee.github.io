@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on Life as a Programmer</title>
+    <link>https://live4thee.github.io/tags/golang/</link>
+    <description>Recent content in golang on Life as a Programmer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 May 2018 20:47:37 +0800</lastBuildDate><atom:link href="https://live4thee.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buffering</title>
+      <link>https://live4thee.github.io/posts/2018-05-18-buffering/</link>
+      <pubDate>Fri, 18 May 2018 20:47:37 +0800</pubDate>
+      
+      <guid>https://live4thee.github.io/posts/2018-05-18-buffering/</guid>
+      <description>最近碰到一个行缓冲(line buffering)方面的问题，有点意思。 背景 🔗某段 golang 代码中，需要解析 virsh event --loop 的输出，大概就是用 bufio 里的 Scanner 来按行读取</description>
+    </item>
+    
+    <item>
+      <title>Second Life</title>
+      <link>https://live4thee.github.io/2017/11/04/second-life/</link>
+      <pubDate>Sat, 04 Nov 2017 20:28:51 +0800</pubDate>
+      
+      <guid>https://live4thee.github.io/2017/11/04/second-life/</guid>
+      <description>标题想表达的意思是“两世为人”，不知道英文怎么表达比较贴切。 局域网 🔗最近局域网的趋势越来越明显，而手机上的app要么下架，要么无法更新。折腾</description>
+    </item>
+    
+    <item>
+      <title>Go Pitfalls (1)</title>
+      <link>https://live4thee.github.io/2017/10/03/go-pitfalls-1/</link>
+      <pubDate>Tue, 03 Oct 2017 22:48:40 +0800</pubDate>
+      
+      <guid>https://live4thee.github.io/2017/10/03/go-pitfalls-1/</guid>
+      <description>用 golang 以来，遇到过一些坑，这里搜集了三个坑的比较惨的例子。 Variable Shadowing 🔗这个非常容易中招，比如，下面其实是个死循环。 package main import &amp;#34;fmt&amp;#34; func getNextCursor(cursor int) (int, error) { return cursor + 1, nil } func</description>
+    </item>
+    
+    <item>
+      <title>Debugging Go Programs</title>
+      <link>https://live4thee.github.io/2016/04/07/debugging-go-program/</link>
+      <pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://live4thee.github.io/2016/04/07/debugging-go-program/</guid>
+      <description>调试 golang 程序的体验不是很好，虽然很多时候加一些打印语句也能解决问题。 gdb 🔗 设置 gdb 的启动脚本，以正确解析符号（以前开发 SGX SDK 的时候也干过）。 add-auto-load-safe-path /usr/share/go-1.6/src/runtime/runtime-gdb.py 在需</description>
+    </item>
+    
+    <item>
+      <title>A Few Tips</title>
+      <link>https://live4thee.github.io/2016/04/01/a-few-tips/</link>
+      <pubDate>Fri, 01 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://live4thee.github.io/2016/04/01/a-few-tips/</guid>
+      <description>&amp;lsquo;godef&amp;rsquo; 不能定位到系统函数源代码 🔗godef 突然不能定位到 golang 自己的源代码。研究了一下，我的机器里装有 golang-src 和 golang-1.6-src，其中 golang-src 包内并</description>
+    </item>
+    
+    <item>
+      <title>vim-go with pathogen</title>
+      <link>https://live4thee.github.io/2016/01/25/vim-go-with-pathogen/</link>
+      <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://live4thee.github.io/2016/01/25/vim-go-with-pathogen/</guid>
+      <description>本地的 Fedora 虚拟机里面设置了用pathogen加载vim-go，一直工作得很好。 而我远程一台 Ubuntu 14.04 LTS 则不工作，虽然.vimrc的内容一模一样，且 p</description>
+    </item>
+    
+  </channel>
+</rss>
