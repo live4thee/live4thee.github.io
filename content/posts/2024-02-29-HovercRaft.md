@@ -3,7 +3,7 @@ title: "HovercRaft"
 date: 2024-02-29T16:44:40+08:00
 tags: [ "paper" ]
 categories: [ "programming" ]
-draft: false
+draft: true
 ---
 
 一起读论文：[HovercRaft: Achieving Scalability and Fault-tolerance for
