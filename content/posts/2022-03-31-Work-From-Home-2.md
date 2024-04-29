@@ -6,7 +6,7 @@ categories = ["work"]
 draft = false
 +++
 
-自[上次居家办公]({{< ref "/content/posts/2020-02-11-work-from-home.md">}})以来，
+自[上次居家办公]({{< ref "/posts/2020-02-11-work-from-home">}})以来，
 目前本次居家已超三个星期。然而生活的不易，却远较上次艰辛。
 
 ## 工作

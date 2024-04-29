@@ -15,7 +15,7 @@ draft: false
 
 出错的地方都是使用 `ref` 指令做站内引用的地方。
 
-搜了一下，原来是 v123.0 开始引入了[逻辑路径](https://gohugo.io/methods/page/path/)的概念，
+搜了一下，原来是 v0.123.0 开始引入了[逻辑路径](https://gohugo.io/methods/page/path/)的概念，
 是个非向前兼容的改动。解决方法类似如下：
 
 - 修改前：ref "/content/posts/foo.md"

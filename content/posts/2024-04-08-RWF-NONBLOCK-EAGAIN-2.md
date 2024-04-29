@@ -6,7 +6,7 @@ categories: [ "linux" ]
 draft: false
 ---
 
-先交代一下[上文]({{< ref "/content/posts/2024-04-03-RWF-NONBLOCK-EAGAIN.md" >}})的实验环境：
+先交代一下[上文]({{< ref "/posts/2024-04-03-RWF-NONBLOCK-EAGAIN" >}})的实验环境：
 
 - kernel: 4.18.0-425.19.2 (CentOS Stream 8)
 - filesystem: Ext4
