@@ -40,6 +40,11 @@ disqusShortname = "live4thee"
 [markup]
   defaultMarkdownHandler = "goldmark"
   [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.cjk]
+        enable = true
+        eastAsianLineBreaks = true
+        escapedSpace = true
     [markup.goldmark.parser]
       wrapStandAloneImageWithinParagraph = false
       [markup.goldmark.parser.attribute]
