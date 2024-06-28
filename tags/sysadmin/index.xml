@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sysadmin on Life as a Programmer</title>
+    <link>https://live4thee.github.io/tags/sysadmin/</link>
+    <description>Recent content in Sysadmin on Life as a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 02 Feb 2021 12:37:02 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/sysadmin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Syscalls by Process</title>
+      <link>https://live4thee.github.io/posts/2021-02-02-syscalls-by-process/</link>
+      <pubDate>Tue, 02 Feb 2021 12:37:02 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-02-02-syscalls-by-process/</guid>
+      <description>自 Linux 2.6.27 开始，可以通过文件 /proc/[pid]/syscall 得知进程号为pid 的进程正在做什么系统调用。比如： $ sudo cat /proc/$$/syscall 61 0xffffffff 0x7ffddd4c4000 0xa 0x0 0x0 0x7 0x7ffddd4c3fe8 0x7ff09ab37dba 这里，第一个字段是系统调用号。后面一次</description>
+    </item>
+    <item>
+      <title>MySQL/Mariadb Notes - 1</title>
+      <link>https://live4thee.github.io/posts/2020-03-28-mysql-mariadb-notes-1/</link>
+      <pubDate>Sat, 28 Mar 2020 14:31:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-28-mysql-mariadb-notes-1/</guid>
+      <description>MySQL 8 🔗跑部署脚本的时候，一直报错： ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &amp;#39;IDENTIFIED BY &amp;#39;secret&amp;#39; at line 1 啥，语法错？看了一下执行的 SQL 语句，很正</description>
+    </item>
+    <item>
+      <title>xfs_growfs</title>
+      <link>https://live4thee.github.io/posts/2020-02-26-xfs-growfs/</link>
+      <pubDate>Wed, 26 Feb 2020 22:45:36 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-02-26-xfs-growfs/</guid>
+      <description>跑在公司内网的开发机系统盘只有 6GB，因此前段时间碰到了 surefire 插件在 /tmp 目录下写入大量 report 数据把磁盘写满的问题。后来建了一块数据盘专门挂载到 /tmp, 没想到</description>
+    </item>
+    <item>
+      <title>ramblings</title>
+      <link>https://live4thee.github.io/posts/2019-11-04-ramblings/</link>
+      <pubDate>Mon, 04 Nov 2019 20:35:06 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-04-ramblings/</guid>
+      <description>懂事的孩子 🔗老师问小朋友，“你的尺子断了，铅笔也很短了，怎么还没换啊？” 小朋友回答说，“家长很忙。” 这段对话是老师告知的。家长很惭愧。 传感器</description>
+    </item>
+    <item>
+      <title>Vacuuming Systemd Journals</title>
+      <link>https://live4thee.github.io/posts/2019-10-31-vacuuming-journal-files/</link>
+      <pubDate>Thu, 31 Oct 2019 09:20:19 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-10-31-vacuuming-journal-files/</guid>
+      <description>之前发现，执行 journalctl &amp;ndash;vacuum-time=2d 并不一定会释放日志空间。 根本原因是：vacuum 操作只针对已经归档的日志。所以，正确的操作： journalctl --rotate journalctl --vacuum-time=2d 需要注意的是：上面两个</description>
+    </item>
+    <item>
+      <title>Chroot to Rescue!</title>
+      <link>https://live4thee.github.io/posts/2019-09-03-chroot-for-rescue/</link>
+      <pubDate>Tue, 03 Sep 2019 10:56:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-03-chroot-for-rescue/</guid>
+      <description>很久之前，为了合规，公司换用了合法的 VPN 提供商。然而自此之后，我的 VPN 接入就成了问题。 对方号称有 Linux 客户端，但是官网不能下载； 对方的设备提供 L2TP 服务</description>
+    </item>
+    <item>
+      <title>Random Bits (3)</title>
+      <link>https://live4thee.github.io/posts/2018-11-22-random-bits-3/</link>
+      <pubDate>Thu, 22 Nov 2018 19:36:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-11-22-random-bits-3/</guid>
+      <description>今天是小雪。魔都阳光明媚。 最近手上处理了几个诡异的问题，这里简单记录一下。 &amp;ldquo;Too many open files&amp;rdquo; 🔗售前同事说，某客户的环境里，出现了 &amp;ldquo;Too many open files&amp;rdquo;. 一般来说，这种</description>
+    </item>
+    <item>
+      <title>A stop job is running ...</title>
+      <link>https://live4thee.github.io/posts/2018-03-20-a-stop-job/</link>
+      <pubDate>Tue, 20 Mar 2018 15:17:45 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-20-a-stop-job/</guid>
+      <description>更新了系统后，因为选择了采用 package maintainer 的配置文件，之前关机时碰到的一个 systemd 的问题又回来了： A stop job is running for Session ... (1min 30s) 好记性不如烂笔头。解决办法： $ grep ^DefaultTimeout /etc/systemd/system.conf DefaultTimeoutStartSec=10s</description>
+    </item>
+    <item>
+      <title>Pain of OSS</title>
+      <link>https://live4thee.github.io/2017/10/14/pain-of-oss/</link>
+      <pubDate>Sat, 14 Oct 2017 22:00:18 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/14/pain-of-oss/</guid>
+      <description>题记 🔗老同志说：“你要回到Windows的正道上来。” 年轻人说，“用Mac，省心。” 我要吐槽 🔗吐槽一下 Linux 下各种不爽的坑。 关于投影 🔗之前投影在</description>
+    </item>
+    <item>
+      <title>Combine Pics to PDF</title>
+      <link>https://live4thee.github.io/2017/07/15/combine-pics-to-pdf/</link>
+      <pubDate>Sat, 15 Jul 2017 23:42:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/07/15/combine-pics-to-pdf/</guid>
+      <description>简记一则技巧：网上看见一在线PPT，但是每一页都被转换成了PNG图片，怎么把它们制成一个PDF文件？ 批量下载 🔗假设有30页，每一页的图片都遵</description>
+    </item>
+    <item>
+      <title>Command-line limits</title>
+      <link>https://live4thee.github.io/2017/03/15/command-line-limits/</link>
+      <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/15/command-line-limits/</guid>
+      <description>可能大多数人都没有意识到，命令行字符串的最大长度是有限制的。 $ echo | xargs --show-limits Your environment variables take up 2766 bytes POSIX upper limit on argument length (this system): 2092338 POSIX smallest allowable upper limit on argument length (all systems): 4096 Maximum length of command we could actually use:</description>
+    </item>
+    <item>
+      <title>Monitor File Access in Linux</title>
+      <link>https://live4thee.github.io/2016/10/22/monitor-file-access-in-linux/</link>
+      <pubDate>Sat, 22 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/10/22/monitor-file-access-in-linux/</guid>
+      <description>最近调试某个程序的过程中，需要监控文件系统中，某个目录下的文件删除操作。下意识反应是用 inotify，但是又不想自己处理递归添加被监控目录或</description>
+    </item>
+  </channel>
+</rss>

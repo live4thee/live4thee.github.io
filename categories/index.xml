@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Life as a Programmer</title>
+    <link>https://live4thee.github.io/categories/</link>
+    <description>Recent content in Categories on Life as a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 28 Jun 2024 09:43:50 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Life</title>
+      <link>https://live4thee.github.io/categories/life/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/categories/life/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>https://live4thee.github.io/categories/programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://live4thee.github.io/categories/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Storage</title>
+      <link>https://live4thee.github.io/categories/storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/categories/storage/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Address</title>
+      <link>https://live4thee.github.io/categories/address/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/categories/address/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Work</title>
+      <link>https://live4thee.github.io/categories/work/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/categories/work/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Emacs</title>
+      <link>https://live4thee.github.io/categories/emacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/categories/emacs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vim</title>
+      <link>https://live4thee.github.io/categories/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/categories/vim/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://live4thee.github.io/categories/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/categories/windows/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
