@@ -2,7 +2,7 @@
 baseurl = "https://live4thee.github.io/"
 # HTML Language Code Reference, such as en, zh-cn
 languageCode = "en"
-title = "Life as a Programmer"
+title = "Life of a Programmer"
 theme = "cactus-plus"
 paginate = 5
 
