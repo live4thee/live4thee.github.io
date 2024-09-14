@@ -1,7 +1,7 @@
 ---
 title: "RDMA Networking - Message TX"
 date: 2024-06-12T14:31:25+08:00
-tags: [ "networking" ]
+tags: [ "networking", "rdma" ]
 categories: [ "programming" ]
 draft: false
 ---

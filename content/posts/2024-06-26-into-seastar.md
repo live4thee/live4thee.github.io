@@ -1,7 +1,7 @@
 ---
 title: "Into Seastar"
 date: 2024-06-26T14:40:35+08:00
-tags: [ "networking", "c++" ]
+tags: [ "networking", "c++", "seastar" ]
 categories: [ "programming" ]
 draft: false
 ---
