@@ -1,7 +1,7 @@
 ---
 title: "RDMA Networking - Intro"
 date: 2024-06-12T09:59:23+08:00
-tags: [ "networking" ]
+tags: [ "networking", "rdma" ]
 categories: [ "programming" ]
 draft: false
 ---
