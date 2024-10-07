@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Life of a Programmer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Sep 2024 09:42:27 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IBV_WC_RETRY_EXC_ERR</title>
+      <link>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</link>
+      <pubDate>Sat, 14 Sep 2024 09:42:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</guid>
+      <description>记得休假前跑通了 RDMA 网络, 并在组内做了演示。看着环境 A 屏幕上飞快滚动的日志，颇为欣喜。当时的性能数据略有点奇怪 &amp;ndash; 因为开着 DEBUG 信息，并未太放在心上</description>
+    </item>
+    <item>
+      <title>ASAN Report Before Program Exits</title>
+      <link>https://live4thee.github.io/posts/2024-08-13-asan-report-before-program-exits/</link>
+      <pubDate>Tue, 13 Aug 2024 10:40:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-08-13-asan-report-before-program-exits/</guid>
+      <description>Address Sanitizer (ASAN) 是个非常好用的工具，其子集 Leak Sanitizer (LSAN) 也非常好用。用 GCC 编译的时候：1 -fsanitize=address # 启用 ASAN -fsanitize=leak # 启用 LSAN 现实应用中，很多业务都以守护进程 daemon 的形式运行，因此进</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;11 Lambda Capture</title>
+      <link>https://live4thee.github.io/posts/2024-07-24-cpp-11-lambda-capture/</link>
+      <pubDate>Wed, 24 Jul 2024 17:49:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-24-cpp-11-lambda-capture/</guid>
+      <description>好记性不如烂笔头，内容来自cppreference.com. 语法 🔗c++11 的 lambda capture 大概有如下语法： identifier (1) identifier ... (2) identifier initializer (3) (since C++14) &amp;amp; identifier (4) &amp;amp; identifier ... (5) &amp;amp; identifier initializer (6)</description>
+    </item>
+    <item>
+      <title>Into Seastar</title>
+      <link>https://live4thee.github.io/posts/2024-06-26-into-seastar/</link>
+      <pubDate>Wed, 26 Jun 2024 14:40:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-26-into-seastar/</guid>
+      <description>在Seastar的海洋里扑腾，喘口气。 增加了一个 HTTP handler, 用 curl 测试了一下能工作。所用的 Seastar 版本只有 http_server, 没有 http_client，不得不照猫画虎写了个</description>
+    </item>
+    <item>
+      <title>[zz] All Concurrency Models Suck</title>
+      <link>https://live4thee.github.io/posts/2024-04-03-all-concurrency-models-suck/</link>
+      <pubDate>Wed, 03 Apr 2024 09:37:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-03-all-concurrency-models-suck/</guid>
+      <description>本文内容转载自webarchive, 2013/11/15. 作者是 Kenton Varda, 前 CloudFlare 工程师，cap&amp;rsquo;n proto的主要作者之一。原始讨论包含一些其他内容，不在 webarchive</description>
+    </item>
+    <item>
+      <title>pwrite() &amp; O_APPEND</title>
+      <link>https://live4thee.github.io/posts/2023-11-23-pwrite-and-o-append/</link>
+      <pubDate>Thu, 23 Nov 2023 13:03:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-23-pwrite-and-o-append/</guid>
+      <description>Linux 的 pwrite() 有个 BUG: 当文件以 O_APPEND 模式打开时，虽然 file offset 不会变，但是写入的内容会追加到文件尾部。 此外，pwrite() 和 pwritev() 的 offset 参数不能为 -1, 否则会 EINVAL. 但是 pwritev2() 可</description>
+    </item>
+    <item>
+      <title>Future &amp; Promise</title>
+      <link>https://live4thee.github.io/posts/2023-11-21-future-and-promise/</link>
+      <pubDate>Tue, 21 Nov 2023 11:46:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-21-future-and-promise/</guid>
+      <description>基于异步事件的编程框架基本上都有 Future 和 Promise 的概念。比如， 主流编程语言中 C++11 有std::future 和std::promise, 而 Java 1.5 开始有Futu</description>
+    </item>
+    <item>
+      <title>Address Sanitizer</title>
+      <link>https://live4thee.github.io/posts/2023-11-20-address-sanitizer/</link>
+      <pubDate>Mon, 20 Nov 2023 15:14:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-20-address-sanitizer/</guid>
+      <description>N 年前，调试 C/C++ 内存问题一般会选择用valgrind 或者efence. 目前 Address Sanitizer (ASan) 居多， 它已经被集成进了 LLVM 以及 GCC, 用来比较方便。 访问越界 🔗比如，下</description>
+    </item>
+    <item>
+      <title>`O_DIRECT&#39; undeclared</title>
+      <link>https://live4thee.github.io/posts/2023-11-14-o-direct-undeclared/</link>
+      <pubDate>Tue, 14 Nov 2023 15:08:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-14-o-direct-undeclared/</guid>
+      <description>用 gcc 编译代码时报错：&#39;O_DIRECT&#39; undeclared. 看操作历史，之前一直用的 g++ 没报错。感觉有点奇怪。加上参数 -E 导出预处理过程对比了一下： 处理的文件都一</description>
+    </item>
+    <item>
+      <title>A Little C&#43;&#43;</title>
+      <link>https://live4thee.github.io/posts/2023-11-10-a-little-cpp/</link>
+      <pubDate>Fri, 10 Nov 2023 11:30:45 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-10-a-little-cpp/</guid>
+      <description>好久没用 C++ 了，当项目里重度使用现代 C++（c++11 以及后续标准） 的新特性时，就有点力不从心 &amp;ndash; 书到用时方恨少。 template &amp;lt;typename... A&amp;gt; void set(A&amp;amp;&amp;amp;... a) noexcept { assert(_u.st == state::future); new (this) future_state(ready_future_marker(), std::forward&amp;lt;A&amp;gt;(a)...);</description>
+    </item>
+    <item>
+      <title>(Old) Seastar and C&#43;&#43;17</title>
+      <link>https://live4thee.github.io/posts/2023-11-01-old-seastar-and-cpp-17/</link>
+      <pubDate>Wed, 01 Nov 2023 15:26:01 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-01-old-seastar-and-cpp-17/</guid>
+      <description>在 CentOS Stream 8 上编译老版本 Seastar 时碰到两个问题，记录一下。 cannot deduce template arguments for ‘tuple’ from () 🔗编译 sharded.hh 报错，用最新的代码也还是错，于是手动修改如下： --- include/seastar/core/sharded.hh.orig 2023-11-01 15:22:58.800059019 +0800</description>
+    </item>
+    <item>
+      <title>Modern C&#43;&#43;</title>
+      <link>https://live4thee.github.io/2016/10/18/modern-cpp/</link>
+      <pubDate>Tue, 18 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/10/18/modern-cpp/</guid>
+      <description>一点笔记，来自 Modern C++ 最重要的一点：不要直接用指针。因为它直接暴露了内存区域，且不能传达出所有者相关语义。Pointers must NOT own resources. 以下是一些例子</description>
+    </item>
+  </channel>
+</rss>
