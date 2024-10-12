@@ -1,8 +1,8 @@
 +++
 title = "Parallel All the Time"
 date = 2023-12-05T13:35:33+08:00
-tags = ["paper", "ssd"]
-categories = ["storage"]
+tags = ["paper", "ssd", "storage"]
+categories = ["work"]
 draft = false
 +++
 
