@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rdma on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/rdma/</link>
+    <description>Recent content in Rdma on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Sep 2024 09:42:27 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/rdma/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IBV_WC_RETRY_EXC_ERR</title>
+      <link>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</link>
+      <pubDate>Sat, 14 Sep 2024 09:42:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</guid>
+      <description>记得休假前跑通了 RDMA 网络, 并在组内做了演示。看着环境 A 屏幕上飞快滚动的日志，颇为欣喜。当时的性能数据略有点奇怪 &amp;ndash; 因为开着 DEBUG 信息，并未太放在心上</description>
+    </item>
+    <item>
+      <title>RDMA Networking - Message TX</title>
+      <link>https://live4thee.github.io/posts/2024-06-12-rdma-networking-message-tx/</link>
+      <pubDate>Wed, 12 Jun 2024 14:31:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-12-rdma-networking-message-tx/</guid>
+      <description>书接上文RDMA简介， 看看 CPU、网卡和 PCIe fabric 是怎么配合实现消息传递的。 背景知识 🔗Verbs API - slow &amp;amp; fast 🔗Verbs API 有两类： 初始化和配置等低频</description>
+    </item>
+    <item>
+      <title>RDMA Networking - Intro</title>
+      <link>https://live4thee.github.io/posts/2024-06-12-rdma-networking-intro/</link>
+      <pubDate>Wed, 12 Jun 2024 09:59:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-12-rdma-networking-intro/</guid>
+      <description>前言 🔗最近给Seastar增加 RDMA 网络支持， 接触了一堆资料。比如： futurewei 的 chogori-seastar bRPC 的 RDMA 支持 spdk 的 RDMA 相关代码 文档、示例比较全面的 rdma-core 最后，Dotan Bara</description>
+    </item>
+  </channel>
+</rss>

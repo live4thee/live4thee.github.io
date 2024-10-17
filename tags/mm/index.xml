@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mm on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/mm/</link>
+    <description>Recent content in Mm on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Jul 2024 18:39:04 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/mm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bpftrace Tips</title>
+      <link>https://live4thee.github.io/posts/2024-07-25-bpftrace-tips/</link>
+      <pubDate>Thu, 25 Jul 2024 18:39:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-25-bpftrace-tips/</guid>
+      <description>bpftrace 的一些陷阱 🔗&amp;ldquo;char[]&amp;rdquo; 的问题 🔗举个例子，xfs_lookup 对应 tracepoint 中的第四个参数 name 被声明为 char[] 而不是 char*. 这在 C 里</description>
+    </item>
+    <item>
+      <title>A Taste of bpftrace</title>
+      <link>https://live4thee.github.io/posts/2024-01-09-a-taste-of-bpftrace/</link>
+      <pubDate>Tue, 09 Jan 2024 13:03:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-09-a-taste-of-bpftrace/</guid>
+      <description>bpftrace真的挺好用。1 跟踪进程的执行 🔗通过跟踪 execve，可以得到系统中进程执行的情况。 $ bpftrace -e &amp;#39;tracepoint:syscalls:sys_enter_execve { time(&amp;#34;%H:%M:%S &amp;#34;); join(args-&amp;gt;argv) }&amp;#39; Attaching 1 probe... 13:10:04 /usr/lib64/sa/sa1 1 1 13:10:04 /usr/lib64/sa/sadc -F -L -S</description>
+    </item>
+    <item>
+      <title>Interpreting Kernel Call Trace</title>
+      <link>https://live4thee.github.io/posts/2024-01-02-interpreting-kernel-call-trace/</link>
+      <pubDate>Tue, 02 Jan 2024 16:54:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-02-interpreting-kernel-call-trace/</guid>
+      <description>假设有 Call Trace 如下： [89580.077835] task:kworker/u195:0 state:D stack: 0 pid:9848 ppid: 2 flags:0x80004080 [89580.077840] Workqueue: events_unbound async_run_entry_fn [89580.077845] Call Trace: [89580.077847] __schedule+0x2d1/0x860 [89580.077852] ? scan_shadow_nodes+0x30/0x30 [89580.077856] schedule+0x35/0xa0 [89580.077857] io_schedule+0x12/0x40 [89580.077859] do_read_cache_page+0x4eb/0x740 上面这段日志是由 kernel/sched/core.c 中的 sched_show_task() 函数打印的。 任务信息 🔗task:kworker</description>
+    </item>
+    <item>
+      <title>Interpreting Linux OOM Logs (1/2)</title>
+      <link>https://live4thee.github.io/posts/2019-04-12-interpreting-linux-oom-logs/</link>
+      <pubDate>Fri, 12 Apr 2019 10:28:42 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-04-12-interpreting-linux-oom-logs/</guid>
+      <description>本文描述如何分析 Linux OOM 日志。下面的日志去掉了开头的时间戳。 HOST1 kernel: prometheus invoked oom-killer: gfp_mask=0x0, order=0, oom_score_adj=0 HOST1 kernel: prometheus cpuset=docker-f55e8d749684a0746aa1cb3d186df370848ba502cc19d249bf732450de5a2f30.scope mems_allowed=0-3 HOST1 kernel: CPU: 88 PID: 49521 Comm: prometheus Tainted: G OE ------------ 3.10.0-327.36.1.el7.x86_64 #1 HOST1 kernel: Hardware name: Dell Inc. PowerEdge R930/0Y0V4F, BIOS 2.4.3 07/07/2017 HOST1 kernel: ffff88bf0612f300 00000000cbfaa699</description>
+    </item>
+  </channel>
+</rss>
