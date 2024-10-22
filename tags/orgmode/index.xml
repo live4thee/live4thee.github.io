@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orgmode on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/orgmode/</link>
+    <description>Recent content in Orgmode on Life of a Programmer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 17 Jun 2022 17:05:31 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>org-link-set-parameters</title>
+      <link>https://live4thee.github.io/posts/2022-06-17-org-link-set-parameters/</link>
+      <pubDate>Fri, 17 Jun 2022 17:05:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-06-17-org-link-set-parameters/</guid>
+      <description>back to fcitx 🔗最近做了很多文字工作，发现 ibus 虽然视觉好看一点，但中文输入的时候偶尔会切换输入法卡住，接着就只能输入英文了（虽然切换动画还是继续挺好看</description>
+    </item>
+    <item>
+      <title>Fonts</title>
+      <link>https://live4thee.github.io/2017/03/16/fonts/</link>
+      <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/16/fonts/</guid>
+      <description>用 orgmode + xelatex 输出 pdf 的时候，偶尔发现中英文混排的情况下， 会碰到中文断行出错的情况。现象就是一行中文超出边框很长也不段行。我的LATEX_HEADE</description>
+    </item>
+    <item>
+      <title>org export to latex</title>
+      <link>https://live4thee.github.io/2017/03/10/org-export-to-latex/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/10/org-export-to-latex/</guid>
+      <description>最近写 orgmode 笔记的时候碰到几个问题： code block 没有语法高亮； 输出的 pdf 文件中，python 代码对齐出错； 输出的 pdf 文件中，源代码没有高亮。 解决办法如下： ;;</description>
+    </item>
+    <item>
+      <title>Habits</title>
+      <link>https://live4thee.github.io/2017/03/05/habits/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/05/habits/</guid>
+      <description>折腾了一把 vscode + markdown 后，还是回到了 Emacs + orgmode 的老路。可谓“积习难改”。 Emacs with git 🔗我的 orgmode 文档通过远程 git 仓库同步。Windows 下面我装了一个GitHub</description>
+    </item>
+    <item>
+      <title>A Few Tips</title>
+      <link>https://live4thee.github.io/2016/04/01/a-few-tips/</link>
+      <pubDate>Fri, 01 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/01/a-few-tips/</guid>
+      <description>&amp;lsquo;godef&amp;rsquo; 不能定位到系统函数源代码 🔗godef 突然不能定位到 golang 自己的源代码。研究了一下，我的机器里装有golang-src 和 golang-1.6-s</description>
+    </item>
+    <item>
+      <title>An Emacs Tip</title>
+      <link>https://live4thee.github.io/2016/03/22/an-emacs-tip/</link>
+      <pubDate>Tue, 22 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/22/an-emacs-tip/</guid>
+      <description>用 orgmode 写完文档后，C-x C-c 提示退出失败，出错信息为：eshell-save-some-history: Text is read-only. 切换到 eshell buffer 后输入 exit，果然又提</description>
+    </item>
+    <item>
+      <title>orgmode</title>
+      <link>https://live4thee.github.io/2015/07/05/orgmode/</link>
+      <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/05/orgmode/</guid>
+      <description>用Emacs的orgmode写文档，至今仍是我的最爱。 今天碰到一个问题，当我用了#+BEGIN_SRC去渲染一块代码区域时，将文档输出到HT</description>
+    </item>
+  </channel>
+</rss>

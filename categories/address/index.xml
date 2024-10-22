@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Address on Life of a Programmer</title>
+    <link>https://live4thee.github.io/categories/address/</link>
+    <description>Recent content in Address on Life of a Programmer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Nov 2023 15:14:30 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/categories/address/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Address Sanitizer</title>
+      <link>https://live4thee.github.io/posts/2023-11-20-address-sanitizer/</link>
+      <pubDate>Mon, 20 Nov 2023 15:14:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-20-address-sanitizer/</guid>
+      <description>N 年前，调试 C/C++ 内存问题一般会选择用valgrind 或者efence. 目前 Address Sanitizer (ASan) 居多， 它已经被集成进了 LLVM 以及 GCC, 用来比较方便。 访问越界 🔗比如，下</description>
+    </item>
+  </channel>
+</rss>
