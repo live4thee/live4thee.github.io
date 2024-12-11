@@ -1,0 +1,2252 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Life of a Programmer</title>
+    <link>https://live4thee.github.io/</link>
+    <description>Recent content on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Dec 2024 13:20:47 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Detraining</title>
+      <link>https://live4thee.github.io/posts/2024-12-11-detraining/</link>
+      <pubDate>Wed, 11 Dec 2024 13:20:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-12-11-detraining/</guid>
+      <description>已经半个月没有跑步了，理由诸多：气温降低、空气污染等等。周末去迪卡侬买了个头套，夫人说，“看起来像打劫的，晚上出去跑步容易把人吓着。” 额外又</description>
+    </item>
+    <item>
+      <title>ICU</title>
+      <link>https://live4thee.github.io/posts/2024-12-04-icu/</link>
+      <pubDate>Wed, 04 Dec 2024 17:37:05 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-12-04-icu/</guid>
+      <description>以从未预料过、也从未有过心理准备的方式，经历了 ICU 外的等待。 病房外，经常看见一位打扮得体的老人推着他的亲人。 一城一夜一滋味，几度愁肠几度秋。</description>
+    </item>
+    <item>
+      <title>Sudden Call</title>
+      <link>https://live4thee.github.io/posts/2024-11-26-sudden-call/</link>
+      <pubDate>Tue, 26 Nov 2024 19:33:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-26-sudden-call/</guid>
+      <description>今天大风蓝色预警。阳光还不错，空气指数 36, 西北风 4 级。 犹犹豫豫，还是决定跑个步。上周末已经完成本月的 100km, 然而昨晚翻了几页《比山更高》后，还是决定</description>
+    </item>
+    <item>
+      <title>Higher Than Mountains</title>
+      <link>https://live4thee.github.io/posts/2024-11-25-higher-than-mountains/</link>
+      <pubDate>Mon, 25 Nov 2024 20:15:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-25-higher-than-mountains/</guid>
+      <description>周末偶然在B站的某个视频看到一本《比山更高》， 对比了一下发现 PDD 上的当当价格还可以，于是请夫人下单买了一本。 书到手后才翻了豆瓣 &amp;ndash; 没想到评分竟然</description>
+    </item>
+    <item>
+      <title>Crowds</title>
+      <link>https://live4thee.github.io/posts/2024-11-22-crowds/</link>
+      <pubDate>Fri, 22 Nov 2024 19:12:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-22-crowds/</guid>
+      <description>上周六从天平山穿出来时，已经是日暮时分。游人如织。从白云古刹经过时，用手机随手拍了一张。这两天越看越喜欢。原图为横拍，裁成了竖的。有点“芸芸</description>
+    </item>
+    <item>
+      <title>Notes on Unknown (2)</title>
+      <link>https://live4thee.github.io/posts/2024-11-20-notes-on-unknown-2/</link>
+      <pubDate>Wed, 20 Nov 2024 10:02:51 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-20-notes-on-unknown-2/</guid>
+      <description>天渐冷 🔗本月跑量目前已经 84.3 公里，灵白魔鬼线山路徒步 8 公里， 其中还有一段比较陡峭的崖降。刺激。 小本本 🔗vmscan 问题 🔗请教了F老师后，奇怪的</description>
+    </item>
+    <item>
+      <title>Notes on Unknown</title>
+      <link>https://live4thee.github.io/posts/2024-11-09-notes-on-unknown/</link>
+      <pubDate>Sat, 09 Nov 2024 21:41:11 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-09-notes-on-unknown/</guid>
+      <description>记录一下最近碰到的不能理解的问题。 radix_tree_node 占比 🔗下面是某个节点的例子： $ slabtop -sc --once | sed -e &amp;#39;1,6d&amp;#39; -e &amp;#39;s/J S/J-S/&amp;#39; -e &amp;#39;s/E S/E-S/&amp;#39; | head -10 | column -t OBJS ACTIVE USE OBJ-SIZE SLABS OBJ/SLAB CACHE-SIZE NAME 4848200 4847571 99% 1.14K 173150 28 5540800K ext4_inode_cache 16624725 16623589</description>
+    </item>
+    <item>
+      <title>Pains &amp; Gains</title>
+      <link>https://live4thee.github.io/posts/2024-11-07-pains-and-gains/</link>
+      <pubDate>Thu, 07 Nov 2024 21:58:36 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-07-pains-and-gains/</guid>
+      <description>Pains 🔗Physical 🔗大概十月中旬开始，起床时两手有点麻，无法握拳。差不多一分钟内，症状消失。最近几天左手背开始有点酸疼。 Mental 🔗这两天被 Linux 的内</description>
+    </item>
+    <item>
+      <title>Education</title>
+      <link>https://live4thee.github.io/posts/2024-10-22-education/</link>
+      <pubDate>Tue, 22 Oct 2024 22:07:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-22-education/</guid>
+      <description>数学 🔗最近辅导孩子数学，有的题目还挺有意思。有上学的时候刷 Project Euler 的感觉。 晚上做作业，小朋友做完后一看，满分。然而也比较坦诚，说有一道选择题是蒙</description>
+    </item>
+    <item>
+      <title>Ramblings - 4</title>
+      <link>https://live4thee.github.io/posts/2024-10-17-ramblings-4/</link>
+      <pubDate>Thu, 17 Oct 2024 14:35:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-17-ramblings-4/</guid>
+      <description>孩子的评价 🔗昨天意外得知了孩子对父母的评价，“书呆子和狂妄自大的地理盲。” 有点哭笑不得。 来自 B 站的知识 🔗刘禹锡 🔗看了一段讲述刘禹锡生平的长视</description>
+    </item>
+    <item>
+      <title>Look After Child</title>
+      <link>https://live4thee.github.io/posts/2024-10-14-look-after-child/</link>
+      <pubDate>Mon, 14 Oct 2024 20:44:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-14-look-after-child/</guid>
+      <description>这几天夫人出差，由我在家照料孩子。 傍晚刚到家不久，小屁孩就一声不吭地进门了。放下书包，来厨房看了一眼，就是例行蹲洗手间。 “我的文曲星有闹钟的</description>
+    </item>
+    <item>
+      <title>fio Trickery</title>
+      <link>https://live4thee.github.io/posts/2024-10-12-fio-trickery/</link>
+      <pubDate>Sat, 12 Oct 2024 13:51:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-12-fio-trickery/</guid>
+      <description>遇到一个需要测试大量创建文件的场景。毫无疑问，一定能通过 fio 解决。查看了一下 man 手册，有个 filecreate 引擎，折腾了几分钟也只能创建一个文件。Deepsee</description>
+    </item>
+    <item>
+      <title>Joys and Sorrows</title>
+      <link>https://live4thee.github.io/posts/2024-10-11-joys-and-sorrows/</link>
+      <pubDate>Fri, 11 Oct 2024 22:12:14 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-11-joys-and-sorrows/</guid>
+      <description>回到家，夫人给我讲最近听到的各种关于股市的段子。 鲁迅先生曾说，“人类的悲欢并不相通。” 我突然悟到：人类大概也更愿意接受（未必真的相信） 各种欢</description>
+    </item>
+    <item>
+      <title>Holidays</title>
+      <link>https://live4thee.github.io/posts/2024-10-07-holidays/</link>
+      <pubDate>Mon, 07 Oct 2024 14:02:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-07-holidays/</guid>
+      <description>这个国庆天气不太给力。 修电脑 🔗最近坏掉的两台电脑都是无风扇版。继 Surface Pro 4 阵亡后，MacBook 也彻底开不了机了。跑到修理店，伙计都不愿意修， “</description>
+    </item>
+    <item>
+      <title>Up &amp; Down</title>
+      <link>https://live4thee.github.io/posts/2024-09-29-up-and-down/</link>
+      <pubDate>Sun, 29 Sep 2024 16:41:11 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-29-up-and-down/</guid>
+      <description>上周四晚上，刚到家还没停车，发现自己被拉到了一个群里。 “这个问题比较严重，麻烦帮忙看一下。” 环境是 Kylin v10, 内核版本：4.19.90-52.15.</description>
+    </item>
+    <item>
+      <title>Sunset Surface Pro 4</title>
+      <link>https://live4thee.github.io/posts/2024-09-28-sunset-surface-pro-4/</link>
+      <pubDate>Sat, 28 Sep 2024 22:51:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-28-sunset-surface-pro-4/</guid>
+      <description>2017年初买的 Surface Pro 4 在今年的雨季期间开始摆烂。左下角的屏幕开始起撬，黄色的胶合剂无法再粘住边框，附近的屏幕颜色也开始发黄。最近打开一看，整</description>
+    </item>
+    <item>
+      <title>Ramblings - 3</title>
+      <link>https://live4thee.github.io/posts/2024-09-26-ramblings-3/</link>
+      <pubDate>Thu, 26 Sep 2024 09:47:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-26-ramblings-3/</guid>
+      <description>扩容 🔗资源用的比较节省，根盘只分配了 20 GB, 最近不够用了。 曾经写了个虚拟机磁盘扩容笔记， 当时的环境里，硬盘没有做 LVM, 因此 growpart 再 xfs_growfs 就搞定了。有 LVM 的情况</description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://live4thee.github.io/posts/2024-09-18-ai/</link>
+      <pubDate>Wed, 18 Sep 2024 18:42:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-18-ai/</guid>
+      <description>碰到问题的时候，基本上还是靠 Google 搜索引擎。不过，最近有两次都是 AI 表现得更好。一次是关于 RDMA 重试错误，一次是关于某个 Seastar 报错。搜索引擎其实早就搜到了</description>
+    </item>
+    <item>
+      <title>IBV_WC_RETRY_EXC_ERR</title>
+      <link>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</link>
+      <pubDate>Sat, 14 Sep 2024 09:42:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</guid>
+      <description>记得休假前跑通了 RDMA 网络, 并在组内做了演示。看着环境 A 屏幕上飞快滚动的日志，颇为欣喜。当时的性能数据略有点奇怪 &amp;ndash; 因为开着 DEBUG 信息，并未太放在心上</description>
+    </item>
+    <item>
+      <title>Rest or not</title>
+      <link>https://live4thee.github.io/posts/2024-09-12-rest-or-not/</link>
+      <pubDate>Thu, 12 Sep 2024 17:46:44 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-12-rest-or-not/</guid>
+      <description>七、八月没有跑步。进入九月至今，跑步 30 公里，划船机 43 分钟，完成度得分恢复到 77%. 手表提示我休息。我仿佛听见它在喊我“弱鸡”。</description>
+    </item>
+    <item>
+      <title>Overreaching</title>
+      <link>https://live4thee.github.io/posts/2024-09-09-overreaching/</link>
+      <pubDate>Mon, 09 Sep 2024 12:59:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-09-overreaching/</guid>
+      <description>进入九月，还是很热。跑步四次，都是晚上，气温在 30℃. 最终每次手表内训练目标的execution score 分别为：3%, 10%, 26%, 52%. 不大敢撒丫子跑，一来跑</description>
+    </item>
+    <item>
+      <title>MSG_ZEROCOPY (2)</title>
+      <link>https://live4thee.github.io/posts/2024-09-04-msg-zerocopy-2/</link>
+      <pubDate>Wed, 04 Sep 2024 20:29:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-04-msg-zerocopy-2/</guid>
+      <description>不服输的F老师兴冲冲地告诉我可以稳定复现零拷贝的效果，并演示了一下， 果然很稳。mpstat 也很有说服力。 我拿出我的 50 GbE 环境，向F老师演示了一</description>
+    </item>
+    <item>
+      <title>Himalaya</title>
+      <link>https://live4thee.github.io/posts/2024-09-01-himalaya/</link>
+      <pubDate>Sun, 01 Sep 2024 22:35:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-01-himalaya/</guid>
+      <description>断断续续，看完了一部 1999 年上映的电影：Himalaya. 这部电影的 OST 我已经听了几十遍。毫不夸张地说，很多人因为先听了配乐而看了整部电影，包括我</description>
+    </item>
+    <item>
+      <title>MSG_ZEROCOPY</title>
+      <link>https://live4thee.github.io/posts/2024-08-30-msg-zerocopy/</link>
+      <pubDate>Fri, 30 Aug 2024 16:56:38 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-08-30-msg-zerocopy/</guid>
+      <description>之前听F老师说，手动修改代码后，本机 Qemu 热升级打开零拷贝支持后效果非常好。因此拿内核代码树里的测试代码试了试， 却发现几乎没啥区别：并且每次都报</description>
+    </item>
+    <item>
+      <title>RDP w/ Admin</title>
+      <link>https://live4thee.github.io/posts/2024-08-27-rdp-without-admin/</link>
+      <pubDate>Tue, 27 Aug 2024 13:19:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-08-27-rdp-without-admin/</guid>
+      <description>我的 Windows 环境一直跑在虚拟机里，主要为了使用钉钉和上网。默认用的管理员账号做 rdp 登录。 添加了一个普通账户后，用 xfreerdp 登录，报错 connect reset. 目测权限问题 &amp;ndash; 搜索了</description>
+    </item>
+    <item>
+      <title>ASAN Report Before Program Exits</title>
+      <link>https://live4thee.github.io/posts/2024-08-13-asan-report-before-program-exits/</link>
+      <pubDate>Tue, 13 Aug 2024 10:40:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-08-13-asan-report-before-program-exits/</guid>
+      <description>Address Sanitizer (ASAN) 是个非常好用的工具，其子集 Leak Sanitizer (LSAN) 也非常好用。用 GCC 编译的时候：1 -fsanitize=address # 启用 ASAN -fsanitize=leak # 启用 LSAN 现实应用中，很多业务都以守护进程 daemon 的形式运行，因此进</description>
+    </item>
+    <item>
+      <title>bpftrace Tips</title>
+      <link>https://live4thee.github.io/posts/2024-07-25-bpftrace-tips/</link>
+      <pubDate>Thu, 25 Jul 2024 18:39:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-25-bpftrace-tips/</guid>
+      <description>bpftrace 的一些陷阱 🔗&amp;ldquo;char[]&amp;rdquo; 的问题 🔗举个例子，xfs_lookup 对应 tracepoint 中的第四个参数 name 被声明为 char[] 而不是 char*. 这在 C 里</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;11 Lambda Capture</title>
+      <link>https://live4thee.github.io/posts/2024-07-24-cpp-11-lambda-capture/</link>
+      <pubDate>Wed, 24 Jul 2024 17:49:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-24-cpp-11-lambda-capture/</guid>
+      <description>好记性不如烂笔头，内容来自cppreference.com. 语法 🔗c++11 的 lambda capture 大概有如下语法： identifier (1) identifier ... (2) identifier initializer (3) (since C++14) &amp;amp; identifier (4) &amp;amp; identifier ... (5) &amp;amp; identifier initializer (6)</description>
+    </item>
+    <item>
+      <title>Gyala Peri</title>
+      <link>https://live4thee.github.io/posts/2024-07-23-gyala-peri/</link>
+      <pubDate>Tue, 23 Jul 2024 13:27:06 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-23-gyala-peri/</guid>
+      <description>前几天才发现，这次藏东南之旅其实也拍到了加拉白垒。 自从在鲁朗把支巴岗日误认为加拉白垒后，儿子对雪山的确认就谨慎了许多。在达林村的时候，儿子还</description>
+    </item>
+    <item>
+      <title>Nyingchi Final 3</title>
+      <link>https://live4thee.github.io/posts/2024-07-12-nyingchi-final-3/</link>
+      <pubDate>Fri, 12 Jul 2024 18:24:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-12-nyingchi-final-3/</guid>
+      <description>这是本次林芝之旅的最后一篇。 楔子 🔗去之前，经常时不时地瞄一眼索松村的直播。总结了差不多一个月的取样结果， 得出了一个不太靠谱的经验：周四、周五</description>
+    </item>
+    <item>
+      <title>Communication</title>
+      <link>https://live4thee.github.io/posts/2024-07-10-communication/</link>
+      <pubDate>Wed, 10 Jul 2024 09:18:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-10-communication/</guid>
+      <description>不知道什么时候开始，钉钉的工作聊天的开始是一段光秃秃的转发的聊天记录。想要表达什么内容？自己猜。很有“可意会不可言传”的艺术性。这种风格在早</description>
+    </item>
+    <item>
+      <title>Nyingchi Routes 2</title>
+      <link>https://live4thee.github.io/posts/2024-07-08-nyingchi-routes-2/</link>
+      <pubDate>Mon, 08 Jul 2024 10:21:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-08-nyingchi-routes-2/</guid>
+      <description>说明：本文的图都是直出，或者截图。有修图的做了说明。 一颗种子 🔗我也不知道什么时候心里种下了一颗去西藏的种子。夫人分析说： 滇西北、川西、青海陕</description>
+    </item>
+    <item>
+      <title>Nyingchi Intro 1</title>
+      <link>https://live4thee.github.io/posts/2024-07-07-nyingchi-intro-1/</link>
+      <pubDate>Sun, 07 Jul 2024 23:46:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-07-nyingchi-intro-1/</guid>
+      <description>第一次去西藏，选择了藏东南的林芝地区。因为这里在整个藏区海拔相对较低，比较有良好的可接近性。没有做攻略，为了照顾只有我一人开车，夫人制定的行</description>
+    </item>
+    <item>
+      <title>Before Vacation</title>
+      <link>https://live4thee.github.io/posts/2024-06-28-before-vacation/</link>
+      <pubDate>Fri, 28 Jun 2024 09:43:50 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-28-before-vacation/</guid>
+      <description>一喜一悲 🔗周五晚上飞机，周末开始休假。 一喜 🔗喜者，休假前在 Seastar 上跑通了 RDMA 网络。改动看起来还算顺眼，当然，也还需打磨。 12 files changed, 350 insertions(+), 20 deletions(-) 一悲 🔗晚上收</description>
+    </item>
+    <item>
+      <title>Into Seastar</title>
+      <link>https://live4thee.github.io/posts/2024-06-26-into-seastar/</link>
+      <pubDate>Wed, 26 Jun 2024 14:40:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-26-into-seastar/</guid>
+      <description>在Seastar的海洋里扑腾，喘口气。 增加了一个 HTTP handler, 用 curl 测试了一下能工作。所用的 Seastar 版本只有 http_server, 没有 http_client，不得不照猫画虎写了个</description>
+    </item>
+    <item>
+      <title>Peaking</title>
+      <link>https://live4thee.github.io/posts/2024-06-22-peaking/</link>
+      <pubDate>Sat, 22 Jun 2024 22:00:21 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-22-peaking/</guid>
+      <description>最近下雨，没有跑步。今早起床一看，运动状态居然从 Productive 变成了 Peaking. 根据以往经验，保持运动后休息几天会变成 Maintaining. 看了一下状态描述： 过去几天的休息使您的体力</description>
+    </item>
+    <item>
+      <title>Quotes</title>
+      <link>https://live4thee.github.io/posts/2024-06-20-quotes/</link>
+      <pubDate>Thu, 20 Jun 2024 14:21:54 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-20-quotes/</guid>
+      <description>HN 上看见一则陶哲轩的帖子：There&amp;rsquo;s more to mathematics than rigour and proofs (2007) 文章开头引用的是 Douglas Adams 在《银河系漫游指南》中的句子： The history of every major galactic civilization tends to pass through</description>
+    </item>
+    <item>
+      <title>80.4 km</title>
+      <link>https://live4thee.github.io/posts/2024-06-17-80-4-km/</link>
+      <pubDate>Mon, 17 Jun 2024 15:09:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-17-80-4-km/</guid>
+      <description>截至 6/16, 本月跑量已达 80.4km, 看起来每个月 100km 的小目标近在咫尺。 最近白天有点热，基本都是晚上跑步，导致睡眠不太好。跑完之后虽然两腿疲惫， 但是脑子很兴奋，</description>
+    </item>
+    <item>
+      <title>RDMA Networking - Message TX</title>
+      <link>https://live4thee.github.io/posts/2024-06-12-rdma-networking-message-tx/</link>
+      <pubDate>Wed, 12 Jun 2024 14:31:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-12-rdma-networking-message-tx/</guid>
+      <description>书接上文RDMA简介， 看看 CPU、网卡和 PCIe fabric 是怎么配合实现消息传递的。 背景知识 🔗Verbs API - slow &amp;amp; fast 🔗Verbs API 有两类： 初始化和配置等低频</description>
+    </item>
+    <item>
+      <title>RDMA Networking - Intro</title>
+      <link>https://live4thee.github.io/posts/2024-06-12-rdma-networking-intro/</link>
+      <pubDate>Wed, 12 Jun 2024 09:59:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-12-rdma-networking-intro/</guid>
+      <description>前言 🔗最近给Seastar增加 RDMA 网络支持， 接触了一堆资料。比如： futurewei 的 chogori-seastar bRPC 的 RDMA 支持 spdk 的 RDMA 相关代码 文档、示例比较全面的 rdma-core 最后，Dotan Bara</description>
+    </item>
+    <item>
+      <title>The Little Great Wall</title>
+      <link>https://live4thee.github.io/posts/2024-06-11-the-little-great-wall/</link>
+      <pubDate>Tue, 11 Jun 2024 09:39:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-11-the-little-great-wall/</guid>
+      <description>常熟 🔗趁着端午假期，第一次去常熟溜达了一天。住在三环外，面朝昆承湖。作为苏州代管城市，据说常熟是少有的县级市中有三环的城市。傍晚的湖畔↓ 虞山</description>
+    </item>
+    <item>
+      <title>Own Goal</title>
+      <link>https://live4thee.github.io/posts/2024-05-30-own-goal/</link>
+      <pubDate>Thu, 30 May 2024 14:48:36 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-30-own-goal/</guid>
+      <description>最近一周都是跑一休二，增加了休息的时间避免肌肉慢性炎症。之前 5km 的最好成绩是耗时 26&#39;20&amp;quot;, 当时暗自给自己的目标是今年能跑进 25&#39;. 乌龙 🔗昨天跑最大摄氧量训练</description>
+    </item>
+    <item>
+      <title>Fugu</title>
+      <link>https://live4thee.github.io/posts/2024-05-24-fugu/</link>
+      <pubDate>Fri, 24 May 2024 09:36:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-24-fugu/</guid>
+      <description>上周六去了趟锦溪古镇，离淀山湖景区不远。古镇不收门票，当天镇内各大展馆也都免费参观，薅了社会主义羊毛。停车场收费很便宜，加上来回走崧泽高架省</description>
+    </item>
+    <item>
+      <title>Half Marathon</title>
+      <link>https://live4thee.github.io/posts/2024-05-19-half-marathon/</link>
+      <pubDate>Sun, 19 May 2024 16:39:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-19-half-marathon/</guid>
+      <description>昨晚跑无氧，意犹未尽，继续撒脚丫子，跑了人生第一个半马。耗时 2:08:30，还行。手表提醒恢复训练需要 79 小时。 最后四公里主要靠意志，特别是最</description>
+    </item>
+    <item>
+      <title>Strange Latency Issue</title>
+      <link>https://live4thee.github.io/posts/2024-05-13-strange-latency/</link>
+      <pubDate>Mon, 13 May 2024 10:27:34 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-13-strange-latency/</guid>
+      <description>最近碰到一个奇怪的问题。有个多线程应用，其中一个线程中的伪代码如下： gettimeofday(&amp;amp;begin, NULL); foo(); // 同步过程调用 gettimeofday(&amp;amp;end, NULL); usleep(N); 其中，end-begin 得到 foo() 的耗时 T. 目前可以</description>
+    </item>
+    <item>
+      <title>Learning by Tracing</title>
+      <link>https://live4thee.github.io/posts/2024-05-09-learning-by-tracing/</link>
+      <pubDate>Thu, 09 May 2024 18:41:54 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-09-learning-by-tracing/</guid>
+      <description>用 bpftrace 跟踪一个 Direct I/O 在 polling 和非 polling 模式下的处理逻辑。为了减少无关的 I/O 干扰，限定了 comm == &amp;quot;a.out&amp;quot; &amp;ndash; 这个 a.out 是我的测试程序。 内核是 4.18, 关键代码相对比较好找，在 fs/block_dev.c: static void</description>
+    </item>
+    <item>
+      <title>Ramblings - 2</title>
+      <link>https://live4thee.github.io/posts/2024-05-05-ramblings-2/</link>
+      <pubDate>Sun, 05 May 2024 22:45:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-05-ramblings-2/</guid>
+      <description>Audio + Headphones 🔗不知道是 6.1 的哪个内核小版本开始，重启之后再也不用重新插拔一下耳机。如果耳机插着的情况下，外放会 mute, 耳机有声音。 小长假 🔗在外面晃悠了三天</description>
+    </item>
+    <item>
+      <title>Ramblings</title>
+      <link>https://live4thee.github.io/posts/2024-04-29-ramblings/</link>
+      <pubDate>Mon, 29 Apr 2024 09:45:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-29-ramblings/</guid>
+      <description>目标和松弛 🔗25 号中午跑完一次艰苦的无氧后，本月跑量达到了 92.2 公里，距离之前的 100.4 公里最好记录仅一步之遥。然而这几天没有一鼓作气，训练状态从 Productive 到</description>
+    </item>
+    <item>
+      <title>Recovery Heart Rate</title>
+      <link>https://live4thee.github.io/posts/2024-04-25-recovery-heart-rate/</link>
+      <pubDate>Thu, 25 Apr 2024 18:39:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-25-recovery-heart-rate/</guid>
+      <description>最近发现跑步记录里多了一个“恢复心率”指标。根据定义：这个指标是运动后两分钟，心率降低的数值。比如，刚运动完是140, 休息两分钟后是 90，那</description>
+    </item>
+    <item>
+      <title>Meaning &amp; Truth</title>
+      <link>https://live4thee.github.io/posts/2024-04-17-meaning-and-truth/</link>
+      <pubDate>Tue, 16 Apr 2024 23:16:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-17-meaning-and-truth/</guid>
+      <description>开了一天会，最大的收获有两个： 找到了一本书； 读到一篇前言。 物理所的文章 🔗前几天在中科院物理所看见一篇文章, 说不只是人类，在深海里被咬伤的鱼，</description>
+    </item>
+    <item>
+      <title>Just So So</title>
+      <link>https://live4thee.github.io/posts/2024-04-15-just-so-so/</link>
+      <pubDate>Mon, 15 Apr 2024 18:03:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-15-just-so-so/</guid>
+      <description>这两天看崔永元的《不过如此》，挺有意思。语言平实，就像一口气看完长长一段《实话实说》。 以下描述的场景大概是上世纪七十年代末，或八十年代初的样</description>
+    </item>
+    <item>
+      <title>Meta Defcon</title>
+      <link>https://live4thee.github.io/posts/2024-04-12-meta-defcon/</link>
+      <pubDate>Fri, 12 Apr 2024 14:39:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-12-meta-defcon/</guid>
+      <description>一起读论文：Defcon: Preventing Overload with Graceful Feature Degradation 复杂系统中，一旦有故障发生，则往往容易发展成为Cascading Failures. 为了防止系统过载影响产品使用，Met</description>
+    </item>
+    <item>
+      <title>Hugo: Ref Not Found</title>
+      <link>https://live4thee.github.io/posts/2024-04-12-hugo-ref-not-found/</link>
+      <pubDate>Fri, 12 Apr 2024 14:21:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-12-hugo-ref-not-found/</guid>
+      <description>在 Mac 上也用 brew 装了一个 hugo. 不过，把自己的 gh-pages 抓到本地后，生成静态网页时总是报错 Ref_Not_Found. 把报错的文件路径粘贴出来检查了一下，对应的文件却又实实在在地在磁盘</description>
+    </item>
+    <item>
+      <title>Causality</title>
+      <link>https://live4thee.github.io/posts/2024-04-08-causality/</link>
+      <pubDate>Mon, 08 Apr 2024 16:21:05 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-08-causality/</guid>
+      <description>自从偶然买了徒步越野鞋后，夫人热情高涨。至今为止，为了一碟醋，包了好几顿饺子。 最近看了好几集《极径》和《百日大横断》，均来自阅路山。挺震撼的</description>
+    </item>
+    <item>
+      <title>RWF_NONBLOCK &amp; EAGAIN (2)</title>
+      <link>https://live4thee.github.io/posts/2024-04-08-rwf-nonblock-eagain-2/</link>
+      <pubDate>Mon, 08 Apr 2024 11:00:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-08-rwf-nonblock-eagain-2/</guid>
+      <description>先交代一下上文的实验环境： kernel: 4.18.0-425.19.2 (CentOS Stream 8) filesystem: Ext4 测试动作：向一个 Ext4 上的文件发一个 4k 非阻塞异步写请求。 RWF_NOWAIT 🔗重新回顾一下 io_submit(2) 的手册里交代了设置 RWF_NOWAIT 后出现 -EAGAIN 的</description>
+    </item>
+    <item>
+      <title>RWF_NONBLOCK &amp; EAGAIN</title>
+      <link>https://live4thee.github.io/posts/2024-04-03-rwf-nonblock-eagain/</link>
+      <pubDate>Wed, 03 Apr 2024 17:56:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-03-rwf-nonblock-eagain/</guid>
+      <description>通过 Linux AIO 做 non_blocking IO, 碰到一个奇怪的问题，记录一下。 I/O 面向的是 Ext4 文件系统，而不是块。 RWF_NOWAIT 🔗RWF_NOWAIT 的语义在 io_submit(2) 里有描述，libaio 的测试用</description>
+    </item>
+    <item>
+      <title>[zz] All Concurrency Models Suck</title>
+      <link>https://live4thee.github.io/posts/2024-04-03-all-concurrency-models-suck/</link>
+      <pubDate>Wed, 03 Apr 2024 09:37:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-03-all-concurrency-models-suck/</guid>
+      <description>本文内容转载自webarchive, 2013/11/15. 作者是 Kenton Varda, 前 CloudFlare 工程师，cap&amp;rsquo;n proto的主要作者之一。原始讨论包含一些其他内容，不在 webarchive</description>
+    </item>
+    <item>
+      <title>Readings 24Q1</title>
+      <link>https://live4thee.github.io/posts/2024-04-02-readings-24q1/</link>
+      <pubDate>Tue, 02 Apr 2024 13:55:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-02-readings-24q1/</guid>
+      <description>24 年第一季度只读完一本书，莫言的《生死疲劳》。 去年在蜗牛读书上读了大半，后来更多是用得到，就搁置了。之前没读过莫言老师的书， 就这本书而言，有</description>
+    </item>
+    <item>
+      <title>Xiao Shi Ji (2)</title>
+      <link>https://live4thee.github.io/posts/2024-03-25-xiao-shi-ji-2/</link>
+      <pubDate>Mon, 25 Mar 2024 17:42:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-25-xiao-shi-ji-2/</guid>
+      <description>一家江湖川菜馆 🔗前段时间特别想念川菜，特别是折耳根。趁着小明周五来沪，竟然意外地达成了愿望。馆子对我而言，略有特殊意义。欣慰的是，这么多年不</description>
+    </item>
+    <item>
+      <title>Xiao Shi Ji</title>
+      <link>https://live4thee.github.io/posts/2024-03-21-xiao-shi-ji/</link>
+      <pubDate>Thu, 21 Mar 2024 16:30:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-21-xiao-shi-ji/</guid>
+      <description>偶然看到一篇文章， 看到最后不由得会心地笑了。却也心生 “我亦可往” 的念头，一发不可收拾。 起名《小诗集》有几层含义和致敬： 有点像《小妇人》； 好歹</description>
+    </item>
+    <item>
+      <title>Running</title>
+      <link>https://live4thee.github.io/posts/2024-03-19-running/</link>
+      <pubDate>Tue, 19 Mar 2024 13:10:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-19-running/</guid>
+      <description>中午阳光明媚。 跑了 6 公里，心跳还是偏高。上周日跑步心跳稳定在 125 bpm, 心里很开心，看起来只是昙花一现。 樱桃司东门马路边的樱花都已经快谢了，广场路、</description>
+    </item>
+    <item>
+      <title>Hiking: Fish Bone Route</title>
+      <link>https://live4thee.github.io/posts/2024-03-16-fish-bone-route/</link>
+      <pubDate>Sat, 16 Mar 2024 20:55:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-16-fish-bone-route/</guid>
+      <description>周六，魔都阴天。开车到苏州地界后，天气开始放晴。临时决定试试鱼骨线。 鱼骨线 🔗可能是清明扫墓的关系，一路稍有拥堵。出城后，沪常高速经过一个小鱼</description>
+    </item>
+    <item>
+      <title>Rainy</title>
+      <link>https://live4thee.github.io/posts/2024-03-05-rainy/</link>
+      <pubDate>Tue, 05 Mar 2024 13:09:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-05-rainy/</guid>
+      <description>出门没有带伞，离开小区之前迟疑了一下，也终究没有回去拿。到公司时雨势渐大，一路小跑，从停车场直奔公司 &amp;ndash; 如果统计一下配速，应该是超过了平均水平</description>
+    </item>
+    <item>
+      <title>Hometown</title>
+      <link>https://live4thee.github.io/posts/2024-02-28-hometown/</link>
+      <pubDate>Tue, 27 Feb 2024 19:55:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-28-hometown/</guid>
+      <description>近乡情怯 🔗青年 🔗春节在家待了一周。那段时间天公作美，雨雪暂缓，气温持续攀升。在小镇、乡间漫步，时间在这里流淌的速度仿佛要慢很多。和往年不太一</description>
+    </item>
+    <item>
+      <title>Hiking, again!</title>
+      <link>https://live4thee.github.io/posts/2024-02-26-hiking-again/</link>
+      <pubDate>Sun, 25 Feb 2024 17:38:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-26-hiking-again/</guid>
+      <description>农历年后的第一个周末，继上次阳树线后，徒步了灵白线 &amp;ndash; 从灵岩山寺到白马涧，全程八公里左右。 灵岩山寺比邻木渎古镇，开车导航到灵岩山寺西门停车场。</description>
+    </item>
+    <item>
+      <title>Coffee</title>
+      <link>https://live4thee.github.io/posts/2024-02-18-coffee/</link>
+      <pubDate>Sat, 17 Feb 2024 22:29:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-18-coffee/</guid>
+      <description>作孽，小朋友真的喜欢上了喝咖啡。 昨天去奥乐齐买食物，经过星巴克，夫人像往常一样买了两杯咖啡。小朋友像是神经突然错乱，把我的咖啡拿过去喝掉了一</description>
+    </item>
+    <item>
+      <title>About Time</title>
+      <link>https://live4thee.github.io/posts/2024-02-04-about-time/</link>
+      <pubDate>Sun, 04 Feb 2024 11:04:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-04-about-time/</guid>
+      <description>得到头条里听了刘澜老师对学习者的分类，有点意思。这个分类是按照使用时间的方式划分的： 生产：把时间用来生产产品、提供服务，在当下产生了社会价值</description>
+    </item>
+    <item>
+      <title>CVA?</title>
+      <link>https://live4thee.github.io/posts/2024-02-04-cva/</link>
+      <pubDate>Sun, 04 Feb 2024 09:52:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-04-cva/</guid>
+      <description>趁着小朋友寒假，去了趟潮汕。提前看了天气预报，全国有大幅降温，没想到降得比想象中厉害。更没想到，这趟旅途开启了至今最糟糕的HRV 记录。对比一</description>
+    </item>
+    <item>
+      <title>Debt</title>
+      <link>https://live4thee.github.io/posts/2024-01-18-debt/</link>
+      <pubDate>Thu, 18 Jan 2024 09:20:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-18-debt/</guid>
+      <description>今天还清了个人贷款。 三年前，兜里只剩三千出头。虽然不至于饿死，实在不行也可以用信用卡，但是心理感受却是空前的窘迫。感谢波哥当时经常拉我吃午餐</description>
+    </item>
+    <item>
+      <title>Lunch &amp; ex-Team</title>
+      <link>https://live4thee.github.io/posts/2024-01-17-lunch-and-ex-team/</link>
+      <pubDate>Wed, 17 Jan 2024 13:26:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-17-lunch-and-ex-team/</guid>
+      <description>上午培训结束、放回办公物品已经是将近下午一点。夫人给我买了午餐。 夫人的公司离我三百米左右。明天就是腊八，今天中午阳光高照，居然有点热。看了一</description>
+    </item>
+    <item>
+      <title>HRV Status</title>
+      <link>https://live4thee.github.io/posts/2024-01-16-hrv-status/</link>
+      <pubDate>Tue, 16 Jan 2024 11:31:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-16-hrv-status/</guid>
+      <description>周末 HRV 突降了一把，这两天又爬了回来。最近缺乏运动，睡眠质量不太好。 昨天翻出钱包里一直放着的高中老友的评价，“复刻” 了一个电子版。久未联系， 聊</description>
+    </item>
+    <item>
+      <title>Humanity</title>
+      <link>https://live4thee.github.io/posts/2024-01-15-humanity/</link>
+      <pubDate>Mon, 15 Jan 2024 20:46:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-15-humanity/</guid>
+      <description>奖学金 🔗小朋友坐在沙发上抱着零钱袋，很宝贝的样子。前两天数了一下，一共 490 元&amp;ndash; 这是他这几年在晚托挣的奖学金。做了个君子约定：以后出</description>
+    </item>
+    <item>
+      <title>New Year New Theme</title>
+      <link>https://live4thee.github.io/posts/2024-01-11-new-year-new-theme/</link>
+      <pubDate>Thu, 11 Jan 2024 14:02:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-11-new-year-new-theme/</guid>
+      <description>更新了一下主题，支持目录和数学排版。 常读常新 🔗Linux VFS 的文档之前没认真读过，应该花个半小时好好读一下。 彩蛋 🔗非常喜欢Linux Kernel Block I/O St</description>
+    </item>
+    <item>
+      <title>BLKTRACESETUP(2)</title>
+      <link>https://live4thee.github.io/posts/2024-01-09-blktracesetup-2/</link>
+      <pubDate>Tue, 09 Jan 2024 20:36:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-09-blktracesetup-2/</guid>
+      <description>嗯，解决了一个 blktrace 只能跟踪一次分区的问题。 缘起 🔗前几天在一个 4.18 内核环境里做 blkparse 跟踪的时候发现：每个分区只能跟踪一次，第二次就会报错：1 BLKTRACESETUP(2) /dev/sda failed: 2/No such</description>
+    </item>
+    <item>
+      <title>A Taste of bpftrace</title>
+      <link>https://live4thee.github.io/posts/2024-01-09-a-taste-of-bpftrace/</link>
+      <pubDate>Tue, 09 Jan 2024 13:03:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-09-a-taste-of-bpftrace/</guid>
+      <description>bpftrace真的挺好用。1 跟踪进程的执行 🔗通过跟踪 execve，可以得到系统中进程执行的情况。 $ bpftrace -e &amp;#39;tracepoint:syscalls:sys_enter_execve { time(&amp;#34;%H:%M:%S &amp;#34;); join(args-&amp;gt;argv) }&amp;#39; Attaching 1 probe... 13:10:04 /usr/lib64/sa/sa1 1 1 13:10:04 /usr/lib64/sa/sadc -F -L -S</description>
+    </item>
+    <item>
+      <title>Klepetan and Malena</title>
+      <link>https://live4thee.github.io/posts/2024-01-06-klepetan-and-malena/</link>
+      <pubDate>Sat, 06 Jan 2024 22:00:57 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-06-klepetan-and-malena/</guid>
+      <description>偶尔刷到一则视频，关于一对克罗地亚白鹳，阿克和玛莲娜。1 故事就不再复述了，挺感人。2意外的是在B站某个评论里看到了元好问的《摸鱼儿》。 “问世</description>
+    </item>
+    <item>
+      <title>What Is a PDU</title>
+      <link>https://live4thee.github.io/posts/2024-01-05-what-is-a-pdu/</link>
+      <pubDate>Fri, 05 Jan 2024 18:23:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-05-what-is-a-pdu/</guid>
+      <description>以前在 Ceph 上跑虚拟机的时候，偶尔看到 libvirt 报错： qemu unexpectedly closed the monitor: sending req data... pdu length 134, total length 142 the received hdr shows the err 0, the pdu length 198 ... 当时不知道这个 pdu 是啥意思。搜了一圈 libvirt, Qemu, Ceph</description>
+    </item>
+    <item>
+      <title>Texas Sharpshooter Fallacy</title>
+      <link>https://live4thee.github.io/posts/2024-01-03-texas-sharpshooter-fallacy/</link>
+      <pubDate>Wed, 03 Jan 2024 17:09:29 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-03-texas-sharpshooter-fallacy/</guid>
+      <description>Steven Pinker 在《理性》一书中讲到一则德克萨斯神枪手谬误: 有个德州人朝着自己的谷仓射了许多子弹，在弹孔最密集的地方画一个圈，然后自称是神枪手。1 “先射</description>
+    </item>
+    <item>
+      <title>Interpreting Kernel Call Trace</title>
+      <link>https://live4thee.github.io/posts/2024-01-02-interpreting-kernel-call-trace/</link>
+      <pubDate>Tue, 02 Jan 2024 16:54:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-02-interpreting-kernel-call-trace/</guid>
+      <description>假设有 Call Trace 如下： [89580.077835] task:kworker/u195:0 state:D stack: 0 pid:9848 ppid: 2 flags:0x80004080 [89580.077840] Workqueue: events_unbound async_run_entry_fn [89580.077845] Call Trace: [89580.077847] __schedule+0x2d1/0x860 [89580.077852] ? scan_shadow_nodes+0x30/0x30 [89580.077856] schedule+0x35/0xa0 [89580.077857] io_schedule+0x12/0x40 [89580.077859] do_read_cache_page+0x4eb/0x740 上面这段日志是由 kernel/sched/core.c 中的 sched_show_task() 函数打印的。 任务信息 🔗task:kworker</description>
+    </item>
+    <item>
+      <title>Readings 2023 WW52</title>
+      <link>https://live4thee.github.io/posts/2023-12-31-readings-2023-ww52/</link>
+      <pubDate>Sun, 31 Dec 2023 22:19:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-31-readings-2023-ww52/</guid>
+      <description>2023年的最后一周，看完了刘勃老师的天下英雄谁敌手。 书的主角就两位：曹操和刘备。 后来的桓温在很大程度上和曹操很像，而刘备的战斗力在《三国演</description>
+    </item>
+    <item>
+      <title>SATA Hotplug</title>
+      <link>https://live4thee.github.io/posts/2023-12-31-sata-hotplug/</link>
+      <pubDate>Sun, 31 Dec 2023 13:25:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-31-sata-hotplug/</guid>
+      <description>SATA/SAS 规范中要求支持热插拔，因此 SATA/SAS 平台在热插拔上应该问题较少 &amp;ndash; 当然也还是有一些坑。kernel.org有篇Wiki讲述了 SATA Hotplug 的硬件要求。有点意思</description>
+    </item>
+    <item>
+      <title>SCSI Addressing</title>
+      <link>https://live4thee.github.io/posts/2023-12-30-scsi-addressing/</link>
+      <pubDate>Sat, 30 Dec 2023 17:06:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-30-scsi-addressing/</guid>
+      <description>HBTL 经常容易和 LaTeX 图片位置 htbp 记岔，好记性不如烂笔头。记录一下。内容主要翻译自RedHat文档。 HBTL 🔗HBTL - Host:Bus:Target:LUN 也被称为 HCIL 寻址。1 SCSI 设备热插拔前后</description>
+    </item>
+    <item>
+      <title>Readings 23Q4</title>
+      <link>https://live4thee.github.io/posts/2023-12-19-readings-23q4/</link>
+      <pubDate>Tue, 19 Dec 2023 10:13:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-19-readings-23q4/</guid>
+      <description>深深尝了人间味 🔗我是纯粹被这本书的书名所吸引。比较喜欢史铁生、老舍、许地山的几篇。另外，林徽因的《彼此》很有民国风雨飘摇的感觉。其余不是我的</description>
+    </item>
+    <item>
+      <title>A Trip to Suzhou</title>
+      <link>https://live4thee.github.io/posts/2023-12-18-a-trip-to-suzhou/</link>
+      <pubDate>Sun, 17 Dec 2023 21:20:24 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-18-a-trip-to-suzhou/</guid>
+      <description>今年第 N 次去苏州。碰上强降温，从前两天最高 20℃，一下跌到最低 -6℃ 左右。 爬了两天山 🔗从未想到苏州的小山还挺多。周六阴天、急剧降温，仿佛和周</description>
+    </item>
+    <item>
+      <title>Parallel All the Time</title>
+      <link>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</link>
+      <pubDate>Tue, 05 Dec 2023 13:35:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</guid>
+      <description>一起读论文：Parallel All The Time, 2019。该论文有一个改进版本，发表在 IEEE TPDS 2020 的九月刊。标题也有所更改，强调充分利用并发，去掉了“All The T</description>
+    </item>
+    <item>
+      <title>SSD 101 Plus</title>
+      <link>https://live4thee.github.io/posts/2023-12-04-ssd-intro/</link>
+      <pubDate>Mon, 04 Dec 2023 15:39:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-04-ssd-intro/</guid>
+      <description>简介 🔗读 NAND SSD 相关资料的时候，一般会遇到下面这张图： 相应解释是：1 一块 NAND Flash 包含多个 LUN（Logic Unit Number）； 每个 LUN 又包含多个 Plane; 每个 Plane</description>
+    </item>
+    <item>
+      <title>City Walk</title>
+      <link>https://live4thee.github.io/posts/2023-12-03-city-walk/</link>
+      <pubDate>Sun, 03 Dec 2023 21:38:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-03-city-walk/</guid>
+      <description>难得进城，就用 city walk 作为标题。 Old days 🔗夫人预定了古北路附近一家餐馆吃晚餐。午餐后出发，先压马路。赚足步数后想必也会胃口大开。室外略有点冷。 先去长</description>
+    </item>
+    <item>
+      <title>pwrite() &amp; O_APPEND</title>
+      <link>https://live4thee.github.io/posts/2023-11-23-pwrite-and-o-append/</link>
+      <pubDate>Thu, 23 Nov 2023 13:03:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-23-pwrite-and-o-append/</guid>
+      <description>Linux 的 pwrite() 有个 BUG: 当文件以 O_APPEND 模式打开时，虽然 file offset 不会变，但是写入的内容会追加到文件尾部。 此外，pwrite() 和 pwritev() 的 offset 参数不能为 -1, 否则会 EINVAL. 但是 pwritev2() 可</description>
+    </item>
+    <item>
+      <title>Future &amp; Promise</title>
+      <link>https://live4thee.github.io/posts/2023-11-21-future-and-promise/</link>
+      <pubDate>Tue, 21 Nov 2023 11:46:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-21-future-and-promise/</guid>
+      <description>基于异步事件的编程框架基本上都有 Future 和 Promise 的概念。比如， 主流编程语言中 C++11 有std::future 和std::promise, 而 Java 1.5 开始有Futu</description>
+    </item>
+    <item>
+      <title>Address Sanitizer</title>
+      <link>https://live4thee.github.io/posts/2023-11-20-address-sanitizer/</link>
+      <pubDate>Mon, 20 Nov 2023 15:14:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-20-address-sanitizer/</guid>
+      <description>N 年前，调试 C/C++ 内存问题一般会选择用valgrind 或者efence. 目前 Address Sanitizer (ASan) 居多， 它已经被集成进了 LLVM 以及 GCC, 用来比较方便。 访问越界 🔗比如，下</description>
+    </item>
+    <item>
+      <title>A Trip to Wuxi</title>
+      <link>https://live4thee.github.io/posts/2023-11-20-a-trip-to-wuxi/</link>
+      <pubDate>Mon, 20 Nov 2023 11:39:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-20-a-trip-to-wuxi/</guid>
+      <description>上次去鼋头渚已经是二十年前了，当时没有随身电脑更没有手机、相机，记忆也已经接近空白。现在只能回想起三件事： 当时湖心的太湖仙岛上还有猴群出没；</description>
+    </item>
+    <item>
+      <title>Linux AIO</title>
+      <link>https://live4thee.github.io/posts/2023-11-16-linux-aio/</link>
+      <pubDate>Thu, 16 Nov 2023 11:56:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-16-linux-aio/</guid>
+      <description>对 Linux 的 AIO 一直是一些碎片化的知识，没有好好总结。我们知道，AIO 的推荐使用场景是访问块设备、结合 O_DIRECT 一起使用。比如，CephBlockDevic</description>
+    </item>
+    <item>
+      <title>Readings 23Q3</title>
+      <link>https://live4thee.github.io/posts/2023-11-15-readings-23q3/</link>
+      <pubDate>Wed, 15 Nov 2023 17:24:19 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-15-readings-23q3/</guid>
+      <description>自从用上 BOOX Note X2 后，看书的时间变多了，尤其文史书籍看起来特别快。如果书城里（用的“得到”）电子书的笔记能在本地自动保存一份，方便复习，何其快哉</description>
+    </item>
+    <item>
+      <title>`O_DIRECT&#39; undeclared</title>
+      <link>https://live4thee.github.io/posts/2023-11-14-o-direct-undeclared/</link>
+      <pubDate>Tue, 14 Nov 2023 15:08:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-14-o-direct-undeclared/</guid>
+      <description>用 gcc 编译代码时报错：&#39;O_DIRECT&#39; undeclared. 看操作历史，之前一直用的 g++ 没报错。感觉有点奇怪。加上参数 -E 导出预处理过程对比了一下： 处理的文件都一</description>
+    </item>
+    <item>
+      <title>A Little C&#43;&#43;</title>
+      <link>https://live4thee.github.io/posts/2023-11-10-a-little-cpp/</link>
+      <pubDate>Fri, 10 Nov 2023 11:30:45 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-10-a-little-cpp/</guid>
+      <description>好久没用 C++ 了，当项目里重度使用现代 C++（c++11 以及后续标准） 的新特性时，就有点力不从心 &amp;ndash; 书到用时方恨少。 template &amp;lt;typename... A&amp;gt; void set(A&amp;amp;&amp;amp;... a) noexcept { assert(_u.st == state::future); new (this) future_state(ready_future_marker(), std::forward&amp;lt;A&amp;gt;(a)...);</description>
+    </item>
+    <item>
+      <title>(Old) Seastar and C&#43;&#43;17</title>
+      <link>https://live4thee.github.io/posts/2023-11-01-old-seastar-and-cpp-17/</link>
+      <pubDate>Wed, 01 Nov 2023 15:26:01 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-01-old-seastar-and-cpp-17/</guid>
+      <description>在 CentOS Stream 8 上编译老版本 Seastar 时碰到两个问题，记录一下。 cannot deduce template arguments for ‘tuple’ from () 🔗编译 sharded.hh 报错，用最新的代码也还是错，于是手动修改如下： --- include/seastar/core/sharded.hh.orig 2023-11-01 15:22:58.800059019 +0800</description>
+    </item>
+    <item>
+      <title>Tracker Miners and Git LFS</title>
+      <link>https://live4thee.github.io/posts/2023-10-26-tracker-miners-and-git-lfs/</link>
+      <pubDate>Thu, 26 Oct 2023 09:44:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-10-26-tracker-miners-and-git-lfs/</guid>
+      <description>GNOME 索引程序 tracker-miner-fs 占用 CPU 高的原因是我在本机Documents 目录里面有差不多三百个 git 仓库，索引一遍比较耗时。 $ LANG=C tracker3 status Currently indexed: 369684 files, 48866 folders ... omitted ... 149 recorded failures Path Message garage/doc/talks/2021-09-13-ngi-kickoff/talk.pdf</description>
+    </item>
+    <item>
+      <title>DeLL OptiPlex Micro 7010</title>
+      <link>https://live4thee.github.io/posts/2023-10-25-dell-optiplex-micro-7010/</link>
+      <pubDate>Wed, 25 Oct 2023 18:39:50 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-10-25-dell-optiplex-micro-7010/</guid>
+      <description>手头的 DeLL XPS13 已经用了超过七年半，虽然内存只有 8 GiB ，但是跑 Linux 一直还是挺快。去年九月电池鼓包换了个第三方电池，最近也开始鼓了&amp;ndash; 不但撑得</description>
+    </item>
+    <item>
+      <title>Surgery</title>
+      <link>https://live4thee.github.io/posts/2023-08-29-surgery/</link>
+      <pubDate>Tue, 29 Aug 2023 17:21:36 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-08-29-surgery/</guid>
+      <description>小朋友做了个小手术。一早出去，傍晚才回家，饿了一天。进门后，既不打招呼也不接话茬。一声不吭地脱掉袜子、去了趟洗手间，然后爬上床睡觉了。 昨天医</description>
+    </item>
+    <item>
+      <title>Optimized PDF</title>
+      <link>https://live4thee.github.io/posts/2023-08-23-optimized-pdf/</link>
+      <pubDate>Wed, 23 Aug 2023 10:55:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-08-23-optimized-pdf/</guid>
+      <description>无意中，看到生成出来的 pdf 文件的属性中有这么一段： Optimized: No 这好奇心和强迫症一下就升腾上来了。我呕心沥血写的 Xelatex 文本，仔仔细细地修复了 Underfull 和 Overfull 报警，为啥</description>
+    </item>
+    <item>
+      <title>Garze &amp; Aba</title>
+      <link>https://live4thee.github.io/posts/2023-07-17-garze-aba/</link>
+      <pubDate>Sun, 16 Jul 2023 19:27:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-07-17-garze-aba/</guid>
+      <description>流水帐 🔗七月七，去川西。 7/7 上海 - 成都 - 康定 🔗飞机降落在天府国际机场。租了一辆苏A 牌照的 Rav4, 车况据说比较新，至少方向盘非常干净。阴有雨，穿过一条</description>
+    </item>
+    <item>
+      <title>A Trip to Suzhou</title>
+      <link>https://live4thee.github.io/posts/2023-05-29-a-trip-to-suzhou/</link>
+      <pubDate>Mon, 29 May 2023 11:59:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-05-29-a-trip-to-suzhou/</guid>
+      <description>之前部门淀山湖团建，夫人被照片里的皮划艇种草。一番搜索后，找到了苏州石湖景区。除了景观像西湖之外，价格也是一样免费，且游客非常少。开车很方便</description>
+    </item>
+    <item>
+      <title>Thinking</title>
+      <link>https://live4thee.github.io/posts/2023-04-25-thinking/</link>
+      <pubDate>Tue, 25 Apr 2023 11:11:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-04-25-thinking/</guid>
+      <description>很久之前买了一本《How Not to Be Wrong》， 最近开始断断续续读完了前两部分，总共十章，主要讨论线性和推理。这里记录一些相关的思考。 Reductio ad Unlikely 🔗书</description>
+    </item>
+    <item>
+      <title>Back, again</title>
+      <link>https://live4thee.github.io/posts/2023-02-19-back-again/</link>
+      <pubDate>Sun, 19 Feb 2023 19:40:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-02-19-back-again/</guid>
+      <description>回程 🔗经过江阴大桥的时候，刚好夕阳西下。落日的余晖洒在江面上，像是弥漫着金光的镜子。 手术 🔗昨晚父亲做了手术。当时我还没回，都是表兄帮忙张罗。</description>
+    </item>
+    <item>
+      <title>Fell Down</title>
+      <link>https://live4thee.github.io/posts/2023-01-19-fell-down/</link>
+      <pubDate>Thu, 19 Jan 2023 20:57:21 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-01-19-fell-down/</guid>
+      <description>2023/1/19，由南部外双溪索道进三清山。上山前，短暂地出了一阵太阳。索道上，目之所及，依稀有几处白雪。草丛、阴影处居多。 爬到山背面，场</description>
+    </item>
+    <item>
+      <title>Omicron Recovery</title>
+      <link>https://live4thee.github.io/posts/2022-12-21-omicron-recovery/</link>
+      <pubDate>Wed, 21 Dec 2022 17:40:28 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-12-21-omicron-recovery/</guid>
+      <description>19 号晚上突然畏寒，早早开着空调睡了。 20 号白天高烧，维C银翘没压下去，傍晚吃了一粒退烧药，晚上就感觉好很多。 21 醒来，体温已经完全回复，喉咙轻微</description>
+    </item>
+    <item>
+      <title>Breaking Bad</title>
+      <link>https://live4thee.github.io/posts/2022-12-19-breaking-bad/</link>
+      <pubDate>Mon, 19 Dec 2022 20:19:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-12-19-breaking-bad/</guid>
+      <description>这个周末不同寻常。 身边 🔗几个朋友感染了新冠。周五表弟也开始发烧了，尽管直到今天（周一）抗原才测出两道杠。考虑到表弟一个人住，看势头不对，周六</description>
+    </item>
+    <item>
+      <title>Remember</title>
+      <link>https://live4thee.github.io/posts/2022-12-12-remember/</link>
+      <pubDate>Mon, 12 Dec 2022 14:56:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-12-12-remember/</guid>
+      <description>不知怎的 🔗最近经常想起 2020 年青甘环线，开车翻过当金山埡口时的景象。当时专心驾车， 并未停留。虽然只是一瞥，但是记忆中那眼底乌压压的群峦叠嶂却从未</description>
+    </item>
+    <item>
+      <title>Under the Roof</title>
+      <link>https://live4thee.github.io/posts/2022-12-07-under-the-roof/</link>
+      <pubDate>Wed, 07 Dec 2022 22:23:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-12-07-under-the-roof/</guid>
+      <description>驱车300 公里落地检，手表提醒了一次心跳过速。好不容易进了停车场，却进不去住院部的大楼。因此，除了打电话，我没能和父母见上一面。</description>
+    </item>
+    <item>
+      <title>To Be, or not to be</title>
+      <link>https://live4thee.github.io/posts/2022-11-30-to-be-or-not-to-be/</link>
+      <pubDate>Wed, 30 Nov 2022 18:10:13 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-11-30-to-be-or-not-to-be/</guid>
+      <description>自从打开了久坐提醒后，“病灶”就从“久痔”变成了“尿频”：光站起来走一圈很是无聊，不如顺便打水 -&amp;gt; 打水了就会喝水 -&amp;gt; 水喝多了就要洗手。 趁雨天、降</description>
+    </item>
+    <item>
+      <title>Running, Again!</title>
+      <link>https://live4thee.github.io/posts/2022-11-28-running-again/</link>
+      <pubDate>Sun, 27 Nov 2022 18:01:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-11-28-running-again/</guid>
+      <description>趁着气温合适，又重新开始跑步。 Running, again! 🔗周六下楼时很忐忑，不知道是否跑得动。最后跑了 2.28 公里，还算能接受。上次跑步是去年 12 月初，不到 600 米就放弃了。</description>
+    </item>
+    <item>
+      <title>Indoor Rowing</title>
+      <link>https://live4thee.github.io/posts/2022-11-05-indoor-rowing/</link>
+      <pubDate>Sat, 05 Nov 2022 20:35:53 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-11-05-indoor-rowing/</guid>
+      <description>倒叙 🔗心心念的划船机终于到货了。夫人在咸鱼碰壁后，做了一大一小两件事情： 大事：下单买了个新的； 小事：留下一句“你们天蝎座就是腹黑”！ 据我考证</description>
+    </item>
+    <item>
+      <title>What Does s.t. Mean?</title>
+      <link>https://live4thee.github.io/posts/2022-07-19-what-does-st-mean/</link>
+      <pubDate>Tue, 19 Jul 2022 21:56:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-07-19-what-does-st-mean/</guid>
+      <description>看 atc15 论文的时候，算法描述看见一个 s.t. 符号，不明其意。后来在 stackexchange 上找到了答案: Usually, the acronym s.t. means `such that&amp;#39;. In the context of optimization, it means `subject to&amp;#39;. Also note that `such that&amp;#39; does *not* have the same meaning as `so that&amp;#39;. - Such that, describes</description>
+    </item>
+    <item>
+      <title>Heinrich Law</title>
+      <link>https://live4thee.github.io/posts/2022-06-28-heinrich-law/</link>
+      <pubDate>Tue, 28 Jun 2022 20:55:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-06-28-heinrich-law/</guid>
+      <description>前几天有同事提到海恩法则，有点意思，因此多搜索了一下。本文的主要观点， 以及下面的海恩里奇金字塔，均来自 Heinrich Law and industrial safety。 William Herbert Heinrich 就职于旅游</description>
+    </item>
+    <item>
+      <title>Father and Son (12)</title>
+      <link>https://live4thee.github.io/posts/2022-06-22-father-and-son-12/</link>
+      <pubDate>Wed, 22 Jun 2022 19:48:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-06-22-father-and-son-12/</guid>
+      <description>昨天 2+12 最后一天，去了趟公司。搬了个新座位，靠窗，不在空调出风口，挺好。很久没给车加油了，#95 已经涨到了9.88 - 印象中开车十年来最贵的价格</description>
+    </item>
+    <item>
+      <title>org-link-set-parameters</title>
+      <link>https://live4thee.github.io/posts/2022-06-17-org-link-set-parameters/</link>
+      <pubDate>Fri, 17 Jun 2022 17:05:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-06-17-org-link-set-parameters/</guid>
+      <description>back to fcitx 🔗最近做了很多文字工作，发现 ibus 虽然视觉好看一点，但中文输入的时候偶尔会切换输入法卡住，接着就只能输入英文了（虽然切换动画还是继续挺好看</description>
+    </item>
+    <item>
+      <title>Back to Focal</title>
+      <link>https://live4thee.github.io/posts/2022-05-16-back-to-focal/</link>
+      <pubDate>Mon, 16 May 2022 16:14:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-05-16-back-to-focal/</guid>
+      <description>20.04 升级到 22.04 后用了一个月出头，突然某次重启后发现无线网络死活连不上了。 Wi-Fi issue 🔗现象：NetworkManager 没有任何可用的设备，不但没有 Wi</description>
+    </item>
+    <item>
+      <title>Firefox PPA for Ubuntu 22.04</title>
+      <link>https://live4thee.github.io/posts/2022-04-24-firefox-ppa-for-ubuntu-22-04/</link>
+      <pubDate>Sun, 24 Apr 2022 20:55:26 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-04-24-firefox-ppa-for-ubuntu-22-04/</guid>
+      <description>内容来自 https://balintreczey.hu/ 22.04 里搭载的 firefox 是用 snap 打包的，不过还是有用回 deb 的方法：使用 Mozilla 团队维护的 PPA (Personal Package Archive) 仓库。 $ cat /etc/apt/preferences.d/firefox-no-snap Package: firefox* Pin: release o=Ubuntu* Pin-Priority: -1 然后，删掉已有的 firefox</description>
+    </item>
+    <item>
+      <title>Fcitx Icon Issue</title>
+      <link>https://live4thee.github.io/posts/2022-04-18-fix-fcitx-icon-issue/</link>
+      <pubDate>Mon, 18 Apr 2022 19:39:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-04-18-fix-fcitx-icon-issue/</guid>
+      <description>最近把 20.04 升级到 22.04 后发现切换输入法的时候，图标比例有点怪，像是大图标原样（非按比例）显示在了 panel 上。 查了一下，xfce 的 panel references 里面设置了： ‘ico</description>
+    </item>
+    <item>
+      <title>Work From Home (2) </title>
+      <link>https://live4thee.github.io/posts/2022-03-31-work-from-home-2/</link>
+      <pubDate>Thu, 31 Mar 2022 14:15:34 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-03-31-work-from-home-2/</guid>
+      <description>自上次居家办公以来， 目前本次居家已超三个星期。然而生活的不易，却远较上次艰辛。 工作 🔗作为程序员，居家基本不影响工作。坏处是生活和工作的界限变</description>
+    </item>
+    <item>
+      <title>PNG and Poppler</title>
+      <link>https://live4thee.github.io/posts/2022-02-08-png-and-poppler/</link>
+      <pubDate>Tue, 08 Feb 2022 18:34:16 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-02-08-png-and-poppler/</guid>
+      <description>前段时间碰到一个问题：xelatex 生成出来的 pdf，用阅读器（atril）打开， 图片看不见。 编译的时候，有报警信息如： Overfull \hbox (170.25pt too wide) in paragraph at lines 2169--2170</description>
+    </item>
+    <item>
+      <title>Coyote Notes - 3</title>
+      <link>https://live4thee.github.io/posts/2021-11-23-coyote-notes-3/</link>
+      <pubDate>Tue, 23 Nov 2021 11:22:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-11-23-coyote-notes-3/</guid>
+      <description>内容来自官网。 Actors and StateMachine 🔗上篇提到，Coyote 提供了异步 Actor 编程模型。Coyote 框架提供了一种特殊的 Actor 类型, 叫StateMachine ，这种 Actor</description>
+    </item>
+    <item>
+      <title>Physical Examination</title>
+      <link>https://live4thee.github.io/posts/2021-11-01-physical-examination/</link>
+      <pubDate>Fri, 29 Oct 2021 12:18:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-11-01-physical-examination/</guid>
+      <description>人到中年，不愿体检。 每年到体检的时候，就陷入了鸵鸟心态。既不愿动动指头做预约，双腿也像灌了铅似的，不愿挪动半步。终究，九年义务教育没有白费，</description>
+    </item>
+    <item>
+      <title>Goodwill</title>
+      <link>https://live4thee.github.io/posts/2021-08-23-goodwill/</link>
+      <pubDate>Mon, 23 Aug 2021 22:10:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-08-23-goodwill/</guid>
+      <description>老婆帮忙，在咸鱼上卖掉了两只镜头： Canon 50mm 1.8 STM - 600 RMB; Sigma 35mm 1.4 HSM - 2000 RMB. 本来心里感叹，原厂就是坚挺，偶然一看官网原价, 居然涨到 1199 大洋了。折合现价算是五</description>
+    </item>
+    <item>
+      <title>Pony Language</title>
+      <link>https://live4thee.github.io/posts/2021-05-10-pony-language/</link>
+      <pubDate>Mon, 10 May 2021 20:25:57 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-05-10-pony-language/</guid>
+      <description>某天电子邮箱里躺了一封关于 Pony 的问答。手贱点了进去，然后深受“广度优先”之害。 这篇文章来自 Pony 的设计者 Sylvan Clebsch 的口述 Pony 早期历史 ，原文读下来颇有点 Coders at</description>
+    </item>
+    <item>
+      <title>Processes in D State</title>
+      <link>https://live4thee.github.io/posts/2021-04-30-processes-in-d-state/</link>
+      <pubDate>Fri, 30 Apr 2021 16:00:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-04-30-processes-in-d-state/</guid>
+      <description>当进程陷入不可中断睡眠的时候，用户没有办法杀掉它。如果该进程进入了僵尸状态、且有很多子进程的话那就更是“屋漏偏逢连夜雨”了。绝大部分情况下，</description>
+    </item>
+    <item>
+      <title>5 Years</title>
+      <link>https://live4thee.github.io/posts/2021-03-29-5-years/</link>
+      <pubDate>Mon, 29 Mar 2021 19:42:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-03-29-5-years/</guid>
+      <description>以“创业者”的身份做为打工人，已五年矣！ 五年间，经常缠绕心头的一句话是“泯然众人矣”！那份叹息，仿佛有穿越千年的力量。 不由自主地，突然又想起</description>
+    </item>
+    <item>
+      <title>.Net Core on Linux - 2</title>
+      <link>https://live4thee.github.io/posts/2021-02-09-dotnet-core-on-linux-2/</link>
+      <pubDate>Tue, 09 Feb 2021 15:48:42 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-02-09-dotnet-core-on-linux-2/</guid>
+      <description>dotnet publish 🔗dotnet publish - Publishes the application and its dependencies to a folder for deployment to a hosting system. 试验了一下打包应用，放到别的 Linux 机器（没有.Net 运行时）上跑。 自包含应用 🔗$ dotnet publish -h ... -f, --framework</description>
+    </item>
+    <item>
+      <title>Coyote Notes - 2</title>
+      <link>https://live4thee.github.io/posts/2021-02-02-coyote-notes-2/</link>
+      <pubDate>Tue, 02 Feb 2021 15:57:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-02-02-coyote-notes-2/</guid>
+      <description>Actors 🔗Coyote 提供了两大编程模型，其中一个就是 Asynchronous Actors. Actor 模型 有几个特征： 创建 Actor 以及向 actor 发送消息是非阻塞的； Actor 对消息的处理是顺序的，因此处理逻辑</description>
+    </item>
+    <item>
+      <title>Syscalls by Process</title>
+      <link>https://live4thee.github.io/posts/2021-02-02-syscalls-by-process/</link>
+      <pubDate>Tue, 02 Feb 2021 12:37:02 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-02-02-syscalls-by-process/</guid>
+      <description>自 Linux 2.6.27 开始，可以通过文件 /proc/[pid]/syscall 得知进程号为pid 的进程正在做什么系统调用。比如： $ sudo cat /proc/$$/syscall 61 0xffffffff 0x7ffddd4c4000 0xa 0x0 0x0 0x7 0x7ffddd4c3fe8 0x7ff09ab37dba 这里，第一个字段是系统调用号。后面一次</description>
+    </item>
+    <item>
+      <title>.Net Core on Linux</title>
+      <link>https://live4thee.github.io/posts/2021-01-27-dotnet-core-on-linux/</link>
+      <pubDate>Wed, 27 Jan 2021 22:22:51 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-01-27-dotnet-core-on-linux/</guid>
+      <description>因为要学 coyote，又不想用 Windows，于是在本机 Xubuntu 20.04 上装了一个 .Net Core，没想到体验还挺不错。我在 Fedora 33 以及 Windows 2012 R2 虚拟机里测试了也可以</description>
+    </item>
+    <item>
+      <title>Coyote Notes - 1</title>
+      <link>https://live4thee.github.io/posts/2021-01-27-coyote-notes/</link>
+      <pubDate>Wed, 27 Jan 2021 15:35:50 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-01-27-coyote-notes/</guid>
+      <description>这几天在学 coyote，做个笔记。 入口 🔗测试入口函数必须 带有属性[Microsoft.Coyote.SystematicTesting.Te</description>
+    </item>
+    <item>
+      <title>MC11 for Rescue</title>
+      <link>https://live4thee.github.io/posts/2020-09-23-mc11-for-rescue/</link>
+      <pubDate>Wed, 23 Sep 2020 17:33:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-09-23-mc11-for-rescue/</guid>
+      <description>在 Z5、Z6、EOS R6、A7m3 里纠结了一阵子之后，选了大法。 Z5/Z6 🔗Z5 非常理想，很适合我这种只拍照不拍视频的需求，但是当前的价格相对小贵。</description>
+    </item>
+    <item>
+      <title>Hanging Out</title>
+      <link>https://live4thee.github.io/posts/2020-09-12-hanging-out/</link>
+      <pubDate>Sat, 12 Sep 2020 22:24:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-09-12-hanging-out/</guid>
+      <description>器材店半日游。 自从卖掉 80D 后，手头就只剩下老婆的 rx100v 了。上次在万象城的索尼店， 拿着 Sony A73，老婆一眼很毒的指出：“这屏幕太差了，不能买、不能买！</description>
+    </item>
+    <item>
+      <title>Nanjing</title>
+      <link>https://live4thee.github.io/posts/2020-08-17-nanjing/</link>
+      <pubDate>Fri, 14 Aug 2020 22:16:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-08-17-nanjing/</guid>
+      <description>周四去南京出差，顺便见了一下大学同学们。 见到同学，真的很开心，大家甚至都还是毕业时候的面孔，连声音也似乎保持着当初的模样。遥远的过去一下又变</description>
+    </item>
+    <item>
+      <title>Big Events</title>
+      <link>https://live4thee.github.io/posts/2020-08-11-big-events/</link>
+      <pubDate>Tue, 11 Aug 2020 18:06:57 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-08-11-big-events/</guid>
+      <description>上周末发生了两件大事： 把 80D 给卖了，换了 4500 大洋，还算满意； 突然左边肩膀疼痛不能发力，一度悲凉得以为一脚踏入半身不遂（还好今天感觉已经完全回复了</description>
+    </item>
+    <item>
+      <title>Random Bits (3)</title>
+      <link>https://live4thee.github.io/posts/2020-06-12-random-bits-3/</link>
+      <pubDate>Fri, 12 Jun 2020 00:04:43 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-06-12-random-bits-3/</guid>
+      <description>最近救了两场火，聊以记录。 Vyos on ARM64 🔗同学终于搞出可用的 Vyos ARM64 镜像，但 commit 总是报错。上去看了一下， 默认的 Perl 版本和 perl-modules 版本不一样。重新编译了 Vyatta 相关的包，</description>
+    </item>
+    <item>
+      <title>Xfce Again</title>
+      <link>https://live4thee.github.io/posts/2020-04-29-xfce-again/</link>
+      <pubDate>Wed, 29 Apr 2020 22:38:24 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-04-29-xfce-again/</guid>
+      <description>分析了大半天 crash dump, 有点晕。 VMware player 🔗本机有个 VMware Player, 从 Kubuntu 18.04 升级到 20.04 后，内核模块编译失败。仔细找了一下，原来代码都放到 /usr/lib/vmware/modules/source/ 里去了，以 tar 包的形式存在。升级 vmplayer</description>
+    </item>
+    <item>
+      <title>MySQL/Mariadb Notes - 1</title>
+      <link>https://live4thee.github.io/posts/2020-03-28-mysql-mariadb-notes-1/</link>
+      <pubDate>Sat, 28 Mar 2020 14:31:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-28-mysql-mariadb-notes-1/</guid>
+      <description>MySQL 8 🔗跑部署脚本的时候，一直报错： ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &amp;#39;IDENTIFIED BY &amp;#39;secret&amp;#39; at line 1 啥，语法错？看了一下执行的 SQL 语句，很正</description>
+    </item>
+    <item>
+      <title>Firefox</title>
+      <link>https://live4thee.github.io/posts/2020-03-26-firefox/</link>
+      <pubDate>Thu, 26 Mar 2020 19:30:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-26-firefox/</guid>
+      <description>前段时间一顿升级再加各种骚操作后，我的 firefox 播放音频的时候没有声音了。 突然想起，之前删掉了 PulseAudio - 装回来后果然好了。维基上有一张 PulseAudio 的图： 对比下面的搜</description>
+    </item>
+    <item>
+      <title>Father and Son (11)</title>
+      <link>https://live4thee.github.io/posts/2020-03-23-father-and-son-11/</link>
+      <pubDate>Mon, 23 Mar 2020 22:29:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-23-father-and-son-11/</guid>
+      <description>陪眼泪婆娑的小朋友写作业。 小朋友写着写着，突然问了一句：“爸爸，只有你关心我么？” 一时语塞。</description>
+    </item>
+    <item>
+      <title>Kubuntu 20.04</title>
+      <link>https://live4thee.github.io/posts/2020-03-07-kubuntu-20-04/</link>
+      <pubDate>Sat, 07 Mar 2020 12:31:18 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-07-kubuntu-20-04/</guid>
+      <description>没忍住，提前升级到了 20.04. 输入法 🔗升级后自动安装上了 ibus, 切换中文有点问题。删掉 ibus 保留 fcitx 就好。一个手快，多删了下面两个包，导致使用 gtk 的程序没法切换输</description>
+    </item>
+    <item>
+      <title>xfs_growfs</title>
+      <link>https://live4thee.github.io/posts/2020-02-26-xfs-growfs/</link>
+      <pubDate>Wed, 26 Feb 2020 22:45:36 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-02-26-xfs-growfs/</guid>
+      <description>跑在公司内网的开发机系统盘只有 6GB，因此前段时间碰到了 surefire 插件在 /tmp 目录下写入大量 report 数据把磁盘写满的问题。后来建了一块数据盘专门挂载到 /tmp, 没想到</description>
+    </item>
+    <item>
+      <title>Samsung NX11</title>
+      <link>https://live4thee.github.io/posts/2020-02-23-samsung-nx11/</link>
+      <pubDate>Sun, 23 Feb 2020 20:30:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-02-23-samsung-nx11/</guid>
+      <description>重拾压箱底的 NX11，发现它的快门数还没满 8000。 重量、握持、造型还是挺满意，手动模式不能 Auto ISO。 差点想淘一个 NX 30mm f2 饼干。</description>
+    </item>
+    <item>
+      <title>Work From Home</title>
+      <link>https://live4thee.github.io/posts/2020-02-11-work-from-home/</link>
+      <pubDate>Tue, 11 Feb 2020 23:10:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-02-11-work-from-home/</guid>
+      <description>相应号召，最近在家工作，不免总结一番。 作息 🔗每天夫人先起床，早餐差不多了，小朋友起床。小朋友的起床后兴致勃勃的任务之一是叫我起床。一家三口，</description>
+    </item>
+    <item>
+      <title>stdout*deferred</title>
+      <link>https://live4thee.github.io/posts/2020-01-28-stdout-deferred/</link>
+      <pubDate>Tue, 28 Jan 2020 20:12:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-01-28-stdout-deferred/</guid>
+      <description>跑 maven test 的时候，发现 /tmp 目录下多了一堆命名模式为stdoutdeferred* 的文件，居然把根盘的空间（总共 6 GB）给消耗光了。 查了一下，原来是</description>
+    </item>
+    <item>
+      <title>A Sudden Reboot</title>
+      <link>https://live4thee.github.io/posts/2019-12-12-a-sudden-reboot/</link>
+      <pubDate>Thu, 12 Dec 2019 09:21:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-12-12-a-sudden-reboot/</guid>
+      <description>冷汗 🔗昨天开车时中控突然重启，冷汗还没来得及冒出来，已重启好。网上一搜，远不是孤例。 Hugo 🔗升级了 Hugo 后，貌似joinLines 插件不管用了&amp;he</description>
+    </item>
+    <item>
+      <title>Half of Heaven</title>
+      <link>https://live4thee.github.io/posts/2019-11-18-half-of-heaven/</link>
+      <pubDate>Mon, 18 Nov 2019 22:41:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-18-half-of-heaven/</guid>
+      <description>老婆三八八度，高烧躺在床头。自从昨天下午，还未踏出门口。 晚托接娃回家，进门便找妈妈： “现在好些了吗，怎么还在咳嗽？” 挣扎半卧起身，勉强喝点稀</description>
+    </item>
+    <item>
+      <title>Python Inspection</title>
+      <link>https://live4thee.github.io/posts/2019-11-05-python-inspection/</link>
+      <pubDate>Tue, 05 Nov 2019 10:42:28 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-05-python-inspection/</guid>
+      <description>作为程序员，经常有查看源代码的需求。如果没有代码，能反汇编也不至于两眼摸黑。Python 这方面的支持做的挺不错。 inspect 🔗inspect 定义了很多</description>
+    </item>
+    <item>
+      <title>ramblings</title>
+      <link>https://live4thee.github.io/posts/2019-11-04-ramblings/</link>
+      <pubDate>Mon, 04 Nov 2019 20:35:06 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-04-ramblings/</guid>
+      <description>懂事的孩子 🔗老师问小朋友，“你的尺子断了，铅笔也很短了，怎么还没换啊？” 小朋友回答说，“家长很忙。” 这段对话是老师告知的。家长很惭愧。 传感器</description>
+    </item>
+    <item>
+      <title>Current Noise</title>
+      <link>https://live4thee.github.io/posts/2019-11-02-current-noise/</link>
+      <pubDate>Sat, 02 Nov 2019 15:16:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-02-current-noise/</guid>
+      <description>不知何时开始，耳机里总有一股电流声。打开 alsamixer 折腾了一下，调一下 Headphone Mic Boost 就好。如下图第三列。 世界清净了。感觉真好。</description>
+    </item>
+    <item>
+      <title>Vacuuming Systemd Journals</title>
+      <link>https://live4thee.github.io/posts/2019-10-31-vacuuming-journal-files/</link>
+      <pubDate>Thu, 31 Oct 2019 09:20:19 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-10-31-vacuuming-journal-files/</guid>
+      <description>之前发现，执行 journalctl &amp;ndash;vacuum-time=2d 并不一定会释放日志空间。 根本原因是：vacuum 操作只针对已经归档的日志。所以，正确的操作： journalctl --rotate journalctl --vacuum-time=2d 需要注意的是：上面两个</description>
+    </item>
+    <item>
+      <title>Python &#39;if&#39;</title>
+      <link>https://live4thee.github.io/posts/2019-10-14-python-if/</link>
+      <pubDate>Mon, 14 Oct 2019 19:41:03 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-10-14-python-if/</guid>
+      <description>前两天掉进了一个 Python 的坑。 import xml.etree.ElementTree as ET s = &amp;#34;&amp;#34;&amp;#34;&amp;lt;disk type=&amp;#39;file&amp;#39; device=&amp;#39;disk&amp;#39;&amp;gt; &amp;lt;driver name=&amp;#39;qemu&amp;#39; type=&amp;#39;qcow2&amp;#39; cache=&amp;#39;directsync&amp;#39; io=&amp;#39;native&amp;#39;/&amp;gt; &amp;lt;source file=&amp;#39;/vms/test/centos76-efi&amp;#39;/&amp;gt; &amp;lt;target dev=&amp;#39;vda&amp;#39; bus=&amp;#39;virtio&amp;#39;/&amp;gt; &amp;lt;/disk&amp;gt;&amp;#34;&amp;#34;&amp;#34; ele = etree.fromstring(s) t = ele.find(&amp;#39;target&amp;#39;) # &amp;lt;Element &amp;#39;target&amp;#39; at 0x249dc90&amp;gt; if t: ele.remove(t) 然后发现，&amp;rsquo;ele.remove(t</description>
+    </item>
+    <item>
+      <title>UnboundLocalError</title>
+      <link>https://live4thee.github.io/posts/2019-10-14-unboundlocalerror/</link>
+      <pubDate>Mon, 14 Oct 2019 09:36:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-10-14-unboundlocalerror/</guid>
+      <description>最近碰到个 &amp;lsquo;UnboundLocalError&amp;rsquo;, 初看不可思议，知道原理后就释然了。 # file: test.py def e(x): print(x) def g(): e(1) e = 1 g() 运行一下： $ python test.py Traceback (most recent call last): File &amp;#34;test.py&amp;#34;, line 7, in &amp;lt;module&amp;gt; g() File &amp;#34;test.py&amp;#34;, line 4, in g e(1) UnboundLocalError: local variable &amp;#39;e&amp;#39; referenced before assignment</description>
+    </item>
+    <item>
+      <title>Shared Bikes</title>
+      <link>https://live4thee.github.io/posts/2019-09-16-shared-bikes/</link>
+      <pubDate>Mon, 16 Sep 2019 08:40:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-16-shared-bikes/</guid>
+      <description>破财 🔗在某农家乐墙角停车时，倒车撞到了悬在半空的空调支架，留下一个 &amp;ldquo;I&amp;rdquo; 形的伤口。心疼。 母与子 🔗越来越觉得，小朋友很狗腿。 “妈妈，妈妈，汉字描红</description>
+    </item>
+    <item>
+      <title>A Taste of Beer</title>
+      <link>https://live4thee.github.io/posts/2019-09-07-a-taste-of-beer/</link>
+      <pubDate>Sat, 07 Sep 2019 22:10:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-07-a-taste-of-beer/</guid>
+      <description>看着父母在喝啤酒，小朋友有点眼馋：“让我闻一闻，让我闻一闻！” 递了过去，“要不，你喝一口尝尝？” 推辞不过，抿着嘴巴，嘴唇碰了两下：“闻着香，</description>
+    </item>
+    <item>
+      <title>Auguries of Innocence</title>
+      <link>https://live4thee.github.io/posts/2019-09-04-auguries-of-innocence/</link>
+      <pubDate>Wed, 04 Sep 2019 09:53:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-04-auguries-of-innocence/</guid>
+      <description>在一篇论文的序言读到一首小诗，来自William Blake. To see a World in a Grain of Sand And a Heaven in a Wild Flower, Hold Infinity in the palm of your hand And Eternity in an hour. 译文： 从一粒沙看世界， 从一朵花见</description>
+    </item>
+    <item>
+      <title>Chroot to Rescue!</title>
+      <link>https://live4thee.github.io/posts/2019-09-03-chroot-for-rescue/</link>
+      <pubDate>Tue, 03 Sep 2019 10:56:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-03-chroot-for-rescue/</guid>
+      <description>很久之前，为了合规，公司换用了合法的 VPN 提供商。然而自此之后，我的 VPN 接入就成了问题。 对方号称有 Linux 客户端，但是官网不能下载； 对方的设备提供 L2TP 服务</description>
+    </item>
+    <item>
+      <title>Father and Son (10)</title>
+      <link>https://live4thee.github.io/posts/2019-09-03-father-and-son-10/</link>
+      <pubDate>Tue, 03 Sep 2019 09:06:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-03-father-and-son-10/</guid>
+      <description>爱吃又腹黑的小朋友 🔗小朋友饭量还算比较大，每天晚上都要吃两碗饭。肚子撑的鼓鼓的，然后掀起衣服给妈妈看：“看我的大肚肚！”因此我偏向主张控制饮</description>
+    </item>
+    <item>
+      <title>AppImage to Rescue!</title>
+      <link>https://live4thee.github.io/posts/2019-04-17-appimage-to-rescue/</link>
+      <pubDate>Wed, 17 Apr 2019 22:37:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-04-17-appimage-to-rescue/</guid>
+      <description>最近开始用钉钉写周报。因为没有 Linux 客户端，之前一直用的网页版。无奈之下，在某个 Windows 虚拟机里面装了一个， 通过远程桌面访问。体验不是太好。 想起之前看</description>
+    </item>
+    <item>
+      <title>Interpreting Linux OOM Logs (1/2)</title>
+      <link>https://live4thee.github.io/posts/2019-04-12-interpreting-linux-oom-logs/</link>
+      <pubDate>Fri, 12 Apr 2019 10:28:42 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-04-12-interpreting-linux-oom-logs/</guid>
+      <description>本文描述如何分析 Linux OOM 日志。下面的日志去掉了开头的时间戳。 HOST1 kernel: prometheus invoked oom-killer: gfp_mask=0x0, order=0, oom_score_adj=0 HOST1 kernel: prometheus cpuset=docker-f55e8d749684a0746aa1cb3d186df370848ba502cc19d249bf732450de5a2f30.scope mems_allowed=0-3 HOST1 kernel: CPU: 88 PID: 49521 Comm: prometheus Tainted: G OE ------------ 3.10.0-327.36.1.el7.x86_64 #1 HOST1 kernel: Hardware name: Dell Inc. PowerEdge R930/0Y0V4F, BIOS 2.4.3 07/07/2017 HOST1 kernel: ffff88bf0612f300 00000000cbfaa699</description>
+    </item>
+    <item>
+      <title>A Trip to An-Ji</title>
+      <link>https://live4thee.github.io/posts/2019-03-17-a-trip-to-an-ji/</link>
+      <pubDate>Sun, 17 Mar 2019 21:56:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-03-17-a-trip-to-an-ji/</guid>
+      <description>周末去了趟安吉。 周六下午两点到。休息了一会儿后去爬山，一路都是茶园。还没爬几步，就气喘吁吁、汗流颊背。两旁偶尔盛开着山鸡椒娇嫩的黄花、以及散</description>
+    </item>
+    <item>
+      <title>By Your Side</title>
+      <link>https://live4thee.github.io/posts/2019-03-05-by-your-side/</link>
+      <pubDate>Tue, 05 Mar 2019 22:02:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-03-05-by-your-side/</guid>
+      <description>突然想买支口琴，我唯一会使用的乐器。感谢老婆完成了我这个小心愿。</description>
+    </item>
+    <item>
+      <title>Debugging a Washer</title>
+      <link>https://live4thee.github.io/posts/2019-03-02-debugging-a-washer/</link>
+      <pubDate>Sat, 02 Mar 2019 22:31:26 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-03-02-debugging-a-washer/</guid>
+      <description>旅游回来的时候，突然发现洗衣机不能脱水了。剩余时间倒数到 6 分钟后就再也进行不下去了。按照品牌，在网上搜了一下，发现不是孤例。一般是两种可能：</description>
+    </item>
+    <item>
+      <title>I am a Joker</title>
+      <link>https://live4thee.github.io/posts/2019-03-02-i-am-a-joker/</link>
+      <pubDate>Sat, 02 Mar 2019 17:27:03 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-03-02-i-am-a-joker/</guid>
+      <description>Travel 🔗前段时间完成了第五次霓虹国之旅，由于避开了春节，人不算多。主要时间都在高山 (Takayama) 和下吕 (Gero)。一路下来，也算是体验了一把北方大雪纷飞，</description>
+    </item>
+    <item>
+      <title>25 Days</title>
+      <link>https://live4thee.github.io/posts/2019-01-13-25-days/</link>
+      <pubDate>Sun, 13 Jan 2019 22:54:50 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-01-13-25-days/</guid>
+      <description>母亲今天出院了，等电梯的时候刚好是最近两周来魔都难得露出阳光的那一刻。 这些天在医院陪同的时候，写了一些日记，也正好有时间看一些书。有讲人生的</description>
+    </item>
+    <item>
+      <title>An Unlucky Year</title>
+      <link>https://live4thee.github.io/posts/2018-12-20-an-unlucky-year/</link>
+      <pubDate>Thu, 20 Dec 2018 22:56:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-12-20-an-unlucky-year/</guid>
+      <description>可能是因为本命年的缘故，今年颇有点流年不利的意思。 折腾了一年，毫无悬念地没有拍中沪牌，倒是赚了黄牛小几千块钱。朋友推荐的黄牛此前都是两三次就</description>
+    </item>
+    <item>
+      <title>All About Time</title>
+      <link>https://live4thee.github.io/posts/2018-12-03-all-about-time/</link>
+      <pubDate>Mon, 03 Dec 2018 22:53:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-12-03-all-about-time/</guid>
+      <description>最近鼻炎爆发得挺厉害，之前美亚上淘的 fexofenadine 也似乎已经没什么效果。该打喷嚏的时候，还是克制不住，十分痛苦。无奈之下，把角落里的洗鼻仪拖了出来，症状</description>
+    </item>
+    <item>
+      <title>Random Bits (3)</title>
+      <link>https://live4thee.github.io/posts/2018-11-22-random-bits-3/</link>
+      <pubDate>Thu, 22 Nov 2018 19:36:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-11-22-random-bits-3/</guid>
+      <description>今天是小雪。魔都阳光明媚。 最近手上处理了几个诡异的问题，这里简单记录一下。 &amp;ldquo;Too many open files&amp;rdquo; 🔗售前同事说，某客户的环境里，出现了 &amp;ldquo;Too many open files&amp;rdquo;. 一般来说，这种</description>
+    </item>
+    <item>
+      <title>Running Again!</title>
+      <link>https://live4thee.github.io/posts/2018-11-06-running-again/</link>
+      <pubDate>Tue, 06 Nov 2018 10:08:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-11-06-running-again/</guid>
+      <description>自从恢复跑步一个月来，总共跑了 32 公里，每周一到二次。运动量算是一般， 尤其看了自己的每公里配速、以及 VO2 Max 等数据后，惊觉再不动身就凉了。 断断续续</description>
+    </item>
+    <item>
+      <title>An Accident</title>
+      <link>https://live4thee.github.io/posts/2018-10-16-an-accident/</link>
+      <pubDate>Tue, 16 Oct 2018 23:42:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-10-16-an-accident/</guid>
+      <description>今天几乎酿成一起发布事故。《红楼梦》开篇有言：愧则有馀,悔又无益。 有诗为证： “险些酿大错，老脸没处搁。捶胸又顿足，还来平余波。”</description>
+    </item>
+    <item>
+      <title>Trivial Notes</title>
+      <link>https://live4thee.github.io/posts/2018-10-08-trivial-notes/</link>
+      <pubDate>Mon, 08 Oct 2018 14:52:18 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-10-08-trivial-notes/</guid>
+      <description>国庆长假，蜗牛读书里面看《蒋勋说红楼梦》，写的挺不错。 小朋友第一次吃了三文鱼刺身，居然，没有吐掉。 写了一段小脚本，促进了家庭和谐，生产力进步</description>
+    </item>
+    <item>
+      <title>Apple Watch</title>
+      <link>https://live4thee.github.io/posts/2018-09-21-apple-watch/</link>
+      <pubDate>Fri, 21 Sep 2018 22:34:57 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-09-21-apple-watch/</guid>
+      <description>老婆带孩子、老人出去旅游，留下我独守空房。孩子妈临走之前给我买了一支 AW3，曰：“新款出来了，可以买老款了。” 最近也在开始跑步，虽然还不能恢</description>
+    </item>
+    <item>
+      <title>Disney, again.</title>
+      <link>https://live4thee.github.io/posts/2018-09-20-disney-again/</link>
+      <pubDate>Thu, 20 Sep 2018 22:22:38 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-09-20-disney-again/</guid>
+      <description>趁前东家的家庭日，上周和老婆再访迪士尼 - 不过这次没带小拖油瓶。 先是看歌舞剧《美女与野兽》，前东家包场。整部剧中，我最喜欢的角色是老婆口中的“</description>
+    </item>
+    <item>
+      <title>Lost and Found</title>
+      <link>https://live4thee.github.io/posts/2018-09-19-lost-and-found/</link>
+      <pubDate>Wed, 19 Sep 2018 12:29:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-09-19-lost-and-found/</guid>
+      <description>换了 Kindle 3 的主板后，一大损失就是之前保存在里面的电子书和音乐。 电子书没有备份，也找不回了。音乐只有几首，都是当年很喜欢的。其中有一首法语歌，但</description>
+    </item>
+    <item>
+      <title>iFixit</title>
+      <link>https://live4thee.github.io/posts/2018-09-08-ifixit/</link>
+      <pubDate>Sat, 08 Sep 2018 07:14:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-09-08-ifixit/</guid>
+      <description>题记：终于把 Kindle 3 给修好了。 自从在看热闹不嫌事大的同事的怂恿下，买了块国产大容量电池给自己的6s成功续命后，看到苟延残喘的电子产品都特别手痒。</description>
+    </item>
+    <item>
+      <title>Body Exercise</title>
+      <link>https://live4thee.github.io/posts/2018-08-29-body-exercise/</link>
+      <pubDate>Wed, 29 Aug 2018 23:05:54 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-08-29-body-exercise/</guid>
+      <description>搁置了两年多后，重新开始加入了每周一次的羽毛球活动。 第一次热身充分，啥事没有；第二次跳杀的时候突然右腿抽筋；第三次刚开打了几拍，右手背就突然</description>
+    </item>
+    <item>
+      <title>Unexpected Experiences</title>
+      <link>https://live4thee.github.io/posts/2018-08-28-unexpected-experiences/</link>
+      <pubDate>Tue, 28 Aug 2018 23:59:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-08-28-unexpected-experiences/</guid>
+      <description>在经历了惨无人道的“催更”后，赶在零点之前写下一点文字： 今天终于解决了一块心病，法律规定具体内容不可言说，因此点到即止。然而总归是一段人生经</description>
+    </item>
+    <item>
+      <title>A Beautiful Mistake</title>
+      <link>https://live4thee.github.io/posts/2018-07-13-a-beautiful-mistake/</link>
+      <pubDate>Fri, 13 Jul 2018 20:11:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-07-13-a-beautiful-mistake/</guid>
+      <description>2018年6月20日，上午。 从本部町(Motobu)沿58号公路开往那霸市，途经一片美丽的海域。翡翠色的水面在蓝天白云之下格外令人心旷神怡。</description>
+    </item>
+    <item>
+      <title>A Trip to Okinawa</title>
+      <link>https://live4thee.github.io/posts/2018-06-23-a-trip-to-okinawa/</link>
+      <pubDate>Sat, 23 Jun 2018 22:35:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-06-23-a-trip-to-okinawa/</guid>
+      <description>傍晚飞机降落在浦东机场，当时落日余晖，夕阳正美。 租车 🔗由于飞机晚点，上周六傍晚才到冲绳。赶不上航班，因此取消了两天的宫古岛行程，略有遗憾，不</description>
+    </item>
+    <item>
+      <title>Buffering</title>
+      <link>https://live4thee.github.io/posts/2018-05-18-buffering/</link>
+      <pubDate>Fri, 18 May 2018 20:47:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-18-buffering/</guid>
+      <description>最近碰到一个行缓冲(line buffering)方面的问题，有点意思。 背景 🔗某段 golang 代码中，需要解析 virsh event --loop 的输出，大概就是用bufio 里的 Scanner 来</description>
+    </item>
+    <item>
+      <title>Being Sick</title>
+      <link>https://live4thee.github.io/posts/2018-05-12-sick/</link>
+      <pubDate>Sat, 12 May 2018 12:38:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-12-sick/</guid>
+      <description>自我感觉良好一直穿着短袖之后，周三开始了牙龈疼。最严重的时候，既合不拢、也张不开嘴巴。会疼。奇怪的是，除了扁桃体有点隐隐做痛，没有其它感冒或</description>
+    </item>
+    <item>
+      <title>Java Thread States</title>
+      <link>https://live4thee.github.io/posts/2018-05-11-java-thread-states/</link>
+      <pubDate>Fri, 11 May 2018 19:12:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-11-java-thread-states/</guid>
+      <description>根据 Oracle 的官方文档 ，Java 线程有如下状态： 状态 描述 NEW 刚创建的新线程 RUNNABLE 线程正在JVM内执行 BLOCKED 线程阻塞在 monitor lock WAITING 线程无限等待其他线程的某个特定动作</description>
+    </item>
+    <item>
+      <title>Deadlock in Groovy 2.4.8</title>
+      <link>https://live4thee.github.io/posts/2018-05-11-deadlock-in-groovy-2-4-8/</link>
+      <pubDate>Fri, 11 May 2018 18:39:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-11-deadlock-in-groovy-2-4-8/</guid>
+      <description>前段时间，为了解决 GroovyShell 中的一个内存泄漏问题，把 groovy 从 2.4.7 升级到了 2.4.8，没想到 2.4.8 中解决内存泄漏的时候，引入了一个高危bug：会导致线程死锁。 c.f.</description>
+    </item>
+    <item>
+      <title>Meet JVM OOM - cont&#39;d</title>
+      <link>https://live4thee.github.io/posts/2018-05-02-meet-jvm-oom-2/</link>
+      <pubDate>Wed, 02 May 2018 20:10:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-02-meet-jvm-oom-2/</guid>
+      <description>接上篇。 Groovy 🔗内存泄漏的原因还是因为不当使用了GroovyShell，因为需要动态的加载并执行生成的 groovy 脚本。Groovy是一门动态语言，每个方</description>
+    </item>
+    <item>
+      <title>Meet JVM OOM</title>
+      <link>https://live4thee.github.io/posts/2018-04-24-meet-jvm-oom/</link>
+      <pubDate>Tue, 24 Apr 2018 23:12:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-04-24-meet-jvm-oom/</guid>
+      <description>今天做了一次 Java 进程的 OOM 分析，记录一下过程。 初次怀疑 🔗有同事最近反应 Java 进程没有响应，kill -3抓了一下catalina.out， 结果发现里面</description>
+    </item>
+    <item>
+      <title>Morning Sky</title>
+      <link>https://live4thee.github.io/posts/2018-04-22-morning-sky/</link>
+      <pubDate>Sun, 22 Apr 2018 20:23:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-04-22-morning-sky/</guid>
+      <description>做了个恶梦。还好在生死边缘，梦醒了。 起床洗脸，天边已经泛着一丝微光。蓝色的背景下，飞机掠过的痕迹依稀可见。晨风微凉，睡意渐消。天空的色调看起</description>
+    </item>
+    <item>
+      <title>A Trip to Hangzhou</title>
+      <link>https://live4thee.github.io/posts/2018-04-10-a-trip-to-hangzhou/</link>
+      <pubDate>Tue, 10 Apr 2018 19:48:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-04-10-a-trip-to-hangzhou/</guid>
+      <description>清明节再次去了一趟杭州。第一次是冬天，第二次是夏天，这回是春天。游西溪、登宝石山，以及北高峰。小朋友有点轻微感冒，但还是自己走完了全程。 相比</description>
+    </item>
+    <item>
+      <title>Late Again</title>
+      <link>https://live4thee.github.io/posts/2018-03-28-late-again/</link>
+      <pubDate>Wed, 28 Mar 2018 23:37:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-28-late-again/</guid>
+      <description>晚上11点到家。 桌子上有一幅小朋友画的“超人”。 孩子妈说，小朋友睡前把他那最爱的米老鼠放在了我枕头上，说让我和米老鼠睡。之前小朋友睡觉时经常</description>
+    </item>
+    <item>
+      <title>Going Home Late at Night</title>
+      <link>https://live4thee.github.io/posts/2018-03-26-going-home-late-at-night/</link>
+      <pubDate>Mon, 26 Mar 2018 23:27:05 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-26-going-home-late-at-night/</guid>
+      <description>都市夜归人。 回到家已经很晚，肚子很饿。搜来搜去，只有水果和坚果，提不起兴趣。目光落在了桌子上剩下的一点白葡萄酒和一只咸鸭蛋。 金圣叹说“豆腐干</description>
+    </item>
+    <item>
+      <title>Sigma 35mm f/1.4</title>
+      <link>https://live4thee.github.io/posts/2018-03-21-sigma-35-1-4/</link>
+      <pubDate>Wed, 21 Mar 2018 21:36:11 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-21-sigma-35-1-4/</guid>
+      <description>周末老婆大发慈悲，为我买了一只 Sigma 35/1.4 - 条件是交回过年时同样大发慈悲，以“镜头基金”为名，发给我的红包。周六下单周日到。 忐忑中试拍了几张，似乎没</description>
+    </item>
+    <item>
+      <title>A stop job is running ...</title>
+      <link>https://live4thee.github.io/posts/2018-03-20-a-stop-job/</link>
+      <pubDate>Tue, 20 Mar 2018 15:17:45 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-20-a-stop-job/</guid>
+      <description>更新了系统后，因为选择了采用 package maintainer 的配置文件，之前关机时碰到的一个 systemd 的问题又回来了： A stop job is running for Session ... (1min 30s) 好记性不如烂笔头。解决办法： $ grep ^DefaultTimeout /etc/systemd/system.conf DefaultTimeoutStartSec=10s</description>
+    </item>
+    <item>
+      <title>Bionic Beaver</title>
+      <link>https://live4thee.github.io/posts/2018-03-18-bionic-beaver/</link>
+      <pubDate>Sun, 18 Mar 2018 00:01:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-18-bionic-beaver/</guid>
+      <description>把用了两年的 Kubuntu 16.04 升级到了 18.04 Bionic Beaver. 基本上所有的东西都工作得很好，除了 Chromium（依赖GTK）, LibreOffice（依赖 Java） 以及 d</description>
+    </item>
+    <item>
+      <title>White Valentine</title>
+      <link>https://live4thee.github.io/posts/2018-03-14-white-valentine/</link>
+      <pubDate>Wed, 14 Mar 2018 23:08:14 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-14-white-valentine/</guid>
+      <description>今天是商家努力宣传的“白色情人节”，我有三个小故事。 突袭 🔗上午送孩子妈到公司门口，靠边停车的时候，看见路边有一辆银色桑塔纳，就停在了对方前面</description>
+    </item>
+    <item>
+      <title>Fitness</title>
+      <link>https://live4thee.github.io/posts/2018-03-11-fitness/</link>
+      <pubDate>Sun, 11 Mar 2018 19:29:13 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-11-fitness/</guid>
+      <description>过去大半年间，两个大拇指一直比较酸痛。Y股东得知后给我快递了一把 Cherry 键盘。不过我其实早就有了一把 Filco, 拇指的状况没有变得好多少，也没有更糟糕。目前</description>
+    </item>
+    <item>
+      <title>Lantern Festival 2018</title>
+      <link>https://live4thee.github.io/posts/2018-03-02-lantern-festival/</link>
+      <pubDate>Fri, 02 Mar 2018 21:55:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-02-lantern-festival/</guid>
+      <description>今天元宵节。来沪多年，第一次晚上出去看灯。 人潮汹涌，经常听见广播寻人启事。还好家里的小宅男不愿意跟着来。 莘城中央公园</description>
+    </item>
+    <item>
+      <title>First Impression</title>
+      <link>https://live4thee.github.io/2018/02/26/first-impression/</link>
+      <pubDate>Mon, 26 Feb 2018 22:19:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/02/26/first-impression/</guid>
+      <description>孩子妈微信里说，小朋友看见晚餐有烤鱼，一直问： “这个鱼很好吃的吧？” “鱼皮也可以吃的吧？” 就像饿了很久的猫。自从之前有一次小朋友吃鱼被鱼刺卡</description>
+    </item>
+    <item>
+      <title>Year 2018</title>
+      <link>https://live4thee.github.io/2018/02/21/year-2018/</link>
+      <pubDate>Wed, 21 Feb 2018 21:19:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/02/21/year-2018/</guid>
+      <description>转眼已经过完七天春节假期。以前年终还会煞有介事的写一篇年终回顾，这回算是抛到了九霄云外。 时隔两年，再次去了苏州金鸡湖。东方之门（秋裤楼）已经</description>
+    </item>
+    <item>
+      <title>Linux Desktop (2)</title>
+      <link>https://live4thee.github.io/2018/02/12/linux-desktop-2/</link>
+      <pubDate>Mon, 12 Feb 2018 16:42:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/02/12/linux-desktop-2/</guid>
+      <description>输入法 🔗之前一直用 ibus-pinyin 以及后来的 ibus-libpinyin，无法摆脱的苦恼是词库。选了自带的词库后感觉输入还是不接地气。看热闹不嫌事大的同事</description>
+    </item>
+    <item>
+      <title>Surface Pro4 - 10 months later</title>
+      <link>https://live4thee.github.io/2018/01/04/surface-pro4-is-shit/</link>
+      <pubDate>Thu, 04 Jan 2018 18:48:21 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/01/04/surface-pro4-is-shit/</guid>
+      <description>去年二月底买了一台 Surface Pro 4，低配带手写笔。后来又买了配套的无线蓝牙键盘。我得承认，这是我比较后悔的一次购物。主要问题是这货 非常容易 出问题，特别</description>
+    </item>
+    <item>
+      <title>All of a Sudden</title>
+      <link>https://live4thee.github.io/2017/12/08/all-of-a-sudden/</link>
+      <pubDate>Fri, 08 Dec 2017 21:57:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/12/08/all-of-a-sudden/</guid>
+      <description>这篇文章虽然打了 python 标签，其实没啥关系。主要原因在于同事发现了我之前在我司的 python 代码里埋下的两个“煞有介事”的bug，略尴尬。 这俩bug也解释了</description>
+    </item>
+    <item>
+      <title>Father and Son (9)</title>
+      <link>https://live4thee.github.io/2017/12/03/father-and-son-9/</link>
+      <pubDate>Sun, 03 Dec 2017 23:06:01 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/12/03/father-and-son-9/</guid>
+      <description>最近工作时间又比之前长一点，每天到家已经很晚。明显感觉小朋友是有想法的， 摘录如下一些话。 “爸爸，你怎么回来这么晚啊！” 上周二回到家的时候，小</description>
+    </item>
+    <item>
+      <title>Second Life</title>
+      <link>https://live4thee.github.io/2017/11/04/second-life/</link>
+      <pubDate>Sat, 04 Nov 2017 20:28:51 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/11/04/second-life/</guid>
+      <description>标题想表达的意思是“两世为人”，不知道英文怎么表达比较贴切。 局域网 🔗最近局域网的趋势越来越明显，而手机上的app要么下架，要么无法更新。折腾</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (7)</title>
+      <link>https://live4thee.github.io/2017/10/15/hunting-a-bug/</link>
+      <pubDate>Sun, 15 Oct 2017 22:07:53 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/15/hunting-a-bug/</guid>
+      <description>最近几天被一个 bug 折磨得不要不要的，经过诸多分析后，最终发现它藏在CherryPy 的代码里，如下： 该函数在最新版本里至今仍一行未改：传送门 这段</description>
+    </item>
+    <item>
+      <title>Pain of OSS</title>
+      <link>https://live4thee.github.io/2017/10/14/pain-of-oss/</link>
+      <pubDate>Sat, 14 Oct 2017 22:00:18 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/14/pain-of-oss/</guid>
+      <description>题记 🔗老同志说：“你要回到Windows的正道上来。” 年轻人说，“用Mac，省心。” 我要吐槽 🔗吐槽一下 Linux 下各种不爽的坑。 关于投影 🔗之前投影在</description>
+    </item>
+    <item>
+      <title>A Little Tired</title>
+      <link>https://live4thee.github.io/2017/10/13/a-little-tired/</link>
+      <pubDate>Fri, 13 Oct 2017 00:10:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/13/a-little-tired/</guid>
+      <description>在路口等红绿灯的时候，看见手机屏幕上有一条微信留言。问我到哪里了，小朋友等着我（陪他玩）。我说还有二十分钟，麻麻说那就不等了。 从公司出来已经</description>
+    </item>
+    <item>
+      <title>Dark Sleeper</title>
+      <link>https://live4thee.github.io/2017/10/04/dark-sleeper/</link>
+      <pubDate>Wed, 04 Oct 2017 23:17:02 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/04/dark-sleeper/</guid>
+      <description>小时候，经常在田边的沟渠里看见一种鱼，体型巴掌来大，黑褐色。大人们称之为“葫芦呆子”，查阅了一下网络，应该也是以讹传讹（没有文字记录的亏）。</description>
+    </item>
+    <item>
+      <title>Go Pitfalls (1)</title>
+      <link>https://live4thee.github.io/2017/10/03/go-pitfalls-1/</link>
+      <pubDate>Tue, 03 Oct 2017 22:48:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/03/go-pitfalls-1/</guid>
+      <description>用 golang 以来，遇到过一些坑，这里搜集了三个坑的比较惨的例子。 Variable Shadowing 🔗这个非常容易中招，比如，下面其实是个死循环。 package main import &amp;#34;fmt&amp;#34; func getNextCursor(cursor int) (int, error) { return cursor + 1, nil } func</description>
+    </item>
+    <item>
+      <title>Keyboard Switches</title>
+      <link>https://live4thee.github.io/2017/09/20/keyboard-switches/</link>
+      <pubDate>Wed, 20 Sep 2017 16:22:29 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/09/20/keyboard-switches/</guid>
+      <description>偶然学到了几个英文单词： Blue switch - 青轴（青出于蓝） Brown switch - 茶轴 Black switch - 黑轴 Red switch - 红轴</description>
+    </item>
+    <item>
+      <title>Snakes</title>
+      <link>https://live4thee.github.io/2017/09/16/snakes/</link>
+      <pubDate>Sat, 16 Sep 2017 23:03:02 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/09/16/snakes/</guid>
+      <description>扬州地区的蛇类 🔗突然想起，小时候曾经碰到过各种蛇类，有的只知道方言怎么讲，却不知道用文字怎么书写。有的直到现在，才直到“方言”的讲法也是以讹</description>
+    </item>
+    <item>
+      <title>Applying for a VISA</title>
+      <link>https://live4thee.github.io/2017/09/14/applying-for-a-visa/</link>
+      <pubDate>Thu, 14 Sep 2017 23:16:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/09/14/applying-for-a-visa/</guid>
+      <description>签证记。 楔子 🔗时隔五年，再次去梅陇镇广场申请签证。上次走美商会，这回没有。DS-160 和以前大同小异，只是不走美商会则预约签证面试会安排到很</description>
+    </item>
+    <item>
+      <title>Stories in the Childhood</title>
+      <link>https://live4thee.github.io/2017/09/02/stories-in-the-childhood/</link>
+      <pubDate>Sat, 02 Sep 2017 22:29:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/09/02/stories-in-the-childhood/</guid>
+      <description>买了相机后，总想着什么时候能拍出美丽的闪电，壮观的银河之类。这让我想起一些儿时的记忆。 乡村的夜空 🔗我记得小时候，乡村夏天的夜空只能以璀璨形容</description>
+    </item>
+    <item>
+      <title>A Car Accident</title>
+      <link>https://live4thee.github.io/2017/08/03/a-car-accident/</link>
+      <pubDate>Thu, 03 Aug 2017 16:31:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/08/03/a-car-accident/</guid>
+      <description>定责 🔗“我啊，看了录像。闯红灯，你老婆急着干什么去啊？” 交警问Q某。 “你 - 当时道路那么宽敞，没有一辆车啊！” 交警又转向我。“好了，你就稍微让</description>
+    </item>
+    <item>
+      <title>First Visit</title>
+      <link>https://live4thee.github.io/2017/07/28/first-visit/</link>
+      <pubDate>Fri, 28 Jul 2017 19:18:53 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/07/28/first-visit/</guid>
+      <description>第一次拜访客户。地点是之前刚去过的某商场邻座的写字楼。 事前没有什么准备。虽然有我司一号扛霸子在场，我还是比较集中精神，提出问题、分析问题。不</description>
+    </item>
+    <item>
+      <title>Combine Pics to PDF</title>
+      <link>https://live4thee.github.io/2017/07/15/combine-pics-to-pdf/</link>
+      <pubDate>Sat, 15 Jul 2017 23:42:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/07/15/combine-pics-to-pdf/</guid>
+      <description>简记一则技巧：网上看见一在线PPT，但是每一页都被转换成了PNG图片，怎么把它们制成一个PDF文件？ 批量下载 🔗假设有30页，每一页的图片都遵</description>
+    </item>
+    <item>
+      <title>LaTeX Watermarks</title>
+      <link>https://live4thee.github.io/2017/07/12/LaTeX-Watermarks/</link>
+      <pubDate>Wed, 12 Jul 2017 17:26:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/07/12/LaTeX-Watermarks/</guid>
+      <description>前几天，同事问我中文省略号怎么输入。我说我用 org-mode 都是直接插入 LaTeX 标记 \ldots。其实中文输入状态下，按 shift-6 即可。想起来，如果是在中文环境下输入笑</description>
+    </item>
+    <item>
+      <title>DRBD Split-Brain</title>
+      <link>https://live4thee.github.io/2017/06/30/DRBD-Split-Brain/</link>
+      <pubDate>Fri, 30 Jun 2017 20:40:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/06/30/DRBD-Split-Brain/</guid>
+      <description>上午正在聚精会神写代码的时候，QA团队的同事说，一个测试环境的DRBD集群貌似出了问题，数据不一致。心里一个惊，真是怕啥来啥。一边疑惑着“不</description>
+    </item>
+    <item>
+      <title>Miscellaneous (2)</title>
+      <link>https://live4thee.github.io/2017/06/17/miscellaneous-2/</link>
+      <pubDate>Sat, 17 Jun 2017 22:01:16 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/06/17/miscellaneous-2/</guid>
+      <description>偶然来到闵行怡丰城，坐落在传说中号称莘庄商务区 的地方。上周末在大悦城停车费花了65RMB，怡丰城这里还没有完全修好，目测还有1/3商家没有装</description>
+    </item>
+    <item>
+      <title>Pioneer</title>
+      <link>https://live4thee.github.io/2017/06/14/pioneer/</link>
+      <pubDate>Wed, 14 Jun 2017 10:39:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/06/14/pioneer/</guid>
+      <description>打开 HN 发现顶部加了黑边，置顶的消息是 Chuck Thacker has died。又一位计算机先驱离世了。 因为对操作系统比较感兴趣，读研选修了“计算机系统与结构”。研一时</description>
+    </item>
+    <item>
+      <title>Take Mind Off</title>
+      <link>https://live4thee.github.io/2017/06/10/take-mind-off/</link>
+      <pubDate>Sat, 10 Jun 2017 21:55:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/06/10/take-mind-off/</guid>
+      <description>前几天，同事对我说：“（你的博客）好久没更新了”。 确实如此。偶然的情绪下，翻阅了之前写下的博客（本地用 XeLaTeX 生成的 PDF）。自2004年以来，积</description>
+    </item>
+    <item>
+      <title>Readings 17&#39;Q1</title>
+      <link>https://live4thee.github.io/2017/05/26/readings-17-q1/</link>
+      <pubDate>Fri, 26 May 2017 23:01:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/26/readings-17-q1/</guid>
+      <description>很惭愧，今年都快过去一半了，还没有完整地读完一本书。 今天在虎嗅的一篇推送文章中看到一个说法，叫“中文内容粪坑化”。网易科技也有报道。我深以为</description>
+    </item>
+    <item>
+      <title>Alone</title>
+      <link>https://live4thee.github.io/2017/05/21/alone/</link>
+      <pubDate>Sun, 21 May 2017 15:11:28 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/21/alone/</guid>
+      <description>这周末休息两天，但却独自在家。老婆远程为我点了外卖，如果不是要下楼丢垃圾，根本就无需出门。 最近好像又瘦了两三斤，也有可能是夏天到来，少了一点</description>
+    </item>
+    <item>
+      <title>Demo after Staying Late</title>
+      <link>https://live4thee.github.io/2017/05/15/Demo-after-Staying-Late/</link>
+      <pubDate>Mon, 15 May 2017 21:03:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/15/Demo-after-Staying-Late/</guid>
+      <description>此前立下军令状，两个礼拜出demo，今天终于赶上。然而demo的时候出了意想不到的问题：虚拟机启动后很快就自动关机了。后来demo结束后修复</description>
+    </item>
+    <item>
+      <title>Miscellaneous</title>
+      <link>https://live4thee.github.io/2017/05/06/miscellaneous/</link>
+      <pubDate>Sat, 06 May 2017 20:07:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/06/miscellaneous/</guid>
+      <description>碎碎念 🔗下午去公司加班了半天，当时已经有两位老司机在辛苦工作。还有其它几位年轻同事和实习生。安静无人打扰，效率相对较高。 EOS 🔗回家升级了一下相</description>
+    </item>
+    <item>
+      <title>Quorum</title>
+      <link>https://live4thee.github.io/2017/05/03/quorum/</link>
+      <pubDate>Wed, 03 May 2017 23:20:44 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/03/quorum/</guid>
+      <description>最近在看 consul 资料的时候，又碰到了之前研究 DRBD 9 时碰到的一个概念：quorum. Quorum 的中文直译是 法定人数 - 所谓“法定人数”是指选举制度下，参与选举的</description>
+    </item>
+    <item>
+      <title>Second Tour to Japan</title>
+      <link>https://live4thee.github.io/2017/05/01/second-tour-to-jp/</link>
+      <pubDate>Mon, 01 May 2017 17:11:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/01/second-tour-to-jp/</guid>
+      <description>请了一周假，再次去了日本国。 小朋友 🔗小朋友对于第一次京都、大阪的游历已经完全没有印象。这次除了北海道的雪山之外，也没有什么印象深刻的地方。完</description>
+    </item>
+    <item>
+      <title>A Frightening Dream</title>
+      <link>https://live4thee.github.io/2017/04/19/A-Frightening-Dream/</link>
+      <pubDate>Wed, 19 Apr 2017 13:06:21 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/04/19/A-Frightening-Dream/</guid>
+      <description>昨夜做了一个很恐怖的噩梦。我梦见自己被机枪“突突突”，但是由于自己永生的能力，只能陷入持续、无尽的痛苦。惊醒。 早餐和老婆讲这个事情，回答：这</description>
+    </item>
+    <item>
+      <title>Jekyll to Hugo</title>
+      <link>https://live4thee.github.io/2017/04/13/Jekyll-to-Hugo/</link>
+      <pubDate>Thu, 13 Apr 2017 20:56:03 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/04/13/Jekyll-to-Hugo/</guid>
+      <description>花了点时间从 Jekyll 切换到了Hugo，好处是：不用维护一个 Ruby 环境，这样可以方便的写笔记，而不用太关心平台问题。 又写了一个简单的脚本自动创建新帖子：</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://live4thee.github.io/about/</link>
+      <pubDate>Wed, 12 Apr 2017 23:47:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/about/</guid>
+      <description>For the last decade, I have been writing blogs, frequently or occasionally. To me, writing is remembering, is to keep a record of my ideas, feelings and thoughts. I would like to keep the habit of reading and writing as a lifetime endeavor.&#xA;Before switching to GitHub, I was writing at colorfulwe, a WordPress site maintained by my friend Yechun. I have been using it 5 years since moving fromBlogger. Thanks a lot to Yechun!</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (6)</title>
+      <link>https://live4thee.github.io/2017/04/11/hunting-a-bug/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/04/11/hunting-a-bug/</guid>
+      <description>今天调试一个 bug 的过程非常有趣，起承转合很像央视《走近科学》的风格。故障代码类似于这样： if (mgr.getSomeObj().getSomeField() != null) { hostnum = mgr.getSomeObj().getSomeField(); } else { // ... } 断点成功断在第一行，单步进</description>
+    </item>
+    <item>
+      <title>DRBD Notes (2)</title>
+      <link>https://live4thee.github.io/2017/04/01/drbd-notes-2/</link>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/04/01/drbd-notes-2/</guid>
+      <description>DRBD 9 出了一个套件，叫 drbdmanage，提供了配置分发、re-balancing 等功能。由于依赖存放在 Sourceforge 的 DocBook 样式文件，编译生成 rpm 包的整个过</description>
+    </item>
+    <item>
+      <title>Data Cable</title>
+      <link>https://live4thee.github.io/2017/03/31/data-cable/</link>
+      <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/31/data-cable/</guid>
+      <description>前几天打开尘封已久的 Kindle 3，充了电还能用。不过因为好久没有面对电子墨水，对其电量显示非常狐疑。不确定右上角的图标是表示电充满了，还是充不进去。</description>
+    </item>
+    <item>
+      <title>DRBD Notes (1)</title>
+      <link>https://live4thee.github.io/2017/03/31/drbd-notes-1/</link>
+      <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/31/drbd-notes-1/</guid>
+      <description>最近开始接触 DRBD，具体来说，DRDB 9 - 这是一个 CentOS 7.2 还没有第三方 rpm 的版本，也就是说要自己编译。呵呵，C, Makefile, autotools, Kernel Module，十年前就磨练</description>
+    </item>
+    <item>
+      <title>What a Programmer Does</title>
+      <link>https://live4thee.github.io/2017/03/25/what-a-programmer-does/</link>
+      <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/25/what-a-programmer-does/</guid>
+      <description>电脑里躺着一篇文章 ：What a Programmer Does1。年代已经非常久远：1967 年，距今刚好半个世纪。这篇文章是Charles L. Baker 介绍给 D. E. Knuth 的， 原作</description>
+    </item>
+    <item>
+      <title>A Few Notes</title>
+      <link>https://live4thee.github.io/2017/03/23/a-few-notes/</link>
+      <pubDate>Thu, 23 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/23/a-few-notes/</guid>
+      <description>深水区的bug修复起来有点老眼昏花，有时候也有点欲哭无泪。 真相有时候很残酷 🔗这一周的调试生活从测试团队刚报的一个问题开始，极端情况下物理机器</description>
+    </item>
+    <item>
+      <title>Occam&#39;s Razor</title>
+      <link>https://live4thee.github.io/2017/03/17/occams-razor/</link>
+      <pubDate>Fri, 17 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/17/occams-razor/</guid>
+      <description>今天在解决issue #2259的过程中， 突然发现，该问题的现象能够很容易地解释issue #1235。而#1235 曾经被认为是一个不可思议的一</description>
+    </item>
+    <item>
+      <title>Fonts</title>
+      <link>https://live4thee.github.io/2017/03/16/fonts/</link>
+      <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/16/fonts/</guid>
+      <description>用 orgmode + xelatex 输出 pdf 的时候，偶尔发现中英文混排的情况下， 会碰到中文断行出错的情况。现象就是一行中文超出边框很长也不段行。我的LATEX_HEADE</description>
+    </item>
+    <item>
+      <title>Command-line limits</title>
+      <link>https://live4thee.github.io/2017/03/15/command-line-limits/</link>
+      <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/15/command-line-limits/</guid>
+      <description>可能大多数人都没有意识到，命令行字符串的最大长度是有限制的。 $ echo | xargs --show-limits Your environment variables take up 2766 bytes POSIX upper limit on argument length (this system): 2092338 POSIX smallest allowable upper limit on argument length (all systems): 4096 Maximum length of command we could actually use:</description>
+    </item>
+    <item>
+      <title>Father and Son (8)</title>
+      <link>https://live4thee.github.io/2017/03/15/father-and-son-8/</link>
+      <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/15/father-and-son-8/</guid>
+      <description>小孩在家唧唧咕咕，其中有一个单词 broccoli，还知道意思是 西兰花。我和孩子妈顿时觉得被超越。想起前段时间小朋友周六来公司，问我 糖 怎么说。</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (5)</title>
+      <link>https://live4thee.github.io/2017/03/14/hunting-a-bug-5/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/14/hunting-a-bug-5/</guid>
+      <description>最近研究 zstack1 中一个比较诡异的bug，现象是：并发创建大量虚拟机的时候，kvmagent 偶尔会报告 iptables 操作失败，最终导致少数虚拟机创建失败。 Another app is</description>
+    </item>
+    <item>
+      <title>org export to latex</title>
+      <link>https://live4thee.github.io/2017/03/10/org-export-to-latex/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/10/org-export-to-latex/</guid>
+      <description>最近写 orgmode 笔记的时候碰到几个问题： code block 没有语法高亮； 输出的 pdf 文件中，python 代码对齐出错； 输出的 pdf 文件中，源代码没有高亮。 解决办法如下： ;;</description>
+    </item>
+    <item>
+      <title>Habits</title>
+      <link>https://live4thee.github.io/2017/03/05/habits/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/05/habits/</guid>
+      <description>折腾了一把 vscode + markdown 后，还是回到了 Emacs + orgmode 的老路。可谓“积习难改”。 Emacs with git 🔗我的 orgmode 文档通过远程 git 仓库同步。Windows 下面我装了一个GitHub</description>
+    </item>
+    <item>
+      <title>Surface Pro 4</title>
+      <link>https://live4thee.github.io/2017/02/25/surface-pro-4/</link>
+      <pubDate>Sat, 25 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/02/25/surface-pro-4/</guid>
+      <description>为了比较方便高效地看文档（主要是PDF）、记笔记，平衡了诸般选择后，买了一台 Surface Pro 4。最低配的版本，但是手写笔套装。用了两三个礼拜后， 还是忍不</description>
+    </item>
+    <item>
+      <title>Without Cellphone</title>
+      <link>https://live4thee.github.io/2017/02/12/without-cellphone/</link>
+      <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/02/12/without-cellphone/</guid>
+      <description>手机电池刚好在免费维修之列，于是预约了去水果店换电池。老婆去驾校学车， 而维修的时间要好几个小时，因此多年来第一次一个人在商场闲逛，颇有点落寞</description>
+    </item>
+    <item>
+      <title>The Way Thinking (1)</title>
+      <link>https://live4thee.github.io/2017/02/03/the-way-thinking-1/</link>
+      <pubDate>Fri, 03 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/02/03/the-way-thinking-1/</guid>
+      <description>过年期间打发时间，翻了翻手机里的电子书。其中某本书里的一段，讲的挺有意思。主要是两则故事： 第一个故事讲艾尔基尔这个地区，山里的猴子经常去偷农</description>
+    </item>
+    <item>
+      <title>2016 Recap</title>
+      <link>https://live4thee.github.io/2017/01/18/2016-recap/</link>
+      <pubDate>Wed, 18 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/01/18/2016-recap/</guid>
+      <description>晚上在家，孩子妈忽然问，“公司有 Surface 员工价哎，粑粑要不要？” 我心里一惊，这两天刚好写了个简单的电子产品 wish list，其中就有 Surface，不会</description>
+    </item>
+    <item>
+      <title>Being Sick</title>
+      <link>https://live4thee.github.io/2017/01/02/being-sick/</link>
+      <pubDate>Mon, 02 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/01/02/being-sick/</guid>
+      <description>上周是糟糕的一周。小孩周一从学校回来，满是眼屎，而且老师说他在学校拉了肚子。第二天早晨，小孩眼睛被眼屎粘得睁不开，在被子里急得哭。后来证实是</description>
+    </item>
+    <item>
+      <title>Display Chinese in Vim/Emacs</title>
+      <link>https://live4thee.github.io/2016/12/20/display-chinese-in-vimemacs/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/12/20/display-chinese-in-vimemacs/</guid>
+      <description>碰到一个问题，某个 TXT 文件用 Vim/Emacs 打开均为乱码。vim 下修改一下配置即可： set fileencodings=utf-8,cp936 改为 set fileencodings=utf-8,gb18030 cp936 是微软的简体中文字符集标准，几乎等同于 GB 2312。现在中国</description>
+    </item>
+    <item>
+      <title>PDF Tips</title>
+      <link>https://live4thee.github.io/2016/12/12/pdf-tips/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/12/12/pdf-tips/</guid>
+      <description>想除掉pdf文件里的页脚，某个网站的域名，试了如下方法： 用 vim 打开 pdf 文件，搜关键字，没搜到。strings 再 grep 也没找到。hd 再 grep，没找到</description>
+    </item>
+    <item>
+      <title>Readings 16&#39;H2</title>
+      <link>https://live4thee.github.io/2016/11/14/readings-16h2/</link>
+      <pubDate>Mon, 14 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/11/14/readings-16h2/</guid>
+      <description>9月至今，只读了两三本书。读完了王小波的《红拂夜奔》，还有两本畅销书： 《人类简史》和《最好的告别》。 《人类简史》有一个中心思想：人类整体的发</description>
+    </item>
+    <item>
+      <title>Hui-Hang Road</title>
+      <link>https://live4thee.github.io/2016/11/13/huihang-again/</link>
+      <pubDate>Sun, 13 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/11/13/huihang-again/</guid>
+      <description>十年前，我是个即将毕业的实习生。2006年5月，在经过了一番策划后，和胖总、鄢总、谢总、教头以及段王爷，一行六人踏上了徽杭古道。后来，这次徒</description>
+    </item>
+    <item>
+      <title>Monitor File Access in Linux</title>
+      <link>https://live4thee.github.io/2016/10/22/monitor-file-access-in-linux/</link>
+      <pubDate>Sat, 22 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/10/22/monitor-file-access-in-linux/</guid>
+      <description>最近调试某个程序的过程中，需要监控文件系统中，某个目录下的文件删除操作。下意识反应是用 inotify，但是又不想自己处理递归添加被监控目录或</description>
+    </item>
+    <item>
+      <title>Modern C&#43;&#43;</title>
+      <link>https://live4thee.github.io/2016/10/18/modern-cpp/</link>
+      <pubDate>Tue, 18 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/10/18/modern-cpp/</guid>
+      <description>一点笔记，来自 Modern C++ 最重要的一点：不要直接用指针。因为它直接暴露了内存区域，且不能传达出所有者相关语义。Pointers must NOT own resources. 以下是一些例子</description>
+    </item>
+    <item>
+      <title>Dell XPS13 BIOS Issue</title>
+      <link>https://live4thee.github.io/2016/09/10/dell-xps13-bios-issue/</link>
+      <pubDate>Sat, 10 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/09/10/dell-xps13-bios-issue/</guid>
+      <description>这两天偶尔出现无线鼠标不工作的情况，引起一堆折腾。 现象 🔗开机后，无线鼠标不工作，dmesg发现如下错误： usb 1-1: device descriptor read/64, error -71 usb 1-1: new full-speed USB device number 4 using xhci_hcd usb</description>
+    </item>
+    <item>
+      <title>A New Beginning</title>
+      <link>https://live4thee.github.io/2016/09/08/a-new-beginning/</link>
+      <pubDate>Thu, 08 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/09/08/a-new-beginning/</guid>
+      <description>转眼儿子已经在幼儿园上了六天小班。中间有梦话念“不上幼儿园”，醒来念“不上幼儿园”，以及出门念“不上幼儿园”。出（家）门哭，进（学校）门哭，</description>
+    </item>
+    <item>
+      <title>Readings 16&#39;Q2</title>
+      <link>https://live4thee.github.io/2016/09/08/readings-16q2/</link>
+      <pubDate>Thu, 08 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/09/08/readings-16q2/</guid>
+      <description>Q2看完的书不多，只有王小波的短篇： 2005 白银时代 歌仙 革命时代的爱情 黄金时代 绿毛水怪 没看完的包括王小波的《红拂夜奔》，杨绛的《洗澡》，还有便是《</description>
+    </item>
+    <item>
+      <title>Random Bits (2)</title>
+      <link>https://live4thee.github.io/2016/08/20/random-bits-2/</link>
+      <pubDate>Sat, 20 Aug 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/08/20/random-bits-2/</guid>
+      <description>程序员最郁闷的事情之一在于 - 调试了大半天后，却从日志中发现，折腾了我好久的一个诡异现象的原因是某个第三方软件(嗯，就是libvirt，但也有</description>
+    </item>
+    <item>
+      <title>Solve KDE5 Slow Login</title>
+      <link>https://live4thee.github.io/2016/07/29/kde5-slow-login/</link>
+      <pubDate>Fri, 29 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/07/29/kde5-slow-login/</guid>
+      <description>为了Okular改用了KDE，但是KDE5有个大bug， 导致输入密码到桌面可用需要30秒时间。一个绕过该问题的方法 是把默认的Splash Sc</description>
+    </item>
+    <item>
+      <title>Random Bits (1)</title>
+      <link>https://live4thee.github.io/2016/07/20/random-bits/</link>
+      <pubDate>Wed, 20 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/07/20/random-bits/</guid>
+      <description>自创业以来，渐渐竟然感觉有点回到当年实习的时候 - 因为现在有很多实习生， 让我想起了从前的自己。大伙也经常觍着脸和实习生一起去交大食堂吃饭，改善</description>
+    </item>
+    <item>
+      <title>Looking Back</title>
+      <link>https://live4thee.github.io/2016/06/29/looking-back/</link>
+      <pubDate>Wed, 29 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/06/29/looking-back/</guid>
+      <description>Number of Code Commits 🔗今天是加入创业整整三个月。除去清明、五一以及端午加上自己请假，一共休息了两个礼拜，实际为两个半月。其间 Java 代码相关的改动提交了 46 个，</description>
+    </item>
+    <item>
+      <title>Networking Tips (1)</title>
+      <link>https://live4thee.github.io/2016/06/03/networking-tips-1/</link>
+      <pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/06/03/networking-tips-1/</guid>
+      <description>The Port 0 Trick 🔗经常在 go 的网络库测试代码中，看见如下片段： ln, err := Listen(&amp;#34;tcp&amp;#34;, &amp;#34;127.0.0.1:0&amp;#34;) if err != nil { t.Fatal(err) } 绑定 0 号套接字端口时，操作系统会自动分配一个 1024 号以上某个可用端口</description>
+    </item>
+    <item>
+      <title>More Tmux Tips</title>
+      <link>https://live4thee.github.io/2016/06/01/more-tmux-tips/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/06/01/more-tmux-tips/</guid>
+      <description>Zoom State 🔗C-b z 使得当前窗口最大化，其它窗口被隐藏。再按一次 C-b z 恢复原样。 Detach Pane 🔗C-b ! (detach-pane) 使当前窗口脱离所在 pane，移动到新创建的 pane 中。反之</description>
+    </item>
+    <item>
+      <title>KDE Notes</title>
+      <link>https://live4thee.github.io/2016/05/31/kde-notes/</link>
+      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/31/kde-notes/</guid>
+      <description>为了 Okular，把系统从 xfce 切换到了 kde。以下是遇到的各种问题，以及解决办法。 Konsole 🔗KDE 默认的终端模拟器 Konsole 只能支持很少一部分字体，很不幸的</description>
+    </item>
+    <item>
+      <title>Father and Son (7)</title>
+      <link>https://live4thee.github.io/2016/05/24/father-and-son-7/</link>
+      <pubDate>Tue, 24 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/24/father-and-son-7/</guid>
+      <description>和同事们打羽毛球后，感觉自己击球力量不够，便扶着床沿练俯卧撑。小朋友问 ``爸爸，你怎么亲床呀！&#39;&#39;</description>
+    </item>
+    <item>
+      <title>git post-receive pitfall</title>
+      <link>https://live4thee.github.io/2016/05/05/git-post-receive-pitfall/</link>
+      <pubDate>Thu, 05 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/05/git-post-receive-pitfall/</guid>
+      <description>昨天下午折腾一个 git 仓库的 hook 脚本问题 - 我在远程仓库的post-receive 脚本中指定去更新另外一个工作目录，虽然脚本被执行了，且手工单独运行</description>
+    </item>
+    <item>
+      <title>Readings 16’Q1</title>
+      <link>https://live4thee.github.io/2016/05/04/readings-16-q1/</link>
+      <pubDate>Wed, 04 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/04/readings-16-q1/</guid>
+      <description>第一季度读完了叶李华翻译的阿西莫夫经典科幻，包括《银河帝国三部曲》， 《基地七部曲》系列，以及《机器人五部曲》。很难想象，其写作时间横跨195</description>
+    </item>
+    <item>
+      <title>Fun with Tmux</title>
+      <link>https://live4thee.github.io/2016/04/12/fun-with-tmux/</link>
+      <pubDate>Tue, 12 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/12/fun-with-tmux/</guid>
+      <description>Linux 环境下最喜爱的程序之一是 tmux，基本上它就是我的窗口管理器。 Tmux 有三个概念：session, window 和 pane。对比桌面环境： session 就是一个会话，比</description>
+    </item>
+    <item>
+      <title>Father and Son (6)</title>
+      <link>https://live4thee.github.io/2016/04/08/father-and-son-6/</link>
+      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/08/father-and-son-6/</guid>
+      <description>自从加入创业后，每天到家都比较晚。而每次看见我回家，小孩都挺高兴。 某天刚进门 “爸爸回来啦？是路上堵车吗？” 又一天 “爸爸忙，要-工-作。” 另一</description>
+    </item>
+    <item>
+      <title>Debugging Go Programs</title>
+      <link>https://live4thee.github.io/2016/04/07/debugging-go-program/</link>
+      <pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/07/debugging-go-program/</guid>
+      <description>调试 golang 程序的体验不是很好，虽然很多时候加一些打印语句也能解决问题。 gdb 🔗 设置 gdb 的启动脚本，以正确解析符号（以前开发 SGX SDK 的时候也干过）。 add-auto-load-safe-path /usr/share/go-1.6/src/runtime/runtime-gdb.py 在需</description>
+    </item>
+    <item>
+      <title>A Few Tips</title>
+      <link>https://live4thee.github.io/2016/04/01/a-few-tips/</link>
+      <pubDate>Fri, 01 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/01/a-few-tips/</guid>
+      <description>&amp;lsquo;godef&amp;rsquo; 不能定位到系统函数源代码 🔗godef 突然不能定位到 golang 自己的源代码。研究了一下，我的机器里装有golang-src 和 golang-1.6-s</description>
+    </item>
+    <item>
+      <title>Father and Son (5)</title>
+      <link>https://live4thee.github.io/2016/03/28/father-and-son-5/</link>
+      <pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/28/father-and-son-5/</guid>
+      <description>今天从MS离职，加入小伙伴们的创业团队。下午先顺道去了 4S 店，回家时路上已经有点堵。因为约了和同事们晚餐，我先把东西放回去再出门。看见我重新穿</description>
+    </item>
+    <item>
+      <title>Xfce Tips</title>
+      <link>https://live4thee.github.io/2016/03/24/xfce-tips/</link>
+      <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/24/xfce-tips/</guid>
+      <description>关闭 Guest Session 🔗在目录 /etc/lightdm/lightdm.conf.d 下创建一个文本文件，比如50-my-custom-config.conf，输入以下内容： [SeatDefaults] allow-guest=false 重启即可。 fcitx 的选词问题 🔗我的 fcitx</description>
+    </item>
+    <item>
+      <title>An Emacs Tip</title>
+      <link>https://live4thee.github.io/2016/03/22/an-emacs-tip/</link>
+      <pubDate>Tue, 22 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/22/an-emacs-tip/</guid>
+      <description>用 orgmode 写完文档后，C-x C-c 提示退出失败，出错信息为：eshell-save-some-history: Text is read-only. 切换到 eshell buffer 后输入 exit，果然又提</description>
+    </item>
+    <item>
+      <title>LINQPad Table Driver for Azure China</title>
+      <link>https://live4thee.github.io/2016/03/21/linqpad-table-driver-for-azure-china/</link>
+      <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/21/linqpad-table-driver-for-azure-china/</guid>
+      <description>在 Azure 的 PaaS 上构建云服务，很少有不用到 Cloud Storage 的。一般来说， 查看 Cloud Storage 中的数据主要有两个工具： Azure Table Explorer LINQPad，加上Azure Table Storage Driver 前者的最新版本</description>
+    </item>
+    <item>
+      <title>Benifits of VMs (2)</title>
+      <link>https://live4thee.github.io/2016/03/20/benifits-of-vms-2/</link>
+      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/20/benifits-of-vms-2/</guid>
+      <description>由于我的 vmdk 文件是分割过的，把虚拟机从 vmdk 迁移到 KVM 下稍微有点麻烦。 从 VMware 官方下载 vmware-vdiskmanager1，解开后拷贝到VMware</description>
+    </item>
+    <item>
+      <title>Benifits of VMs</title>
+      <link>https://live4thee.github.io/2016/03/19/benifits-of-vms/</link>
+      <pubDate>Sat, 19 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/19/benifits-of-vms/</guid>
+      <description>对个人来讲，使用虚拟机有一个绝佳的好处，就是体验的完整性。一般而言，公司的办公套件都是围绕在 Windows 生态。因此，果要继续使用个人的 Linux 机器，那就要重</description>
+    </item>
+    <item>
+      <title>Linux Desktop</title>
+      <link>https://live4thee.github.io/2016/03/18/linux-desktop/</link>
+      <pubDate>Fri, 18 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/18/linux-desktop/</guid>
+      <description>Xubuntu 安装好后发现一些问题，解决方法记录在此。 默认分辨率 1920x1080 下，偶尔有闪屏的情况，降低分辨率后没有发生过。 默认的视频播放器 Parole 播放时画面没有按比例调</description>
+    </item>
+    <item>
+      <title>Xubuntu on XPS 13</title>
+      <link>https://live4thee.github.io/2016/03/17/xubuntu-on-xps-13/</link>
+      <pubDate>Thu, 17 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/17/xubuntu-on-xps-13/</guid>
+      <description>拿了一台 Dell XPS 13 9350，作为以后的开发机。自带的 Windows 10 Home 10240 被我我改装为 Xubuntu，省得装虚拟机，另外也方便 dogfood。 由于是新机器，也</description>
+    </item>
+    <item>
+      <title>View Points</title>
+      <link>https://live4thee.github.io/2016/03/15/view-points/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/15/view-points/</guid>
+      <description>饭后和爸妈视频，顺便聊了几句我要离职的事情。 老妈问我，加入初创后，是否也是创始人，我说不是，算是 “重要员工” 吧。又问我收入，我说只有现在一半</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (4)</title>
+      <link>https://live4thee.github.io/2016/03/14/hunting-a-bug-4/</link>
+      <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/14/hunting-a-bug-4/</guid>
+      <description>上午到公司还没出电梯，手机里就蹦出一封邮件，某客户询问某些文件未能及时上传的原因。当时觉得有点不可思议，因为相关服务已经好几个月没出过问题了</description>
+    </item>
+    <item>
+      <title>Debrick my Router</title>
+      <link>https://live4thee.github.io/2016/03/13/debrick-my-router/</link>
+      <pubDate>Sun, 13 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/13/debrick-my-router/</guid>
+      <description>前天晚上升级路由器里面的软件包时，一不小心把路由器给弄挂了，然后家里就断网了。这个世界，饭可以少吃一顿，但是 Wi-Fi 却不可以断线一分钟啊！就算要搜</description>
+    </item>
+    <item>
+      <title>Father and Son (4)</title>
+      <link>https://live4thee.github.io/2016/03/08/father-and-son-4/</link>
+      <pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/08/father-and-son-4/</guid>
+      <description>昨晚吃饭时，儿子突然咕哝了一句“爸爸狠辉辉”。 我有点好奇，他早晨几乎还没起床我就上班去了，晚上回家也刚没多久，怎么就来了这一出。我问，“爸爸</description>
+    </item>
+    <item>
+      <title>Old Dreams</title>
+      <link>https://live4thee.github.io/2016/03/05/old-dreams/</link>
+      <pubDate>Sat, 05 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/05/old-dreams/</guid>
+      <description>偶然在浏览器里输入了一个地址，曾经写 blog 的地方，惊讶的发现，那些文章居然都还在。略微浏览了一下十年前写下的文字，不由得又想起最开始写 blog 的那个站</description>
+    </item>
+    <item>
+      <title>Raising a Son</title>
+      <link>https://live4thee.github.io/2016/02/18/raising-a-son/</link>
+      <pubDate>Thu, 18 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/02/18/raising-a-son/</guid>
+      <description>育儿感想一则 - 以记录周一、周二在家的育儿体验。 曾经闪现过几次全职奶爸的念头，虽然明知不现实。有此念头的原因在于，一方面，我觉得孩子的教育实在</description>
+    </item>
+    <item>
+      <title>Meet JS</title>
+      <link>https://live4thee.github.io/2016/02/04/meet-js/</link>
+      <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/02/04/meet-js/</guid>
+      <description>这两天修复了一个前同事遗留下来的bug，也因此（几乎）首次接触了JavaScript以及 WebUI 方面的东西。我一直避免接触任何 UI 相关的事情， 因为总</description>
+    </item>
+    <item>
+      <title>Better Call Saul</title>
+      <link>https://live4thee.github.io/2016/01/25/better-call-saul/</link>
+      <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/01/25/better-call-saul/</guid>
+      <description>2015年一直处于忙碌状态，但也看了一些电影、电视。最喜欢的，也是之前最期待的，则是《绝命律师》。其中最吸引我的，是 Jimmy（也就是后来的</description>
+    </item>
+    <item>
+      <title>vim-go with pathogen</title>
+      <link>https://live4thee.github.io/2016/01/25/vim-go-with-pathogen/</link>
+      <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/01/25/vim-go-with-pathogen/</guid>
+      <description>本地的 Fedora 虚拟机里面设置了用pathogen加载vim-go，一直工作得很好。而我远程一台 Ubuntu 14.04 LTS 则不工作，虽然.vimrc的内容一模一样，且p</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (3)</title>
+      <link>https://live4thee.github.io/2015/12/02/hunting-a-bug-3/</link>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/12/02/hunting-a-bug-3/</guid>
+      <description>使用第三方服务API总是会有各种从未想到的边界条件，不断颠覆各种假设。然而这几天发现的一个bug却非常有意思。 我有段代码是抓取友商的日志文件</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (2)</title>
+      <link>https://live4thee.github.io/2015/11/24/hunting-a-bug-2/</link>
+      <pubDate>Tue, 24 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/11/24/hunting-a-bug-2/</guid>
+      <description>最近一周一直被一个IOException异常所困扰。异常消息的内容为Not enough space on the disk，搜索后发现，Azure Cloud Service 的磁盘用量是有配额限制</description>
+    </item>
+    <item>
+      <title>Father and Son (3)</title>
+      <link>https://live4thee.github.io/2015/09/17/father-and-son-3/</link>
+      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/17/father-and-son-3/</guid>
+      <description>儿子不好好吃饭，我很严肃的盯着他。 “爸爸生气了” （然后，又来了一句） “火山” 因为以前常读一本《菲菲生气了》，里面的菲菲生气了就像火山爆发一样</description>
+    </item>
+    <item>
+      <title>Hunting a Bug</title>
+      <link>https://live4thee.github.io/2015/09/17/hunting-a-bug/</link>
+      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/17/hunting-a-bug/</guid>
+      <description>这两天在追踪一个非常不可思议的bug - 我们的系统里会定时收到报警邮件说： 数据表是空的。而且，这个报警的内容和条件都是我设定的。 我的算法逻辑很</description>
+    </item>
+    <item>
+      <title>Problem Solved</title>
+      <link>https://live4thee.github.io/2015/09/14/problem-solved/</link>
+      <pubDate>Mon, 14 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/14/problem-solved/</guid>
+      <description>折腾了四五天的Unity的问题，今天终于搞定了。 做了各种尝试，最后发现是因为自己对IIS的运行时环境不够了解。简单来说， 我有点把Azure的</description>
+    </item>
+    <item>
+      <title>Once Upon A Time</title>
+      <link>https://live4thee.github.io/2015/09/12/once-upon-a-time/</link>
+      <pubDate>Sat, 12 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/12/once-upon-a-time/</guid>
+      <description>这周很是忙碌，却又突然被加入一个小学/中学同学微信群，每天上千条消息。 许多名字、老照片、还有往事，晚上下班开车回家的时候，竟然不讨厌红灯了。</description>
+    </item>
+    <item>
+      <title>Pitfalls after Pitfalls</title>
+      <link>https://live4thee.github.io/2015/09/11/pitfalls-after-pitfalls/</link>
+      <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/11/pitfalls-after-pitfalls/</guid>
+      <description>一坑又一坑。 很惭愧，我负责的那部分工作还没能上线，对不起老板和PM。自踏上程序猿这条不归路以来，很少有过delay。这周一直在和bug较劲，</description>
+    </item>
+    <item>
+      <title>An Incident</title>
+      <link>https://live4thee.github.io/2015/08/31/an-incident/</link>
+      <pubDate>Mon, 31 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/31/an-incident/</guid>
+      <description>昨天买了个鞋柜，包装没打开先靠在了墙边。晚上一不留神，儿子跑过去手一扒， 倒下来砸到了左脚。顿时嚎啕大哭，说疼，后来又说不疼。当时没有立刻去急</description>
+    </item>
+    <item>
+      <title>Shell Programming</title>
+      <link>https://live4thee.github.io/2015/08/27/shell-programming/</link>
+      <pubDate>Thu, 27 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/27/shell-programming/</guid>
+      <description>这周轮到我 on call，一直平静无事，以至于我怀疑自己的邮件程序是不是出了问题。直到今天中午，有客户打电话来提了一些数据分析要求。 很快写了几行</description>
+    </item>
+    <item>
+      <title>Old Friend</title>
+      <link>https://live4thee.github.io/2015/08/20/old-friend/</link>
+      <pubDate>Thu, 20 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/20/old-friend/</guid>
+      <description>大狼同学来魔都出差，于是约在莘庄一起午餐。 “你在找啥？”大狼远处招手。多年未见，老同学已经发胖得几乎一眼认不出来。不禁有点感叹光阴蹉跎。虽然</description>
+    </item>
+    <item>
+      <title>Father and Son (2)</title>
+      <link>https://live4thee.github.io/2015/08/16/father-and-son-2/</link>
+      <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/16/father-and-son-2/</guid>
+      <description>给儿子读书，读了一本又一本。正想表扬一下“真聪明”： “辉辉真...” (还没说完) “真懂事、真大方！” “还有呢？” “不好意思呢（了）！” 对着书</description>
+    </item>
+    <item>
+      <title>Curiosity</title>
+      <link>https://live4thee.github.io/2015/08/15/curiosity/</link>
+      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/15/curiosity/</guid>
+      <description>自从约半年前，自Rocky那儿借阅了《三体》之后，最近两三个月，又陆陆续续读了一些科幻：《神门自己》、《永恒的终结》、《微宇宙的上帝》等等。</description>
+    </item>
+    <item>
+      <title>A CertMngr Pitfall</title>
+      <link>https://live4thee.github.io/2015/08/05/a-certmngr-pitfall/</link>
+      <pubDate>Wed, 05 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/05/a-certmngr-pitfall/</guid>
+      <description>这两天碰到一个比较坑的问题，对于一个证书，用CertMngr导入进去后，我在自己的机器上可以导出为pfx，而实习生的机器上死活不行。上午出手</description>
+    </item>
+    <item>
+      <title>Log Processing</title>
+      <link>https://live4thee.github.io/2015/08/03/log-processing/</link>
+      <pubDate>Mon, 03 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/03/log-processing/</guid>
+      <description>这几天需要分析一些Web服务器的日志，比如从 Apache 服务器日志中找出产生流量总数最高的10个文件。日志文件大小：21G，68044641行，其中包</description>
+    </item>
+    <item>
+      <title>Father and Son (1)</title>
+      <link>https://live4thee.github.io/2015/07/20/father-and-son---1/</link>
+      <pubDate>Mon, 20 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/20/father-and-son---1/</guid>
+      <description>前几天买了一本漫画《父与子》全集，打开一看，内容还不适合现在给孩子阅读， 于是就放在了书柜里。但我却也可以仿照其中的内容，写下我自己的《父与子</description>
+    </item>
+    <item>
+      <title>Hair Cut</title>
+      <link>https://live4thee.github.io/2015/07/14/hair-cut/</link>
+      <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/14/hair-cut/</guid>
+      <description>像很多小孩一样，儿子一直不喜欢理发。梅雨过后，天气明显转热，小孩本来就很容易出汗，枕头经常被他的汗水打湿。 最近理发都是我来操刀。以前总是嗷嗷</description>
+    </item>
+    <item>
+      <title>Growing up (2)</title>
+      <link>https://live4thee.github.io/2015/07/05/growing-up-2/</link>
+      <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/05/growing-up-2/</guid>
+      <description>这几天，孩子想要小解之前，也知道要去坐他的小马桶了，或者对大人说“要拉尿尿了”。这真是令我惊讶。我自己完全没有这方面的记忆。 周二体检，周三晚</description>
+    </item>
+    <item>
+      <title>orgmode</title>
+      <link>https://live4thee.github.io/2015/07/05/orgmode/</link>
+      <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/05/orgmode/</guid>
+      <description>用Emacs的orgmode写文档，至今仍是我的最爱。 今天碰到一个问题，当我用了#+BEGIN_SRC去渲染一块代码区域时，将文档输出到HT</description>
+    </item>
+    <item>
+      <title>Using OpenWrt</title>
+      <link>https://live4thee.github.io/2015/07/05/using-openwrt/</link>
+      <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/05/using-openwrt/</guid>
+      <description>之前做路由器方面的工作的时候，老大给我发来了两款还算比较强劲的路由器。其中一款当时OpenWrt还没有正式支持，自己尝试编译了DD-Wrt和</description>
+    </item>
+    <item>
+      <title>Growing Up</title>
+      <link>https://live4thee.github.io/2015/06/25/growing-up/</link>
+      <pubDate>Thu, 25 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/06/25/growing-up/</guid>
+      <description>再过两周，孩子就满两周岁了。我已经明显感受到了他的成长。他已经不再只是要求我给他读书，也经常会坚持要读给我听，而且永远都是他中意的那本书中的</description>
+    </item>
+    <item>
+      <title>Another OData Pitfall</title>
+      <link>https://live4thee.github.io/2015/06/17/another-odata-pitfall/</link>
+      <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/06/17/another-odata-pitfall/</guid>
+      <description>今天又碰到 OData 一个坑，那就是，枚举类型在 JSON 格式中表现为字符串， 而非数值。其文档 中有如下描述： Values of type enumValue are represented as JSON strings using the enumerationMember, defined in [OData-ABNF], where available. 而我用 Json.Net 将对象序</description>
+    </item>
+    <item>
+      <title>Once Upon a Time</title>
+      <link>https://live4thee.github.io/2015/06/13/once-upon-a-time/</link>
+      <pubDate>Sat, 13 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/06/13/once-upon-a-time/</guid>
+      <description>这几天高中同学的微信群突然变得异常热闹，每天大概有上千条消息。 许多本来已经模糊的名字、相貌，再次变得清晰起来。就好像有人在记忆尘封的角落清吹</description>
+    </item>
+    <item>
+      <title>Being a Father</title>
+      <link>https://live4thee.github.io/2015/05/26/being-a-father/</link>
+      <pubDate>Tue, 26 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/26/being-a-father/</guid>
+      <description>孩子并非绝对是天使，父母更是远非神圣。我们都只是一个生命存在，而已。我向往《狮子王》里面 Mufasa 和 Simba 那样的父子关系，父亲勇敢、无畏具有责任感、威严</description>
+    </item>
+    <item>
+      <title>Death</title>
+      <link>https://live4thee.github.io/2015/05/26/death/</link>
+      <pubDate>Tue, 26 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/26/death/</guid>
+      <description>昨天上午得知大伯病逝的消息。胰腺癌，距离医生的宣判刚好50天。记忆中最深刻的印象是月初回家时，他的满头白发和黝黑的皮肤，而且是那种不寻常的奶</description>
+    </item>
+    <item>
+      <title>A Bug</title>
+      <link>https://live4thee.github.io/2015/05/11/a-bug/</link>
+      <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/11/a-bug/</guid>
+      <description>今天碰到一个单元测试中的 bug，有点意思，不妨记录如下。 我有一个 Azure CloudTable，用来存放一些需要后台执行的操作内容。其 PartitionKey 和 RowKey 分别设为</description>
+    </item>
+    <item>
+      <title>With Friends</title>
+      <link>https://live4thee.github.io/2015/05/10/with-friends/</link>
+      <pubDate>Sun, 10 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/10/with-friends/</guid>
+      <description>晚餐响应康总召集，聚在鹤庆路小田园。除了几位早已熟识之外，还有三位听过却未曾谋面的朋友。继爵爷之后，康总也加入了创业者的行列。据某位朋友说，</description>
+    </item>
+    <item>
+      <title>An Issue with Visual Studio 2012 and Later</title>
+      <link>https://live4thee.github.io/2015/05/05/an-issue-with-visual-studio-2012-and-later/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/05/an-issue-with-visual-studio-2012-and-later/</guid>
+      <description>这几天跑单元测试代码的时候，遇到一个奇怪的问题。我有一个单元测试项目， 单独运行的时候，全都通过。但是，和整个 solution 下的其它单元测试一起跑的时候，</description>
+    </item>
+    <item>
+      <title>A Show case of LINQ</title>
+      <link>https://live4thee.github.io/2015/04/13/a-show-case-of-linq/</link>
+      <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/04/13/a-show-case-of-linq/</guid>
+      <description>As a long-time Linux programmer, I barely got a laughter from my wife, when offered a few praises to the productivity of C#. It is interesting - we are apt to believe that what we&amp;rsquo;ve already known are the best, even we don&amp;rsquo;t have any convincing evidence. We are pretty much biased.&#xA;I do like the feature Language-Integrated Query, aka. LINQ, introduced since .Net 3.5. And here is a show case.</description>
+    </item>
+    <item>
+      <title>A Visit to WuXi</title>
+      <link>https://live4thee.github.io/2015/04/06/a-visit-to-wuxi/</link>
+      <pubDate>Mon, 06 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/04/06/a-visit-to-wuxi/</guid>
+      <description>It happens to be one decade since my last visit to WuXi, Jiangsu province. It was a spring outing, and we were in sophomore (or junior) and I still remember that we watched repeatedly, , almost 6 times,Forrest Gump on the bus, during the long travel.&#xA;I planed to take my wife and son to the Yuantouzhu Park, because the sakura there are beautiful, and I was impressed by the Taihu Lake.</description>
+    </item>
+    <item>
+      <title>For the Record</title>
+      <link>https://live4thee.github.io/2015/03/30/for-the-record/</link>
+      <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/30/for-the-record/</guid>
+      <description>Tonight my wife signed a contract to buy an apartment, so that our son can attend a better school. Still, I do not buy in the reason, because I believe that the best education comes from the family, the role model we would build up for, and the belief we would pass to, our son.&#xA;I was irritated (although remained calm and silence), when one day, my wife asked, &amp;ldquo;Do you love our son?</description>
+    </item>
+    <item>
+      <title>OData Pitfalls</title>
+      <link>https://live4thee.github.io/2015/03/25/odata-pitfalls/</link>
+      <pubDate>Wed, 25 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/25/odata-pitfalls/</guid>
+      <description>I have been writing WebApi with OData v4 these days. While it is really fast, and convenient, I experienced a few pitfalls which costs me several hours.&#xA;URL Sensitivity 🔗The path segment etc. are case sensitive by default. Thus, you would probably receive an HTTP 404 when GET ~/api/customers instead of~/api/Customers.&#xA;String Parameter Issue 🔗Assuming that I have a bound function GetCustomerX for the entity type Customer, and it is indexed with a string identifier.</description>
+    </item>
+    <item>
+      <title>Some Frustration</title>
+      <link>https://live4thee.github.io/2015/03/24/some-frustration/</link>
+      <pubDate>Tue, 24 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/24/some-frustration/</guid>
+      <description>I had some frustration these days. Two programming issues consumed more than three work days.&#xA;The first one is related with DLL versions. One of my VS 2012 project is created by VS 2013, but unfortunately they have different SDK versions. And, what is worse - our production code does not useNuGet to resolve dependencies. They are done manually. It is a huge pain for VS novices like me.&#xA;The second, comes from theUnity.</description>
+    </item>
+    <item>
+      <title>A Visit</title>
+      <link>https://live4thee.github.io/2015/03/21/a-visit/</link>
+      <pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/21/a-visit/</guid>
+      <description>Today Yyk and I paid a visit toXiaowei, and others alongside.&#xA;This is the first time I visit Xiaowei&amp;rsquo;s startup. After a few discussion, Xiaowei showed us a demo. I am impressed, not only the product itself, but more about the passion. The passion to create something that is amazing, and the belief that we can take challenges.&#xA;I talked few. I was thinking about my life, my dream. Probably the most meaningful conclusion I had then, is, &amp;ldquo;Have trust, and show respect.</description>
+    </item>
+  </channel>
+</rss>
