@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KDE Notes | Life of a Programmer</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="为了 Okular，把系统从 xfce 切换到了 kde。以下是遇到的各种问题，以及解决办法。 Konsole 🔗KDE 默认的终端模拟器 Konsole 只能支持很少一部分字体，很不幸的">
+<meta name="generator" content="Hugo 0.125.4">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">KDE Notes</h1>
+
+    <div class="tip">
+        <time datetime="2016-05-31 00:00:00 &#43;0000 UTC">May 31, 2016</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          882 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          2 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#konsole">Konsole</a></li>
+    <li><a href="#中文输入">中文输入</a></li>
+    <li><a href="#urxvt">URxvt</a>
+      <ul>
+        <li><a href="#效果图">效果图</a></li>
+      </ul>
+    </li>
+    <li><a href="#耳机没有声音">耳机没有声音</a></li>
+    <li><a href="#多屏幕">多屏幕</a></li>
+    <li><a href="#libreoffice-tooltips-没有文字">LibreOffice Tooltips 没有文字</a></li>
+    <li><a href="#touchpad">Touchpad</a></li>
+    <li><a href="#systemd-的问题-和-kde-无关">Systemd 的问题 (和 KDE 无关)</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>为了 <a href="https://okular.kde.org/" target="_blank" rel="noopener">Okular</a>，把系统从 <em>xfce</em> 切换到了 <em>kde</em>。以下是遇到的各种问题，以及解决办法。</p>
+<h2 id="konsole">Konsole <a href="#konsole" class="anchor">🔗</a></h2><p>KDE 默认的终端模拟器 Konsole 只能支持很少一部分字体，很不幸的是，其中不包括中文字体。因此，Konsole 中混杂中英文的时候就很难看 - 中文下沉，
+英文上浮。换用了 <code>urxvt</code>，配上 <code>Monaco</code> 字体和文泉驿等宽正黑，很棒。</p>
+<h2 id="中文输入">中文输入 <a href="#%e4%b8%ad%e6%96%87%e8%be%93%e5%85%a5" class="anchor">🔗</a></h2><p>中文输入用了 <code>ibus</code>，要注意的是非 Qt 程序，如 GTK 等，其输入模块设为了<code>xim</code>，如下。否则 <code>firefox</code> 里面输入法不起作用。</p>
+<pre tabindex="0"><code>CLUTTER_IM_MODULE=xim
+GTK_IM_MODULE=xim
+</code></pre><h2 id="urxvt">URxvt <a href="#urxvt" class="anchor">🔗</a></h2><p>美化的设置网上有很多，对我比较重要的是 <code>.Xdefaults</code> 中的如下置：</p>
+<pre tabindex="0"><code>URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+URxvt.url-launcher:    /usr/bin/firefox
+URxvt.matcher.button:  3
+</code></pre><p>它使得 <code>URxvt</code> 可以识别链接，鼠标右键点击直接用 <code>firefox</code> 打开。此外，
+设置了 <code>URxvt</code> 的粘贴板 (基于X11) 和 KDE 的同步。另外，<code>URxvt</code> 在 KDE
+下全屏的时候，边沿会有空隙。鼠标右击 <code>URxvt</code> 窗口的标题，<code>More Actions</code> -&gt; <code>Special Application Settings</code> -&gt; <code>Obey geometry restrictions</code> 设为 <code>False</code>, <code>No</code> 即可。</p>
+<h3 id="效果图">效果图 <a href="#%e6%95%88%e6%9e%9c%e5%9b%be" class="anchor">🔗</a></h3><p class="markdown-image">
+  <img src="/media/urxvt.png" alt="urxvt"  />
+</p><h2 id="耳机没有声音">耳机没有声音 <a href="#%e8%80%b3%e6%9c%ba%e6%b2%a1%e6%9c%89%e5%a3%b0%e9%9f%b3" class="anchor">🔗</a></h2><p>只发生了一次，不知道是不是偶然，重新初始化了 <code>alsa</code> 就好了。</p>
+<pre tabindex="0"><code>$ alsactl init
+</code></pre><h2 id="多屏幕">多屏幕 <a href="#%e5%a4%9a%e5%b1%8f%e5%b9%95" class="anchor">🔗</a></h2><p>KDE 的多屏设置没有关闭某个显示器，只保留主显示的选项（选中某个显示器然后取消 <code>enable</code> 也不管用），但是可以直接用 <code>xrandr</code>。比如，我的笔记本是显示器在 <code>xrandr</code> 的输出标示是<code>eDP1</code>，则：</p>
+<pre tabindex="0"><code>$ xrandr --output eDP1 --off
+</code></pre><p>重新打开：</p>
+<pre tabindex="0"><code>$ xrandr --output eDP1 --auto
+</code></pre><p>而且，令我惊讶的是，一旦关闭了笔记本显示器。重新启动后，如果接着外接显示器，笔记本会自动关闭。之前，<code>xfce/lightdm</code> 锁屏幕后，如果设置了只在外接显示器显示，解锁后外接显示器没有输入，需要重新设置显示模式。<code>kde/sddm</code> 没有这个问题。</p>
+<h2 id="libreoffice-tooltips-没有文字">LibreOffice Tooltips 没有文字 <a href="#libreoffice-tooltips-%e6%b2%a1%e6%9c%89%e6%96%87%e5%ad%97" class="anchor">🔗</a></h2><p>其实是有文字的，不过文字和背景色一样，所以看起来像空的。<code>Colors</code> -&gt;<code>Options</code> -&gt; 取消 <code>Apply colors to non-Qt application</code>。</p>
+<h2 id="touchpad">Touchpad <a href="#touchpad" class="anchor">🔗</a></h2><p>如果习惯 Mac 那样的 Natural Scroll，可以用 <code>xinput</code> 来实现：</p>
+<pre tabindex="0"><code>$ xinput --set-button-map &#34;DLL0704:01 06CB:76AE Touchpad&#34; 1 2 3 5 4
+</code></pre><p>其中，<code>DLL0704</code> 那一串是 Touchpad 的标示符，也可以直接用 ID，但因为是
+USB 设备，所以很可能重启后，这个 ID 会变，直接用标识符比较健壮。其中，
+1/2/3 分别表示鼠标左、中、右键，而 4/5 表示上/下滚动。</p>
+<h2 id="systemd-的问题-和-kde-无关">Systemd 的问题 (和 KDE 无关) <a href="#systemd-%e7%9a%84%e9%97%ae%e9%a2%98-%e5%92%8c-kde-%e6%97%a0%e5%85%b3" class="anchor">🔗</a></h2><p>有时候，关机的时候，会报错类似 <code>A stop job is running for Session c2 for user...</code>，<a href="https://github.com/systemd/systemd/issues/1615" target="_blank" rel="noopener">这里</a>以及<a href="https://github.com/systemd/systemd/issues/2691" target="_blank" rel="noopener">这里</a> 是该问题的讨论。我的临时处理方案是把默认的超时从90秒改成了10秒。</p>
+<pre tabindex="0"><code># /etc/systemd/system.conf
+DefaultTimeoutStartSec=10s
+DefaultTimeoutStopSec=10s
+</code></pre>
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://live4thee.github.io/tags/kde">kde</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "live4thee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://www.facebook.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-152.000000, -43.000000)">
+            <g id="Facebook" transform="translate(152.000000, 43.000000)">
+                <rect id="Rounded" fill="#bbbbbb" x="0" y="0" width="72" height="72" rx="8"></rect>
+                <path d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://github.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://twitter.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.536px" height="438.536px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;"
+	 xml:space="preserve">
+<g>
+	<path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
+		C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126
+		h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225
+		C438.532,59.576,430.49,40.204,414.41,24.123z M335.471,168.735c0.191,1.713,0.288,4.278,0.288,7.71
+		c0,15.989-2.334,32.025-6.995,48.104c-4.661,16.087-11.8,31.504-21.416,46.254c-9.606,14.749-21.074,27.791-34.396,39.115
+		c-13.325,11.32-29.311,20.365-47.968,27.117c-18.648,6.762-38.637,10.143-59.953,10.143c-33.116,0-63.76-8.952-91.931-26.836
+		c4.568,0.568,9.329,0.855,14.275,0.855c27.6,0,52.439-8.565,74.519-25.7c-12.941-0.185-24.506-4.179-34.688-11.991
+		c-10.185-7.803-17.273-17.699-21.271-29.691c4.947,0.76,8.658,1.137,11.132,1.137c4.187,0,9.042-0.76,14.56-2.279
+		c-13.894-2.669-25.598-9.562-35.115-20.697c-9.519-11.136-14.277-23.84-14.277-38.114v-0.571
+		c10.085,4.755,19.602,7.229,28.549,7.422c-17.321-11.613-25.981-28.265-25.981-49.963c0-10.66,2.758-20.747,8.278-30.264
+		c15.035,18.464,33.311,33.213,54.816,44.252c21.507,11.038,44.54,17.227,69.092,18.558c-0.95-3.616-1.427-8.186-1.427-13.704
+		c0-16.562,5.853-30.692,17.56-42.399c11.703-11.706,25.837-17.561,42.394-17.561c17.515,0,32.079,6.283,43.688,18.846
+		c13.134-2.474,25.892-7.33,38.26-14.56c-4.757,14.652-13.613,25.788-26.55,33.402c12.368-1.716,23.88-4.95,34.537-9.708
+		C357.458,149.793,347.462,160.166,335.471,168.735z"/>
+</g>
+</svg>
+
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2024 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       live4thee
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>
