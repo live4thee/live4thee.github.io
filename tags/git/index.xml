@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/git/</link>
+    <description>Recent content in Git on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 26 Oct 2023 09:44:33 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tracker Miners and Git LFS</title>
+      <link>https://live4thee.github.io/posts/2023-10-26-tracker-miners-and-git-lfs/</link>
+      <pubDate>Thu, 26 Oct 2023 09:44:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-10-26-tracker-miners-and-git-lfs/</guid>
+      <description>GNOME 索引程序 tracker-miner-fs 占用 CPU 高的原因是我在本机Documents 目录里面有差不多三百个 git 仓库，索引一遍比较耗时。 $ LANG=C tracker3 status Currently indexed: 369684 files, 48866 folders ... omitted ... 149 recorded failures Path Message garage/doc/talks/2021-09-13-ngi-kickoff/talk.pdf</description>
+    </item>
+    <item>
+      <title>git post-receive pitfall</title>
+      <link>https://live4thee.github.io/2016/05/05/git-post-receive-pitfall/</link>
+      <pubDate>Thu, 05 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/05/git-post-receive-pitfall/</guid>
+      <description>昨天下午折腾一个 git 仓库的 hook 脚本问题 - 我在远程仓库的post-receive 脚本中指定去更新另外一个工作目录，虽然脚本被执行了，且手工单独运行</description>
+    </item>
+    <item>
+      <title>Shell Programming</title>
+      <link>https://live4thee.github.io/2015/08/27/shell-programming/</link>
+      <pubDate>Thu, 27 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/27/shell-programming/</guid>
+      <description>这周轮到我 on call，一直平静无事，以至于我怀疑自己的邮件程序是不是出了问题。直到今天中午，有客户打电话来提了一些数据分析要求。 很快写了几行</description>
+    </item>
+  </channel>
+</rss>

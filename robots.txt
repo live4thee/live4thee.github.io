@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: http://live4thee.github.io/sitemap.txt

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vm on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/vm/</link>
+    <description>Recent content in Vm on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Mar 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/vm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Benifits of VMs (2)</title>
+      <link>https://live4thee.github.io/2016/03/20/benifits-of-vms-2/</link>
+      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/20/benifits-of-vms-2/</guid>
+      <description>由于我的 vmdk 文件是分割过的，把虚拟机从 vmdk 迁移到 KVM 下稍微有点麻烦。 从 VMware 官方下载 vmware-vdiskmanager1，解开后拷贝到VMware</description>
+    </item>
+    <item>
+      <title>Benifits of VMs</title>
+      <link>https://live4thee.github.io/2016/03/19/benifits-of-vms/</link>
+      <pubDate>Sat, 19 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/19/benifits-of-vms/</guid>
+      <description>对个人来讲，使用虚拟机有一个绝佳的好处，就是体验的完整性。一般而言，公司的办公套件都是围绕在 Windows 生态。因此，果要继续使用个人的 Linux 机器，那就要重</description>
+    </item>
+  </channel>
+</rss>

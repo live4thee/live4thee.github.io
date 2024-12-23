@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OData on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/odata/</link>
+    <description>Recent content in OData on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/odata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Another OData Pitfall</title>
+      <link>https://live4thee.github.io/2015/06/17/another-odata-pitfall/</link>
+      <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/06/17/another-odata-pitfall/</guid>
+      <description>今天又碰到 OData 一个坑，那就是，枚举类型在 JSON 格式中表现为字符串， 而非数值。其文档 中有如下描述： Values of type enumValue are represented as JSON strings using the enumerationMember, defined in [OData-ABNF], where available. 而我用 Json.Net 将对象序</description>
+    </item>
+    <item>
+      <title>OData Pitfalls</title>
+      <link>https://live4thee.github.io/2015/03/25/odata-pitfalls/</link>
+      <pubDate>Wed, 25 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/25/odata-pitfalls/</guid>
+      <description>I have been writing WebApi with OData v4 these days. While it is really fast, and convenient, I experienced a few pitfalls which costs me several hours.&#xA;URL Sensitivity 🔗The path segment etc. are case sensitive by default. Thus, you would probably receive an HTTP 404 when GET ~/api/customers instead of~/api/Customers.&#xA;String Parameter Issue 🔗Assuming that I have a bound function GetCustomerX for the entity type Customer, and it is indexed with a string identifier.</description>
+    </item>
+  </channel>
+</rss>
