@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CherryPy on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/cherrypy/</link>
+    <description>Recent content in CherryPy on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 15 Oct 2017 22:07:53 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/cherrypy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hunting a Bug (7)</title>
+      <link>https://live4thee.github.io/2017/10/15/hunting-a-bug/</link>
+      <pubDate>Sun, 15 Oct 2017 22:07:53 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/15/hunting-a-bug/</guid>
+      <description>最近几天被一个 bug 折磨得不要不要的，经过诸多分析后，最终发现它藏在CherryPy 的代码里，如下： 该函数在最新版本里至今仍一行未改：传送门 这段</description>
+    </item>
+  </channel>
+</rss>
