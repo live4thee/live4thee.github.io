@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/jekyll/</link>
+    <description>Recent content in Jekyll on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 13 Apr 2017 20:56:03 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jekyll to Hugo</title>
+      <link>https://live4thee.github.io/2017/04/13/Jekyll-to-Hugo/</link>
+      <pubDate>Thu, 13 Apr 2017 20:56:03 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/04/13/Jekyll-to-Hugo/</guid>
+      <description>花了点时间从 Jekyll 切换到了Hugo，好处是：不用维护一个 Ruby 环境，这样可以方便的写笔记，而不用太关心平台问题。 又写了一个简单的脚本自动创建新帖子：</description>
+    </item>
+    <item>
+      <title>Linux Desktop</title>
+      <link>https://live4thee.github.io/2016/03/18/linux-desktop/</link>
+      <pubDate>Fri, 18 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/18/linux-desktop/</guid>
+      <description>Xubuntu 安装好后发现一些问题，解决方法记录在此。 默认分辨率 1920x1080 下，偶尔有闪屏的情况，降低分辨率后没有发生过。 默认的视频播放器 Parole 播放时画面没有按比例调</description>
+    </item>
+  </channel>
+</rss>
