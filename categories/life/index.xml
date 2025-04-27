@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Life on Life of a Programmer</title>
+    <link>https://live4thee.github.io/categories/life/</link>
+    <description>Recent content in Life on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 27 Apr 2025 17:37:38 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>One to Infinity</title>
+      <link>https://live4thee.github.io/posts/2025-04-27-one-to-infinity/</link>
+      <pubDate>Sun, 27 Apr 2025 17:37:38 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-04-27-one-to-infinity/</guid>
+      <description>眼看着四月就要结束了，居然一篇文章都没有写。 树山 🔗上周末小朋友期中考试结束，赶空重新爬了一次树山。对比上次的狼狈， 这回有点探囊取物、不过如此</description>
+    </item>
+    <item>
+      <title>Pains and Gains (4)</title>
+      <link>https://live4thee.github.io/posts/2025-03-31-pains-and-gains-4/</link>
+      <pubDate>Mon, 31 Mar 2025 20:14:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-03-31-pains-and-gains-4/</guid>
+      <description>一直想好好写一篇关于 C++ Memory Model 方面的文章，有时间的时候却又一直沉迷刷视频，以至于明日复明日。最近在 arm64 上碰见两个奇怪的问题：一个和 TLS 相关，一个和 memory</description>
+    </item>
+    <item>
+      <title>Pains and Gains (3)</title>
+      <link>https://live4thee.github.io/posts/2025-03-12-pains-and-gains-3/</link>
+      <pubDate>Wed, 12 Mar 2025 11:37:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-03-12-pains-and-gains-3/</guid>
+      <description>Pains 🔗起床时手麻的问题并未好转，颈椎也开始有点酸痛。 Gains 🔗开始跑步一段时间后，VO2Max 从 47 涨到了 48, 离身体状态好的时候还差 4 个点。无论是 1km, 5km, 10km</description>
+    </item>
+    <item>
+      <title>Annoyance</title>
+      <link>https://live4thee.github.io/posts/2025-02-24-annoyance/</link>
+      <pubDate>Mon, 24 Feb 2025 22:57:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-02-24-annoyance/</guid>
+      <description>For the record.</description>
+    </item>
+    <item>
+      <title>Climbing</title>
+      <link>https://live4thee.github.io/posts/2025-02-24-climbing/</link>
+      <pubDate>Mon, 24 Feb 2025 18:50:51 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-02-24-climbing/</guid>
+      <description>周末挑战了苏州的野攀路线：钉子崖。有一定的风险!!! 看见警示牌犹豫了一下。破体比较陡，一路靠绳攀。 最后 20 米比较困难。我先试了一下，有点担心孩</description>
+    </item>
+    <item>
+      <title>Pains &amp; Gains (2)</title>
+      <link>https://live4thee.github.io/posts/2025-02-21-pains-and-gains-2/</link>
+      <pubDate>Fri, 21 Feb 2025 12:58:43 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-02-21-pains-and-gains-2/</guid>
+      <description>Pains 🔗一个冬天，运动减少。VO2 Max 从 51 掉到了 47. 还没爬回去年夏天前的 52, 就已经再创新低。 Gains 🔗大概去年十月中旬开始，起床时两手有点麻，并且很快消失。</description>
+    </item>
+    <item>
+      <title>Recap</title>
+      <link>https://live4thee.github.io/posts/2025-02-05-recap/</link>
+      <pubDate>Wed, 05 Feb 2025 11:00:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-02-05-recap/</guid>
+      <description>又是新的一年，记录一下去年碰到、但尚未解决的问题。 悬而未决 🔗fsync(2) 🔗假设有以下代码： int fd1, fd2; fd1 = open(&amp;#34;file&amp;#34;, O_CREAT|O_RDWR); do_write(fd1); close(fd1); fd2 = open(&amp;#34;file&amp;#34;, O_CREAT|O_RDWR); fsync(fd2); fsync(fd2) 会回写因 fd1 而写入</description>
+    </item>
+    <item>
+      <title>East Himalaya</title>
+      <link>https://live4thee.github.io/posts/2025-01-26-east-himalaya/</link>
+      <pubDate>Sun, 26 Jan 2025 10:54:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-01-26-east-himalaya/</guid>
+      <description>前言 🔗时隔半年，完成了第二次藏东南之旅。上次旅行留下的遗憾基本上也都完成了。冬天人少且很多景点（比如：布达拉宫）都免费，省了点小钱钱。 出发前</description>
+    </item>
+    <item>
+      <title>Struggle</title>
+      <link>https://live4thee.github.io/posts/2025-01-09-struggle/</link>
+      <pubDate>Thu, 09 Jan 2025 14:53:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-01-09-struggle/</guid>
+      <description>最近的 HRV 曲线可以用“挣扎”来形容。 12 月中旬发烧。康复后，难得朋友小聚。二两小酒下肚，当晚 HRV 应声而跌。后面小心翼翼间隔着跑步两次，HRV 一直在</description>
+    </item>
+    <item>
+      <title>Ever Since</title>
+      <link>https://live4thee.github.io/posts/2024-12-31-ever-since/</link>
+      <pubDate>Tue, 31 Dec 2024 14:56:45 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-12-31-ever-since/</guid>
+      <description>2024 最后一天，完成了《小诗集》，锻炼了 xelatex 技法。 最后一天，水一篇。 隋末唐初，僧人王梵志有一段诗，某百科也有收录，摘抄如下： 我昔未生时，冥冥无所知</description>
+    </item>
+    <item>
+      <title>Rain Dancer</title>
+      <link>https://live4thee.github.io/posts/2024-12-25-rain-dancer/</link>
+      <pubDate>Wed, 25 Dec 2024 20:43:14 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-12-25-rain-dancer/</guid>
+      <description>圣诞。下班回到家中，桌子上躺着一只牛皮纸袋。挺轻的，里面不是纸，而是一件夫人帮忙海淘的 Montbell 的 Rain Dancer 雨衣。 目前手头一件迪卡侬缺货王 MH500, 当年扛住了西安</description>
+    </item>
+    <item>
+      <title>Fatigue</title>
+      <link>https://live4thee.github.io/posts/2024-12-23-fatigue/</link>
+      <pubDate>Mon, 23 Dec 2024 18:46:26 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-12-23-fatigue/</guid>
+      <description>失眠 🔗上周突然发低烧，周末终于基本康复。没有恢复的是睡眠质量，连续三四天晚上睡不着，内心毛躁。同事说，“你可能有点焦虑。” 经验 🔗这次是疫情感</description>
+    </item>
+    <item>
+      <title>Mac Mini M4</title>
+      <link>https://live4thee.github.io/posts/2024-12-14-mac-mini-4/</link>
+      <pubDate>Sat, 14 Dec 2024 22:05:38 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-12-14-mac-mini-4/</guid>
+      <description>用了一个礼拜 Mac Mini M4，来点小吐槽。 家里有个 Magic Mouse, 不过贼难用，尤其是没有右键。两指轻点以及两指下划这种手势控制也不实用。继续回去吃灰。在 darktable 软件中</description>
+    </item>
+    <item>
+      <title>Detraining</title>
+      <link>https://live4thee.github.io/posts/2024-12-11-detraining/</link>
+      <pubDate>Wed, 11 Dec 2024 13:20:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-12-11-detraining/</guid>
+      <description>已经半个月没有跑步了，理由诸多：气温降低、空气污染等等。周末去迪卡侬买了个头套，夫人说，“看起来像打劫的，晚上出去跑步容易把人吓着。” 额外又</description>
+    </item>
+    <item>
+      <title>ICU</title>
+      <link>https://live4thee.github.io/posts/2024-12-04-icu/</link>
+      <pubDate>Wed, 04 Dec 2024 17:37:05 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-12-04-icu/</guid>
+      <description>以从未预料过、也从未有过心理准备的方式，经历了 ICU 外的等待。 病房外，经常看见一位打扮得体的老人推着他的亲人。 一城一夜一滋味，几度愁肠几度秋。</description>
+    </item>
+    <item>
+      <title>Sudden Call</title>
+      <link>https://live4thee.github.io/posts/2024-11-26-sudden-call/</link>
+      <pubDate>Tue, 26 Nov 2024 19:33:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-26-sudden-call/</guid>
+      <description>今天大风蓝色预警。阳光还不错，空气指数 36, 西北风 4 级。 犹犹豫豫，还是决定跑个步。上周末已经完成本月的 100km, 然而昨晚翻了几页《比山更高》后，还是决定</description>
+    </item>
+    <item>
+      <title>Higher Than Mountains</title>
+      <link>https://live4thee.github.io/posts/2024-11-25-higher-than-mountains/</link>
+      <pubDate>Mon, 25 Nov 2024 20:15:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-25-higher-than-mountains/</guid>
+      <description>周末偶然在B站的某个视频看到一本《比山更高》， 对比了一下发现 PDD 上的当当价格还可以，于是请夫人下单买了一本。 书到手后才翻了豆瓣 &amp;ndash; 没想到评分竟然</description>
+    </item>
+    <item>
+      <title>Crowds</title>
+      <link>https://live4thee.github.io/posts/2024-11-22-crowds/</link>
+      <pubDate>Fri, 22 Nov 2024 19:12:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-22-crowds/</guid>
+      <description>上周六从天平山穿出来时，已经是日暮时分。游人如织。从白云古刹经过时，用手机随手拍了一张。这两天越看越喜欢。原图为横拍，裁成了竖的。有点“芸芸</description>
+    </item>
+    <item>
+      <title>Notes on Unknown (2)</title>
+      <link>https://live4thee.github.io/posts/2024-11-20-notes-on-unknown-2/</link>
+      <pubDate>Wed, 20 Nov 2024 10:02:51 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-20-notes-on-unknown-2/</guid>
+      <description>天渐冷 🔗本月跑量目前已经 84.3 公里，灵白魔鬼线山路徒步 8 公里， 其中还有一段比较陡峭的崖降。刺激。 小本本 🔗vmscan 问题 🔗请教了F老师后，奇怪的</description>
+    </item>
+    <item>
+      <title>Pains &amp; Gains</title>
+      <link>https://live4thee.github.io/posts/2024-11-07-pains-and-gains/</link>
+      <pubDate>Thu, 07 Nov 2024 21:58:36 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-07-pains-and-gains/</guid>
+      <description>Pains 🔗Physical 🔗大概十月中旬开始，起床时两手有点麻，无法握拳。差不多一分钟内，症状消失。最近几天左手背开始有点酸疼。 Mental 🔗这两天被 Linux 的内</description>
+    </item>
+    <item>
+      <title>Education</title>
+      <link>https://live4thee.github.io/posts/2024-10-22-education/</link>
+      <pubDate>Tue, 22 Oct 2024 22:07:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-22-education/</guid>
+      <description>数学 🔗最近辅导孩子数学，有的题目还挺有意思。有上学的时候刷 Project Euler 的感觉。 晚上做作业，小朋友做完后一看，满分。然而也比较坦诚，说有一道选择题是蒙</description>
+    </item>
+    <item>
+      <title>Ramblings - 4</title>
+      <link>https://live4thee.github.io/posts/2024-10-17-ramblings-4/</link>
+      <pubDate>Thu, 17 Oct 2024 14:35:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-17-ramblings-4/</guid>
+      <description>孩子的评价 🔗昨天意外得知了孩子对父母的评价，“书呆子和狂妄自大的地理盲。” 有点哭笑不得。 来自 B 站的知识 🔗刘禹锡 🔗看了一段讲述刘禹锡生平的长视</description>
+    </item>
+    <item>
+      <title>Look After Child</title>
+      <link>https://live4thee.github.io/posts/2024-10-14-look-after-child/</link>
+      <pubDate>Mon, 14 Oct 2024 20:44:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-14-look-after-child/</guid>
+      <description>这几天夫人出差，由我在家照料孩子。 傍晚刚到家不久，小屁孩就一声不吭地进门了。放下书包，来厨房看了一眼，就是例行蹲洗手间。 “我的文曲星有闹钟的</description>
+    </item>
+    <item>
+      <title>Joys and Sorrows</title>
+      <link>https://live4thee.github.io/posts/2024-10-11-joys-and-sorrows/</link>
+      <pubDate>Fri, 11 Oct 2024 22:12:14 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-11-joys-and-sorrows/</guid>
+      <description>回到家，夫人给我讲最近听到的各种关于股市的段子。 鲁迅先生曾说，“人类的悲欢并不相通。” 我突然悟到：人类大概也更愿意接受（未必真的相信） 各种欢</description>
+    </item>
+    <item>
+      <title>Holidays</title>
+      <link>https://live4thee.github.io/posts/2024-10-07-holidays/</link>
+      <pubDate>Mon, 07 Oct 2024 14:02:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-07-holidays/</guid>
+      <description>这个国庆天气不太给力。 修电脑 🔗最近坏掉的两台电脑都是无风扇版。继 Surface Pro 4 阵亡后，MacBook 也彻底开不了机了。跑到修理店，伙计都不愿意修， “</description>
+    </item>
+    <item>
+      <title>Sunset Surface Pro 4</title>
+      <link>https://live4thee.github.io/posts/2024-09-28-sunset-surface-pro-4/</link>
+      <pubDate>Sat, 28 Sep 2024 22:51:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-28-sunset-surface-pro-4/</guid>
+      <description>2017年初买的 Surface Pro 4 在今年的雨季期间开始摆烂。左下角的屏幕开始起撬，黄色的胶合剂无法再粘住边框，附近的屏幕颜色也开始发黄。最近打开一看，整</description>
+    </item>
+    <item>
+      <title>Rest or not</title>
+      <link>https://live4thee.github.io/posts/2024-09-12-rest-or-not/</link>
+      <pubDate>Thu, 12 Sep 2024 17:46:44 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-12-rest-or-not/</guid>
+      <description>七、八月没有跑步。进入九月至今，跑步 30 公里，划船机 43 分钟，完成度得分恢复到 77%. 手表提示我休息。我仿佛听见它在喊我“弱鸡”。</description>
+    </item>
+    <item>
+      <title>Overreaching</title>
+      <link>https://live4thee.github.io/posts/2024-09-09-overreaching/</link>
+      <pubDate>Mon, 09 Sep 2024 12:59:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-09-overreaching/</guid>
+      <description>进入九月，还是很热。跑步四次，都是晚上，气温在 30℃. 最终每次手表内训练目标的execution score 分别为：3%, 10%, 26%, 52%. 不大敢撒丫子跑，一来跑</description>
+    </item>
+    <item>
+      <title>Himalaya</title>
+      <link>https://live4thee.github.io/posts/2024-09-01-himalaya/</link>
+      <pubDate>Sun, 01 Sep 2024 22:35:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-01-himalaya/</guid>
+      <description>断断续续，看完了一部 1999 年上映的电影：Himalaya. 这部电影的 OST 我已经听了几十遍。毫不夸张地说，很多人因为先听了配乐而看了整部电影，包括我</description>
+    </item>
+    <item>
+      <title>Gyala Peri</title>
+      <link>https://live4thee.github.io/posts/2024-07-23-gyala-peri/</link>
+      <pubDate>Tue, 23 Jul 2024 13:27:06 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-23-gyala-peri/</guid>
+      <description>前几天才发现，这次藏东南之旅其实也拍到了加拉白垒。 自从在鲁朗把支巴岗日误认为加拉白垒后，儿子对雪山的确认就谨慎了许多。在达林村的时候，儿子还</description>
+    </item>
+    <item>
+      <title>Nyingchi Final 3</title>
+      <link>https://live4thee.github.io/posts/2024-07-12-nyingchi-final-3/</link>
+      <pubDate>Fri, 12 Jul 2024 18:24:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-12-nyingchi-final-3/</guid>
+      <description>这是本次林芝之旅的最后一篇。 楔子 🔗去之前，经常时不时地瞄一眼索松村的直播。总结了差不多一个月的取样结果， 得出了一个不太靠谱的经验：周四、周五</description>
+    </item>
+    <item>
+      <title>Nyingchi Routes 2</title>
+      <link>https://live4thee.github.io/posts/2024-07-08-nyingchi-routes-2/</link>
+      <pubDate>Mon, 08 Jul 2024 10:21:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-08-nyingchi-routes-2/</guid>
+      <description>说明：本文的图都是直出，或者截图。有修图的做了说明。 一颗种子 🔗我也不知道什么时候心里种下了一颗去西藏的种子。夫人分析说： 滇西北、川西、青海陕</description>
+    </item>
+    <item>
+      <title>Nyingchi Intro 1</title>
+      <link>https://live4thee.github.io/posts/2024-07-07-nyingchi-intro-1/</link>
+      <pubDate>Sun, 07 Jul 2024 23:46:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-07-nyingchi-intro-1/</guid>
+      <description>第一次去西藏，选择了藏东南的林芝地区。因为这里在整个藏区海拔相对较低，比较有良好的可接近性。没有做攻略，为了照顾只有我一人开车，夫人制定的行</description>
+    </item>
+    <item>
+      <title>Before Vacation</title>
+      <link>https://live4thee.github.io/posts/2024-06-28-before-vacation/</link>
+      <pubDate>Fri, 28 Jun 2024 09:43:50 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-28-before-vacation/</guid>
+      <description>一喜一悲 🔗周五晚上飞机，周末开始休假。 一喜 🔗喜者，休假前在 Seastar 上跑通了 RDMA 网络。改动看起来还算顺眼，当然，也还需打磨。 12 files changed, 350 insertions(+), 20 deletions(-) 一悲 🔗晚上收</description>
+    </item>
+    <item>
+      <title>Peaking</title>
+      <link>https://live4thee.github.io/posts/2024-06-22-peaking/</link>
+      <pubDate>Sat, 22 Jun 2024 22:00:21 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-22-peaking/</guid>
+      <description>最近下雨，没有跑步。今早起床一看，运动状态居然从 Productive 变成了 Peaking. 根据以往经验，保持运动后休息几天会变成 Maintaining. 看了一下状态描述： 过去几天的休息使您的体力</description>
+    </item>
+    <item>
+      <title>Quotes</title>
+      <link>https://live4thee.github.io/posts/2024-06-20-quotes/</link>
+      <pubDate>Thu, 20 Jun 2024 14:21:54 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-20-quotes/</guid>
+      <description>HN 上看见一则陶哲轩的帖子：There&amp;rsquo;s more to mathematics than rigour and proofs (2007) 文章开头引用的是 Douglas Adams 在《银河系漫游指南》中的句子： The history of every major galactic civilization tends to pass through</description>
+    </item>
+    <item>
+      <title>80.4 km</title>
+      <link>https://live4thee.github.io/posts/2024-06-17-80-4-km/</link>
+      <pubDate>Mon, 17 Jun 2024 15:09:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-17-80-4-km/</guid>
+      <description>截至 6/16, 本月跑量已达 80.4km, 看起来每个月 100km 的小目标近在咫尺。 最近白天有点热，基本都是晚上跑步，导致睡眠不太好。跑完之后虽然两腿疲惫， 但是脑子很兴奋，</description>
+    </item>
+    <item>
+      <title>The Little Great Wall</title>
+      <link>https://live4thee.github.io/posts/2024-06-11-the-little-great-wall/</link>
+      <pubDate>Tue, 11 Jun 2024 09:39:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-11-the-little-great-wall/</guid>
+      <description>常熟 🔗趁着端午假期，第一次去常熟溜达了一天。住在三环外，面朝昆承湖。作为苏州代管城市，据说常熟是少有的县级市中有三环的城市。傍晚的湖畔↓ 虞山</description>
+    </item>
+    <item>
+      <title>Own Goal</title>
+      <link>https://live4thee.github.io/posts/2024-05-30-own-goal/</link>
+      <pubDate>Thu, 30 May 2024 14:48:36 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-30-own-goal/</guid>
+      <description>最近一周都是跑一休二，增加了休息的时间避免肌肉慢性炎症。之前 5km 的最好成绩是耗时 26&#39;20&amp;quot;, 当时暗自给自己的目标是今年能跑进 25&#39;. 乌龙 🔗昨天跑最大摄氧量训练</description>
+    </item>
+    <item>
+      <title>Fugu</title>
+      <link>https://live4thee.github.io/posts/2024-05-24-fugu/</link>
+      <pubDate>Fri, 24 May 2024 09:36:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-24-fugu/</guid>
+      <description>上周六去了趟锦溪古镇，离淀山湖景区不远。古镇不收门票，当天镇内各大展馆也都免费参观，薅了社会主义羊毛。停车场收费很便宜，加上来回走崧泽高架省</description>
+    </item>
+    <item>
+      <title>Half Marathon</title>
+      <link>https://live4thee.github.io/posts/2024-05-19-half-marathon/</link>
+      <pubDate>Sun, 19 May 2024 16:39:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-19-half-marathon/</guid>
+      <description>昨晚跑无氧，意犹未尽，继续撒脚丫子，跑了人生第一个半马。耗时 2:08:30，还行。手表提醒恢复训练需要 79 小时。 最后四公里主要靠意志，特别是最</description>
+    </item>
+    <item>
+      <title>Ramblings - 2</title>
+      <link>https://live4thee.github.io/posts/2024-05-05-ramblings-2/</link>
+      <pubDate>Sun, 05 May 2024 22:45:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-05-ramblings-2/</guid>
+      <description>Audio + Headphones 🔗不知道是 6.1 的哪个内核小版本开始，重启之后再也不用重新插拔一下耳机。如果耳机插着的情况下，外放会 mute, 耳机有声音。 小长假 🔗在外面晃悠了三天</description>
+    </item>
+    <item>
+      <title>Ramblings</title>
+      <link>https://live4thee.github.io/posts/2024-04-29-ramblings/</link>
+      <pubDate>Mon, 29 Apr 2024 09:45:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-29-ramblings/</guid>
+      <description>目标和松弛 🔗25 号中午跑完一次艰苦的无氧后，本月跑量达到了 92.2 公里，距离之前的 100.4 公里最好记录仅一步之遥。然而这几天没有一鼓作气，训练状态从 Productive 到</description>
+    </item>
+    <item>
+      <title>Recovery Heart Rate</title>
+      <link>https://live4thee.github.io/posts/2024-04-25-recovery-heart-rate/</link>
+      <pubDate>Thu, 25 Apr 2024 18:39:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-25-recovery-heart-rate/</guid>
+      <description>最近发现跑步记录里多了一个“恢复心率”指标。根据定义：这个指标是运动后两分钟，心率降低的数值。比如，刚运动完是140, 休息两分钟后是 90，那</description>
+    </item>
+    <item>
+      <title>Meaning &amp; Truth</title>
+      <link>https://live4thee.github.io/posts/2024-04-17-meaning-and-truth/</link>
+      <pubDate>Tue, 16 Apr 2024 23:16:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-17-meaning-and-truth/</guid>
+      <description>开了一天会，最大的收获有两个： 找到了一本书； 读到一篇前言。 物理所的文章 🔗前几天在中科院物理所看见一篇文章, 说不只是人类，在深海里被咬伤的鱼，</description>
+    </item>
+    <item>
+      <title>Just So So</title>
+      <link>https://live4thee.github.io/posts/2024-04-15-just-so-so/</link>
+      <pubDate>Mon, 15 Apr 2024 18:03:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-15-just-so-so/</guid>
+      <description>这两天看崔永元的《不过如此》，挺有意思。语言平实，就像一口气看完长长一段《实话实说》。 以下描述的场景大概是上世纪七十年代末，或八十年代初的样</description>
+    </item>
+    <item>
+      <title>Hugo: Ref Not Found</title>
+      <link>https://live4thee.github.io/posts/2024-04-12-hugo-ref-not-found/</link>
+      <pubDate>Fri, 12 Apr 2024 14:21:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-12-hugo-ref-not-found/</guid>
+      <description>在 Mac 上也用 brew 装了一个 hugo. 不过，把自己的 gh-pages 抓到本地后，生成静态网页时总是报错 Ref_Not_Found. 把报错的文件路径粘贴出来检查了一下，对应的文件却又实实在在地在磁盘</description>
+    </item>
+    <item>
+      <title>Causality</title>
+      <link>https://live4thee.github.io/posts/2024-04-08-causality/</link>
+      <pubDate>Mon, 08 Apr 2024 16:21:05 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-08-causality/</guid>
+      <description>自从偶然买了徒步越野鞋后，夫人热情高涨。至今为止，为了一碟醋，包了好几顿饺子。 最近看了好几集《极径》和《百日大横断》，均来自阅路山。挺震撼的</description>
+    </item>
+    <item>
+      <title>Readings 24Q1</title>
+      <link>https://live4thee.github.io/posts/2024-04-02-readings-24q1/</link>
+      <pubDate>Tue, 02 Apr 2024 13:55:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-02-readings-24q1/</guid>
+      <description>24 年第一季度只读完一本书，莫言的《生死疲劳》。 去年在蜗牛读书上读了大半，后来更多是用得到，就搁置了。之前没读过莫言老师的书， 就这本书而言，有</description>
+    </item>
+    <item>
+      <title>Xiao Shi Ji (2)</title>
+      <link>https://live4thee.github.io/posts/2024-03-25-xiao-shi-ji-2/</link>
+      <pubDate>Mon, 25 Mar 2024 17:42:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-25-xiao-shi-ji-2/</guid>
+      <description>一家江湖川菜馆 🔗前段时间特别想念川菜，特别是折耳根。趁着小明周五来沪，竟然意外地达成了愿望。馆子对我而言，略有特殊意义。欣慰的是，这么多年不</description>
+    </item>
+    <item>
+      <title>Xiao Shi Ji</title>
+      <link>https://live4thee.github.io/posts/2024-03-21-xiao-shi-ji/</link>
+      <pubDate>Thu, 21 Mar 2024 16:30:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-21-xiao-shi-ji/</guid>
+      <description>偶然看到一篇文章， 看到最后不由得会心地笑了。却也心生 “我亦可往” 的念头，一发不可收拾。 起名《小诗集》有几层含义和致敬： 有点像《小妇人》； 好歹</description>
+    </item>
+    <item>
+      <title>Running</title>
+      <link>https://live4thee.github.io/posts/2024-03-19-running/</link>
+      <pubDate>Tue, 19 Mar 2024 13:10:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-19-running/</guid>
+      <description>中午阳光明媚。 跑了 6 公里，心跳还是偏高。上周日跑步心跳稳定在 125 bpm, 心里很开心，看起来只是昙花一现。 樱桃司东门马路边的樱花都已经快谢了，广场路、</description>
+    </item>
+    <item>
+      <title>Hiking: Fish Bone Route</title>
+      <link>https://live4thee.github.io/posts/2024-03-16-fish-bone-route/</link>
+      <pubDate>Sat, 16 Mar 2024 20:55:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-16-fish-bone-route/</guid>
+      <description>周六，魔都阴天。开车到苏州地界后，天气开始放晴。临时决定试试鱼骨线。 鱼骨线 🔗可能是清明扫墓的关系，一路稍有拥堵。出城后，沪常高速经过一个小鱼</description>
+    </item>
+    <item>
+      <title>Rainy</title>
+      <link>https://live4thee.github.io/posts/2024-03-05-rainy/</link>
+      <pubDate>Tue, 05 Mar 2024 13:09:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-03-05-rainy/</guid>
+      <description>出门没有带伞，离开小区之前迟疑了一下，也终究没有回去拿。到公司时雨势渐大，一路小跑，从停车场直奔公司 &amp;ndash; 如果统计一下配速，应该是超过了平均水平</description>
+    </item>
+    <item>
+      <title>Hometown</title>
+      <link>https://live4thee.github.io/posts/2024-02-28-hometown/</link>
+      <pubDate>Tue, 27 Feb 2024 19:55:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-28-hometown/</guid>
+      <description>近乡情怯 🔗青年 🔗春节在家待了一周。那段时间天公作美，雨雪暂缓，气温持续攀升。在小镇、乡间漫步，时间在这里流淌的速度仿佛要慢很多。和往年不太一</description>
+    </item>
+    <item>
+      <title>Hiking, again!</title>
+      <link>https://live4thee.github.io/posts/2024-02-26-hiking-again/</link>
+      <pubDate>Sun, 25 Feb 2024 17:38:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-26-hiking-again/</guid>
+      <description>农历年后的第一个周末，继上次阳树线后，徒步了灵白线 &amp;ndash; 从灵岩山寺到白马涧，全程八公里左右。 灵岩山寺比邻木渎古镇，开车导航到灵岩山寺西门停车场。</description>
+    </item>
+    <item>
+      <title>Coffee</title>
+      <link>https://live4thee.github.io/posts/2024-02-18-coffee/</link>
+      <pubDate>Sat, 17 Feb 2024 22:29:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-18-coffee/</guid>
+      <description>作孽，小朋友真的喜欢上了喝咖啡。 昨天去奥乐齐买食物，经过星巴克，夫人像往常一样买了两杯咖啡。小朋友像是神经突然错乱，把我的咖啡拿过去喝掉了一</description>
+    </item>
+    <item>
+      <title>About Time</title>
+      <link>https://live4thee.github.io/posts/2024-02-04-about-time/</link>
+      <pubDate>Sun, 04 Feb 2024 11:04:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-04-about-time/</guid>
+      <description>得到头条里听了刘澜老师对学习者的分类，有点意思。这个分类是按照使用时间的方式划分的： 生产：把时间用来生产产品、提供服务，在当下产生了社会价值</description>
+    </item>
+    <item>
+      <title>CVA?</title>
+      <link>https://live4thee.github.io/posts/2024-02-04-cva/</link>
+      <pubDate>Sun, 04 Feb 2024 09:52:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-02-04-cva/</guid>
+      <description>趁着小朋友寒假，去了趟潮汕。提前看了天气预报，全国有大幅降温，没想到降得比想象中厉害。更没想到，这趟旅途开启了至今最糟糕的HRV 记录。对比一</description>
+    </item>
+    <item>
+      <title>Debt</title>
+      <link>https://live4thee.github.io/posts/2024-01-18-debt/</link>
+      <pubDate>Thu, 18 Jan 2024 09:20:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-18-debt/</guid>
+      <description>今天还清了个人贷款。 三年前，兜里只剩三千出头。虽然不至于饿死，实在不行也可以用信用卡，但是心理感受却是空前的窘迫。感谢波哥当时经常拉我吃午餐</description>
+    </item>
+    <item>
+      <title>Lunch &amp; ex-Team</title>
+      <link>https://live4thee.github.io/posts/2024-01-17-lunch-and-ex-team/</link>
+      <pubDate>Wed, 17 Jan 2024 13:26:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-17-lunch-and-ex-team/</guid>
+      <description>上午培训结束、放回办公物品已经是将近下午一点。夫人给我买了午餐。 夫人的公司离我三百米左右。明天就是腊八，今天中午阳光高照，居然有点热。看了一</description>
+    </item>
+    <item>
+      <title>HRV Status</title>
+      <link>https://live4thee.github.io/posts/2024-01-16-hrv-status/</link>
+      <pubDate>Tue, 16 Jan 2024 11:31:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-16-hrv-status/</guid>
+      <description>周末 HRV 突降了一把，这两天又爬了回来。最近缺乏运动，睡眠质量不太好。 昨天翻出钱包里一直放着的高中老友的评价，“复刻” 了一个电子版。久未联系， 聊</description>
+    </item>
+    <item>
+      <title>Humanity</title>
+      <link>https://live4thee.github.io/posts/2024-01-15-humanity/</link>
+      <pubDate>Mon, 15 Jan 2024 20:46:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-15-humanity/</guid>
+      <description>奖学金 🔗小朋友坐在沙发上抱着零钱袋，很宝贝的样子。前两天数了一下，一共 490 元&amp;ndash; 这是他这几年在晚托挣的奖学金。做了个君子约定：以后出</description>
+    </item>
+    <item>
+      <title>New Year New Theme</title>
+      <link>https://live4thee.github.io/posts/2024-01-11-new-year-new-theme/</link>
+      <pubDate>Thu, 11 Jan 2024 14:02:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-11-new-year-new-theme/</guid>
+      <description>更新了一下主题，支持目录和数学排版。 常读常新 🔗Linux VFS 的文档之前没认真读过，应该花个半小时好好读一下。 彩蛋 🔗非常喜欢Linux Kernel Block I/O St</description>
+    </item>
+    <item>
+      <title>Klepetan and Malena</title>
+      <link>https://live4thee.github.io/posts/2024-01-06-klepetan-and-malena/</link>
+      <pubDate>Sat, 06 Jan 2024 22:00:57 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-06-klepetan-and-malena/</guid>
+      <description>偶尔刷到一则视频，关于一对克罗地亚白鹳，阿克和玛莲娜。1 故事就不再复述了，挺感人。2意外的是在B站某个评论里看到了元好问的《摸鱼儿》。 “问世</description>
+    </item>
+    <item>
+      <title>Texas Sharpshooter Fallacy</title>
+      <link>https://live4thee.github.io/posts/2024-01-03-texas-sharpshooter-fallacy/</link>
+      <pubDate>Wed, 03 Jan 2024 17:09:29 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-03-texas-sharpshooter-fallacy/</guid>
+      <description>Steven Pinker 在《理性》一书中讲到一则德克萨斯神枪手谬误: 有个德州人朝着自己的谷仓射了许多子弹，在弹孔最密集的地方画一个圈，然后自称是神枪手。1 “先射</description>
+    </item>
+    <item>
+      <title>Readings 2023 WW52</title>
+      <link>https://live4thee.github.io/posts/2023-12-31-readings-2023-ww52/</link>
+      <pubDate>Sun, 31 Dec 2023 22:19:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-31-readings-2023-ww52/</guid>
+      <description>2023年的最后一周，看完了刘勃老师的天下英雄谁敌手。 书的主角就两位：曹操和刘备。 后来的桓温在很大程度上和曹操很像，而刘备的战斗力在《三国演</description>
+    </item>
+    <item>
+      <title>Readings 23Q4</title>
+      <link>https://live4thee.github.io/posts/2023-12-19-readings-23q4/</link>
+      <pubDate>Tue, 19 Dec 2023 10:13:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-19-readings-23q4/</guid>
+      <description>深深尝了人间味 🔗我是纯粹被这本书的书名所吸引。比较喜欢史铁生、老舍、许地山的几篇。另外，林徽因的《彼此》很有民国风雨飘摇的感觉。其余不是我的</description>
+    </item>
+    <item>
+      <title>A Trip to Suzhou</title>
+      <link>https://live4thee.github.io/posts/2023-12-18-a-trip-to-suzhou/</link>
+      <pubDate>Sun, 17 Dec 2023 21:20:24 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-18-a-trip-to-suzhou/</guid>
+      <description>今年第 N 次去苏州。碰上强降温，从前两天最高 20℃，一下跌到最低 -6℃ 左右。 爬了两天山 🔗从未想到苏州的小山还挺多。周六阴天、急剧降温，仿佛和周</description>
+    </item>
+    <item>
+      <title>City Walk</title>
+      <link>https://live4thee.github.io/posts/2023-12-03-city-walk/</link>
+      <pubDate>Sun, 03 Dec 2023 21:38:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-03-city-walk/</guid>
+      <description>难得进城，就用 city walk 作为标题。 Old days 🔗夫人预定了古北路附近一家餐馆吃晚餐。午餐后出发，先压马路。赚足步数后想必也会胃口大开。室外略有点冷。 先去长</description>
+    </item>
+    <item>
+      <title>A Trip to Wuxi</title>
+      <link>https://live4thee.github.io/posts/2023-11-20-a-trip-to-wuxi/</link>
+      <pubDate>Mon, 20 Nov 2023 11:39:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-20-a-trip-to-wuxi/</guid>
+      <description>上次去鼋头渚已经是二十年前了，当时没有随身电脑更没有手机、相机，记忆也已经接近空白。现在只能回想起三件事： 当时湖心的太湖仙岛上还有猴群出没；</description>
+    </item>
+    <item>
+      <title>Readings 23Q3</title>
+      <link>https://live4thee.github.io/posts/2023-11-15-readings-23q3/</link>
+      <pubDate>Wed, 15 Nov 2023 17:24:19 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-15-readings-23q3/</guid>
+      <description>自从用上 BOOX Note X2 后，看书的时间变多了，尤其文史书籍看起来特别快。如果书城里（用的“得到”）电子书的笔记能在本地自动保存一份，方便复习，何其快哉</description>
+    </item>
+    <item>
+      <title>Surgery</title>
+      <link>https://live4thee.github.io/posts/2023-08-29-surgery/</link>
+      <pubDate>Tue, 29 Aug 2023 17:21:36 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-08-29-surgery/</guid>
+      <description>小朋友做了个小手术。一早出去，傍晚才回家，饿了一天。进门后，既不打招呼也不接话茬。一声不吭地脱掉袜子、去了趟洗手间，然后爬上床睡觉了。 昨天医</description>
+    </item>
+    <item>
+      <title>Garze &amp; Aba</title>
+      <link>https://live4thee.github.io/posts/2023-07-17-garze-aba/</link>
+      <pubDate>Sun, 16 Jul 2023 19:27:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-07-17-garze-aba/</guid>
+      <description>流水帐 🔗七月七，去川西。 7/7 上海 - 成都 - 康定 🔗飞机降落在天府国际机场。租了一辆苏A 牌照的 Rav4, 车况据说比较新，至少方向盘非常干净。阴有雨，穿过一条</description>
+    </item>
+    <item>
+      <title>A Trip to Suzhou</title>
+      <link>https://live4thee.github.io/posts/2023-05-29-a-trip-to-suzhou/</link>
+      <pubDate>Mon, 29 May 2023 11:59:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-05-29-a-trip-to-suzhou/</guid>
+      <description>之前部门淀山湖团建，夫人被照片里的皮划艇种草。一番搜索后，找到了苏州石湖景区。除了景观像西湖之外，价格也是一样免费，且游客非常少。开车很方便</description>
+    </item>
+    <item>
+      <title>Thinking</title>
+      <link>https://live4thee.github.io/posts/2023-04-25-thinking/</link>
+      <pubDate>Tue, 25 Apr 2023 11:11:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-04-25-thinking/</guid>
+      <description>很久之前买了一本《How Not to Be Wrong》， 最近开始断断续续读完了前两部分，总共十章，主要讨论线性和推理。这里记录一些相关的思考。 Reductio ad Unlikely 🔗书</description>
+    </item>
+    <item>
+      <title>Back, again</title>
+      <link>https://live4thee.github.io/posts/2023-02-19-back-again/</link>
+      <pubDate>Sun, 19 Feb 2023 19:40:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-02-19-back-again/</guid>
+      <description>回程 🔗经过江阴大桥的时候，刚好夕阳西下。落日的余晖洒在江面上，像是弥漫着金光的镜子。 手术 🔗昨晚父亲做了手术。当时我还没回，都是表兄帮忙张罗。</description>
+    </item>
+    <item>
+      <title>Fell Down</title>
+      <link>https://live4thee.github.io/posts/2023-01-19-fell-down/</link>
+      <pubDate>Thu, 19 Jan 2023 20:57:21 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-01-19-fell-down/</guid>
+      <description>2023/1/19，由南部外双溪索道进三清山。上山前，短暂地出了一阵太阳。索道上，目之所及，依稀有几处白雪。草丛、阴影处居多。 爬到山背面，场</description>
+    </item>
+    <item>
+      <title>Omicron Recovery</title>
+      <link>https://live4thee.github.io/posts/2022-12-21-omicron-recovery/</link>
+      <pubDate>Wed, 21 Dec 2022 17:40:28 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-12-21-omicron-recovery/</guid>
+      <description>19 号晚上突然畏寒，早早开着空调睡了。 20 号白天高烧，维C银翘没压下去，傍晚吃了一粒退烧药，晚上就感觉好很多。 21 醒来，体温已经完全回复，喉咙轻微</description>
+    </item>
+    <item>
+      <title>Breaking Bad</title>
+      <link>https://live4thee.github.io/posts/2022-12-19-breaking-bad/</link>
+      <pubDate>Mon, 19 Dec 2022 20:19:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-12-19-breaking-bad/</guid>
+      <description>这个周末不同寻常。 身边 🔗几个朋友感染了新冠。周五表弟也开始发烧了，尽管直到今天（周一）抗原才测出两道杠。考虑到表弟一个人住，看势头不对，周六</description>
+    </item>
+    <item>
+      <title>Remember</title>
+      <link>https://live4thee.github.io/posts/2022-12-12-remember/</link>
+      <pubDate>Mon, 12 Dec 2022 14:56:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-12-12-remember/</guid>
+      <description>不知怎的 🔗最近经常想起 2020 年青甘环线，开车翻过当金山埡口时的景象。当时专心驾车， 并未停留。虽然只是一瞥，但是记忆中那眼底乌压压的群峦叠嶂却从未</description>
+    </item>
+    <item>
+      <title>Under the Roof</title>
+      <link>https://live4thee.github.io/posts/2022-12-07-under-the-roof/</link>
+      <pubDate>Wed, 07 Dec 2022 22:23:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-12-07-under-the-roof/</guid>
+      <description>驱车300 公里落地检，手表提醒了一次心跳过速。好不容易进了停车场，却进不去住院部的大楼。因此，除了打电话，我没能和父母见上一面。</description>
+    </item>
+    <item>
+      <title>To Be, or not to be</title>
+      <link>https://live4thee.github.io/posts/2022-11-30-to-be-or-not-to-be/</link>
+      <pubDate>Wed, 30 Nov 2022 18:10:13 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-11-30-to-be-or-not-to-be/</guid>
+      <description>自从打开了久坐提醒后，“病灶”就从“久痔”变成了“尿频”：光站起来走一圈很是无聊，不如顺便打水 -&amp;gt; 打水了就会喝水 -&amp;gt; 水喝多了就要洗手。 趁雨天、降</description>
+    </item>
+    <item>
+      <title>Running, Again!</title>
+      <link>https://live4thee.github.io/posts/2022-11-28-running-again/</link>
+      <pubDate>Sun, 27 Nov 2022 18:01:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-11-28-running-again/</guid>
+      <description>趁着气温合适，又重新开始跑步。 Running, again! 🔗周六下楼时很忐忑，不知道是否跑得动。最后跑了 2.28 公里，还算能接受。上次跑步是去年 12 月初，不到 600 米就放弃了。</description>
+    </item>
+    <item>
+      <title>Indoor Rowing</title>
+      <link>https://live4thee.github.io/posts/2022-11-05-indoor-rowing/</link>
+      <pubDate>Sat, 05 Nov 2022 20:35:53 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-11-05-indoor-rowing/</guid>
+      <description>倒叙 🔗心心念的划船机终于到货了。夫人在咸鱼碰壁后，做了一大一小两件事情： 大事：下单买了个新的； 小事：留下一句“你们天蝎座就是腹黑”！ 据我考证</description>
+    </item>
+    <item>
+      <title>Heinrich Law</title>
+      <link>https://live4thee.github.io/posts/2022-06-28-heinrich-law/</link>
+      <pubDate>Tue, 28 Jun 2022 20:55:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-06-28-heinrich-law/</guid>
+      <description>前几天有同事提到海恩法则，有点意思，因此多搜索了一下。本文的主要观点， 以及下面的海恩里奇金字塔，均来自 Heinrich Law and industrial safety。 William Herbert Heinrich 就职于旅游</description>
+    </item>
+    <item>
+      <title>Father and Son (12)</title>
+      <link>https://live4thee.github.io/posts/2022-06-22-father-and-son-12/</link>
+      <pubDate>Wed, 22 Jun 2022 19:48:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-06-22-father-and-son-12/</guid>
+      <description>昨天 2+12 最后一天，去了趟公司。搬了个新座位，靠窗，不在空调出风口，挺好。很久没给车加油了，#95 已经涨到了9.88 - 印象中开车十年来最贵的价格</description>
+    </item>
+    <item>
+      <title>Physical Examination</title>
+      <link>https://live4thee.github.io/posts/2021-11-01-physical-examination/</link>
+      <pubDate>Fri, 29 Oct 2021 12:18:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-11-01-physical-examination/</guid>
+      <description>人到中年，不愿体检。 每年到体检的时候，就陷入了鸵鸟心态。既不愿动动指头做预约，双腿也像灌了铅似的，不愿挪动半步。终究，九年义务教育没有白费，</description>
+    </item>
+    <item>
+      <title>Goodwill</title>
+      <link>https://live4thee.github.io/posts/2021-08-23-goodwill/</link>
+      <pubDate>Mon, 23 Aug 2021 22:10:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-08-23-goodwill/</guid>
+      <description>老婆帮忙，在咸鱼上卖掉了两只镜头： Canon 50mm 1.8 STM - 600 RMB; Sigma 35mm 1.4 HSM - 2000 RMB. 本来心里感叹，原厂就是坚挺，偶然一看官网原价, 居然涨到 1199 大洋了。折合现价算是五</description>
+    </item>
+    <item>
+      <title>MC11 for Rescue</title>
+      <link>https://live4thee.github.io/posts/2020-09-23-mc11-for-rescue/</link>
+      <pubDate>Wed, 23 Sep 2020 17:33:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-09-23-mc11-for-rescue/</guid>
+      <description>在 Z5、Z6、EOS R6、A7m3 里纠结了一阵子之后，选了大法。 Z5/Z6 🔗Z5 非常理想，很适合我这种只拍照不拍视频的需求，但是当前的价格相对小贵。</description>
+    </item>
+    <item>
+      <title>Hanging Out</title>
+      <link>https://live4thee.github.io/posts/2020-09-12-hanging-out/</link>
+      <pubDate>Sat, 12 Sep 2020 22:24:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-09-12-hanging-out/</guid>
+      <description>器材店半日游。 自从卖掉 80D 后，手头就只剩下老婆的 rx100v 了。上次在万象城的索尼店， 拿着 Sony A73，老婆一眼很毒的指出：“这屏幕太差了，不能买、不能买！</description>
+    </item>
+    <item>
+      <title>Nanjing</title>
+      <link>https://live4thee.github.io/posts/2020-08-17-nanjing/</link>
+      <pubDate>Fri, 14 Aug 2020 22:16:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-08-17-nanjing/</guid>
+      <description>周四去南京出差，顺便见了一下大学同学们。 见到同学，真的很开心，大家甚至都还是毕业时候的面孔，连声音也似乎保持着当初的模样。遥远的过去一下又变</description>
+    </item>
+    <item>
+      <title>Big Events</title>
+      <link>https://live4thee.github.io/posts/2020-08-11-big-events/</link>
+      <pubDate>Tue, 11 Aug 2020 18:06:57 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-08-11-big-events/</guid>
+      <description>上周末发生了两件大事： 把 80D 给卖了，换了 4500 大洋，还算满意； 突然左边肩膀疼痛不能发力，一度悲凉得以为一脚踏入半身不遂（还好今天感觉已经完全回复了</description>
+    </item>
+    <item>
+      <title>Father and Son (11)</title>
+      <link>https://live4thee.github.io/posts/2020-03-23-father-and-son-11/</link>
+      <pubDate>Mon, 23 Mar 2020 22:29:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-23-father-and-son-11/</guid>
+      <description>陪眼泪婆娑的小朋友写作业。 小朋友写着写着，突然问了一句：“爸爸，只有你关心我么？” 一时语塞。</description>
+    </item>
+    <item>
+      <title>Samsung NX11</title>
+      <link>https://live4thee.github.io/posts/2020-02-23-samsung-nx11/</link>
+      <pubDate>Sun, 23 Feb 2020 20:30:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-02-23-samsung-nx11/</guid>
+      <description>重拾压箱底的 NX11，发现它的快门数还没满 8000。 重量、握持、造型还是挺满意，手动模式不能 Auto ISO。 差点想淘一个 NX 30mm f2 饼干。</description>
+    </item>
+    <item>
+      <title>A Sudden Reboot</title>
+      <link>https://live4thee.github.io/posts/2019-12-12-a-sudden-reboot/</link>
+      <pubDate>Thu, 12 Dec 2019 09:21:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-12-12-a-sudden-reboot/</guid>
+      <description>冷汗 🔗昨天开车时中控突然重启，冷汗还没来得及冒出来，已重启好。网上一搜，远不是孤例。 Hugo 🔗升级了 Hugo 后，貌似joinLines 插件不管用了&amp;he</description>
+    </item>
+    <item>
+      <title>Half of Heaven</title>
+      <link>https://live4thee.github.io/posts/2019-11-18-half-of-heaven/</link>
+      <pubDate>Mon, 18 Nov 2019 22:41:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-18-half-of-heaven/</guid>
+      <description>老婆三八八度，高烧躺在床头。自从昨天下午，还未踏出门口。 晚托接娃回家，进门便找妈妈： “现在好些了吗，怎么还在咳嗽？” 挣扎半卧起身，勉强喝点稀</description>
+    </item>
+    <item>
+      <title>Shared Bikes</title>
+      <link>https://live4thee.github.io/posts/2019-09-16-shared-bikes/</link>
+      <pubDate>Mon, 16 Sep 2019 08:40:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-16-shared-bikes/</guid>
+      <description>破财 🔗在某农家乐墙角停车时，倒车撞到了悬在半空的空调支架，留下一个 &amp;ldquo;I&amp;rdquo; 形的伤口。心疼。 母与子 🔗越来越觉得，小朋友很狗腿。 “妈妈，妈妈，汉字描红</description>
+    </item>
+    <item>
+      <title>A Taste of Beer</title>
+      <link>https://live4thee.github.io/posts/2019-09-07-a-taste-of-beer/</link>
+      <pubDate>Sat, 07 Sep 2019 22:10:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-07-a-taste-of-beer/</guid>
+      <description>看着父母在喝啤酒，小朋友有点眼馋：“让我闻一闻，让我闻一闻！” 递了过去，“要不，你喝一口尝尝？” 推辞不过，抿着嘴巴，嘴唇碰了两下：“闻着香，</description>
+    </item>
+    <item>
+      <title>Auguries of Innocence</title>
+      <link>https://live4thee.github.io/posts/2019-09-04-auguries-of-innocence/</link>
+      <pubDate>Wed, 04 Sep 2019 09:53:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-04-auguries-of-innocence/</guid>
+      <description>在一篇论文的序言读到一首小诗，来自William Blake. To see a World in a Grain of Sand And a Heaven in a Wild Flower, Hold Infinity in the palm of your hand And Eternity in an hour. 译文： 从一粒沙看世界， 从一朵花见</description>
+    </item>
+    <item>
+      <title>Father and Son (10)</title>
+      <link>https://live4thee.github.io/posts/2019-09-03-father-and-son-10/</link>
+      <pubDate>Tue, 03 Sep 2019 09:06:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-03-father-and-son-10/</guid>
+      <description>爱吃又腹黑的小朋友 🔗小朋友饭量还算比较大，每天晚上都要吃两碗饭。肚子撑的鼓鼓的，然后掀起衣服给妈妈看：“看我的大肚肚！”因此我偏向主张控制饮</description>
+    </item>
+    <item>
+      <title>A Trip to An-Ji</title>
+      <link>https://live4thee.github.io/posts/2019-03-17-a-trip-to-an-ji/</link>
+      <pubDate>Sun, 17 Mar 2019 21:56:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-03-17-a-trip-to-an-ji/</guid>
+      <description>周末去了趟安吉。 周六下午两点到。休息了一会儿后去爬山，一路都是茶园。还没爬几步，就气喘吁吁、汗流颊背。两旁偶尔盛开着山鸡椒娇嫩的黄花、以及散</description>
+    </item>
+    <item>
+      <title>By Your Side</title>
+      <link>https://live4thee.github.io/posts/2019-03-05-by-your-side/</link>
+      <pubDate>Tue, 05 Mar 2019 22:02:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-03-05-by-your-side/</guid>
+      <description>突然想买支口琴，我唯一会使用的乐器。感谢老婆完成了我这个小心愿。</description>
+    </item>
+    <item>
+      <title>Debugging a Washer</title>
+      <link>https://live4thee.github.io/posts/2019-03-02-debugging-a-washer/</link>
+      <pubDate>Sat, 02 Mar 2019 22:31:26 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-03-02-debugging-a-washer/</guid>
+      <description>旅游回来的时候，突然发现洗衣机不能脱水了。剩余时间倒数到 6 分钟后就再也进行不下去了。按照品牌，在网上搜了一下，发现不是孤例。一般是两种可能：</description>
+    </item>
+    <item>
+      <title>I am a Joker</title>
+      <link>https://live4thee.github.io/posts/2019-03-02-i-am-a-joker/</link>
+      <pubDate>Sat, 02 Mar 2019 17:27:03 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-03-02-i-am-a-joker/</guid>
+      <description>Travel 🔗前段时间完成了第五次霓虹国之旅，由于避开了春节，人不算多。主要时间都在高山 (Takayama) 和下吕 (Gero)。一路下来，也算是体验了一把北方大雪纷飞，</description>
+    </item>
+    <item>
+      <title>25 Days</title>
+      <link>https://live4thee.github.io/posts/2019-01-13-25-days/</link>
+      <pubDate>Sun, 13 Jan 2019 22:54:50 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-01-13-25-days/</guid>
+      <description>母亲今天出院了，等电梯的时候刚好是最近两周来魔都难得露出阳光的那一刻。 这些天在医院陪同的时候，写了一些日记，也正好有时间看一些书。有讲人生的</description>
+    </item>
+    <item>
+      <title>An Unlucky Year</title>
+      <link>https://live4thee.github.io/posts/2018-12-20-an-unlucky-year/</link>
+      <pubDate>Thu, 20 Dec 2018 22:56:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-12-20-an-unlucky-year/</guid>
+      <description>可能是因为本命年的缘故，今年颇有点流年不利的意思。 折腾了一年，毫无悬念地没有拍中沪牌，倒是赚了黄牛小几千块钱。朋友推荐的黄牛此前都是两三次就</description>
+    </item>
+    <item>
+      <title>All About Time</title>
+      <link>https://live4thee.github.io/posts/2018-12-03-all-about-time/</link>
+      <pubDate>Mon, 03 Dec 2018 22:53:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-12-03-all-about-time/</guid>
+      <description>最近鼻炎爆发得挺厉害，之前美亚上淘的 fexofenadine 也似乎已经没什么效果。该打喷嚏的时候，还是克制不住，十分痛苦。无奈之下，把角落里的洗鼻仪拖了出来，症状</description>
+    </item>
+    <item>
+      <title>Running Again!</title>
+      <link>https://live4thee.github.io/posts/2018-11-06-running-again/</link>
+      <pubDate>Tue, 06 Nov 2018 10:08:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-11-06-running-again/</guid>
+      <description>自从恢复跑步一个月来，总共跑了 32 公里，每周一到二次。运动量算是一般， 尤其看了自己的每公里配速、以及 VO2 Max 等数据后，惊觉再不动身就凉了。 断断续续</description>
+    </item>
+    <item>
+      <title>Trivial Notes</title>
+      <link>https://live4thee.github.io/posts/2018-10-08-trivial-notes/</link>
+      <pubDate>Mon, 08 Oct 2018 14:52:18 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-10-08-trivial-notes/</guid>
+      <description>国庆长假，蜗牛读书里面看《蒋勋说红楼梦》，写的挺不错。 小朋友第一次吃了三文鱼刺身，居然，没有吐掉。 写了一段小脚本，促进了家庭和谐，生产力进步</description>
+    </item>
+    <item>
+      <title>Apple Watch</title>
+      <link>https://live4thee.github.io/posts/2018-09-21-apple-watch/</link>
+      <pubDate>Fri, 21 Sep 2018 22:34:57 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-09-21-apple-watch/</guid>
+      <description>老婆带孩子、老人出去旅游，留下我独守空房。孩子妈临走之前给我买了一支 AW3，曰：“新款出来了，可以买老款了。” 最近也在开始跑步，虽然还不能恢</description>
+    </item>
+    <item>
+      <title>Disney, again.</title>
+      <link>https://live4thee.github.io/posts/2018-09-20-disney-again/</link>
+      <pubDate>Thu, 20 Sep 2018 22:22:38 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-09-20-disney-again/</guid>
+      <description>趁前东家的家庭日，上周和老婆再访迪士尼 - 不过这次没带小拖油瓶。 先是看歌舞剧《美女与野兽》，前东家包场。整部剧中，我最喜欢的角色是老婆口中的“</description>
+    </item>
+    <item>
+      <title>Lost and Found</title>
+      <link>https://live4thee.github.io/posts/2018-09-19-lost-and-found/</link>
+      <pubDate>Wed, 19 Sep 2018 12:29:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-09-19-lost-and-found/</guid>
+      <description>换了 Kindle 3 的主板后，一大损失就是之前保存在里面的电子书和音乐。 电子书没有备份，也找不回了。音乐只有几首，都是当年很喜欢的。其中有一首法语歌，但</description>
+    </item>
+    <item>
+      <title>iFixit</title>
+      <link>https://live4thee.github.io/posts/2018-09-08-ifixit/</link>
+      <pubDate>Sat, 08 Sep 2018 07:14:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-09-08-ifixit/</guid>
+      <description>题记：终于把 Kindle 3 给修好了。 自从在看热闹不嫌事大的同事的怂恿下，买了块国产大容量电池给自己的6s成功续命后，看到苟延残喘的电子产品都特别手痒。</description>
+    </item>
+    <item>
+      <title>Body Exercise</title>
+      <link>https://live4thee.github.io/posts/2018-08-29-body-exercise/</link>
+      <pubDate>Wed, 29 Aug 2018 23:05:54 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-08-29-body-exercise/</guid>
+      <description>搁置了两年多后，重新开始加入了每周一次的羽毛球活动。 第一次热身充分，啥事没有；第二次跳杀的时候突然右腿抽筋；第三次刚开打了几拍，右手背就突然</description>
+    </item>
+    <item>
+      <title>Unexpected Experiences</title>
+      <link>https://live4thee.github.io/posts/2018-08-28-unexpected-experiences/</link>
+      <pubDate>Tue, 28 Aug 2018 23:59:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-08-28-unexpected-experiences/</guid>
+      <description>在经历了惨无人道的“催更”后，赶在零点之前写下一点文字： 今天终于解决了一块心病，法律规定具体内容不可言说，因此点到即止。然而总归是一段人生经</description>
+    </item>
+    <item>
+      <title>A Beautiful Mistake</title>
+      <link>https://live4thee.github.io/posts/2018-07-13-a-beautiful-mistake/</link>
+      <pubDate>Fri, 13 Jul 2018 20:11:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-07-13-a-beautiful-mistake/</guid>
+      <description>2018年6月20日，上午。 从本部町(Motobu)沿58号公路开往那霸市，途经一片美丽的海域。翡翠色的水面在蓝天白云之下格外令人心旷神怡。</description>
+    </item>
+    <item>
+      <title>A Trip to Okinawa</title>
+      <link>https://live4thee.github.io/posts/2018-06-23-a-trip-to-okinawa/</link>
+      <pubDate>Sat, 23 Jun 2018 22:35:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-06-23-a-trip-to-okinawa/</guid>
+      <description>傍晚飞机降落在浦东机场，当时落日余晖，夕阳正美。 租车 🔗由于飞机晚点，上周六傍晚才到冲绳。赶不上航班，因此取消了两天的宫古岛行程，略有遗憾，不</description>
+    </item>
+    <item>
+      <title>Being Sick</title>
+      <link>https://live4thee.github.io/posts/2018-05-12-sick/</link>
+      <pubDate>Sat, 12 May 2018 12:38:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-12-sick/</guid>
+      <description>自我感觉良好一直穿着短袖之后，周三开始了牙龈疼。最严重的时候，既合不拢、也张不开嘴巴。会疼。奇怪的是，除了扁桃体有点隐隐做痛，没有其它感冒或</description>
+    </item>
+    <item>
+      <title>Morning Sky</title>
+      <link>https://live4thee.github.io/posts/2018-04-22-morning-sky/</link>
+      <pubDate>Sun, 22 Apr 2018 20:23:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-04-22-morning-sky/</guid>
+      <description>做了个恶梦。还好在生死边缘，梦醒了。 起床洗脸，天边已经泛着一丝微光。蓝色的背景下，飞机掠过的痕迹依稀可见。晨风微凉，睡意渐消。天空的色调看起</description>
+    </item>
+    <item>
+      <title>A Trip to Hangzhou</title>
+      <link>https://live4thee.github.io/posts/2018-04-10-a-trip-to-hangzhou/</link>
+      <pubDate>Tue, 10 Apr 2018 19:48:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-04-10-a-trip-to-hangzhou/</guid>
+      <description>清明节再次去了一趟杭州。第一次是冬天，第二次是夏天，这回是春天。游西溪、登宝石山，以及北高峰。小朋友有点轻微感冒，但还是自己走完了全程。 相比</description>
+    </item>
+    <item>
+      <title>Sigma 35mm f/1.4</title>
+      <link>https://live4thee.github.io/posts/2018-03-21-sigma-35-1-4/</link>
+      <pubDate>Wed, 21 Mar 2018 21:36:11 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-21-sigma-35-1-4/</guid>
+      <description>周末老婆大发慈悲，为我买了一只 Sigma 35/1.4 - 条件是交回过年时同样大发慈悲，以“镜头基金”为名，发给我的红包。周六下单周日到。 忐忑中试拍了几张，似乎没</description>
+    </item>
+    <item>
+      <title>White Valentine</title>
+      <link>https://live4thee.github.io/posts/2018-03-14-white-valentine/</link>
+      <pubDate>Wed, 14 Mar 2018 23:08:14 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-14-white-valentine/</guid>
+      <description>今天是商家努力宣传的“白色情人节”，我有三个小故事。 突袭 🔗上午送孩子妈到公司门口，靠边停车的时候，看见路边有一辆银色桑塔纳，就停在了对方前面</description>
+    </item>
+    <item>
+      <title>Fitness</title>
+      <link>https://live4thee.github.io/posts/2018-03-11-fitness/</link>
+      <pubDate>Sun, 11 Mar 2018 19:29:13 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-11-fitness/</guid>
+      <description>过去大半年间，两个大拇指一直比较酸痛。Y股东得知后给我快递了一把 Cherry 键盘。不过我其实早就有了一把 Filco, 拇指的状况没有变得好多少，也没有更糟糕。目前</description>
+    </item>
+    <item>
+      <title>Lantern Festival 2018</title>
+      <link>https://live4thee.github.io/posts/2018-03-02-lantern-festival/</link>
+      <pubDate>Fri, 02 Mar 2018 21:55:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-02-lantern-festival/</guid>
+      <description>今天元宵节。来沪多年，第一次晚上出去看灯。 人潮汹涌，经常听见广播寻人启事。还好家里的小宅男不愿意跟着来。 莘城中央公园</description>
+    </item>
+    <item>
+      <title>First Impression</title>
+      <link>https://live4thee.github.io/2018/02/26/first-impression/</link>
+      <pubDate>Mon, 26 Feb 2018 22:19:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/02/26/first-impression/</guid>
+      <description>孩子妈微信里说，小朋友看见晚餐有烤鱼，一直问： “这个鱼很好吃的吧？” “鱼皮也可以吃的吧？” 就像饿了很久的猫。自从之前有一次小朋友吃鱼被鱼刺卡</description>
+    </item>
+    <item>
+      <title>Year 2018</title>
+      <link>https://live4thee.github.io/2018/02/21/year-2018/</link>
+      <pubDate>Wed, 21 Feb 2018 21:19:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/02/21/year-2018/</guid>
+      <description>转眼已经过完七天春节假期。以前年终还会煞有介事的写一篇年终回顾，这回算是抛到了九霄云外。 时隔两年，再次去了苏州金鸡湖。东方之门（秋裤楼）已经</description>
+    </item>
+    <item>
+      <title>Surface Pro4 - 10 months later</title>
+      <link>https://live4thee.github.io/2018/01/04/surface-pro4-is-shit/</link>
+      <pubDate>Thu, 04 Jan 2018 18:48:21 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/01/04/surface-pro4-is-shit/</guid>
+      <description>去年二月底买了一台 Surface Pro 4，低配带手写笔。后来又买了配套的无线蓝牙键盘。我得承认，这是我比较后悔的一次购物。主要问题是这货 非常容易 出问题，特别</description>
+    </item>
+    <item>
+      <title>All of a Sudden</title>
+      <link>https://live4thee.github.io/2017/12/08/all-of-a-sudden/</link>
+      <pubDate>Fri, 08 Dec 2017 21:57:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/12/08/all-of-a-sudden/</guid>
+      <description>这篇文章虽然打了 python 标签，其实没啥关系。主要原因在于同事发现了我之前在我司的 python 代码里埋下的两个“煞有介事”的bug，略尴尬。 这俩bug也解释了</description>
+    </item>
+    <item>
+      <title>Father and Son (9)</title>
+      <link>https://live4thee.github.io/2017/12/03/father-and-son-9/</link>
+      <pubDate>Sun, 03 Dec 2017 23:06:01 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/12/03/father-and-son-9/</guid>
+      <description>最近工作时间又比之前长一点，每天到家已经很晚。明显感觉小朋友是有想法的， 摘录如下一些话。 “爸爸，你怎么回来这么晚啊！” 上周二回到家的时候，小</description>
+    </item>
+    <item>
+      <title>A Little Tired</title>
+      <link>https://live4thee.github.io/2017/10/13/a-little-tired/</link>
+      <pubDate>Fri, 13 Oct 2017 00:10:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/13/a-little-tired/</guid>
+      <description>在路口等红绿灯的时候，看见手机屏幕上有一条微信留言。问我到哪里了，小朋友等着我（陪他玩）。我说还有二十分钟，麻麻说那就不等了。 从公司出来已经</description>
+    </item>
+    <item>
+      <title>Dark Sleeper</title>
+      <link>https://live4thee.github.io/2017/10/04/dark-sleeper/</link>
+      <pubDate>Wed, 04 Oct 2017 23:17:02 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/04/dark-sleeper/</guid>
+      <description>小时候，经常在田边的沟渠里看见一种鱼，体型巴掌来大，黑褐色。大人们称之为“葫芦呆子”，查阅了一下网络，应该也是以讹传讹（没有文字记录的亏）。</description>
+    </item>
+    <item>
+      <title>Keyboard Switches</title>
+      <link>https://live4thee.github.io/2017/09/20/keyboard-switches/</link>
+      <pubDate>Wed, 20 Sep 2017 16:22:29 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/09/20/keyboard-switches/</guid>
+      <description>偶然学到了几个英文单词： Blue switch - 青轴（青出于蓝） Brown switch - 茶轴 Black switch - 黑轴 Red switch - 红轴</description>
+    </item>
+    <item>
+      <title>Snakes</title>
+      <link>https://live4thee.github.io/2017/09/16/snakes/</link>
+      <pubDate>Sat, 16 Sep 2017 23:03:02 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/09/16/snakes/</guid>
+      <description>扬州地区的蛇类 🔗突然想起，小时候曾经碰到过各种蛇类，有的只知道方言怎么讲，却不知道用文字怎么书写。有的直到现在，才直到“方言”的讲法也是以讹</description>
+    </item>
+    <item>
+      <title>Applying for a VISA</title>
+      <link>https://live4thee.github.io/2017/09/14/applying-for-a-visa/</link>
+      <pubDate>Thu, 14 Sep 2017 23:16:17 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/09/14/applying-for-a-visa/</guid>
+      <description>签证记。 楔子 🔗时隔五年，再次去梅陇镇广场申请签证。上次走美商会，这回没有。DS-160 和以前大同小异，只是不走美商会则预约签证面试会安排到很</description>
+    </item>
+    <item>
+      <title>Stories in the Childhood</title>
+      <link>https://live4thee.github.io/2017/09/02/stories-in-the-childhood/</link>
+      <pubDate>Sat, 02 Sep 2017 22:29:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/09/02/stories-in-the-childhood/</guid>
+      <description>买了相机后，总想着什么时候能拍出美丽的闪电，壮观的银河之类。这让我想起一些儿时的记忆。 乡村的夜空 🔗我记得小时候，乡村夏天的夜空只能以璀璨形容</description>
+    </item>
+    <item>
+      <title>A Car Accident</title>
+      <link>https://live4thee.github.io/2017/08/03/a-car-accident/</link>
+      <pubDate>Thu, 03 Aug 2017 16:31:22 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/08/03/a-car-accident/</guid>
+      <description>定责 🔗“我啊，看了录像。闯红灯，你老婆急着干什么去啊？” 交警问Q某。 “你 - 当时道路那么宽敞，没有一辆车啊！” 交警又转向我。“好了，你就稍微让</description>
+    </item>
+    <item>
+      <title>Miscellaneous (2)</title>
+      <link>https://live4thee.github.io/2017/06/17/miscellaneous-2/</link>
+      <pubDate>Sat, 17 Jun 2017 22:01:16 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/06/17/miscellaneous-2/</guid>
+      <description>偶然来到闵行怡丰城，坐落在传说中号称莘庄商务区 的地方。上周末在大悦城停车费花了65RMB，怡丰城这里还没有完全修好，目测还有1/3商家没有装</description>
+    </item>
+    <item>
+      <title>Pioneer</title>
+      <link>https://live4thee.github.io/2017/06/14/pioneer/</link>
+      <pubDate>Wed, 14 Jun 2017 10:39:30 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/06/14/pioneer/</guid>
+      <description>打开 HN 发现顶部加了黑边，置顶的消息是 Chuck Thacker has died。又一位计算机先驱离世了。 因为对操作系统比较感兴趣，读研选修了“计算机系统与结构”。研一时</description>
+    </item>
+    <item>
+      <title>Take Mind Off</title>
+      <link>https://live4thee.github.io/2017/06/10/take-mind-off/</link>
+      <pubDate>Sat, 10 Jun 2017 21:55:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/06/10/take-mind-off/</guid>
+      <description>前几天，同事对我说：“（你的博客）好久没更新了”。 确实如此。偶然的情绪下，翻阅了之前写下的博客（本地用 XeLaTeX 生成的 PDF）。自2004年以来，积</description>
+    </item>
+    <item>
+      <title>Readings 17&#39;Q1</title>
+      <link>https://live4thee.github.io/2017/05/26/readings-17-q1/</link>
+      <pubDate>Fri, 26 May 2017 23:01:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/26/readings-17-q1/</guid>
+      <description>很惭愧，今年都快过去一半了，还没有完整地读完一本书。 今天在虎嗅的一篇推送文章中看到一个说法，叫“中文内容粪坑化”。网易科技也有报道。我深以为</description>
+    </item>
+    <item>
+      <title>Alone</title>
+      <link>https://live4thee.github.io/2017/05/21/alone/</link>
+      <pubDate>Sun, 21 May 2017 15:11:28 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/21/alone/</guid>
+      <description>这周末休息两天，但却独自在家。老婆远程为我点了外卖，如果不是要下楼丢垃圾，根本就无需出门。 最近好像又瘦了两三斤，也有可能是夏天到来，少了一点</description>
+    </item>
+    <item>
+      <title>Miscellaneous</title>
+      <link>https://live4thee.github.io/2017/05/06/miscellaneous/</link>
+      <pubDate>Sat, 06 May 2017 20:07:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/06/miscellaneous/</guid>
+      <description>碎碎念 🔗下午去公司加班了半天，当时已经有两位老司机在辛苦工作。还有其它几位年轻同事和实习生。安静无人打扰，效率相对较高。 EOS 🔗回家升级了一下相</description>
+    </item>
+    <item>
+      <title>Second Tour to Japan</title>
+      <link>https://live4thee.github.io/2017/05/01/second-tour-to-jp/</link>
+      <pubDate>Mon, 01 May 2017 17:11:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/01/second-tour-to-jp/</guid>
+      <description>请了一周假，再次去了日本国。 小朋友 🔗小朋友对于第一次京都、大阪的游历已经完全没有印象。这次除了北海道的雪山之外，也没有什么印象深刻的地方。完</description>
+    </item>
+    <item>
+      <title>A Frightening Dream</title>
+      <link>https://live4thee.github.io/2017/04/19/A-Frightening-Dream/</link>
+      <pubDate>Wed, 19 Apr 2017 13:06:21 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/04/19/A-Frightening-Dream/</guid>
+      <description>昨夜做了一个很恐怖的噩梦。我梦见自己被机枪“突突突”，但是由于自己永生的能力，只能陷入持续、无尽的痛苦。惊醒。 早餐和老婆讲这个事情，回答：这</description>
+    </item>
+    <item>
+      <title>Jekyll to Hugo</title>
+      <link>https://live4thee.github.io/2017/04/13/Jekyll-to-Hugo/</link>
+      <pubDate>Thu, 13 Apr 2017 20:56:03 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/04/13/Jekyll-to-Hugo/</guid>
+      <description>花了点时间从 Jekyll 切换到了Hugo，好处是：不用维护一个 Ruby 环境，这样可以方便的写笔记，而不用太关心平台问题。 又写了一个简单的脚本自动创建新帖子：</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://live4thee.github.io/about/</link>
+      <pubDate>Wed, 12 Apr 2017 23:47:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/about/</guid>
+      <description>For the last decade, I have been writing blogs, frequently or occasionally. To me, writing is remembering, is to keep a record of my ideas, feelings and thoughts. I would like to keep the habit of reading and writing as a lifetime endeavor.&#xA;Before switching to GitHub, I was writing at colorfulwe, a WordPress site maintained by my friend Yechun. I have been using it 5 years since moving fromBlogger. Thanks a lot to Yechun!</description>
+    </item>
+    <item>
+      <title>Data Cable</title>
+      <link>https://live4thee.github.io/2017/03/31/data-cable/</link>
+      <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/31/data-cable/</guid>
+      <description>前几天打开尘封已久的 Kindle 3，充了电还能用。不过因为好久没有面对电子墨水，对其电量显示非常狐疑。不确定右上角的图标是表示电充满了，还是充不进去。</description>
+    </item>
+    <item>
+      <title>What a Programmer Does</title>
+      <link>https://live4thee.github.io/2017/03/25/what-a-programmer-does/</link>
+      <pubDate>Sat, 25 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/25/what-a-programmer-does/</guid>
+      <description>电脑里躺着一篇文章 ：What a Programmer Does1。年代已经非常久远：1967 年，距今刚好半个世纪。这篇文章是Charles L. Baker 介绍给 D. E. Knuth 的， 原作</description>
+    </item>
+    <item>
+      <title>Father and Son (8)</title>
+      <link>https://live4thee.github.io/2017/03/15/father-and-son-8/</link>
+      <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/15/father-and-son-8/</guid>
+      <description>小孩在家唧唧咕咕，其中有一个单词 broccoli，还知道意思是 西兰花。我和孩子妈顿时觉得被超越。想起前段时间小朋友周六来公司，问我 糖 怎么说。</description>
+    </item>
+    <item>
+      <title>Surface Pro 4</title>
+      <link>https://live4thee.github.io/2017/02/25/surface-pro-4/</link>
+      <pubDate>Sat, 25 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/02/25/surface-pro-4/</guid>
+      <description>为了比较方便高效地看文档（主要是PDF）、记笔记，平衡了诸般选择后，买了一台 Surface Pro 4。最低配的版本，但是手写笔套装。用了两三个礼拜后， 还是忍不</description>
+    </item>
+    <item>
+      <title>Without Cellphone</title>
+      <link>https://live4thee.github.io/2017/02/12/without-cellphone/</link>
+      <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/02/12/without-cellphone/</guid>
+      <description>手机电池刚好在免费维修之列，于是预约了去水果店换电池。老婆去驾校学车， 而维修的时间要好几个小时，因此多年来第一次一个人在商场闲逛，颇有点落寞</description>
+    </item>
+    <item>
+      <title>The Way Thinking (1)</title>
+      <link>https://live4thee.github.io/2017/02/03/the-way-thinking-1/</link>
+      <pubDate>Fri, 03 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/02/03/the-way-thinking-1/</guid>
+      <description>过年期间打发时间，翻了翻手机里的电子书。其中某本书里的一段，讲的挺有意思。主要是两则故事： 第一个故事讲艾尔基尔这个地区，山里的猴子经常去偷农</description>
+    </item>
+    <item>
+      <title>Being Sick</title>
+      <link>https://live4thee.github.io/2017/01/02/being-sick/</link>
+      <pubDate>Mon, 02 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/01/02/being-sick/</guid>
+      <description>上周是糟糕的一周。小孩周一从学校回来，满是眼屎，而且老师说他在学校拉了肚子。第二天早晨，小孩眼睛被眼屎粘得睁不开，在被子里急得哭。后来证实是</description>
+    </item>
+    <item>
+      <title>Readings 16&#39;H2</title>
+      <link>https://live4thee.github.io/2016/11/14/readings-16h2/</link>
+      <pubDate>Mon, 14 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/11/14/readings-16h2/</guid>
+      <description>9月至今，只读了两三本书。读完了王小波的《红拂夜奔》，还有两本畅销书： 《人类简史》和《最好的告别》。 《人类简史》有一个中心思想：人类整体的发</description>
+    </item>
+    <item>
+      <title>Hui-Hang Road</title>
+      <link>https://live4thee.github.io/2016/11/13/huihang-again/</link>
+      <pubDate>Sun, 13 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/11/13/huihang-again/</guid>
+      <description>十年前，我是个即将毕业的实习生。2006年5月，在经过了一番策划后，和胖总、鄢总、谢总、教头以及段王爷，一行六人踏上了徽杭古道。后来，这次徒</description>
+    </item>
+    <item>
+      <title>A New Beginning</title>
+      <link>https://live4thee.github.io/2016/09/08/a-new-beginning/</link>
+      <pubDate>Thu, 08 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/09/08/a-new-beginning/</guid>
+      <description>转眼儿子已经在幼儿园上了六天小班。中间有梦话念“不上幼儿园”，醒来念“不上幼儿园”，以及出门念“不上幼儿园”。出（家）门哭，进（学校）门哭，</description>
+    </item>
+    <item>
+      <title>Readings 16&#39;Q2</title>
+      <link>https://live4thee.github.io/2016/09/08/readings-16q2/</link>
+      <pubDate>Thu, 08 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/09/08/readings-16q2/</guid>
+      <description>Q2看完的书不多，只有王小波的短篇： 2005 白银时代 歌仙 革命时代的爱情 黄金时代 绿毛水怪 没看完的包括王小波的《红拂夜奔》，杨绛的《洗澡》，还有便是《</description>
+    </item>
+    <item>
+      <title>Random Bits (2)</title>
+      <link>https://live4thee.github.io/2016/08/20/random-bits-2/</link>
+      <pubDate>Sat, 20 Aug 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/08/20/random-bits-2/</guid>
+      <description>程序员最郁闷的事情之一在于 - 调试了大半天后，却从日志中发现，折腾了我好久的一个诡异现象的原因是某个第三方软件(嗯，就是libvirt，但也有</description>
+    </item>
+    <item>
+      <title>Random Bits (1)</title>
+      <link>https://live4thee.github.io/2016/07/20/random-bits/</link>
+      <pubDate>Wed, 20 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/07/20/random-bits/</guid>
+      <description>自创业以来，渐渐竟然感觉有点回到当年实习的时候 - 因为现在有很多实习生， 让我想起了从前的自己。大伙也经常觍着脸和实习生一起去交大食堂吃饭，改善</description>
+    </item>
+    <item>
+      <title>Looking Back</title>
+      <link>https://live4thee.github.io/2016/06/29/looking-back/</link>
+      <pubDate>Wed, 29 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/06/29/looking-back/</guid>
+      <description>Number of Code Commits 🔗今天是加入创业整整三个月。除去清明、五一以及端午加上自己请假，一共休息了两个礼拜，实际为两个半月。其间 Java 代码相关的改动提交了 46 个，</description>
+    </item>
+    <item>
+      <title>Father and Son (7)</title>
+      <link>https://live4thee.github.io/2016/05/24/father-and-son-7/</link>
+      <pubDate>Tue, 24 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/24/father-and-son-7/</guid>
+      <description>和同事们打羽毛球后，感觉自己击球力量不够，便扶着床沿练俯卧撑。小朋友问 ``爸爸，你怎么亲床呀！&#39;&#39;</description>
+    </item>
+    <item>
+      <title>Readings 16’Q1</title>
+      <link>https://live4thee.github.io/2016/05/04/readings-16-q1/</link>
+      <pubDate>Wed, 04 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/04/readings-16-q1/</guid>
+      <description>第一季度读完了叶李华翻译的阿西莫夫经典科幻，包括《银河帝国三部曲》， 《基地七部曲》系列，以及《机器人五部曲》。很难想象，其写作时间横跨195</description>
+    </item>
+    <item>
+      <title>Father and Son (6)</title>
+      <link>https://live4thee.github.io/2016/04/08/father-and-son-6/</link>
+      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/08/father-and-son-6/</guid>
+      <description>自从加入创业后，每天到家都比较晚。而每次看见我回家，小孩都挺高兴。 某天刚进门 “爸爸回来啦？是路上堵车吗？” 又一天 “爸爸忙，要-工-作。” 另一</description>
+    </item>
+    <item>
+      <title>Father and Son (5)</title>
+      <link>https://live4thee.github.io/2016/03/28/father-and-son-5/</link>
+      <pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/28/father-and-son-5/</guid>
+      <description>今天从MS离职，加入小伙伴们的创业团队。下午先顺道去了 4S 店，回家时路上已经有点堵。因为约了和同事们晚餐，我先把东西放回去再出门。看见我重新穿</description>
+    </item>
+    <item>
+      <title>View Points</title>
+      <link>https://live4thee.github.io/2016/03/15/view-points/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/15/view-points/</guid>
+      <description>饭后和爸妈视频，顺便聊了几句我要离职的事情。 老妈问我，加入初创后，是否也是创始人，我说不是，算是 “重要员工” 吧。又问我收入，我说只有现在一半</description>
+    </item>
+    <item>
+      <title>Father and Son (4)</title>
+      <link>https://live4thee.github.io/2016/03/08/father-and-son-4/</link>
+      <pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/08/father-and-son-4/</guid>
+      <description>昨晚吃饭时，儿子突然咕哝了一句“爸爸狠辉辉”。 我有点好奇，他早晨几乎还没起床我就上班去了，晚上回家也刚没多久，怎么就来了这一出。我问，“爸爸</description>
+    </item>
+    <item>
+      <title>Old Dreams</title>
+      <link>https://live4thee.github.io/2016/03/05/old-dreams/</link>
+      <pubDate>Sat, 05 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/05/old-dreams/</guid>
+      <description>偶然在浏览器里输入了一个地址，曾经写 blog 的地方，惊讶的发现，那些文章居然都还在。略微浏览了一下十年前写下的文字，不由得又想起最开始写 blog 的那个站</description>
+    </item>
+    <item>
+      <title>Raising a Son</title>
+      <link>https://live4thee.github.io/2016/02/18/raising-a-son/</link>
+      <pubDate>Thu, 18 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/02/18/raising-a-son/</guid>
+      <description>育儿感想一则 - 以记录周一、周二在家的育儿体验。 曾经闪现过几次全职奶爸的念头，虽然明知不现实。有此念头的原因在于，一方面，我觉得孩子的教育实在</description>
+    </item>
+    <item>
+      <title>Better Call Saul</title>
+      <link>https://live4thee.github.io/2016/01/25/better-call-saul/</link>
+      <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/01/25/better-call-saul/</guid>
+      <description>2015年一直处于忙碌状态，但也看了一些电影、电视。最喜欢的，也是之前最期待的，则是《绝命律师》。其中最吸引我的，是 Jimmy（也就是后来的</description>
+    </item>
+    <item>
+      <title>Father and Son (3)</title>
+      <link>https://live4thee.github.io/2015/09/17/father-and-son-3/</link>
+      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/17/father-and-son-3/</guid>
+      <description>儿子不好好吃饭，我很严肃的盯着他。 “爸爸生气了” （然后，又来了一句） “火山” 因为以前常读一本《菲菲生气了》，里面的菲菲生气了就像火山爆发一样</description>
+    </item>
+    <item>
+      <title>Once Upon A Time</title>
+      <link>https://live4thee.github.io/2015/09/12/once-upon-a-time/</link>
+      <pubDate>Sat, 12 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/12/once-upon-a-time/</guid>
+      <description>这周很是忙碌，却又突然被加入一个小学/中学同学微信群，每天上千条消息。 许多名字、老照片、还有往事，晚上下班开车回家的时候，竟然不讨厌红灯了。</description>
+    </item>
+    <item>
+      <title>An Incident</title>
+      <link>https://live4thee.github.io/2015/08/31/an-incident/</link>
+      <pubDate>Mon, 31 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/31/an-incident/</guid>
+      <description>昨天买了个鞋柜，包装没打开先靠在了墙边。晚上一不留神，儿子跑过去手一扒， 倒下来砸到了左脚。顿时嚎啕大哭，说疼，后来又说不疼。当时没有立刻去急</description>
+    </item>
+    <item>
+      <title>Old Friend</title>
+      <link>https://live4thee.github.io/2015/08/20/old-friend/</link>
+      <pubDate>Thu, 20 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/20/old-friend/</guid>
+      <description>大狼同学来魔都出差，于是约在莘庄一起午餐。 “你在找啥？”大狼远处招手。多年未见，老同学已经发胖得几乎一眼认不出来。不禁有点感叹光阴蹉跎。虽然</description>
+    </item>
+    <item>
+      <title>Father and Son (2)</title>
+      <link>https://live4thee.github.io/2015/08/16/father-and-son-2/</link>
+      <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/16/father-and-son-2/</guid>
+      <description>给儿子读书，读了一本又一本。正想表扬一下“真聪明”： “辉辉真...” (还没说完) “真懂事、真大方！” “还有呢？” “不好意思呢（了）！” 对着书</description>
+    </item>
+    <item>
+      <title>Curiosity</title>
+      <link>https://live4thee.github.io/2015/08/15/curiosity/</link>
+      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/15/curiosity/</guid>
+      <description>自从约半年前，自Rocky那儿借阅了《三体》之后，最近两三个月，又陆陆续续读了一些科幻：《神门自己》、《永恒的终结》、《微宇宙的上帝》等等。</description>
+    </item>
+    <item>
+      <title>Father and Son (1)</title>
+      <link>https://live4thee.github.io/2015/07/20/father-and-son---1/</link>
+      <pubDate>Mon, 20 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/20/father-and-son---1/</guid>
+      <description>前几天买了一本漫画《父与子》全集，打开一看，内容还不适合现在给孩子阅读， 于是就放在了书柜里。但我却也可以仿照其中的内容，写下我自己的《父与子</description>
+    </item>
+    <item>
+      <title>Hair Cut</title>
+      <link>https://live4thee.github.io/2015/07/14/hair-cut/</link>
+      <pubDate>Tue, 14 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/14/hair-cut/</guid>
+      <description>像很多小孩一样，儿子一直不喜欢理发。梅雨过后，天气明显转热，小孩本来就很容易出汗，枕头经常被他的汗水打湿。 最近理发都是我来操刀。以前总是嗷嗷</description>
+    </item>
+    <item>
+      <title>Growing up (2)</title>
+      <link>https://live4thee.github.io/2015/07/05/growing-up-2/</link>
+      <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/05/growing-up-2/</guid>
+      <description>这几天，孩子想要小解之前，也知道要去坐他的小马桶了，或者对大人说“要拉尿尿了”。这真是令我惊讶。我自己完全没有这方面的记忆。 周二体检，周三晚</description>
+    </item>
+    <item>
+      <title>Growing Up</title>
+      <link>https://live4thee.github.io/2015/06/25/growing-up/</link>
+      <pubDate>Thu, 25 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/06/25/growing-up/</guid>
+      <description>再过两周，孩子就满两周岁了。我已经明显感受到了他的成长。他已经不再只是要求我给他读书，也经常会坚持要读给我听，而且永远都是他中意的那本书中的</description>
+    </item>
+    <item>
+      <title>Once Upon a Time</title>
+      <link>https://live4thee.github.io/2015/06/13/once-upon-a-time/</link>
+      <pubDate>Sat, 13 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/06/13/once-upon-a-time/</guid>
+      <description>这几天高中同学的微信群突然变得异常热闹，每天大概有上千条消息。 许多本来已经模糊的名字、相貌，再次变得清晰起来。就好像有人在记忆尘封的角落清吹</description>
+    </item>
+    <item>
+      <title>Being a Father</title>
+      <link>https://live4thee.github.io/2015/05/26/being-a-father/</link>
+      <pubDate>Tue, 26 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/26/being-a-father/</guid>
+      <description>孩子并非绝对是天使，父母更是远非神圣。我们都只是一个生命存在，而已。我向往《狮子王》里面 Mufasa 和 Simba 那样的父子关系，父亲勇敢、无畏具有责任感、威严</description>
+    </item>
+    <item>
+      <title>Death</title>
+      <link>https://live4thee.github.io/2015/05/26/death/</link>
+      <pubDate>Tue, 26 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/26/death/</guid>
+      <description>昨天上午得知大伯病逝的消息。胰腺癌，距离医生的宣判刚好50天。记忆中最深刻的印象是月初回家时，他的满头白发和黝黑的皮肤，而且是那种不寻常的奶</description>
+    </item>
+    <item>
+      <title>With Friends</title>
+      <link>https://live4thee.github.io/2015/05/10/with-friends/</link>
+      <pubDate>Sun, 10 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/10/with-friends/</guid>
+      <description>晚餐响应康总召集，聚在鹤庆路小田园。除了几位早已熟识之外，还有三位听过却未曾谋面的朋友。继爵爷之后，康总也加入了创业者的行列。据某位朋友说，</description>
+    </item>
+    <item>
+      <title>A Visit to WuXi</title>
+      <link>https://live4thee.github.io/2015/04/06/a-visit-to-wuxi/</link>
+      <pubDate>Mon, 06 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/04/06/a-visit-to-wuxi/</guid>
+      <description>It happens to be one decade since my last visit to WuXi, Jiangsu province. It was a spring outing, and we were in sophomore (or junior) and I still remember that we watched repeatedly, , almost 6 times,Forrest Gump on the bus, during the long travel.&#xA;I planed to take my wife and son to the Yuantouzhu Park, because the sakura there are beautiful, and I was impressed by the Taihu Lake.</description>
+    </item>
+    <item>
+      <title>For the Record</title>
+      <link>https://live4thee.github.io/2015/03/30/for-the-record/</link>
+      <pubDate>Mon, 30 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/30/for-the-record/</guid>
+      <description>Tonight my wife signed a contract to buy an apartment, so that our son can attend a better school. Still, I do not buy in the reason, because I believe that the best education comes from the family, the role model we would build up for, and the belief we would pass to, our son.&#xA;I was irritated (although remained calm and silence), when one day, my wife asked, &amp;ldquo;Do you love our son?</description>
+    </item>
+    <item>
+      <title>A Visit</title>
+      <link>https://live4thee.github.io/2015/03/21/a-visit/</link>
+      <pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/21/a-visit/</guid>
+      <description>Today Yyk and I paid a visit toXiaowei, and others alongside.&#xA;This is the first time I visit Xiaowei&amp;rsquo;s startup. After a few discussion, Xiaowei showed us a demo. I am impressed, not only the product itself, but more about the passion. The passion to create something that is amazing, and the belief that we can take challenges.&#xA;I talked few. I was thinking about my life, my dream. Probably the most meaningful conclusion I had then, is, &amp;ldquo;Have trust, and show respect.</description>
+    </item>
+  </channel>
+</rss>
