@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on Life of a Programmer</title>
+    <link>https://live4thee.github.io/categories/vim/</link>
+    <description>Recent content in Vim on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 25 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/categories/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vim-go with pathogen</title>
+      <link>https://live4thee.github.io/2016/01/25/vim-go-with-pathogen/</link>
+      <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/01/25/vim-go-with-pathogen/</guid>
+      <description>本地的 Fedora 虚拟机里面设置了用pathogen加载vim-go，一直工作得很好。而我远程一台 Ubuntu 14.04 LTS 则不工作，虽然.vimrc的内容一模一样，且p</description>
+    </item>
+  </channel>
+</rss>

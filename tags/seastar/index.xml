@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seastar on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/seastar/</link>
+    <description>Recent content in Seastar on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Sep 2024 09:42:27 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/seastar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IBV_WC_RETRY_EXC_ERR</title>
+      <link>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</link>
+      <pubDate>Sat, 14 Sep 2024 09:42:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</guid>
+      <description>记得休假前跑通了 RDMA 网络, 并在组内做了演示。看着环境 A 屏幕上飞快滚动的日志，颇为欣喜。当时的性能数据略有点奇怪 &amp;ndash; 因为开着 DEBUG 信息，并未太放在心上</description>
+    </item>
+    <item>
+      <title>Into Seastar</title>
+      <link>https://live4thee.github.io/posts/2024-06-26-into-seastar/</link>
+      <pubDate>Wed, 26 Jun 2024 14:40:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-26-into-seastar/</guid>
+      <description>在Seastar的海洋里扑腾，喘口气。 增加了一个 HTTP handler, 用 curl 测试了一下能工作。所用的 Seastar 版本只有 http_server, 没有 http_client，不得不照猫画虎写了个</description>
+    </item>
+  </channel>
+</rss>
