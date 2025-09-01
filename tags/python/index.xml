@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/python/</link>
+    <description>Recent content in Python on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Nov 2019 10:42:28 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Inspection</title>
+      <link>https://live4thee.github.io/posts/2019-11-05-python-inspection/</link>
+      <pubDate>Tue, 05 Nov 2019 10:42:28 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-05-python-inspection/</guid>
+      <description>作为程序员，经常有查看源代码的需求。如果没有代码，能反汇编也不至于两眼摸黑。Python 这方面的支持做的挺不错。 inspect 🔗inspect 定义了很多</description>
+    </item>
+    <item>
+      <title>Python &#39;if&#39;</title>
+      <link>https://live4thee.github.io/posts/2019-10-14-python-if/</link>
+      <pubDate>Mon, 14 Oct 2019 19:41:03 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-10-14-python-if/</guid>
+      <description>前两天掉进了一个 Python 的坑。 import xml.etree.ElementTree as ET s = &amp;#34;&amp;#34;&amp;#34;&amp;lt;disk type=&amp;#39;file&amp;#39; device=&amp;#39;disk&amp;#39;&amp;gt; &amp;lt;driver name=&amp;#39;qemu&amp;#39; type=&amp;#39;qcow2&amp;#39; cache=&amp;#39;directsync&amp;#39; io=&amp;#39;native&amp;#39;/&amp;gt; &amp;lt;source file=&amp;#39;/vms/test/centos76-efi&amp;#39;/&amp;gt; &amp;lt;target dev=&amp;#39;vda&amp;#39; bus=&amp;#39;virtio&amp;#39;/&amp;gt; &amp;lt;/disk&amp;gt;&amp;#34;&amp;#34;&amp;#34; ele = etree.fromstring(s) t = ele.find(&amp;#39;target&amp;#39;) # &amp;lt;Element &amp;#39;target&amp;#39; at 0x249dc90&amp;gt; if t: ele.remove(t) 然后发现，&amp;rsquo;ele.remove(t</description>
+    </item>
+    <item>
+      <title>UnboundLocalError</title>
+      <link>https://live4thee.github.io/posts/2019-10-14-unboundlocalerror/</link>
+      <pubDate>Mon, 14 Oct 2019 09:36:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-10-14-unboundlocalerror/</guid>
+      <description>最近碰到个 &amp;lsquo;UnboundLocalError&amp;rsquo;, 初看不可思议，知道原理后就释然了。 # file: test.py def e(x): print(x) def g(): e(1) e = 1 g() 运行一下： $ python test.py Traceback (most recent call last): File &amp;#34;test.py&amp;#34;, line 7, in &amp;lt;module&amp;gt; g() File &amp;#34;test.py&amp;#34;, line 4, in g e(1) UnboundLocalError: local variable &amp;#39;e&amp;#39; referenced before assignment</description>
+    </item>
+    <item>
+      <title>All of a Sudden</title>
+      <link>https://live4thee.github.io/2017/12/08/all-of-a-sudden/</link>
+      <pubDate>Fri, 08 Dec 2017 21:57:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/12/08/all-of-a-sudden/</guid>
+      <description>这篇文章虽然打了 python 标签，其实没啥关系。主要原因在于同事发现了我之前在我司的 python 代码里埋下的两个“煞有介事”的bug，略尴尬。 这俩bug也解释了</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (7)</title>
+      <link>https://live4thee.github.io/2017/10/15/hunting-a-bug/</link>
+      <pubDate>Sun, 15 Oct 2017 22:07:53 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/15/hunting-a-bug/</guid>
+      <description>最近几天被一个 bug 折磨得不要不要的，经过诸多分析后，最终发现它藏在CherryPy 的代码里，如下： 该函数在最新版本里至今仍一行未改：传送门 这段</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MSG_ZEROCOPY | Life of a Programmer</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="之前听F老师说，手动修改代码后，本机 Qemu 热升级打开零拷贝支持后效果非常好。因此拿内核代码树里的测试代码试了试， 却发现几乎没啥区别：并且每次都报">
+<meta name="generator" content="Hugo 0.131.0">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">MSG_ZEROCOPY</h1>
+
+    <div class="tip">
+        <time datetime="2024-08-30 16:56:38 &#43;0800 CST">Aug 30, 2024</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          937 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          2 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#msg_zerocopy">MSG_ZEROCOPY</a>
+      <ul>
+        <li><a href="#语义">语义</a></li>
+        <li><a href="#bug">BUG</a></li>
+      </ul>
+    </li>
+    <li><a href="#再探">再探</a>
+      <ul>
+        <li><a href="#没有免费午餐">没有免费午餐</a></li>
+        <li><a href="#zcn-的原因"><code>zc=n</code> 的原因</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>之前听F老师说，手动修改代码后，本机 Qemu 热升级打开零拷贝支持后效果非常好。因此拿内核代码树里的<a href="https://github.com/torvalds/linux/blob/master/tools/testing/selftests/net/msg_zerocopy.c" target="_blank" rel="noopener">测试代码</a>试了试，
+却发现几乎没啥区别：并且每次都报 <code>zc=n</code>, 也就是并没有成功做零拷贝。</p>
+<p>在F老师的帮助下，<code>perf</code> 粗粗地看了看，相关内核路径确实也跑到了。奇怪。前几天看 SNIA SDC EMEA 2022 <a href="https://b23.tv/hXtV52J" target="_blank" rel="noopener">视频</a>的时候，里面提到打开零拷贝效果明显，忍不住又探究了一番。</p>
+<h2 id="msg_zerocopy">MSG_ZEROCOPY <a href="#msg_zerocopy" class="anchor">🔗</a></h2><h3 id="语义">语义 <a href="#%e8%af%ad%e4%b9%89" class="anchor">🔗</a></h3><p><a href="https://docs.kernel.org/networking/msg_zerocopy.html" target="_blank" rel="noopener">MSG_ZEROCOPY</a>只是一个提示(hint)，内核会避免做拷贝并入队一个通知，但并不能保证一定会消除拷贝开销。重要的是，该参数实际上也改变了<code>send()</code>系统调用的语义：</p>
+<ol>
+<li>内核会锁定相关页面，通过共享内存的方式，把待发送的数据共享给网络栈；</li>
+<li>因此发送过程中用户不能修改 <code>buf</code> &ndash; 虽然此时 <code>send(fd, buf, ...)</code> 可能已返回；</li>
+<li><code>buf</code> 完成使用后，内核通过发送 zc completion notification 通知用户。</li>
+</ol>
+<h3 id="bug">BUG <a href="#bug" class="anchor">🔗</a></h3><p>测试代码曾经有 BUG, 会导致代码其实没有去读取 completion 通知。字节的同学提交了一个<a href="https://lore.kernel.org/netdev/4de9f008-ccb1-4077-b415-d7373caeb3cc@bytedance.com/T/" target="_blank" rel="noopener">补丁</a>。</p>
+<blockquote>
+<p>Typically, it will start the receiving process after around 30+
+sendmsgs. However, as the introduction of commit dfa2f0483360 (&ldquo;tcp:
+get rid of sysctl_tcp_adv_win_scale&rdquo;), the sender is always writable
+and does not get any chance to run recv notifications.  The selftest
+always exits with OUT_OF_MEMORY because the memory used by opt_skb
+exceeds the net.core.optmem_max.</p>
+</blockquote>
+<p>我用的测试代码已经包含了及时读取 notification 的修复，但仍然报 <code>zc=n</code>.</p>
+<h2 id="再探">再探 <a href="#%e5%86%8d%e6%8e%a2" class="anchor">🔗</a></h2><h3 id="没有免费午餐">没有免费午餐 <a href="#%e6%b2%a1%e6%9c%89%e5%85%8d%e8%b4%b9%e5%8d%88%e9%a4%90" class="anchor">🔗</a></h3><p>再次仔细阅读<a href="https://docs.kernel.org/networking/msg_zerocopy.html" target="_blank" rel="noopener">文档</a>，
+得到如下信息：</p>
+<ol>
+<li>网络设备需要支持 scatter-gather I/O;</li>
+<li>收到 zc completion 不代表发送完成；</li>
+<li>内核通过在 <code>ee_code</code> 中设置 <code>SO_EE_CODE_ZEROCOPY_COPIED</code> 告知用户当前设备无法使用零拷贝，后续不必设置 <code>MSG_ZEROCOPY</code>.</li>
+</ol>
+<p>无法使用零拷贝却又做了相关工作，还得回退到拷贝模式，反而会有性能损耗。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ethtool -k bond1 | grep scat
+</span></span><span style="display:flex;"><span>scatter-gather: on
+</span></span><span style="display:flex;"><span>        tx-scatter-gather: on
+</span></span><span style="display:flex;"><span>		tx-scatter-gather-fraglist: off <span style="color:#f92672">[</span>requested on<span style="color:#f92672">]</span>
+</span></span></code></pre></div><h3 id="zcn-的原因"><code>zc=n</code> 的原因 <a href="#zcn-%e7%9a%84%e5%8e%9f%e5%9b%a0" class="anchor">🔗</a></h3><p>还是在 StackOverflow 找到了<a href="https://stackoverflow.com/questions/61203647" target="_blank" rel="noopener">答案</a>：</p>
+<blockquote>
+<p>After tracing kernel stack, i found that skb_copy_ubufs lead to the
+result, which was called by dev_queue_xmit_nit. It means that
+MSG_ZEROCOPY notification will return SO_EE_CODE_ZEROCOPY_COPIED if
+there are network taps in use. For my case, they are dhclient and
+lldpd.service. After killing them, the code disappeared.</p>
+</blockquote>
+<p>默认使用最大 payload 进行测试，在一个相对空闲的环境进行测试，成功使用零拷贝时得出的数据比较有波动，并且不具有性能优势。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># 不使用零拷贝</span>
+</span></span><span style="display:flex;"><span>$ time ./msg_zerocopy -C <span style="color:#ae81ff">39</span> -4 tcp -D 10.10.3.4  
+</span></span><span style="display:flex;"><span>tx<span style="color:#f92672">=</span><span style="color:#ae81ff">129909</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">8106</span> MB<span style="color:#f92672">)</span> txc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> zc<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>real    0m4.201s
+</span></span><span style="display:flex;"><span>user    0m0.049s
+</span></span><span style="display:flex;"><span>sys     0m1.988s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置使用零拷贝，实际未能成功零拷贝</span>
+</span></span><span style="display:flex;"><span>$ time ./msg_zerocopy -C <span style="color:#ae81ff">39</span> -4 tcp -D 10.10.3.4 -z
+</span></span><span style="display:flex;"><span>tx<span style="color:#f92672">=</span><span style="color:#ae81ff">90078</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">5621</span> MB<span style="color:#f92672">)</span> txc<span style="color:#f92672">=</span><span style="color:#ae81ff">90078</span> zc<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>real    0m4.242s
+</span></span><span style="display:flex;"><span>user    0m0.022s
+</span></span><span style="display:flex;"><span>sys     0m2.211s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 关掉 lldpd 设置使用零拷贝，实际成功进行了零拷贝</span>
+</span></span><span style="display:flex;"><span>$ time ./msg_zerocopy -C <span style="color:#ae81ff">39</span> -4 tcp -D 10.10.3.4 -z
+</span></span><span style="display:flex;"><span>tx<span style="color:#f92672">=</span><span style="color:#ae81ff">108938</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">6798</span> MB<span style="color:#f92672">)</span> txc<span style="color:#f92672">=</span><span style="color:#ae81ff">108938</span> zc<span style="color:#f92672">=</span>y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>real    0m4.201s
+</span></span><span style="display:flex;"><span>user    0m0.023s
+</span></span><span style="display:flex;"><span>sys     0m1.108s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ time ./msg_zerocopy -C <span style="color:#ae81ff">39</span> -4 tcp -D 10.10.3.4 -z
+</span></span><span style="display:flex;"><span>tx<span style="color:#f92672">=</span><span style="color:#ae81ff">70444</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">4395</span> MB<span style="color:#f92672">)</span> txc<span style="color:#f92672">=</span><span style="color:#ae81ff">70444</span> zc<span style="color:#f92672">=</span>y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>real    0m4.202s
+</span></span><span style="display:flex;"><span>user    0m0.018s
+</span></span><span style="display:flex;"><span>sys     0m0.841s
+</span></span></code></pre></div><p>用 <code>bpftrace</code> 跟踪了一下，打开零拷贝，由于 lldpd 服务而未能进行零拷贝时，内核代码会走 <code>skb_copy_ubufs()</code>. 成功进行零拷贝不会进入该函数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ bpftrace -e <span style="color:#e6db74">&#39;kretfunc:skb_copy_ubufs{printf(&#34;%s\n&#34;, kstack); exit()}&#39;</span>
+</span></span><span style="display:flex;"><span>Attaching <span style="color:#ae81ff">1</span> probe...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        exit_misc_binfmt+53365
+</span></span><span style="display:flex;"><span>        bpf_get_stackid_raw_tp+82
+</span></span><span style="display:flex;"><span>        exit_misc_binfmt+53365
+</span></span><span style="display:flex;"><span>        exit_misc_binfmt+60989
+</span></span><span style="display:flex;"><span>        skb_copy_ubufs+5
+</span></span><span style="display:flex;"><span>        dev_queue_xmit_nit+451
+</span></span><span style="display:flex;"><span>        dev_hard_start_xmit+106
+</span></span><span style="display:flex;"><span>        __dev_queue_xmit+2060
+</span></span><span style="display:flex;"><span>        ip_finish_output2+621
+</span></span><span style="display:flex;"><span>        ip_output+112
+</span></span><span style="display:flex;"><span>        __ip_queue_xmit+365
+</span></span><span style="display:flex;"><span>        __tcp_transmit_skb+2561
+</span></span><span style="display:flex;"><span>        tcp_write_xmit+1085
+</span></span><span style="display:flex;"><span>        tcp_sendmsg_locked+677
+</span></span><span style="display:flex;"><span>        tcp_sendmsg+39
+</span></span><span style="display:flex;"><span>        sock_sendmsg+66
+</span></span><span style="display:flex;"><span>        ____sys_sendmsg+495
+</span></span><span style="display:flex;"><span>        ___sys_sendmsg+124
+</span></span><span style="display:flex;"><span>        __sys_sendmsg+87
+</span></span><span style="display:flex;"><span>        do_syscall_64+91
+</span></span><span style="display:flex;"><span>        entry_SYSCALL_64_after_hwframe+97
+</span></span></code></pre></div><p>测试环境：kernel-4.18.0.  Stack Overflow 的回答中用的 5.4.0</p>
+
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://live4thee.github.io/tags/networking">networking</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "live4thee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://www.facebook.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-152.000000, -43.000000)">
+            <g id="Facebook" transform="translate(152.000000, 43.000000)">
+                <rect id="Rounded" fill="#bbbbbb" x="0" y="0" width="72" height="72" rx="8"></rect>
+                <path d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://github.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://twitter.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.536px" height="438.536px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;"
+	 xml:space="preserve">
+<g>
+	<path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
+		C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126
+		h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225
+		C438.532,59.576,430.49,40.204,414.41,24.123z M335.471,168.735c0.191,1.713,0.288,4.278,0.288,7.71
+		c0,15.989-2.334,32.025-6.995,48.104c-4.661,16.087-11.8,31.504-21.416,46.254c-9.606,14.749-21.074,27.791-34.396,39.115
+		c-13.325,11.32-29.311,20.365-47.968,27.117c-18.648,6.762-38.637,10.143-59.953,10.143c-33.116,0-63.76-8.952-91.931-26.836
+		c4.568,0.568,9.329,0.855,14.275,0.855c27.6,0,52.439-8.565,74.519-25.7c-12.941-0.185-24.506-4.179-34.688-11.991
+		c-10.185-7.803-17.273-17.699-21.271-29.691c4.947,0.76,8.658,1.137,11.132,1.137c4.187,0,9.042-0.76,14.56-2.279
+		c-13.894-2.669-25.598-9.562-35.115-20.697c-9.519-11.136-14.277-23.84-14.277-38.114v-0.571
+		c10.085,4.755,19.602,7.229,28.549,7.422c-17.321-11.613-25.981-28.265-25.981-49.963c0-10.66,2.758-20.747,8.278-30.264
+		c15.035,18.464,33.311,33.213,54.816,44.252c21.507,11.038,44.54,17.227,69.092,18.558c-0.95-3.616-1.427-8.186-1.427-13.704
+		c0-16.562,5.853-30.692,17.56-42.399c11.703-11.706,25.837-17.561,42.394-17.561c17.515,0,32.079,6.283,43.688,18.846
+		c13.134-2.474,25.892-7.33,38.26-14.56c-4.757,14.652-13.613,25.788-26.55,33.402c12.368-1.716,23.88-4.95,34.537-9.708
+		C357.458,149.793,347.462,160.166,335.471,168.735z"/>
+</g>
+</svg>
+
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2025 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       live4thee
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>
