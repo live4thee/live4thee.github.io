@@ -129,7 +129,7 @@ MODULE_LICENSE("GPL");
 编译后，测试一下：
 
 ```sh
-$ insmod ./blktrace-remover.ko pathname=sdb1
+$ insmod ./blktrace-remover.ko partname=sdb1
 insmod: ERROR: could not insert module ./blktrace-remover.ko: Operation not permitted
 ```
 
