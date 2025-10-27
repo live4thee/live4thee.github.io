@@ -49,7 +49,7 @@ $ gdbus introspect --session \
 $ gdbus introspect --session \
   --dest org.freedesktop.portal.Desktop \
   --object-path /org/freedesktop/portal/desktop \
-  --xml | grep org.freedesktop.portal                                       
+  --xml | grep org.freedesktop.portal
   <interface name="org.freedesktop.portal.Trash">
   <interface name="org.freedesktop.portal.MemoryMonitor">
   <interface name="org.freedesktop.portal.GameMode">
@@ -96,8 +96,8 @@ Failed to restart xdg-desktop-portal-gnome.service: Unit xdg-desktop-portal-gnom
 ```sh
 $ systemctl --user unmask xdg-desktop-portal-gnome.service
 Removed '/home/david/.config/systemd/user/xdg-desktop-portal-gnome.service'.
-$ systemctl --user restart xdg-desktop-portal.service                                  
-$ systemctl --user status xdg-desktop-portal                                            
+$ systemctl --user restart xdg-desktop-portal.service
+$ systemctl --user status xdg-desktop-portal
 ● xdg-desktop-portal.service - Portal service
      Loaded: loaded (/usr/lib/systemd/user/xdg-desktop-portal.service; static)
      Active: active (running) since Mon 2025-10-13 13:07:29 CST; 12s ago
@@ -151,3 +151,8 @@ $ gdbus introspect --session \
 ```
 
 再次运行 `xmind`, 果然正常了。
+
+**2025/10/27 Update**
+
+执行 `unmask xdg-desktop-portal-gnome` 会导致首次登录桌面环境后，`gnome-terminal`
+启动很慢的问题，见前文[Debian 13 Trixie]({{< ref "/posts/2025-08-13-trixie">}}).
