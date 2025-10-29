@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/windows/</link>
+    <description>Recent content in Windows on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Aug 2024 13:19:41 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RDP w/ Admin</title>
+      <link>https://live4thee.github.io/posts/2024-08-27-rdp-without-admin/</link>
+      <pubDate>Tue, 27 Aug 2024 13:19:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-08-27-rdp-without-admin/</guid>
+      <description>我的 Windows 环境一直跑在虚拟机里，主要为了使用钉钉和上网。默认用的管理员账号做 rdp 登录。 添加了一个普通账户后，用 xfreerdp 登录，报错 connect reset. 目测权限问题 &amp;ndash; 搜索了</description>
+    </item>
+    <item>
+      <title>Work From Home (2) </title>
+      <link>https://live4thee.github.io/posts/2022-03-31-work-from-home-2/</link>
+      <pubDate>Thu, 31 Mar 2022 14:15:34 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-03-31-work-from-home-2/</guid>
+      <description>自上次居家办公以来， 目前本次居家已超三个星期。然而生活的不易，却远较上次艰辛。 工作 🔗作为程序员，居家基本不影响工作。坏处是生活和工作的界限变</description>
+    </item>
+    <item>
+      <title>Work From Home</title>
+      <link>https://live4thee.github.io/posts/2020-02-11-work-from-home/</link>
+      <pubDate>Tue, 11 Feb 2020 23:10:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-02-11-work-from-home/</guid>
+      <description>相应号召，最近在家工作，不免总结一番。 作息 🔗每天夫人先起床，早餐差不多了，小朋友起床。小朋友的起床后兴致勃勃的任务之一是叫我起床。一家三口，</description>
+    </item>
+    <item>
+      <title>Surface Pro4 - 10 months later</title>
+      <link>https://live4thee.github.io/2018/01/04/surface-pro4-is-shit/</link>
+      <pubDate>Thu, 04 Jan 2018 18:48:21 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/01/04/surface-pro4-is-shit/</guid>
+      <description>去年二月底买了一台 Surface Pro 4，低配带手写笔。后来又买了配套的无线蓝牙键盘。我得承认，这是我比较后悔的一次购物。主要问题是这货 非常容易 出问题，特别</description>
+    </item>
+    <item>
+      <title>Surface Pro 4</title>
+      <link>https://live4thee.github.io/2017/02/25/surface-pro-4/</link>
+      <pubDate>Sat, 25 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/02/25/surface-pro-4/</guid>
+      <description>为了比较方便高效地看文档（主要是PDF）、记笔记，平衡了诸般选择后，买了一台 Surface Pro 4。最低配的版本，但是手写笔套装。用了两三个礼拜后， 还是忍不</description>
+    </item>
+    <item>
+      <title>A CertMngr Pitfall</title>
+      <link>https://live4thee.github.io/2015/08/05/a-certmngr-pitfall/</link>
+      <pubDate>Wed, 05 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/05/a-certmngr-pitfall/</guid>
+      <description>这两天碰到一个比较坑的问题，对于一个证书，用CertMngr导入进去后，我在自己的机器上可以导出为pfx，而实习生的机器上死活不行。上午出手</description>
+    </item>
+  </channel>
+</rss>

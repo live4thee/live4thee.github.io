@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Movie on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/movie/</link>
+    <description>Recent content in Movie on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Sep 2024 22:35:00 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/movie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Himalaya</title>
+      <link>https://live4thee.github.io/posts/2024-09-01-himalaya/</link>
+      <pubDate>Sun, 01 Sep 2024 22:35:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-01-himalaya/</guid>
+      <description>断断续续，看完了一部 1999 年上映的电影：Himalaya. 这部电影的 OST 我已经听了几十遍。毫不夸张地说，很多人因为先听了配乐而看了整部电影，包括我</description>
+    </item>
+    <item>
+      <title>Better Call Saul</title>
+      <link>https://live4thee.github.io/2016/01/25/better-call-saul/</link>
+      <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/01/25/better-call-saul/</guid>
+      <description>2015年一直处于忙碌状态，但也看了一些电影、电视。最喜欢的，也是之前最期待的，则是《绝命律师》。其中最吸引我的，是 Jimmy（也就是后来的</description>
+    </item>
+  </channel>
+</rss>
