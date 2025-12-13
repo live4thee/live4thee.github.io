@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/azure/</link>
+    <description>Recent content in Azure on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Oct 2025 19:07:01 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Layoff</title>
+      <link>https://live4thee.github.io/posts/2025-10-10-layoff/</link>
+      <pubDate>Fri, 10 Oct 2025 19:07:01 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-10-10-layoff/</guid>
+      <description>一个国庆长假回来，前东家的研发团队来了一次大裁员。虽然并不意外，然而感官上，灰犀牛来得比想象的猛列一些。</description>
+    </item>
+    <item>
+      <title>LINQPad Table Driver for Azure China</title>
+      <link>https://live4thee.github.io/2016/03/21/linqpad-table-driver-for-azure-china/</link>
+      <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/21/linqpad-table-driver-for-azure-china/</guid>
+      <description>在 Azure 的 PaaS 上构建云服务，很少有不用到 Cloud Storage 的。一般来说， 查看 Cloud Storage 中的数据主要有两个工具： Azure Table Explorer LINQPad，加上Azure Table Storage Driver 前者的最新版本</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (4)</title>
+      <link>https://live4thee.github.io/2016/03/14/hunting-a-bug-4/</link>
+      <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/14/hunting-a-bug-4/</guid>
+      <description>上午到公司还没出电梯，手机里就蹦出一封邮件，某客户询问某些文件未能及时上传的原因。当时觉得有点不可思议，因为相关服务已经好几个月没出过问题了</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (3)</title>
+      <link>https://live4thee.github.io/2015/12/02/hunting-a-bug-3/</link>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/12/02/hunting-a-bug-3/</guid>
+      <description>使用第三方服务API总是会有各种从未想到的边界条件，不断颠覆各种假设。然而这几天发现的一个bug却非常有意思。 我有段代码是抓取友商的日志文件</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (2)</title>
+      <link>https://live4thee.github.io/2015/11/24/hunting-a-bug-2/</link>
+      <pubDate>Tue, 24 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/11/24/hunting-a-bug-2/</guid>
+      <description>最近一周一直被一个IOException异常所困扰。异常消息的内容为Not enough space on the disk，搜索后发现，Azure Cloud Service 的磁盘用量是有配额限制</description>
+    </item>
+    <item>
+      <title>Hunting a Bug</title>
+      <link>https://live4thee.github.io/2015/09/17/hunting-a-bug/</link>
+      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/17/hunting-a-bug/</guid>
+      <description>这两天在追踪一个非常不可思议的bug - 我们的系统里会定时收到报警邮件说： 数据表是空的。而且，这个报警的内容和条件都是我设定的。 我的算法逻辑很</description>
+    </item>
+  </channel>
+</rss>
