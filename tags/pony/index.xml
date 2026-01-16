@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pony on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/pony/</link>
+    <description>Recent content in Pony on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 May 2021 20:25:57 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/pony/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pony Language</title>
+      <link>https://live4thee.github.io/posts/2021-05-10-pony-language/</link>
+      <pubDate>Mon, 10 May 2021 20:25:57 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-05-10-pony-language/</guid>
+      <description>某天电子邮箱里躺了一封关于 Pony 的问答。手贱点了进去，然后深受“广度优先”之害。 这篇文章来自 Pony 的设计者 Sylvan Clebsch 的口述 Pony 早期历史 ，原文读下来颇有点 Coders at</description>
+    </item>
+  </channel>
+</rss>

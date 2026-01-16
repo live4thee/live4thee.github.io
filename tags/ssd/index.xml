@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssd on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/ssd/</link>
+    <description>Recent content in Ssd on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Dec 2023 13:35:33 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/ssd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parallel All the Time</title>
+      <link>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</link>
+      <pubDate>Tue, 05 Dec 2023 13:35:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</guid>
+      <description>一起读论文：Parallel All The Time, 2019。该论文有一个改进版本，发表在 IEEE TPDS 2020 的九月刊。标题也有所更改，强调充分利用并发，去掉了“All The T</description>
+    </item>
+    <item>
+      <title>SSD 101 Plus</title>
+      <link>https://live4thee.github.io/posts/2023-12-04-ssd-intro/</link>
+      <pubDate>Mon, 04 Dec 2023 15:39:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-04-ssd-intro/</guid>
+      <description>简介 🔗读 NAND SSD 相关资料的时候，一般会遇到下面这张图： 相应解释是：1 一块 NAND Flash 包含多个 LUN（Logic Unit Number）； 每个 LUN 又包含多个 Plane; 每个 Plane</description>
+    </item>
+  </channel>
+</rss>

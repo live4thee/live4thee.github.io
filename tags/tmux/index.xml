@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tmux on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/tmux/</link>
+    <description>Recent content in Tmux on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>More Tmux Tips</title>
+      <link>https://live4thee.github.io/2016/06/01/more-tmux-tips/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/06/01/more-tmux-tips/</guid>
+      <description>Zoom State 🔗C-b z 使得当前窗口最大化，其它窗口被隐藏。再按一次 C-b z 恢复原样。 Detach Pane 🔗C-b ! (detach-pane) 使当前窗口脱离所在 pane，移动到新创建的 pane 中。反之</description>
+    </item>
+    <item>
+      <title>Fun with Tmux</title>
+      <link>https://live4thee.github.io/2016/04/12/fun-with-tmux/</link>
+      <pubDate>Tue, 12 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/12/fun-with-tmux/</guid>
+      <description>Linux 环境下最喜爱的程序之一是 tmux，基本上它就是我的窗口管理器。 Tmux 有三个概念：session, window 和 pane。对比桌面环境： session 就是一个会话，比</description>
+    </item>
+  </channel>
+</rss>

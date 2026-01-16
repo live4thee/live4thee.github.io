@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IBV_WC_RETRY_EXC_ERR | Life of a Programmer</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="记得休假前跑通了 RDMA 网络, 并在组内做了演示。看着环境 A 屏幕上飞快滚动的日志，颇为欣喜。当时的性能数据略有点奇怪 &ndash; 因为开着 DEBUG 信息，并未太放在心上">
+<meta name="generator" content="Hugo 0.131.0">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">IBV_WC_RETRY_EXC_ERR</h1>
+
+    <div class="tip">
+        <time datetime="2024-09-14 09:42:27 &#43;0800 CST">Sep 14, 2024</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1738 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          4 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#奇怪的报错">奇怪的报错</a>
+      <ul>
+        <li><a href="#意外现象">意外现象</a></li>
+        <li><a href="#更多现象">更多现象</a></li>
+      </ul>
+    </li>
+    <li><a href="#横向对比">横向对比</a>
+      <ul>
+        <li><a href="#相同环境不同代码">相同环境不同代码</a></li>
+        <li><a href="#相同代码不同环境">相同代码不同环境</a></li>
+      </ul>
+    </li>
+    <li><a href="#错误码说明">错误码说明</a></li>
+    <li><a href="#反复实验">反复实验</a>
+      <ul>
+        <li><a href="#对比建连过程">对比建连过程</a></li>
+        <li><a href="#验证-mtu-的影响">验证 MTU 的影响</a></li>
+        <li><a href="#mtu-的设置">MTU 的设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#后记">后记</a>
+      <ul>
+        <li><a href="#挂钟问题">挂钟问题</a></li>
+        <li><a href="#之前的演示">之前的演示？</a></li>
+        <li><a href="#ai-的助攻">AI 的助攻</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>记得<a href="https://live4thee.github.io/posts/2024-06-28-before-vacation/">休假前跑通了 RDMA 网络</a>,
+并在组内做了演示。看着环境 A 屏幕上飞快滚动的日志，颇为欣喜。当时的性能数据略有点奇怪 &ndash; 因为开着 DEBUG 信息，并未太放在心上。</p>
+<h2 id="奇怪的报错">奇怪的报错 <a href="#%e5%a5%87%e6%80%aa%e7%9a%84%e6%8a%a5%e9%94%99" class="anchor">🔗</a></h2><h3 id="意外现象">意外现象 <a href="#%e6%84%8f%e5%a4%96%e7%8e%b0%e8%b1%a1" class="anchor">🔗</a></h3><p>最近继续开始相关代码的改进和打磨，首先是获取性能指标。由于环境 A 被占用，因此在环境 B 上继续做若干横向对比。去除 DEBUG 后，再次运行测试程序，
+得到一行报错：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>rdma.cc:851 @processRCCQ]error on send wc: transport retry counter exceeded
+</span></span></code></pre></div><p>对应的代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (wcs[i].status <span style="color:#f92672">!=</span> IBV_WC_SUCCESS) {
+</span></span><span style="display:flex;"><span>    LOG(WARNING) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;error on send wc: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> ibv_wc_status_str(wcs[i].status));
+</span></span><span style="display:flex;"><span>    conn<span style="color:#f92672">-&gt;</span>shutdownConnection();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>这里，<code>wcs</code> 数组内存放的是 <a href="https://www.rdmamojo.com/2013/02/15/ibv_poll_cq/" target="_blank" rel="noopener"><code>ibv_poll_cq()</code></a>
+轮询得到的 <code>Work Completion</code> 信息。</p>
+<h3 id="更多现象">更多现象 <a href="#%e6%9b%b4%e5%a4%9a%e7%8e%b0%e8%b1%a1" class="anchor">🔗</a></h3><p>加入调试日志后，可以确认以下信息：</p>
+<ol>
+<li>客户端通过 <em>ibv_post_send()</em> 同时发送了两份数据，一个是 RPC 头，一个是 RPC 主体；</li>
+<li>服务端收到了 RPC 头，且数据是正确的；</li>
+<li>服务端读取 RPC 主体一直收不到数据，此时客户端已经报错 <em>retry counter exceeded</em>,</li>
+<li>报错是在 QP 建连（俗称 RDMA 握手）成功之后。</li>
+</ol>
+<h2 id="横向对比">横向对比 <a href="#%e6%a8%aa%e5%90%91%e5%af%b9%e6%af%94" class="anchor">🔗</a></h2><h3 id="相同环境不同代码">相同环境不同代码 <a href="#%e7%9b%b8%e5%90%8c%e7%8e%af%e5%a2%83%e4%b8%8d%e5%90%8c%e4%bb%a3%e7%a0%81" class="anchor">🔗</a></h3><p>在相同的测试环境 B，运行 <code>rdma-core</code> 自带的测试程序 <code>ibv_srq_pingpong</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># 服务端 node-2</span>
+</span></span><span style="display:flex;"><span>$ ibv_srq_pingpong -d mlx5_bond_0 -g <span style="color:#ae81ff">3</span> -n <span style="color:#ae81ff">100</span> -q <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 客户端</span>
+</span></span><span style="display:flex;"><span>$ ibv_srq_pingpong -d mlx5_bond_0 -g <span style="color:#ae81ff">3</span> -n <span style="color:#ae81ff">100</span> -q <span style="color:#ae81ff">2</span> node-2
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>看起来没毛病，一切正常。</p>
+<h3 id="相同代码不同环境">相同代码不同环境 <a href="#%e7%9b%b8%e5%90%8c%e4%bb%a3%e7%a0%81%e4%b8%8d%e5%90%8c%e7%8e%af%e5%a2%83" class="anchor">🔗</a></h3><p>把自己的测试程序重新在环境 A 上跑，却发现行为不一样了。客户端/服务端打印建连日志后，客户端虽然没有报错 <code>retry counter exceeded</code>, 服务端也没收到任何信息。遇到了新情况。</p>
+<p>该环境前两周拿来测友商的存储，拆掉了 RoCE 的 LAG 链路聚合。交换机上也折腾过一通 pfc/ecn. 一番检查后，找到了原因：铲掉环境后，同事重新在机器上做 bond 的时候，三个节点中 <code>node-2</code> 上的 bond 名字配反了。也就是<code>node-{1,3}</code> 节点上对应的 <code>mlx5_bond_{0,1}</code> 分别对应 <code>node-2</code> 上的<code>mlx5_bond_{1,0}</code>.</p>
+<p>测试程序指定正确的 RDMA 设备后，再次碰到了 <code>retry couter exceeded</code>. 当然，这个环境里 <code>ibv_srq_pingpong</code> 也没问题。回到原点。</p>
+<h2 id="错误码说明">错误码说明 <a href="#%e9%94%99%e8%af%af%e7%a0%81%e8%af%b4%e6%98%8e" class="anchor">🔗</a></h2><p>Dotan Barak 大神对该错误码做了<a href="https://www.rdmamojo.com/2013/02/15/ibv_poll_cq/" target="_blank" rel="noopener">一份说明</a>:</p>
+<blockquote>
+<p><strong>IBV_WC_RETRY_EXC_ERR</strong> (12) - Transport Retry Counter Exceeded:
+The local transport timeout retry counter was exceeded while trying
+to send this message. This means that the remote side didn&rsquo;t send
+any Ack or Nack. If this happens when sending the first message,
+usually this mean that the connection attributes are wrong or the
+remote side isn&rsquo;t in a state that it can respond to messages. If
+this happens after sending the first message, usually it means that
+the remote QP isn&rsquo;t available anymore. Relevant for RC QPs.</p>
+</blockquote>
+<p>总结下来，有下面几个意思：</p>
+<ol>
+<li>服务端可能没有发送 Ack 或 Nack;</li>
+<li>如果发送第一条信息就报错，可能是连接参数错误或者远端当时无法回复；</li>
+<li>如果是发送第一条后报的错，可能是远端的 QP 已经不在了；</li>
+<li>只在 RC 类型的 QP 下会发生。</li>
+</ol>
+<h2 id="反复实验">反复实验 <a href="#%e5%8f%8d%e5%a4%8d%e5%ae%9e%e9%aa%8c" class="anchor">🔗</a></h2><p>先把代码改成一条一条消息串行发送，并且设置上：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>    send_wr<span style="color:#f92672">-&gt;</span>send_flags <span style="color:#f92672">=</span> IBV_SEND_SIGNALED;
+</span></span></code></pre></div><p>可以确认：确实是发送第一个 RPC 头的时候就报了<code>IBV_WC_RETRY_EXC_ERR</code>.</p>
+<p>当然更有意思的是，服务端也确实成功收到了正确的 RPC 头。由于 QP 建立连接已经完成，如果是连接参数错误，反过来可以说明：</p>
+<blockquote>
+<p>通过调用 <code>ibv_modify_qp()</code> 把状态机一路推进到 <code>RTR</code> 再到 <code>RTS</code> 后，
+即使没有报错，<strong>也不能</strong>保证 <code>qp_attr</code> 中填写的连接参数都是正确的。</p>
+</blockquote>
+<h3 id="对比建连过程">对比建连过程 <a href="#%e5%af%b9%e6%af%94%e5%bb%ba%e8%bf%9e%e8%bf%87%e7%a8%8b" class="anchor">🔗</a></h3><p>对比测试代码和 <code>ibv_srq_pingpong</code> 客户端的建连逻辑，发现一处微小的区别：</p>
+<blockquote>
+<p>前者的 <code>qp_attr.path_mtu</code> 设置为 <code>IBV_MTU_4096</code>, 后者则是<code>IBV_MTU_1024</code>.</p>
+</blockquote>
+<p>查看了一下 SPDK 的代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ git grep IBV_MTU
+</span></span><span style="display:flex;"><span>lib/mlx5/mlx5_qp.c:     conn_caps-&gt;mtu <span style="color:#f92672">=</span> IBV_MTU_4096;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ git grep -w path_mtu
+</span></span><span style="display:flex;"><span>lib/mlx5/mlx5_qp.c:             DEVX_SET<span style="color:#f92672">(</span>qpc, qpc, mtu, qp_attr-&gt;path_mtu<span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>lib/mlx5/mlx5_qp.c:     qp_attr.path_mtu <span style="color:#f92672">=</span> caps-&gt;mtu;
+</span></span><span style="display:flex;"><span>module/accel/mlx5/accel_mlx5.c: attr.path_mtu <span style="color:#f92672">=</span> cur_attr.path_mtu;
+</span></span></code></pre></div><p>改成 <code>IBV_MTU_1024</code> 后，果然成功了。单线程单深度网络性能比现有框架提高了整整一倍出头。</p>
+<h3 id="验证-mtu-的影响">验证 MTU 的影响 <a href="#%e9%aa%8c%e8%af%81-mtu-%e7%9a%84%e5%bd%b1%e5%93%8d" class="anchor">🔗</a></h3><p><code>ibv_srq_pingpong</code> 可以指定 MTU（默认是 1024）.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># 服务端 node-2</span>
+</span></span><span style="display:flex;"><span>$ ibv_srq_pingpong -d mlx5_bond_0 -g <span style="color:#ae81ff">3</span> -n <span style="color:#ae81ff">100</span> -q <span style="color:#ae81ff">2</span> -m <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 客户端</span>
+</span></span><span style="display:flex;"><span>$ ibv_srq_pingpong -d mlx5_bond_0 -g <span style="color:#ae81ff">3</span> -n <span style="color:#ae81ff">100</span> -q <span style="color:#ae81ff">2</span> -m <span style="color:#ae81ff">4096</span> node-2
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>Failed status transport retry counter exceeded <span style="color:#f92672">(</span>12<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> wr_id <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>果然报了同样的错误。</p>
+<h3 id="mtu-的设置">MTU 的设置 <a href="#mtu-%e7%9a%84%e8%ae%be%e7%bd%ae" class="anchor">🔗</a></h3><p>IBM 有一份文档，<a href="https://www.ibm.com/docs/en/linux-on-systems?topic=functions-set-mtu" target="_blank" rel="noopener">Setting the MTU size</a>,
+写的很清楚：RoCE 模式下，网卡其实有两个 MTU 值：</p>
+<ol>
+<li>以太网的 MTU;</li>
+<li>InfiniBand 接口的 MTU - 也就是 IBoE (IB over Ethernet) MTU.</li>
+</ol>
+<p>后者是通过前者算出来的，无法直接设置。内核里找到这样一段代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/* include/rdma/ib_addr.h */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">enum</span> ib_mtu <span style="color:#a6e22e">iboe_get_mtu</span>(<span style="color:#66d9ef">int</span> mtu)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         * Reduce IB headers from effective IBoE MTU.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         */</span>
+</span></span><span style="display:flex;"><span>        mtu <span style="color:#f92672">=</span> mtu <span style="color:#f92672">-</span> (IB_GRH_BYTES <span style="color:#f92672">+</span> IB_UDP_BYTES <span style="color:#f92672">+</span> IB_BTH_BYTES <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                     IB_EXT_XRC_BYTES <span style="color:#f92672">+</span> IB_EXT_ATOMICETH_BYTES <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                     IB_ICRC_BYTES);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (mtu <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">ib_mtu_enum_to_int</span>(IB_MTU_4096))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> IB_MTU_4096;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (mtu <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">ib_mtu_enum_to_int</span>(IB_MTU_2048))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> IB_MTU_2048;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (mtu <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">ib_mtu_enum_to_int</span>(IB_MTU_1024))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> IB_MTU_1024;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (mtu <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">ib_mtu_enum_to_int</span>(IB_MTU_512))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> IB_MTU_512;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (mtu <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">ib_mtu_enum_to_int</span>(IB_MTU_256))
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> IB_MTU_256;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>可见，该 MTU 值为 <code>256 * 2^n</code>, <code>n = 0..4</code>. 环境里以太网 MTU 是 1500, 因此计算出 IBoE MTU 为 1024. 可以通过 <code>ibv_devinfo</code> 查看:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ibv_devinfo -d mlx5_bond_0
+</span></span><span style="display:flex;"><span>hca_id: mlx5_bond_0
+</span></span><span style="display:flex;"><span>        transport:                      InfiniBand <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>		...
+</span></span><span style="display:flex;"><span>		hys_port_cnt:                  <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                port:   <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                        state:                  PORT_ACTIVE <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                        max_mtu:                <span style="color:#ae81ff">4096</span> <span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                        active_mtu:             <span style="color:#ae81ff">1024</span> <span style="color:#f92672">(</span>3<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                        sm_lid:                 <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>                        port_lid:               <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>                        port_lmc:               0x00
+</span></span><span style="display:flex;"><span>                        link_layer:             Ethernet
+</span></span></code></pre></div><p>可以看到，当前 <code>active_mtu</code> 为 1024, 硬件支持的最大值 <code>max_mtu</code> 为 4096.</p>
+<h2 id="后记">后记 <a href="#%e5%90%8e%e8%ae%b0" class="anchor">🔗</a></h2><h3 id="挂钟问题">挂钟问题 <a href="#%e6%8c%82%e9%92%9f%e9%97%ae%e9%a2%98" class="anchor">🔗</a></h3><p>测试代码中，一些调试日志打印的时间戳很奇怪，原来是用的<code>std::chrono::steady_clock</code> 是稳步单调增挂钟。改成<code>std::chrono::high_resolution_clock</code> 解决。</p>
+<p>MSVC 和 GCC 的行为略有不同。GCC 有宏 <code>_GLIBCXX_USE_CLOCK_MONOTONIC</code> 来控制 <code>std::chrono::system_clock</code> 采用哪个挂钟。参考<a href="https://stackoverflow.com/questions/13263277/difference-between-stdsystem-clock-and-stdsteady-clock" target="_blank" rel="noopener">Stack Overflow</a>.</p>
+<h3 id="之前的演示">之前的演示？ <a href="#%e4%b9%8b%e5%89%8d%e7%9a%84%e6%bc%94%e7%a4%ba" class="anchor">🔗</a></h3><p>演了个寂寞？为啥当初没注意到 <code>retry counter exceeded</code> 呢？</p>
+<h3 id="ai-的助攻">AI 的助攻 <a href="#ai-%e7%9a%84%e5%8a%a9%e6%94%bb" class="anchor">🔗</a></h3><p>梳理建连逻辑的时候，通过内部的 AI 服务可以分类、简化、细化代码逻辑。</p>
+
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://live4thee.github.io/tags/networking">networking</a>
+            
+                <a href="https://live4thee.github.io/tags/rdma">rdma</a>
+            
+                <a href="https://live4thee.github.io/tags/seastar">seastar</a>
+            
+                <a href="https://live4thee.github.io/tags/c&#43;&#43;">c&#43;&#43;</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "live4thee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://www.facebook.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-152.000000, -43.000000)">
+            <g id="Facebook" transform="translate(152.000000, 43.000000)">
+                <rect id="Rounded" fill="#bbbbbb" x="0" y="0" width="72" height="72" rx="8"></rect>
+                <path d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://github.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://twitter.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.536px" height="438.536px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;"
+	 xml:space="preserve">
+<g>
+	<path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
+		C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126
+		h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225
+		C438.532,59.576,430.49,40.204,414.41,24.123z M335.471,168.735c0.191,1.713,0.288,4.278,0.288,7.71
+		c0,15.989-2.334,32.025-6.995,48.104c-4.661,16.087-11.8,31.504-21.416,46.254c-9.606,14.749-21.074,27.791-34.396,39.115
+		c-13.325,11.32-29.311,20.365-47.968,27.117c-18.648,6.762-38.637,10.143-59.953,10.143c-33.116,0-63.76-8.952-91.931-26.836
+		c4.568,0.568,9.329,0.855,14.275,0.855c27.6,0,52.439-8.565,74.519-25.7c-12.941-0.185-24.506-4.179-34.688-11.991
+		c-10.185-7.803-17.273-17.699-21.271-29.691c4.947,0.76,8.658,1.137,11.132,1.137c4.187,0,9.042-0.76,14.56-2.279
+		c-13.894-2.669-25.598-9.562-35.115-20.697c-9.519-11.136-14.277-23.84-14.277-38.114v-0.571
+		c10.085,4.755,19.602,7.229,28.549,7.422c-17.321-11.613-25.981-28.265-25.981-49.963c0-10.66,2.758-20.747,8.278-30.264
+		c15.035,18.464,33.311,33.213,54.816,44.252c21.507,11.038,44.54,17.227,69.092,18.558c-0.95-3.616-1.427-8.186-1.427-13.704
+		c0-16.562,5.853-30.692,17.56-42.399c11.703-11.706,25.837-17.561,42.394-17.561c17.515,0,32.079,6.283,43.688,18.846
+		c13.134-2.474,25.892-7.33,38.26-14.56c-4.757,14.652-13.613,25.788-26.55,33.402c12.368-1.716,23.88-4.95,34.537-9.708
+		C357.458,149.793,347.462,160.166,335.471,168.735z"/>
+</g>
+</svg>
+
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2026 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       live4thee
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>

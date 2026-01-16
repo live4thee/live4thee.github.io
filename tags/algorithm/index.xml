@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/algorithm/</link>
+    <description>Recent content in Algorithm on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 19 Jul 2022 21:56:52 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Does s.t. Mean?</title>
+      <link>https://live4thee.github.io/posts/2022-07-19-what-does-st-mean/</link>
+      <pubDate>Tue, 19 Jul 2022 21:56:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-07-19-what-does-st-mean/</guid>
+      <description>看 atc15 论文的时候，算法描述看见一个 s.t. 符号，不明其意。后来在 stackexchange 上找到了答案: Usually, the acronym s.t. means `such that&amp;#39;. In the context of optimization, it means `subject to&amp;#39;. Also note that `such that&amp;#39; does *not* have the same meaning as `so that&amp;#39;. - Such that, describes</description>
+    </item>
+    <item>
+      <title>Quorum</title>
+      <link>https://live4thee.github.io/2017/05/03/quorum/</link>
+      <pubDate>Wed, 03 May 2017 23:20:44 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/03/quorum/</guid>
+      <description>最近在看 consul 资料的时候，又碰到了之前研究 DRBD 9 时碰到的一个概念：quorum. Quorum 的中文直译是 法定人数 - 所谓“法定人数”是指选举制度下，参与选举的</description>
+    </item>
+    <item>
+      <title>Log Processing</title>
+      <link>https://live4thee.github.io/2015/08/03/log-processing/</link>
+      <pubDate>Mon, 03 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/03/log-processing/</guid>
+      <description>这几天需要分析一些Web服务器的日志，比如从 Apache 服务器日志中找出产生流量总数最高的10个文件。日志文件大小：21G，68044641行，其中包</description>
+    </item>
+  </channel>
+</rss>

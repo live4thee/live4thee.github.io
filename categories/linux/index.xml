@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Life of a Programmer</title>
+    <link>https://live4thee.github.io/categories/linux/</link>
+    <description>Recent content in Linux on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Jan 2026 21:18:25 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AIO</title>
+      <link>https://live4thee.github.io/posts/2026-01-11-aio/</link>
+      <pubDate>Sun, 11 Jan 2026 21:18:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2026-01-11-aio/</guid>
+      <description>本想记录一些 RWF_NOWAIT 相关的行为，没想到之前大部分已经写过。完全没有印象。😭 补充一些新体会。 AIO 🔗bpftrace 🔗前文梳理了打开 RWF_NOWAIT 后提交 AIO 有时候会碰</description>
+    </item>
+    <item>
+      <title>schedstat</title>
+      <link>https://live4thee.github.io/posts/2025-11-04-schedstat/</link>
+      <pubDate>Tue, 04 Nov 2025 14:21:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-11-04-schedstat/</guid>
+      <description>偶尔在一篇博客看到，Linux 内核针对每个进程做了调度统计。内核文档如下： /proc/&amp;lt;pid&amp;gt;/schedstat ---------------- schedstats also adds a new /proc/&amp;lt;pid&amp;gt;/schedstat file to include some of the same information on a per-process level. There are three fields in this file correlating for that process to: 1)</description>
+    </item>
+    <item>
+      <title>Fixing Xmind on Debian 13</title>
+      <link>https://live4thee.github.io/posts/2025-10-13-fixing-xmind-on-debian-13/</link>
+      <pubDate>Mon, 13 Oct 2025 13:13:32 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-10-13-fixing-xmind-on-debian-13/</guid>
+      <description>写文档用 flatpak 版的 xmind 绘制脑图时发现，保存文件时，文件选择对话框一直跳不出来。自打升级到 Debian 13 Trixie 还没用过 xmind, 研究了一下。 先从控制台启动，这样可以方便的</description>
+    </item>
+    <item>
+      <title>Debian 13 Trixie</title>
+      <link>https://live4thee.github.io/posts/2025-08-13-trixie/</link>
+      <pubDate>Wed, 13 Aug 2025 19:33:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-08-13-trixie/</guid>
+      <description>把手头的 DeLL OptiPlex 从 bookworm 升级到了 trixie. 改善的方面 🔗 fcitx 的输入框变得漂亮许多； 插着耳机的时候放音乐，扬声器也会响 - 插拔一次耳机后重启正常； 开机后 USB 键鼠需要重</description>
+    </item>
+    <item>
+      <title>Signals &amp; Multithreading</title>
+      <link>https://live4thee.github.io/posts/2025-02-21-signals-and-multithreading/</link>
+      <pubDate>Fri, 21 Feb 2025 09:59:45 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-02-21-signals-and-multithreading/</guid>
+      <description>最近研究进程的退出，进而弄清楚了一些信号方面的疑问。首先开宗明义：“多线程进程中，信号由主线程处理” 这句话是不准确的。 进程为何退出？ 🔗想要跟</description>
+    </item>
+    <item>
+      <title>trace-cmd et al</title>
+      <link>https://live4thee.github.io/posts/2025-02-19-trace-cmd-et-al/</link>
+      <pubDate>Wed, 19 Feb 2025 18:24:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-02-19-trace-cmd-et-al/</guid>
+      <description>bpftrace 固然好用，但有时候环境中没法装。此时，使用 ftrace 是个很好的选择。具体做法： 使用 trace-cmd, 跟踪内核耗时是个不错的选择； 直接使用 tracefs 接口，最好对照内核文档；</description>
+    </item>
+    <item>
+      <title>Notes on Unknown (2)</title>
+      <link>https://live4thee.github.io/posts/2024-11-20-notes-on-unknown-2/</link>
+      <pubDate>Wed, 20 Nov 2024 10:02:51 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-20-notes-on-unknown-2/</guid>
+      <description>天渐冷 🔗本月跑量目前已经 84.3 公里，灵白魔鬼线山路徒步 8 公里， 其中还有一段比较陡峭的崖降。刺激。 小本本 🔗vmscan 问题 🔗请教了F老师后，奇怪的</description>
+    </item>
+    <item>
+      <title>Notes on Unknown</title>
+      <link>https://live4thee.github.io/posts/2024-11-09-notes-on-unknown/</link>
+      <pubDate>Sat, 09 Nov 2024 21:41:11 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-11-09-notes-on-unknown/</guid>
+      <description>记录一下最近碰到的不能理解的问题。 radix_tree_node 占比 🔗下面是某个节点的例子： $ slabtop -sc --once | sed -e &amp;#39;1,6d&amp;#39; -e &amp;#39;s/J S/J-S/&amp;#39; -e &amp;#39;s/E S/E-S/&amp;#39; | head -10 | column -t OBJS ACTIVE USE OBJ-SIZE SLABS OBJ/SLAB CACHE-SIZE NAME 4848200 4847571 99% 1.14K 173150 28 5540800K ext4_inode_cache 16624725 16623589</description>
+    </item>
+    <item>
+      <title>fio Trickery</title>
+      <link>https://live4thee.github.io/posts/2024-10-12-fio-trickery/</link>
+      <pubDate>Sat, 12 Oct 2024 13:51:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-12-fio-trickery/</guid>
+      <description>遇到一个需要测试大量创建文件的场景。毫无疑问，一定能通过 fio 解决。查看了一下 man 手册，有个 filecreate 引擎，折腾了几分钟也只能创建一个文件。Deepsee</description>
+    </item>
+    <item>
+      <title>Up &amp; Down</title>
+      <link>https://live4thee.github.io/posts/2024-09-29-up-and-down/</link>
+      <pubDate>Sun, 29 Sep 2024 16:41:11 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-29-up-and-down/</guid>
+      <description>上周四晚上，刚到家还没停车，发现自己被拉到了一个群里。 “这个问题比较严重，麻烦帮忙看一下。” 环境是 Kylin v10, 内核版本：4.19.90-52.15.</description>
+    </item>
+    <item>
+      <title>Ramblings - 3</title>
+      <link>https://live4thee.github.io/posts/2024-09-26-ramblings-3/</link>
+      <pubDate>Thu, 26 Sep 2024 09:47:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-26-ramblings-3/</guid>
+      <description>扩容 🔗资源用的比较节省，根盘只分配了 20 GB, 最近不够用了。 曾经写了个虚拟机磁盘扩容笔记， 当时的环境里，硬盘没有做 LVM, 因此 growpart 再 xfs_growfs 就搞定了。有 LVM 的情况</description>
+    </item>
+    <item>
+      <title>MSG_ZEROCOPY (2)</title>
+      <link>https://live4thee.github.io/posts/2024-09-04-msg-zerocopy-2/</link>
+      <pubDate>Wed, 04 Sep 2024 20:29:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-04-msg-zerocopy-2/</guid>
+      <description>不服输的F老师兴冲冲地告诉我可以稳定复现零拷贝的效果，并演示了一下， 果然很稳。mpstat 也很有说服力。 我拿出我的 50 GbE 环境，向F老师演示了一</description>
+    </item>
+    <item>
+      <title>MSG_ZEROCOPY</title>
+      <link>https://live4thee.github.io/posts/2024-08-30-msg-zerocopy/</link>
+      <pubDate>Fri, 30 Aug 2024 16:56:38 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-08-30-msg-zerocopy/</guid>
+      <description>之前听F老师说，手动修改代码后，本机 Qemu 热升级打开零拷贝支持后效果非常好。因此拿内核代码树里的测试代码试了试， 却发现几乎没啥区别：并且每次都报</description>
+    </item>
+    <item>
+      <title>bpftrace Tips</title>
+      <link>https://live4thee.github.io/posts/2024-07-25-bpftrace-tips/</link>
+      <pubDate>Thu, 25 Jul 2024 18:39:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-25-bpftrace-tips/</guid>
+      <description>bpftrace 的一些陷阱 🔗&amp;ldquo;char[]&amp;rdquo; 的问题 🔗举个例子，xfs_lookup 对应 tracepoint 中的第四个参数 name 被声明为 char[] 而不是 char*. 这在 C 里</description>
+    </item>
+    <item>
+      <title>Strange Latency Issue</title>
+      <link>https://live4thee.github.io/posts/2024-05-13-strange-latency/</link>
+      <pubDate>Mon, 13 May 2024 10:27:34 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-13-strange-latency/</guid>
+      <description>最近碰到一个奇怪的问题。有个多线程应用，其中一个线程中的伪代码如下： gettimeofday(&amp;amp;begin, NULL); foo(); // 同步过程调用 gettimeofday(&amp;amp;end, NULL); usleep(N); 其中，end-begin 得到 foo() 的耗时 T. 目前可以</description>
+    </item>
+    <item>
+      <title>Learning by Tracing</title>
+      <link>https://live4thee.github.io/posts/2024-05-09-learning-by-tracing/</link>
+      <pubDate>Thu, 09 May 2024 18:41:54 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-09-learning-by-tracing/</guid>
+      <description>用 bpftrace 跟踪一个 Direct I/O 在 polling 和非 polling 模式下的处理逻辑。为了减少无关的 I/O 干扰，限定了 comm == &amp;quot;a.out&amp;quot; &amp;ndash; 这个 a.out 是我的测试程序。 内核是 4.18, 关键代码相对比较好找，在 fs/block_dev.c: static void</description>
+    </item>
+    <item>
+      <title>RWF_NONBLOCK &amp; EAGAIN (2)</title>
+      <link>https://live4thee.github.io/posts/2024-04-08-rwf-nonblock-eagain-2/</link>
+      <pubDate>Mon, 08 Apr 2024 11:00:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-08-rwf-nonblock-eagain-2/</guid>
+      <description>先交代一下上文的实验环境： kernel: 4.18.0-425.19.2 (CentOS Stream 8) filesystem: Ext4 测试动作：向一个 Ext4 上的文件发一个 4k 非阻塞异步写请求。 RWF_NOWAIT 🔗重新回顾一下 io_submit(2) 的手册里交代了设置 RWF_NOWAIT 后出现 -EAGAIN 的</description>
+    </item>
+    <item>
+      <title>RWF_NONBLOCK &amp; EAGAIN</title>
+      <link>https://live4thee.github.io/posts/2024-04-03-rwf-nonblock-eagain/</link>
+      <pubDate>Wed, 03 Apr 2024 17:56:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-03-rwf-nonblock-eagain/</guid>
+      <description>通过 Linux AIO 做 non_blocking IO, 碰到一个奇怪的问题，记录一下。 I/O 面向的是 Ext4 文件系统，而不是块。 RWF_NOWAIT 🔗RWF_NOWAIT 的语义在 io_submit(2) 里有描述，libaio 的测试用</description>
+    </item>
+    <item>
+      <title>BLKTRACESETUP(2)</title>
+      <link>https://live4thee.github.io/posts/2024-01-09-blktracesetup-2/</link>
+      <pubDate>Tue, 09 Jan 2024 20:36:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-09-blktracesetup-2/</guid>
+      <description>嗯，解决了一个 blktrace 只能跟踪一次分区的问题。 缘起 🔗前几天在一个 4.18 内核环境里做 blkparse 跟踪的时候发现：每个分区只能跟踪一次，第二次就会报错：1 BLKTRACESETUP(2) /dev/sda failed: 2/No such</description>
+    </item>
+    <item>
+      <title>A Taste of bpftrace</title>
+      <link>https://live4thee.github.io/posts/2024-01-09-a-taste-of-bpftrace/</link>
+      <pubDate>Tue, 09 Jan 2024 13:03:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-09-a-taste-of-bpftrace/</guid>
+      <description>bpftrace真的挺好用。1 跟踪进程的执行 🔗通过跟踪 execve，可以得到系统中进程执行的情况。 $ bpftrace -e &amp;#39;tracepoint:syscalls:sys_enter_execve { time(&amp;#34;%H:%M:%S &amp;#34;); join(args-&amp;gt;argv) }&amp;#39; Attaching 1 probe... 13:10:04 /usr/lib64/sa/sa1 1 1 13:10:04 /usr/lib64/sa/sadc -F -L -S</description>
+    </item>
+    <item>
+      <title>What Is a PDU</title>
+      <link>https://live4thee.github.io/posts/2024-01-05-what-is-a-pdu/</link>
+      <pubDate>Fri, 05 Jan 2024 18:23:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-05-what-is-a-pdu/</guid>
+      <description>以前在 Ceph 上跑虚拟机的时候，偶尔看到 libvirt 报错： qemu unexpectedly closed the monitor: sending req data... pdu length 134, total length 142 the received hdr shows the err 0, the pdu length 198 ... 当时不知道这个 pdu 是啥意思。搜了一圈 libvirt, Qemu, Ceph</description>
+    </item>
+    <item>
+      <title>Interpreting Kernel Call Trace</title>
+      <link>https://live4thee.github.io/posts/2024-01-02-interpreting-kernel-call-trace/</link>
+      <pubDate>Tue, 02 Jan 2024 16:54:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-02-interpreting-kernel-call-trace/</guid>
+      <description>假设有 Call Trace 如下： [89580.077835] task:kworker/u195:0 state:D stack: 0 pid:9848 ppid: 2 flags:0x80004080 [89580.077840] Workqueue: events_unbound async_run_entry_fn [89580.077845] Call Trace: [89580.077847] __schedule+0x2d1/0x860 [89580.077852] ? scan_shadow_nodes+0x30/0x30 [89580.077856] schedule+0x35/0xa0 [89580.077857] io_schedule+0x12/0x40 [89580.077859] do_read_cache_page+0x4eb/0x740 上面这段日志是由 kernel/sched/core.c 中的 sched_show_task() 函数打印的。 任务信息 🔗task:kworker</description>
+    </item>
+    <item>
+      <title>SATA Hotplug</title>
+      <link>https://live4thee.github.io/posts/2023-12-31-sata-hotplug/</link>
+      <pubDate>Sun, 31 Dec 2023 13:25:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-31-sata-hotplug/</guid>
+      <description>SATA/SAS 规范中要求支持热插拔，因此 SATA/SAS 平台在热插拔上应该问题较少 &amp;ndash; 当然也还是有一些坑。kernel.org有篇Wiki讲述了 SATA Hotplug 的硬件要求。有点意思</description>
+    </item>
+    <item>
+      <title>SCSI Addressing</title>
+      <link>https://live4thee.github.io/posts/2023-12-30-scsi-addressing/</link>
+      <pubDate>Sat, 30 Dec 2023 17:06:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-30-scsi-addressing/</guid>
+      <description>HBTL 经常容易和 LaTeX 图片位置 htbp 记岔，好记性不如烂笔头。记录一下。内容主要翻译自RedHat文档。 HBTL 🔗HBTL - Host:Bus:Target:LUN 也被称为 HCIL 寻址。1 SCSI 设备热插拔前后</description>
+    </item>
+    <item>
+      <title>pwrite() &amp; O_APPEND</title>
+      <link>https://live4thee.github.io/posts/2023-11-23-pwrite-and-o-append/</link>
+      <pubDate>Thu, 23 Nov 2023 13:03:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-23-pwrite-and-o-append/</guid>
+      <description>Linux 的 pwrite() 有个 BUG: 当文件以 O_APPEND 模式打开时，虽然 file offset 不会变，但是写入的内容会追加到文件尾部。 此外，pwrite() 和 pwritev() 的 offset 参数不能为 -1, 否则会 EINVAL. 但是 pwritev2() 可</description>
+    </item>
+    <item>
+      <title>Linux AIO</title>
+      <link>https://live4thee.github.io/posts/2023-11-16-linux-aio/</link>
+      <pubDate>Thu, 16 Nov 2023 11:56:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-16-linux-aio/</guid>
+      <description>对 Linux 的 AIO 一直是一些碎片化的知识，没有好好总结。我们知道，AIO 的推荐使用场景是访问块设备、结合 O_DIRECT 一起使用。比如，CephBlockDevic</description>
+    </item>
+    <item>
+      <title>Tracker Miners and Git LFS</title>
+      <link>https://live4thee.github.io/posts/2023-10-26-tracker-miners-and-git-lfs/</link>
+      <pubDate>Thu, 26 Oct 2023 09:44:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-10-26-tracker-miners-and-git-lfs/</guid>
+      <description>GNOME 索引程序 tracker-miner-fs 占用 CPU 高的原因是我在本机Documents 目录里面有差不多三百个 git 仓库，索引一遍比较耗时。 $ LANG=C tracker3 status Currently indexed: 369684 files, 48866 folders ... omitted ... 149 recorded failures Path Message garage/doc/talks/2021-09-13-ngi-kickoff/talk.pdf</description>
+    </item>
+    <item>
+      <title>DeLL OptiPlex Micro 7010</title>
+      <link>https://live4thee.github.io/posts/2023-10-25-dell-optiplex-micro-7010/</link>
+      <pubDate>Wed, 25 Oct 2023 18:39:50 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-10-25-dell-optiplex-micro-7010/</guid>
+      <description>手头的 DeLL XPS13 已经用了超过七年半，虽然内存只有 8 GiB ，但是跑 Linux 一直还是挺快。去年九月电池鼓包换了个第三方电池，最近也开始鼓了&amp;ndash; 不但撑得</description>
+    </item>
+    <item>
+      <title>org-link-set-parameters</title>
+      <link>https://live4thee.github.io/posts/2022-06-17-org-link-set-parameters/</link>
+      <pubDate>Fri, 17 Jun 2022 17:05:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-06-17-org-link-set-parameters/</guid>
+      <description>back to fcitx 🔗最近做了很多文字工作，发现 ibus 虽然视觉好看一点，但中文输入的时候偶尔会切换输入法卡住，接着就只能输入英文了（虽然切换动画还是继续挺好看</description>
+    </item>
+    <item>
+      <title>Back to Focal</title>
+      <link>https://live4thee.github.io/posts/2022-05-16-back-to-focal/</link>
+      <pubDate>Mon, 16 May 2022 16:14:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-05-16-back-to-focal/</guid>
+      <description>20.04 升级到 22.04 后用了一个月出头，突然某次重启后发现无线网络死活连不上了。 Wi-Fi issue 🔗现象：NetworkManager 没有任何可用的设备，不但没有 Wi</description>
+    </item>
+    <item>
+      <title>Firefox PPA for Ubuntu 22.04</title>
+      <link>https://live4thee.github.io/posts/2022-04-24-firefox-ppa-for-ubuntu-22-04/</link>
+      <pubDate>Sun, 24 Apr 2022 20:55:26 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-04-24-firefox-ppa-for-ubuntu-22-04/</guid>
+      <description>内容来自 https://balintreczey.hu/ 22.04 里搭载的 firefox 是用 snap 打包的，不过还是有用回 deb 的方法：使用 Mozilla 团队维护的 PPA (Personal Package Archive) 仓库。 $ cat /etc/apt/preferences.d/firefox-no-snap Package: firefox* Pin: release o=Ubuntu* Pin-Priority: -1 然后，删掉已有的 firefox</description>
+    </item>
+    <item>
+      <title>Fcitx Icon Issue</title>
+      <link>https://live4thee.github.io/posts/2022-04-18-fix-fcitx-icon-issue/</link>
+      <pubDate>Mon, 18 Apr 2022 19:39:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-04-18-fix-fcitx-icon-issue/</guid>
+      <description>最近把 20.04 升级到 22.04 后发现切换输入法的时候，图标比例有点怪，像是大图标原样（非按比例）显示在了 panel 上。 查了一下，xfce 的 panel references 里面设置了： ‘ico</description>
+    </item>
+    <item>
+      <title>PNG and Poppler</title>
+      <link>https://live4thee.github.io/posts/2022-02-08-png-and-poppler/</link>
+      <pubDate>Tue, 08 Feb 2022 18:34:16 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-02-08-png-and-poppler/</guid>
+      <description>前段时间碰到一个问题：xelatex 生成出来的 pdf，用阅读器（atril）打开， 图片看不见。 编译的时候，有报警信息如： Overfull \hbox (170.25pt too wide) in paragraph at lines 2169--2170</description>
+    </item>
+    <item>
+      <title>Processes in D State</title>
+      <link>https://live4thee.github.io/posts/2021-04-30-processes-in-d-state/</link>
+      <pubDate>Fri, 30 Apr 2021 16:00:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-04-30-processes-in-d-state/</guid>
+      <description>当进程陷入不可中断睡眠的时候，用户没有办法杀掉它。如果该进程进入了僵尸状态、且有很多子进程的话那就更是“屋漏偏逢连夜雨”了。绝大部分情况下，</description>
+    </item>
+    <item>
+      <title>Syscalls by Process</title>
+      <link>https://live4thee.github.io/posts/2021-02-02-syscalls-by-process/</link>
+      <pubDate>Tue, 02 Feb 2021 12:37:02 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-02-02-syscalls-by-process/</guid>
+      <description>自 Linux 2.6.27 开始，可以通过文件 /proc/[pid]/syscall 得知进程号为pid 的进程正在做什么系统调用。比如： $ sudo cat /proc/$$/syscall 61 0xffffffff 0x7ffddd4c4000 0xa 0x0 0x0 0x7 0x7ffddd4c3fe8 0x7ff09ab37dba 这里，第一个字段是系统调用号。后面一次</description>
+    </item>
+    <item>
+      <title>Xfce Again</title>
+      <link>https://live4thee.github.io/posts/2020-04-29-xfce-again/</link>
+      <pubDate>Wed, 29 Apr 2020 22:38:24 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-04-29-xfce-again/</guid>
+      <description>分析了大半天 crash dump, 有点晕。 VMware player 🔗本机有个 VMware Player, 从 Kubuntu 18.04 升级到 20.04 后，内核模块编译失败。仔细找了一下，原来代码都放到 /usr/lib/vmware/modules/source/ 里去了，以 tar 包的形式存在。升级 vmplayer</description>
+    </item>
+    <item>
+      <title>Firefox</title>
+      <link>https://live4thee.github.io/posts/2020-03-26-firefox/</link>
+      <pubDate>Thu, 26 Mar 2020 19:30:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-26-firefox/</guid>
+      <description>前段时间一顿升级再加各种骚操作后，我的 firefox 播放音频的时候没有声音了。 突然想起，之前删掉了 PulseAudio - 装回来后果然好了。维基上有一张 PulseAudio 的图： 对比下面的搜</description>
+    </item>
+    <item>
+      <title>Kubuntu 20.04</title>
+      <link>https://live4thee.github.io/posts/2020-03-07-kubuntu-20-04/</link>
+      <pubDate>Sat, 07 Mar 2020 12:31:18 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-07-kubuntu-20-04/</guid>
+      <description>没忍住，提前升级到了 20.04. 输入法 🔗升级后自动安装上了 ibus, 切换中文有点问题。删掉 ibus 保留 fcitx 就好。一个手快，多删了下面两个包，导致使用 gtk 的程序没法切换输</description>
+    </item>
+    <item>
+      <title>xfs_growfs</title>
+      <link>https://live4thee.github.io/posts/2020-02-26-xfs-growfs/</link>
+      <pubDate>Wed, 26 Feb 2020 22:45:36 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-02-26-xfs-growfs/</guid>
+      <description>跑在公司内网的开发机系统盘只有 6GB，因此前段时间碰到了 surefire 插件在 /tmp 目录下写入大量 report 数据把磁盘写满的问题。后来建了一块数据盘专门挂载到 /tmp, 没想到</description>
+    </item>
+    <item>
+      <title>ramblings</title>
+      <link>https://live4thee.github.io/posts/2019-11-04-ramblings/</link>
+      <pubDate>Mon, 04 Nov 2019 20:35:06 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-04-ramblings/</guid>
+      <description>懂事的孩子 🔗老师问小朋友，“你的尺子断了，铅笔也很短了，怎么还没换啊？” 小朋友回答说，“家长很忙。” 这段对话是老师告知的。家长很惭愧。 传感器</description>
+    </item>
+    <item>
+      <title>Current Noise</title>
+      <link>https://live4thee.github.io/posts/2019-11-02-current-noise/</link>
+      <pubDate>Sat, 02 Nov 2019 15:16:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-02-current-noise/</guid>
+      <description>不知何时开始，耳机里总有一股电流声。打开 alsamixer 折腾了一下，调一下 Headphone Mic Boost 就好。如下图第三列。 世界清净了。感觉真好。</description>
+    </item>
+    <item>
+      <title>Vacuuming Systemd Journals</title>
+      <link>https://live4thee.github.io/posts/2019-10-31-vacuuming-journal-files/</link>
+      <pubDate>Thu, 31 Oct 2019 09:20:19 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-10-31-vacuuming-journal-files/</guid>
+      <description>之前发现，执行 journalctl &amp;ndash;vacuum-time=2d 并不一定会释放日志空间。 根本原因是：vacuum 操作只针对已经归档的日志。所以，正确的操作： journalctl --rotate journalctl --vacuum-time=2d 需要注意的是：上面两个</description>
+    </item>
+    <item>
+      <title>Chroot to Rescue!</title>
+      <link>https://live4thee.github.io/posts/2019-09-03-chroot-for-rescue/</link>
+      <pubDate>Tue, 03 Sep 2019 10:56:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-09-03-chroot-for-rescue/</guid>
+      <description>很久之前，为了合规，公司换用了合法的 VPN 提供商。然而自此之后，我的 VPN 接入就成了问题。 对方号称有 Linux 客户端，但是官网不能下载； 对方的设备提供 L2TP 服务</description>
+    </item>
+    <item>
+      <title>AppImage to Rescue!</title>
+      <link>https://live4thee.github.io/posts/2019-04-17-appimage-to-rescue/</link>
+      <pubDate>Wed, 17 Apr 2019 22:37:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-04-17-appimage-to-rescue/</guid>
+      <description>最近开始用钉钉写周报。因为没有 Linux 客户端，之前一直用的网页版。无奈之下，在某个 Windows 虚拟机里面装了一个， 通过远程桌面访问。体验不是太好。 想起之前看</description>
+    </item>
+    <item>
+      <title>Interpreting Linux OOM Logs (1/2)</title>
+      <link>https://live4thee.github.io/posts/2019-04-12-interpreting-linux-oom-logs/</link>
+      <pubDate>Fri, 12 Apr 2019 10:28:42 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-04-12-interpreting-linux-oom-logs/</guid>
+      <description>本文描述如何分析 Linux OOM 日志。下面的日志去掉了开头的时间戳。 HOST1 kernel: prometheus invoked oom-killer: gfp_mask=0x0, order=0, oom_score_adj=0 HOST1 kernel: prometheus cpuset=docker-f55e8d749684a0746aa1cb3d186df370848ba502cc19d249bf732450de5a2f30.scope mems_allowed=0-3 HOST1 kernel: CPU: 88 PID: 49521 Comm: prometheus Tainted: G OE ------------ 3.10.0-327.36.1.el7.x86_64 #1 HOST1 kernel: Hardware name: Dell Inc. PowerEdge R930/0Y0V4F, BIOS 2.4.3 07/07/2017 HOST1 kernel: ffff88bf0612f300 00000000cbfaa699</description>
+    </item>
+    <item>
+      <title>A stop job is running ...</title>
+      <link>https://live4thee.github.io/posts/2018-03-20-a-stop-job/</link>
+      <pubDate>Tue, 20 Mar 2018 15:17:45 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-20-a-stop-job/</guid>
+      <description>更新了系统后，因为选择了采用 package maintainer 的配置文件，之前关机时碰到的一个 systemd 的问题又回来了： A stop job is running for Session ... (1min 30s) 好记性不如烂笔头。解决办法： $ grep ^DefaultTimeout /etc/systemd/system.conf DefaultTimeoutStartSec=10s</description>
+    </item>
+    <item>
+      <title>Bionic Beaver</title>
+      <link>https://live4thee.github.io/posts/2018-03-18-bionic-beaver/</link>
+      <pubDate>Sun, 18 Mar 2018 00:01:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-18-bionic-beaver/</guid>
+      <description>把用了两年的 Kubuntu 16.04 升级到了 18.04 Bionic Beaver. 基本上所有的东西都工作得很好，除了 Chromium（依赖GTK）, LibreOffice（依赖 Java） 以及 d</description>
+    </item>
+    <item>
+      <title>Linux Desktop (2)</title>
+      <link>https://live4thee.github.io/2018/02/12/linux-desktop-2/</link>
+      <pubDate>Mon, 12 Feb 2018 16:42:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/02/12/linux-desktop-2/</guid>
+      <description>输入法 🔗之前一直用 ibus-pinyin 以及后来的 ibus-libpinyin，无法摆脱的苦恼是词库。选了自带的词库后感觉输入还是不接地气。看热闹不嫌事大的同事</description>
+    </item>
+    <item>
+      <title>Combine Pics to PDF</title>
+      <link>https://live4thee.github.io/2017/07/15/combine-pics-to-pdf/</link>
+      <pubDate>Sat, 15 Jul 2017 23:42:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/07/15/combine-pics-to-pdf/</guid>
+      <description>简记一则技巧：网上看见一在线PPT，但是每一页都被转换成了PNG图片，怎么把它们制成一个PDF文件？ 批量下载 🔗假设有30页，每一页的图片都遵</description>
+    </item>
+    <item>
+      <title>DRBD Notes (2)</title>
+      <link>https://live4thee.github.io/2017/04/01/drbd-notes-2/</link>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/04/01/drbd-notes-2/</guid>
+      <description>DRBD 9 出了一个套件，叫 drbdmanage，提供了配置分发、re-balancing 等功能。由于依赖存放在 Sourceforge 的 DocBook 样式文件，编译生成 rpm 包的整个过</description>
+    </item>
+    <item>
+      <title>DRBD Notes (1)</title>
+      <link>https://live4thee.github.io/2017/03/31/drbd-notes-1/</link>
+      <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/31/drbd-notes-1/</guid>
+      <description>最近开始接触 DRBD，具体来说，DRDB 9 - 这是一个 CentOS 7.2 还没有第三方 rpm 的版本，也就是说要自己编译。呵呵，C, Makefile, autotools, Kernel Module，十年前就磨练</description>
+    </item>
+    <item>
+      <title>Command-line limits</title>
+      <link>https://live4thee.github.io/2017/03/15/command-line-limits/</link>
+      <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/15/command-line-limits/</guid>
+      <description>可能大多数人都没有意识到，命令行字符串的最大长度是有限制的。 $ echo | xargs --show-limits Your environment variables take up 2766 bytes POSIX upper limit on argument length (this system): 2092338 POSIX smallest allowable upper limit on argument length (all systems): 4096 Maximum length of command we could actually use:</description>
+    </item>
+    <item>
+      <title>PDF Tips</title>
+      <link>https://live4thee.github.io/2016/12/12/pdf-tips/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/12/12/pdf-tips/</guid>
+      <description>想除掉pdf文件里的页脚，某个网站的域名，试了如下方法： 用 vim 打开 pdf 文件，搜关键字，没搜到。strings 再 grep 也没找到。hd 再 grep，没找到</description>
+    </item>
+    <item>
+      <title>Monitor File Access in Linux</title>
+      <link>https://live4thee.github.io/2016/10/22/monitor-file-access-in-linux/</link>
+      <pubDate>Sat, 22 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/10/22/monitor-file-access-in-linux/</guid>
+      <description>最近调试某个程序的过程中，需要监控文件系统中，某个目录下的文件删除操作。下意识反应是用 inotify，但是又不想自己处理递归添加被监控目录或</description>
+    </item>
+    <item>
+      <title>Dell XPS13 BIOS Issue</title>
+      <link>https://live4thee.github.io/2016/09/10/dell-xps13-bios-issue/</link>
+      <pubDate>Sat, 10 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/09/10/dell-xps13-bios-issue/</guid>
+      <description>这两天偶尔出现无线鼠标不工作的情况，引起一堆折腾。 现象 🔗开机后，无线鼠标不工作，dmesg发现如下错误： usb 1-1: device descriptor read/64, error -71 usb 1-1: new full-speed USB device number 4 using xhci_hcd usb</description>
+    </item>
+    <item>
+      <title>Solve KDE5 Slow Login</title>
+      <link>https://live4thee.github.io/2016/07/29/kde5-slow-login/</link>
+      <pubDate>Fri, 29 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/07/29/kde5-slow-login/</guid>
+      <description>为了Okular改用了KDE，但是KDE5有个大bug， 导致输入密码到桌面可用需要30秒时间。一个绕过该问题的方法 是把默认的Splash Sc</description>
+    </item>
+    <item>
+      <title>More Tmux Tips</title>
+      <link>https://live4thee.github.io/2016/06/01/more-tmux-tips/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/06/01/more-tmux-tips/</guid>
+      <description>Zoom State 🔗C-b z 使得当前窗口最大化，其它窗口被隐藏。再按一次 C-b z 恢复原样。 Detach Pane 🔗C-b ! (detach-pane) 使当前窗口脱离所在 pane，移动到新创建的 pane 中。反之</description>
+    </item>
+    <item>
+      <title>KDE Notes</title>
+      <link>https://live4thee.github.io/2016/05/31/kde-notes/</link>
+      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/31/kde-notes/</guid>
+      <description>为了 Okular，把系统从 xfce 切换到了 kde。以下是遇到的各种问题，以及解决办法。 Konsole 🔗KDE 默认的终端模拟器 Konsole 只能支持很少一部分字体，很不幸的</description>
+    </item>
+    <item>
+      <title>git post-receive pitfall</title>
+      <link>https://live4thee.github.io/2016/05/05/git-post-receive-pitfall/</link>
+      <pubDate>Thu, 05 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/05/git-post-receive-pitfall/</guid>
+      <description>昨天下午折腾一个 git 仓库的 hook 脚本问题 - 我在远程仓库的post-receive 脚本中指定去更新另外一个工作目录，虽然脚本被执行了，且手工单独运行</description>
+    </item>
+    <item>
+      <title>Fun with Tmux</title>
+      <link>https://live4thee.github.io/2016/04/12/fun-with-tmux/</link>
+      <pubDate>Tue, 12 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/12/fun-with-tmux/</guid>
+      <description>Linux 环境下最喜爱的程序之一是 tmux，基本上它就是我的窗口管理器。 Tmux 有三个概念：session, window 和 pane。对比桌面环境： session 就是一个会话，比</description>
+    </item>
+    <item>
+      <title>Xfce Tips</title>
+      <link>https://live4thee.github.io/2016/03/24/xfce-tips/</link>
+      <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/24/xfce-tips/</guid>
+      <description>关闭 Guest Session 🔗在目录 /etc/lightdm/lightdm.conf.d 下创建一个文本文件，比如50-my-custom-config.conf，输入以下内容： [SeatDefaults] allow-guest=false 重启即可。 fcitx 的选词问题 🔗我的 fcitx</description>
+    </item>
+    <item>
+      <title>Benifits of VMs (2)</title>
+      <link>https://live4thee.github.io/2016/03/20/benifits-of-vms-2/</link>
+      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/20/benifits-of-vms-2/</guid>
+      <description>由于我的 vmdk 文件是分割过的，把虚拟机从 vmdk 迁移到 KVM 下稍微有点麻烦。 从 VMware 官方下载 vmware-vdiskmanager1，解开后拷贝到VMware</description>
+    </item>
+    <item>
+      <title>Benifits of VMs</title>
+      <link>https://live4thee.github.io/2016/03/19/benifits-of-vms/</link>
+      <pubDate>Sat, 19 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/19/benifits-of-vms/</guid>
+      <description>对个人来讲，使用虚拟机有一个绝佳的好处，就是体验的完整性。一般而言，公司的办公套件都是围绕在 Windows 生态。因此，果要继续使用个人的 Linux 机器，那就要重</description>
+    </item>
+    <item>
+      <title>Linux Desktop</title>
+      <link>https://live4thee.github.io/2016/03/18/linux-desktop/</link>
+      <pubDate>Fri, 18 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/18/linux-desktop/</guid>
+      <description>Xubuntu 安装好后发现一些问题，解决方法记录在此。 默认分辨率 1920x1080 下，偶尔有闪屏的情况，降低分辨率后没有发生过。 默认的视频播放器 Parole 播放时画面没有按比例调</description>
+    </item>
+    <item>
+      <title>Xubuntu on XPS 13</title>
+      <link>https://live4thee.github.io/2016/03/17/xubuntu-on-xps-13/</link>
+      <pubDate>Thu, 17 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/17/xubuntu-on-xps-13/</guid>
+      <description>拿了一台 Dell XPS 13 9350，作为以后的开发机。自带的 Windows 10 Home 10240 被我我改装为 Xubuntu，省得装虚拟机，另外也方便 dogfood。 由于是新机器，也</description>
+    </item>
+    <item>
+      <title>Debrick my Router</title>
+      <link>https://live4thee.github.io/2016/03/13/debrick-my-router/</link>
+      <pubDate>Sun, 13 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/13/debrick-my-router/</guid>
+      <description>前天晚上升级路由器里面的软件包时，一不小心把路由器给弄挂了，然后家里就断网了。这个世界，饭可以少吃一顿，但是 Wi-Fi 却不可以断线一分钟啊！就算要搜</description>
+    </item>
+    <item>
+      <title>Using OpenWrt</title>
+      <link>https://live4thee.github.io/2015/07/05/using-openwrt/</link>
+      <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/05/using-openwrt/</guid>
+      <description>之前做路由器方面的工作的时候，老大给我发来了两款还算比较强劲的路由器。其中一款当时OpenWrt还没有正式支持，自己尝试编译了DD-Wrt和</description>
+    </item>
+  </channel>
+</rss>

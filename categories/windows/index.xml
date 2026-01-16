@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Life of a Programmer</title>
+    <link>https://live4thee.github.io/categories/windows/</link>
+    <description>Recent content in Windows on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Aug 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell Programming</title>
+      <link>https://live4thee.github.io/2015/08/27/shell-programming/</link>
+      <pubDate>Thu, 27 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/27/shell-programming/</guid>
+      <description>这周轮到我 on call，一直平静无事，以至于我怀疑自己的邮件程序是不是出了问题。直到今天中午，有客户打电话来提了一些数据分析要求。 很快写了几行</description>
+    </item>
+  </channel>
+</rss>

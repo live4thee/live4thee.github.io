@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BLKTRACESETUP(2) | Life of a Programmer</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="嗯，解决了一个 blktrace 只能跟踪一次分区的问题。 缘起 🔗前几天在一个 4.18 内核环境里做 blkparse 跟踪的时候发现：每个分区只能跟踪一次，第二次就会报错：1 BLKTRACESETUP(2) /dev/sda failed: 2/No such">
+<meta name="generator" content="Hugo 0.131.0">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">BLKTRACESETUP(2)</h1>
+
+    <div class="tip">
+        <time datetime="2024-01-09 20:36:35 &#43;0800 CST">Jan 9, 2024</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1017 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          3 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#缘起">缘起</a></li>
+    <li><a href="#分析">分析</a></li>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#历史">历史</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>嗯，解决了一个 <code>blktrace</code> 只能跟踪一次分区的问题。</p>
+<h2 id="缘起">缘起 <a href="#%e7%bc%98%e8%b5%b7" class="anchor">🔗</a></h2><p>前几天在一个 4.18 内核环境里做 <code>blkparse</code> 跟踪的时候发现：每个分区只能跟踪一次，第二次就会报错：<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>BLKTRACESETUP(2) /dev/sda failed: 2/No such file or directory
+</span></span></code></pre></div><p>此时相应的有内核日志：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>kernel: blktrace: debugfs_dir not present for sdb1 so skipping
+</span></span></code></pre></div><p>然而跟踪整盘没问题。印象中之前用 3.10 内核没有碰到过，而 6.x 内核好像也没碰到过。网上搜了一下，LQ 里面有个很古老的<a href="https://www.linuxquestions.org/questions/ubuntu-63/problem-while-running-blktrace-929695/" target="_blank" rel="noopener">帖子</a>，
+看起来也没啥有用的信息。不如就自己分析一下。</p>
+<h2 id="分析">分析 <a href="#%e5%88%86%e6%9e%90" class="anchor">🔗</a></h2><p>首先根据报错信息和内核日志找代码，在 <code>do_blk_trace_setup()</code> 可以看到：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/* file: kernel/trace/blktrace.c */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * When tracing the whole disk reuse the existing debugfs directory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * created by the block layer on init. For partitions block devices,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * and scsi-generic block devices we create a temporary new debugfs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * directory that will be removed once the trace ends.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (bdev <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">bdev_is_partition</span>(bdev))
+</span></span><span style="display:flex;"><span>        dir <span style="color:#f92672">=</span> q<span style="color:#f92672">-&gt;</span>debugfs_dir;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        bt<span style="color:#f92672">-&gt;</span>dir <span style="color:#f92672">=</span> dir <span style="color:#f92672">=</span> <span style="color:#a6e22e">debugfs_create_dir</span>(buts<span style="color:#f92672">-&gt;</span>name, blk_debugfs_root);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * As blktrace relies on debugfs for its interface the debugfs directory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * is required, contrary to the usual mantra of not checking for debugfs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * files or directories.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">IS_ERR_OR_NULL</span>(dir)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pr_warn</span>(<span style="color:#e6db74">&#34;debugfs_dir not present for %s so skipping</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>                buts<span style="color:#f92672">-&gt;</span>name);
+</span></span><span style="display:flex;"><span>        ret <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>ENOENT;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">goto</span> err;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>假设这里跟踪的是 <code>/dev/sdb1</code>. 显然，一个块设备是否是分区，会有不同的处理：</p>
+<ul>
+<li>如果是整盘，debugfs 的目录会重用；</li>
+<li>如果是分区，则临时创建一个目录。并且根据注释可知，<code>blktrace</code> 完成后，会删掉。</li>
+</ul>
+<p>结合报错信息可知，<code>debugfs_create_dir()</code> 返回的 <code>dir</code> 有问题，<code>IS_ERR_OR_NULL(dir)</code> 为真。查看现场可知：<code>blktrace</code> 跟踪完成后，<code>/sys/kernel/debug/block/sdb1/</code> 目录仍然存在，
+里面有两个子文件：<code>dropped</code> 和 <code>msg</code> &ndash; 不满足注释里的期待，难怪进入了报错分支。</p>
+<p>心里一阵小激动：刷内核 commit 的机会来了！</p>
+<h2 id="测试">测试 <a href="#%e6%b5%8b%e8%af%95" class="anchor">🔗</a></h2><p>写个内核模块删掉残留的 <code>debugfs</code> 目录试一下。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/debugfs.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/module.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/ctype.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> partname <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> __init <span style="color:#a6e22e">rm_init</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">struct</span> dentry <span style="color:#f92672">*</span>parent <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">struct</span> dentry <span style="color:#f92672">*</span>blk_dbgfs_root <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">size_t</span> len;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (partname <span style="color:#f92672">==</span> NULL)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pr_info</span>(<span style="color:#e6db74">&#34;trying cleanup debugfs for &#39;%s&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, partname);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        len <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>(partname);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (len <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">isdigit</span>(partname[len <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">pr_warn</span>(<span style="color:#e6db74">&#34;unexpected block partname: &#39;%s&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, partname);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        blk_dbgfs_root <span style="color:#f92672">=</span> <span style="color:#a6e22e">debugfs_lookup</span>(<span style="color:#e6db74">&#34;block&#34;</span>, NULL);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">IS_ERR_OR_NULL</span>(blk_dbgfs_root)) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">pr_warn</span>(<span style="color:#e6db74">&#34;debugfs_dir for block trace not found</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">goto</span> out;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        parent <span style="color:#f92672">=</span> <span style="color:#a6e22e">debugfs_lookup</span>(partname, blk_dbgfs_root);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">IS_ERR_OR_NULL</span>(parent)) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">pr_warn</span>(<span style="color:#e6db74">&#34;debugfs_dir &#39;%s&#39; not found</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, partname);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">goto</span> out;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">debugfs_lookup_and_remove</span>(<span style="color:#e6db74">&#34;dropped&#34;</span>, parent);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">debugfs_lookup_and_remove</span>(<span style="color:#e6db74">&#34;msg&#34;</span>, parent);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">debugfs_remove</span>(parent);
+</span></span><span style="display:flex;"><span>out:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (parent) <span style="color:#a6e22e">dput</span>(parent);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (blk_dbgfs_root) <span style="color:#a6e22e">dput</span>(blk_dbgfs_root);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">module_init</span>(rm_init);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">module_param</span>(partname, charp, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MODULE_PARM_DESC</span>(partname, <span style="color:#e6db74">&#34;partition name, e.g. sda1&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MODULE_DESCRIPTION</span>(<span style="color:#e6db74">&#34;remove blktrace debugfs left-overs for a partition&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MODULE_AUTHOR</span>(<span style="color:#e6db74">&#34;David Lee &lt;live4thee@gmail.com&gt;&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MODULE_LICENSE</span>(<span style="color:#e6db74">&#34;GPL&#34;</span>);
+</span></span></code></pre></div><p>编译后，测试一下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ insmod ./blktrace-remover.ko partname<span style="color:#f92672">=</span>sdb1
+</span></span><span style="display:flex;"><span>insmod: ERROR: could not insert module ./blktrace-remover.ko: Operation not permitted
+</span></span></code></pre></div><p>报错不用管，因为 <code>rm_init()</code> 故意返回的 -1. 查看一下，<code>/sys/kernel/debug/block/sdb1/</code> 目录果然删掉了，<code>btrace /dev/sdb1</code> 又能正确工作了。</p>
+<h2 id="历史">历史 <a href="#%e5%8e%86%e5%8f%b2" class="anchor">🔗</a></h2><p>写内核模块的过程中，发现 <code>debugfs_lookup()</code> 返回的 <code>struct dentry*</code> 是有引用计数的，需要 <code>dput()</code> 释放引用。
+2022 年的一个 bugfix 做自动删除时漏掉了 <code>dput()</code> 导致临时目录未能正确删除。</p>
+<ul>
+<li>2020/6, commit <a href="https://github.com/torvalds/linux/commit/b431ef837e3374da0db8ff6683170359aaa0859c" target="_blank" rel="noopener">b431ef837e337</a> 增加了之前看到的出错检查；</li>
+<li>2022/2, commit <a href="https://github.com/torvalds/linux/commit/30939293262eb433c960c4532a0d59c4073b2b84" target="_blank" rel="noopener">30939293262eb</a> 引入了该问题；</li>
+<li>2023/2, commit <a href="https://github.com/torvalds/linux/commit/83e8864fee26f63a7435e941b7c36a20fd6fe93e" target="_blank" rel="noopener">83e8864fee26f</a> 修复了该问题。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>比较好的一点是，这个问题是必现的，排查起来较为方便。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>移交给 F 老师 backport 到 4.18 内核。可惜了这两行刷 commit 的小补丁。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://live4thee.github.io/tags/storage">storage</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "live4thee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://www.facebook.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-152.000000, -43.000000)">
+            <g id="Facebook" transform="translate(152.000000, 43.000000)">
+                <rect id="Rounded" fill="#bbbbbb" x="0" y="0" width="72" height="72" rx="8"></rect>
+                <path d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://github.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://twitter.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.536px" height="438.536px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;"
+	 xml:space="preserve">
+<g>
+	<path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
+		C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126
+		h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225
+		C438.532,59.576,430.49,40.204,414.41,24.123z M335.471,168.735c0.191,1.713,0.288,4.278,0.288,7.71
+		c0,15.989-2.334,32.025-6.995,48.104c-4.661,16.087-11.8,31.504-21.416,46.254c-9.606,14.749-21.074,27.791-34.396,39.115
+		c-13.325,11.32-29.311,20.365-47.968,27.117c-18.648,6.762-38.637,10.143-59.953,10.143c-33.116,0-63.76-8.952-91.931-26.836
+		c4.568,0.568,9.329,0.855,14.275,0.855c27.6,0,52.439-8.565,74.519-25.7c-12.941-0.185-24.506-4.179-34.688-11.991
+		c-10.185-7.803-17.273-17.699-21.271-29.691c4.947,0.76,8.658,1.137,11.132,1.137c4.187,0,9.042-0.76,14.56-2.279
+		c-13.894-2.669-25.598-9.562-35.115-20.697c-9.519-11.136-14.277-23.84-14.277-38.114v-0.571
+		c10.085,4.755,19.602,7.229,28.549,7.422c-17.321-11.613-25.981-28.265-25.981-49.963c0-10.66,2.758-20.747,8.278-30.264
+		c15.035,18.464,33.311,33.213,54.816,44.252c21.507,11.038,44.54,17.227,69.092,18.558c-0.95-3.616-1.427-8.186-1.427-13.704
+		c0-16.562,5.853-30.692,17.56-42.399c11.703-11.706,25.837-17.561,42.394-17.561c17.515,0,32.079,6.283,43.688,18.846
+		c13.134-2.474,25.892-7.33,38.26-14.56c-4.757,14.652-13.613,25.788-26.55,33.402c12.368-1.716,23.88-4.95,34.537-9.708
+		C357.458,149.793,347.462,160.166,335.471,168.735z"/>
+</g>
+</svg>
+
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2026 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       live4thee
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>

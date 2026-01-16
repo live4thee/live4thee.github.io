@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zstack on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/zstack/</link>
+    <description>Recent content in Zstack on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 Mar 2021 19:42:40 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/zstack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 Years</title>
+      <link>https://live4thee.github.io/posts/2021-03-29-5-years/</link>
+      <pubDate>Mon, 29 Mar 2021 19:42:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-03-29-5-years/</guid>
+      <description>以“创业者”的身份做为打工人，已五年矣！ 五年间，经常缠绕心头的一句话是“泯然众人矣”！那份叹息，仿佛有穿越千年的力量。 不由自主地，突然又想起</description>
+    </item>
+    <item>
+      <title>Random Bits (3)</title>
+      <link>https://live4thee.github.io/posts/2020-06-12-random-bits-3/</link>
+      <pubDate>Fri, 12 Jun 2020 00:04:43 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-06-12-random-bits-3/</guid>
+      <description>最近救了两场火，聊以记录。 Vyos on ARM64 🔗同学终于搞出可用的 Vyos ARM64 镜像，但 commit 总是报错。上去看了一下， 默认的 Perl 版本和 perl-modules 版本不一样。重新编译了 Vyatta 相关的包，</description>
+    </item>
+    <item>
+      <title>Occam&#39;s Razor</title>
+      <link>https://live4thee.github.io/2017/03/17/occams-razor/</link>
+      <pubDate>Fri, 17 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/17/occams-razor/</guid>
+      <description>今天在解决issue #2259的过程中， 突然发现，该问题的现象能够很容易地解释issue #1235。而#1235 曾经被认为是一个不可思议的一</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (5)</title>
+      <link>https://live4thee.github.io/2017/03/14/hunting-a-bug-5/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/14/hunting-a-bug-5/</guid>
+      <description>最近研究 zstack1 中一个比较诡异的bug，现象是：并发创建大量虚拟机的时候，kvmagent 偶尔会报告 iptables 操作失败，最终导致少数虚拟机创建失败。 Another app is</description>
+    </item>
+  </channel>
+</rss>

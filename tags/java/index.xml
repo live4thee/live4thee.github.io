@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/java/</link>
+    <description>Recent content in Java on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 21 Nov 2023 11:46:08 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Future &amp; Promise</title>
+      <link>https://live4thee.github.io/posts/2023-11-21-future-and-promise/</link>
+      <pubDate>Tue, 21 Nov 2023 11:46:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-21-future-and-promise/</guid>
+      <description>基于异步事件的编程框架基本上都有 Future 和 Promise 的概念。比如， 主流编程语言中 C++11 有std::future 和std::promise, 而 Java 1.5 开始有Futu</description>
+    </item>
+    <item>
+      <title>stdout*deferred</title>
+      <link>https://live4thee.github.io/posts/2020-01-28-stdout-deferred/</link>
+      <pubDate>Tue, 28 Jan 2020 20:12:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-01-28-stdout-deferred/</guid>
+      <description>跑 maven test 的时候，发现 /tmp 目录下多了一堆命名模式为stdoutdeferred* 的文件，居然把根盘的空间（总共 6 GB）给消耗光了。 查了一下，原来是</description>
+    </item>
+    <item>
+      <title>Java Thread States</title>
+      <link>https://live4thee.github.io/posts/2018-05-11-java-thread-states/</link>
+      <pubDate>Fri, 11 May 2018 19:12:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-11-java-thread-states/</guid>
+      <description>根据 Oracle 的官方文档 ，Java 线程有如下状态： 状态 描述 NEW 刚创建的新线程 RUNNABLE 线程正在JVM内执行 BLOCKED 线程阻塞在 monitor lock WAITING 线程无限等待其他线程的某个特定动作</description>
+    </item>
+    <item>
+      <title>Deadlock in Groovy 2.4.8</title>
+      <link>https://live4thee.github.io/posts/2018-05-11-deadlock-in-groovy-2-4-8/</link>
+      <pubDate>Fri, 11 May 2018 18:39:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-11-deadlock-in-groovy-2-4-8/</guid>
+      <description>前段时间，为了解决 GroovyShell 中的一个内存泄漏问题，把 groovy 从 2.4.7 升级到了 2.4.8，没想到 2.4.8 中解决内存泄漏的时候，引入了一个高危bug：会导致线程死锁。 c.f.</description>
+    </item>
+    <item>
+      <title>Meet JVM OOM - cont&#39;d</title>
+      <link>https://live4thee.github.io/posts/2018-05-02-meet-jvm-oom-2/</link>
+      <pubDate>Wed, 02 May 2018 20:10:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-02-meet-jvm-oom-2/</guid>
+      <description>接上篇。 Groovy 🔗内存泄漏的原因还是因为不当使用了GroovyShell，因为需要动态的加载并执行生成的 groovy 脚本。Groovy是一门动态语言，每个方</description>
+    </item>
+    <item>
+      <title>Meet JVM OOM</title>
+      <link>https://live4thee.github.io/posts/2018-04-24-meet-jvm-oom/</link>
+      <pubDate>Tue, 24 Apr 2018 23:12:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-04-24-meet-jvm-oom/</guid>
+      <description>今天做了一次 Java 进程的 OOM 分析，记录一下过程。 初次怀疑 🔗有同事最近反应 Java 进程没有响应，kill -3抓了一下catalina.out， 结果发现里面</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (6)</title>
+      <link>https://live4thee.github.io/2017/04/11/hunting-a-bug/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/04/11/hunting-a-bug/</guid>
+      <description>今天调试一个 bug 的过程非常有趣，起承转合很像央视《走近科学》的风格。故障代码类似于这样： if (mgr.getSomeObj().getSomeField() != null) { hostnum = mgr.getSomeObj().getSomeField(); } else { // ... } 断点成功断在第一行，单步进</description>
+    </item>
+  </channel>
+</rss>

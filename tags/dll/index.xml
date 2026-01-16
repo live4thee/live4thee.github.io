@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DLL on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/dll/</link>
+    <description>Recent content in DLL on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/dll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Issue with Visual Studio 2012 and Later</title>
+      <link>https://live4thee.github.io/2015/05/05/an-issue-with-visual-studio-2012-and-later/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/05/an-issue-with-visual-studio-2012-and-later/</guid>
+      <description>这几天跑单元测试代码的时候，遇到一个奇怪的问题。我有一个单元测试项目， 单独运行的时候，全都通过。但是，和整个 solution 下的其它单元测试一起跑的时候，</description>
+    </item>
+    <item>
+      <title>Some Frustration</title>
+      <link>https://live4thee.github.io/2015/03/24/some-frustration/</link>
+      <pubDate>Tue, 24 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/24/some-frustration/</guid>
+      <description>I had some frustration these days. Two programming issues consumed more than three work days.&#xA;The first one is related with DLL versions. One of my VS 2012 project is created by VS 2013, but unfortunately they have different SDK versions. And, what is worse - our production code does not useNuGet to resolve dependencies. They are done manually. It is a huge pain for VS novices like me.&#xA;The second, comes from theUnity.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Music on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/music/</link>
+    <description>Recent content in Music on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 26 Mar 2020 19:30:12 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/music/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firefox</title>
+      <link>https://live4thee.github.io/posts/2020-03-26-firefox/</link>
+      <pubDate>Thu, 26 Mar 2020 19:30:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-26-firefox/</guid>
+      <description>前段时间一顿升级再加各种骚操作后，我的 firefox 播放音频的时候没有声音了。 突然想起，之前删掉了 PulseAudio - 装回来后果然好了。维基上有一张 PulseAudio 的图： 对比下面的搜</description>
+    </item>
+    <item>
+      <title>Current Noise</title>
+      <link>https://live4thee.github.io/posts/2019-11-02-current-noise/</link>
+      <pubDate>Sat, 02 Nov 2019 15:16:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-02-current-noise/</guid>
+      <description>不知何时开始，耳机里总有一股电流声。打开 alsamixer 折腾了一下，调一下 Headphone Mic Boost 就好。如下图第三列。 世界清净了。感觉真好。</description>
+    </item>
+    <item>
+      <title>Lost and Found</title>
+      <link>https://live4thee.github.io/posts/2018-09-19-lost-and-found/</link>
+      <pubDate>Wed, 19 Sep 2018 12:29:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-09-19-lost-and-found/</guid>
+      <description>换了 Kindle 3 的主板后，一大损失就是之前保存在里面的电子书和音乐。 电子书没有备份，也找不回了。音乐只有几首，都是当年很喜欢的。其中有一首法语歌，但</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Parallel All the Time | Life of a Programmer</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="一起读论文：Parallel All The Time, 2019。该论文有一个改进版本，发表在 IEEE TPDS 2020 的九月刊。标题也有所更改，强调充分利用并发，去掉了“All The T">
+<meta name="generator" content="Hugo 0.131.0">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">Parallel All the Time</h1>
+
+    <div class="tip">
+        <time datetime="2023-12-05 13:35:33 &#43;0800 CST">Dec 5, 2023</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          2252 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          5 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#问题描述">问题描述</a></li>
+    <li><a href="#ssd-的并发性">SSD 的并发性</a></li>
+    <li><a href="#问题分类">问题分类</a>
+      <ul>
+        <li><a href="#问题描述---主机写">问题描述 - 主机写</a></li>
+        <li><a href="#问题描述---垃圾回收">问题描述 - 垃圾回收</a></li>
+      </ul>
+    </li>
+    <li><a href="#解决方案">解决方案</a>
+      <ul>
+        <li><a href="#基于-buffer-整形的-die-write">基于 buffer 整形的 Die-Write</a></li>
+        <li><a href="#die-上的-gc-改进">Die 上的 GC 改进</a></li>
+      </ul>
+    </li>
+    <li><a href="#后记">后记</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>一起读论文：<a href="https://storageconference.us/2019/Research/ParallelAllTheTime.pdf" target="_blank" rel="noopener">Parallel All The Time</a>, 2019。该论文有一个<a href="https://par.nsf.gov/servlets/purl/10216637" target="_blank" rel="noopener">改进版本</a>，发表在 IEEE TPDS 2020 的九月刊。标题也有所更改，强调充分利用并发，去掉了“All The Time”。</p>
+<h2 id="背景">背景 <a href="#%e8%83%8c%e6%99%af" class="anchor">🔗</a></h2><p>之前在上海市计算机学会存储专委会的公众号里，
+看到一篇来自华东师范大学的<a href="https://faculty.ecnu.edu.cn/_s16/sl2_13905/main.psp?eqid=9432b45f000d3fbc00000003645d937e" target="_blank" rel="noopener">石亮</a>教授（存储专委会主任）的报告，题为“新一代闪存存储系统并行优化技术研究”。</p>
+<p class="markdown-image">
+  <img src="/media/sl-article.png" alt="article"  />
+</p><p>其中，闪存存储系统的并行优化设计被分为三个方向：</p>
+<ol>
+<li>基于闪存访问冲突最小化的并行优化设计</li>
+<li>基于芯片空闲时间的垃圾回收导致访问冲突优化策略</li>
+<li>基于闪存系统并行性最大化的性能优化设计</li>
+</ol>
+<p>这里要读的论文 <code>Parallel All the Time</code> 属于第三种，石亮教授是该论文的第二作者。第一作者是厦门大学的<a href="https://informatics.xmu.edu.cn/info/1425/31239.htm" target="_blank" rel="noopener">高聪明</a>副教授。看论文记录，两位合作已久。</p>
+<h2 id="问题描述">问题描述 <a href="#%e9%97%ae%e9%a2%98%e6%8f%8f%e8%bf%b0" class="anchor">🔗</a></h2><p>一块 SSD 驱动器内建有如下并发单元：channel, chip, die 以及 plane. 论文认为，作为最下级并发级别 - plane 级并发由于限制最多<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，利用率也相当低。利用率低的两个主要原因是主机写和GC. 论文的核心内容就是讨论一种
+die 内数据并发优化框架 &ndash; 它保证 IO 始终满足 plane 级并发。</p>
+<h2 id="ssd-的并发性">SSD 的并发性 <a href="#ssd-%e7%9a%84%e5%b9%b6%e5%8f%91%e6%80%a7" class="anchor">🔗</a></h2><p>SSD 有四级并发，可以用如下表格来描述：<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<!-- raw HTML omitted -->
+<table>
+<thead>
+<tr>
+<th>并发级别</th>
+<th>名称</th>
+<th>行为描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Channel</td>
+<td>channel striping</td>
+<td>完全并发</td>
+</tr>
+<tr>
+<td>Package (LUN)</td>
+<td>way pipelining</td>
+<td>通道内串行, 独立的 I/O 请求流水化</td>
+</tr>
+<tr>
+<td>Die (chip)</td>
+<td>die interleaving</td>
+<td>同上，die 间执行 interleaving command, 数据和命令串行执行</td>
+</tr>
+<tr>
+<td>Plane</td>
+<td>plane sharing</td>
+<td>执行 multi-plane command, 需要满足前提<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></td>
+</tr>
+</tbody>
+</table>
+<p>Channel 和 chip 级并发无需应用程序干预。Die 和 plane 级并发需要使用相关高级指令。</p>
+<ul>
+<li><code>interleaving command</code> 用来提交同 chip 下不同 die 的并发指令；</li>
+<li><code>multi-plane command</code> 用来提交同 die 下不同 plane 的并发指令 &ndash; 限制条件如前所述。通常，一个 die 下会有 2 个或4 个 plane. 在 4 个 plane
+的情况下，可以 0&amp;1、2&amp;3 分别执行 multi-plane command. 如果满足条件，
+也可以 4 个 plane 一起并发执行。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+</ul>
+<p><code>interleaving</code> 是一种流水线方式。总线是共享的，加载数据必须串行。数据加载完成后，写入（NAND 术语里叫 programming）操作和下一个加载可以并发执行。一图胜千言。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p class="markdown-image">
+  <img src="/media/ssd-interleaving.png" alt="interleaving"  />
+</p><p>multi-plane command 其实也是一种 die 内的 interleaving. 参考镁光的描述：<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<blockquote>
+<p>A MULTIPLANE PAGEPROGRAM operation requires the following two steps:</p>
+<ol>
+<li>Serially load up to two pages of data (4224 bytes) into the data
+buffer.</li>
+<li>Parallel programming of both pages starts after the issue of the
+Page Confirm command.</li>
+</ol>
+</blockquote>
+<h2 id="问题分类">问题分类 <a href="#%e9%97%ae%e9%a2%98%e5%88%86%e7%b1%bb" class="anchor">🔗</a></h2><p>论文主要讨论两类问题：如何让写操作和 GC 充分利用 multi-plane 并发。</p>
+<h3 id="问题描述---主机写">问题描述 - 主机写 <a href="#%e9%97%ae%e9%a2%98%e6%8f%8f%e8%bf%b0---%e4%b8%bb%e6%9c%ba%e5%86%99" class="anchor">🔗</a></h3><p>论文把写入（没有讨论读是因为写入更耗时，且对总体性能影响更大）分为四类：</p>
+<ol>
+<li>Single Write - IO 只写一个 plane;</li>
+<li>不同类型的操作写入多个 plane;</li>
+<li>Unaligned Write - 都是写，但是目标 plane 里的物理 page offset 不同；</li>
+<li>Parallel Writes - 都是写，in-plane page offset 也相同，能并发。</li>
+</ol>
+<p>按照以上分类，论文列举了写操作的占比如下图。<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>看起来 Single Write 居多。</p>
+<p class="markdown-image">
+  <img src="/media/ssd-write-ops-cls.png" alt="SSD 写分类"  />
+</p><p>下图，“写入点” 是 in-plane page offset; “分组” 是 plane. 图中描述了一个简单模型：2 个 plane,  每个 plane 里只有一个 block, 每个 block 里有
+6 个物理页。一个简单的算法是对写入进行对齐，图里 W1 和 W2 不对齐。如果把 W2 的目标地址和 W1 对齐（刚好是空白页），则会浪费一个页面。这种实现不满足实际需求。</p>
+<p class="markdown-image">
+  <img src="/media/ssd-host-write.png" alt="host write"  />
+</p><h3 id="问题描述---垃圾回收">问题描述 - 垃圾回收 <a href="#%e9%97%ae%e9%a2%98%e6%8f%8f%e8%bf%b0---%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6" class="anchor">🔗</a></h3><p>Die 内某 plane 激活 GC 的情况下，GC 完成之前其他 plane 的数据也无法被访问。鉴于此，Shahidi 等人提议同时执行 GC, 以摊薄时间开销。其 ParaGC
+算法如下：</p>
+<ol>
+<li>先选择某个 plane 下包含最多无效页的 block A;</li>
+<li>如果该 block 对应的 paired-block B 在另一个 plane 下有足够的无效页，
+则 A 和 B 可以同时 GC. 否则 A 和 B 需要串行回收。</li>
+</ol>
+<p>由于 A 和 B 中包含的有效页面数量可能不等，则容易产生 Unaligned
+Writes. 同理，如果 A 和 B 串行回收，更容易产生非对齐写。</p>
+<p class="markdown-image">
+  <img src="/media/ssd-gc.png" alt="gc"  />
+</p><h2 id="解决方案">解决方案 <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" class="anchor">🔗</a></h2><p>基于以上分析，论文认为，必须从一开始写时就得考虑面向 multi-plane.</p>
+<blockquote>
+<p>To maximize plane level parallelism, the access addresses of writes
+on all planes in the same die should be aligned at all time.</p>
+</blockquote>
+<p>针对写入和GC，论文提出一下解决方案：</p>
+<p class="markdown-image">
+  <img src="/media/multi-plane.png" alt="solution"  />
+</p><ol>
+<li>利用 SSD buffer 对写入数据做整形，从而保证写入符合 Parallel Writes
+的要求。</li>
+<li>数据的分配算法采用<a href="https://www.tavakkol.ch/downloads/papers/A.Tavakkol-CAL2016.pdf" target="_blank" rel="noopener">TBM</a> &ndash; 在 die 内的 plane 之间进行 round-robin.</li>
+</ol>
+<h3 id="基于-buffer-整形的-die-write">基于 buffer 整形的 Die-Write <a href="#%e5%9f%ba%e4%ba%8e-buffer-%e6%95%b4%e5%bd%a2%e7%9a%84-die-write" class="anchor">🔗</a></h3><p>维护一个 die 队列，假设有 4 个 die, 每个 die 里面有 2 个 plane， 如下图。</p>
+<ol>
+<li>每个 die 上维护一个 LRU 链表管理脏页；</li>
+<li>为了保持 die 的写平衡，对 die 上的写采用 round-robin;</li>
+</ol>
+<p class="markdown-image">
+  <img src="/media/buffer-die-write.png" alt="bdw"  />
+</p><p>Buffer 的 evict 机制（从 buffer 选取 page 写入到 die）以上图为例：当前
+Queue head 在 die0, 先从这里扫描，跳过 die1（没有足够的 dirty page）到
+die2、die3，然后分别从 die0, die2, die3 各自淘汰 2 个页面。该方案依赖超级电容等相关设施处理掉电。</p>
+<blockquote>
+<p>假设 die 里面有 N 个 plane, 每次淘汰的页面总是 N 的倍数。</p>
+</blockquote>
+<p>die 上的读无法做类似的处理，因为读取的地址是指定的。</p>
+<h3 id="die-上的-gc-改进">Die 上的 GC 改进 <a href="#die-%e4%b8%8a%e7%9a%84-gc-%e6%94%b9%e8%bf%9b" class="anchor">🔗</a></h3><p>GC 分为三步：1) 选择待搬迁 block A; 2) 搬运数据到目标 block B; 3) 擦除
+block A. 这里的主要开销是第二步搬迁数据，也是改进的重点。</p>
+<p class="markdown-image">
+  <img src="/media/die-gc.png" alt="Die GC"  />
+</p><p>Die-GC 的改进是以 Die-Write 为基础的。考虑到擦除以 block 为粒度，定义<code>aligned block</code> 为具有相同 in-plane 地址的 block.  算法步骤如下：</p>
+<ol>
+<li>对每组 aligned block 中的有效页面数量求和，数量最少的被牺牲；</li>
+<li>把选中的一组 aligned block 中的有效页面读取 N 个到 SSD buffer;<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></li>
+<li>触发一次对齐的 Die-Write;</li>
+<li>重复 #2 直到所有的有效页面都被回写就可以对被牺牲的 block 进行成组擦除了。<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></li>
+</ol>
+<p>上图描述的是把 aligned block-0 中的数据搬迁到 aligned block-j 的过程。</p>
+<h2 id="后记">后记 <a href="#%e5%90%8e%e8%ae%b0" class="anchor">🔗</a></h2><p>Flash plane interleaving 可以显著提高性能（30% ~ 80%），其前提是事先匹配不同目标 plane 下的物理页的地址。如果不幸存在坏块，就很难有用武之地了。<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>
+此外，生产环境还得考虑磨损均衡。理想很丰满，现实很骨感。</p>
+<p>一些 SSD <a href="http://www.openssd-project.org/ssd/simulators/" target="_blank" rel="noopener">模拟器</a>。相关 NAND SSD 知识也许可以参考上一篇 <a href="https://live4thee.github.io/posts/2023-12-04-ssd-intro/" title="Last post" >SSD 101 Plus</a>。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>访问不同 plane 内的同一地址时，操作类型（R/W/E）相同才能并发执行。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>表格来源 <a href="https://thycat.com/docs/cs/ssd-parallelism/" target="_blank" rel="noopener">https://thycat.com/docs/cs/ssd-parallelism/</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>4 个 plane 时两两并发有分组，不能 0&amp;2 或 1&amp;3.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>图片来源还是 <a href="https://thycat.com/docs/cs/ssd-parallelism/" target="_blank" rel="noopener">https://thycat.com/docs/cs/ssd-parallelism/</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Micron Technical Note, 第四页。<a href="https://www.micron.com/-/media/client/global/documents/products/technical-note/nand-flash/tn2962_large_page_nand_drivers.pdf" target="_blank" rel="noopener">TN-29-62</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>看论文，统计数据似乎是用 <a href="https://github.com/huaicheng/ssdsim" target="_blank" rel="noopener">SSDsim</a> 模拟获得的。&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>如前，N 是 die 内 plane 的数量。&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>因此对 SSD 的寿命有不利影响。&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p>参考 <a href="https://www.delkin.com/blog/interleaving-flash-bus-interfaces-and-flash-memory-speed/" target="_blank" rel="noopener">Interleaving, Flash Bus Interfaces, and Flash Memory Speed</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://live4thee.github.io/tags/paper">paper</a>
+            
+                <a href="https://live4thee.github.io/tags/ssd">ssd</a>
+            
+                <a href="https://live4thee.github.io/tags/storage">storage</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "live4thee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://www.facebook.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-152.000000, -43.000000)">
+            <g id="Facebook" transform="translate(152.000000, 43.000000)">
+                <rect id="Rounded" fill="#bbbbbb" x="0" y="0" width="72" height="72" rx="8"></rect>
+                <path d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://github.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://twitter.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.536px" height="438.536px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;"
+	 xml:space="preserve">
+<g>
+	<path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
+		C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126
+		h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225
+		C438.532,59.576,430.49,40.204,414.41,24.123z M335.471,168.735c0.191,1.713,0.288,4.278,0.288,7.71
+		c0,15.989-2.334,32.025-6.995,48.104c-4.661,16.087-11.8,31.504-21.416,46.254c-9.606,14.749-21.074,27.791-34.396,39.115
+		c-13.325,11.32-29.311,20.365-47.968,27.117c-18.648,6.762-38.637,10.143-59.953,10.143c-33.116,0-63.76-8.952-91.931-26.836
+		c4.568,0.568,9.329,0.855,14.275,0.855c27.6,0,52.439-8.565,74.519-25.7c-12.941-0.185-24.506-4.179-34.688-11.991
+		c-10.185-7.803-17.273-17.699-21.271-29.691c4.947,0.76,8.658,1.137,11.132,1.137c4.187,0,9.042-0.76,14.56-2.279
+		c-13.894-2.669-25.598-9.562-35.115-20.697c-9.519-11.136-14.277-23.84-14.277-38.114v-0.571
+		c10.085,4.755,19.602,7.229,28.549,7.422c-17.321-11.613-25.981-28.265-25.981-49.963c0-10.66,2.758-20.747,8.278-30.264
+		c15.035,18.464,33.311,33.213,54.816,44.252c21.507,11.038,44.54,17.227,69.092,18.558c-0.95-3.616-1.427-8.186-1.427-13.704
+		c0-16.562,5.853-30.692,17.56-42.399c11.703-11.706,25.837-17.561,42.394-17.561c17.515,0,32.079,6.283,43.688,18.846
+		c13.134-2.474,25.892-7.33,38.26-14.56c-4.757,14.652-13.613,25.788-26.55,33.402c12.368-1.716,23.88-4.95,34.537-9.708
+		C357.458,149.793,347.462,160.166,335.471,168.735z"/>
+</g>
+</svg>
+
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2026 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       live4thee
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Storage on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/storage/</link>
+    <description>Recent content in Storage on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Jan 2026 21:18:25 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/storage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AIO</title>
+      <link>https://live4thee.github.io/posts/2026-01-11-aio/</link>
+      <pubDate>Sun, 11 Jan 2026 21:18:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2026-01-11-aio/</guid>
+      <description>本想记录一些 RWF_NOWAIT 相关的行为，没想到之前大部分已经写过。完全没有印象。😭 补充一些新体会。 AIO 🔗bpftrace 🔗前文梳理了打开 RWF_NOWAIT 后提交 AIO 有时候会碰</description>
+    </item>
+    <item>
+      <title>fio Trickery</title>
+      <link>https://live4thee.github.io/posts/2024-10-12-fio-trickery/</link>
+      <pubDate>Sat, 12 Oct 2024 13:51:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-10-12-fio-trickery/</guid>
+      <description>遇到一个需要测试大量创建文件的场景。毫无疑问，一定能通过 fio 解决。查看了一下 man 手册，有个 filecreate 引擎，折腾了几分钟也只能创建一个文件。Deepsee</description>
+    </item>
+    <item>
+      <title>Up &amp; Down</title>
+      <link>https://live4thee.github.io/posts/2024-09-29-up-and-down/</link>
+      <pubDate>Sun, 29 Sep 2024 16:41:11 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-29-up-and-down/</guid>
+      <description>上周四晚上，刚到家还没停车，发现自己被拉到了一个群里。 “这个问题比较严重，麻烦帮忙看一下。” 环境是 Kylin v10, 内核版本：4.19.90-52.15.</description>
+    </item>
+    <item>
+      <title>Learning by Tracing</title>
+      <link>https://live4thee.github.io/posts/2024-05-09-learning-by-tracing/</link>
+      <pubDate>Thu, 09 May 2024 18:41:54 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-09-learning-by-tracing/</guid>
+      <description>用 bpftrace 跟踪一个 Direct I/O 在 polling 和非 polling 模式下的处理逻辑。为了减少无关的 I/O 干扰，限定了 comm == &amp;quot;a.out&amp;quot; &amp;ndash; 这个 a.out 是我的测试程序。 内核是 4.18, 关键代码相对比较好找，在 fs/block_dev.c: static void</description>
+    </item>
+    <item>
+      <title>RWF_NONBLOCK &amp; EAGAIN (2)</title>
+      <link>https://live4thee.github.io/posts/2024-04-08-rwf-nonblock-eagain-2/</link>
+      <pubDate>Mon, 08 Apr 2024 11:00:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-08-rwf-nonblock-eagain-2/</guid>
+      <description>先交代一下上文的实验环境： kernel: 4.18.0-425.19.2 (CentOS Stream 8) filesystem: Ext4 测试动作：向一个 Ext4 上的文件发一个 4k 非阻塞异步写请求。 RWF_NOWAIT 🔗重新回顾一下 io_submit(2) 的手册里交代了设置 RWF_NOWAIT 后出现 -EAGAIN 的</description>
+    </item>
+    <item>
+      <title>RWF_NONBLOCK &amp; EAGAIN</title>
+      <link>https://live4thee.github.io/posts/2024-04-03-rwf-nonblock-eagain/</link>
+      <pubDate>Wed, 03 Apr 2024 17:56:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-03-rwf-nonblock-eagain/</guid>
+      <description>通过 Linux AIO 做 non_blocking IO, 碰到一个奇怪的问题，记录一下。 I/O 面向的是 Ext4 文件系统，而不是块。 RWF_NOWAIT 🔗RWF_NOWAIT 的语义在 io_submit(2) 里有描述，libaio 的测试用</description>
+    </item>
+    <item>
+      <title>BLKTRACESETUP(2)</title>
+      <link>https://live4thee.github.io/posts/2024-01-09-blktracesetup-2/</link>
+      <pubDate>Tue, 09 Jan 2024 20:36:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-09-blktracesetup-2/</guid>
+      <description>嗯，解决了一个 blktrace 只能跟踪一次分区的问题。 缘起 🔗前几天在一个 4.18 内核环境里做 blkparse 跟踪的时候发现：每个分区只能跟踪一次，第二次就会报错：1 BLKTRACESETUP(2) /dev/sda failed: 2/No such</description>
+    </item>
+    <item>
+      <title>What Is a PDU</title>
+      <link>https://live4thee.github.io/posts/2024-01-05-what-is-a-pdu/</link>
+      <pubDate>Fri, 05 Jan 2024 18:23:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-05-what-is-a-pdu/</guid>
+      <description>以前在 Ceph 上跑虚拟机的时候，偶尔看到 libvirt 报错： qemu unexpectedly closed the monitor: sending req data... pdu length 134, total length 142 the received hdr shows the err 0, the pdu length 198 ... 当时不知道这个 pdu 是啥意思。搜了一圈 libvirt, Qemu, Ceph</description>
+    </item>
+    <item>
+      <title>SATA Hotplug</title>
+      <link>https://live4thee.github.io/posts/2023-12-31-sata-hotplug/</link>
+      <pubDate>Sun, 31 Dec 2023 13:25:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-31-sata-hotplug/</guid>
+      <description>SATA/SAS 规范中要求支持热插拔，因此 SATA/SAS 平台在热插拔上应该问题较少 &amp;ndash; 当然也还是有一些坑。kernel.org有篇Wiki讲述了 SATA Hotplug 的硬件要求。有点意思</description>
+    </item>
+    <item>
+      <title>SCSI Addressing</title>
+      <link>https://live4thee.github.io/posts/2023-12-30-scsi-addressing/</link>
+      <pubDate>Sat, 30 Dec 2023 17:06:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-30-scsi-addressing/</guid>
+      <description>HBTL 经常容易和 LaTeX 图片位置 htbp 记岔，好记性不如烂笔头。记录一下。内容主要翻译自RedHat文档。 HBTL 🔗HBTL - Host:Bus:Target:LUN 也被称为 HCIL 寻址。1 SCSI 设备热插拔前后</description>
+    </item>
+    <item>
+      <title>Parallel All the Time</title>
+      <link>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</link>
+      <pubDate>Tue, 05 Dec 2023 13:35:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</guid>
+      <description>一起读论文：Parallel All The Time, 2019。该论文有一个改进版本，发表在 IEEE TPDS 2020 的九月刊。标题也有所更改，强调充分利用并发，去掉了“All The T</description>
+    </item>
+    <item>
+      <title>SSD 101 Plus</title>
+      <link>https://live4thee.github.io/posts/2023-12-04-ssd-intro/</link>
+      <pubDate>Mon, 04 Dec 2023 15:39:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-04-ssd-intro/</guid>
+      <description>简介 🔗读 NAND SSD 相关资料的时候，一般会遇到下面这张图： 相应解释是：1 一块 NAND Flash 包含多个 LUN（Logic Unit Number）； 每个 LUN 又包含多个 Plane; 每个 Plane</description>
+    </item>
+    <item>
+      <title>Linux AIO</title>
+      <link>https://live4thee.github.io/posts/2023-11-16-linux-aio/</link>
+      <pubDate>Thu, 16 Nov 2023 11:56:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-16-linux-aio/</guid>
+      <description>对 Linux 的 AIO 一直是一些碎片化的知识，没有好好总结。我们知道，AIO 的推荐使用场景是访问块设备、结合 O_DIRECT 一起使用。比如，CephBlockDevic</description>
+    </item>
+    <item>
+      <title>Processes in D State</title>
+      <link>https://live4thee.github.io/posts/2021-04-30-processes-in-d-state/</link>
+      <pubDate>Fri, 30 Apr 2021 16:00:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-04-30-processes-in-d-state/</guid>
+      <description>当进程陷入不可中断睡眠的时候，用户没有办法杀掉它。如果该进程进入了僵尸状态、且有很多子进程的话那就更是“屋漏偏逢连夜雨”了。绝大部分情况下，</description>
+    </item>
+    <item>
+      <title>DRBD Split-Brain</title>
+      <link>https://live4thee.github.io/2017/06/30/DRBD-Split-Brain/</link>
+      <pubDate>Fri, 30 Jun 2017 20:40:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/06/30/DRBD-Split-Brain/</guid>
+      <description>上午正在聚精会神写代码的时候，QA团队的同事说，一个测试环境的DRBD集群貌似出了问题，数据不一致。心里一个惊，真是怕啥来啥。一边疑惑着“不</description>
+    </item>
+    <item>
+      <title>Demo after Staying Late</title>
+      <link>https://live4thee.github.io/2017/05/15/Demo-after-Staying-Late/</link>
+      <pubDate>Mon, 15 May 2017 21:03:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/15/Demo-after-Staying-Late/</guid>
+      <description>此前立下军令状，两个礼拜出demo，今天终于赶上。然而demo的时候出了意想不到的问题：虚拟机启动后很快就自动关机了。后来demo结束后修复</description>
+    </item>
+    <item>
+      <title>DRBD Notes (2)</title>
+      <link>https://live4thee.github.io/2017/04/01/drbd-notes-2/</link>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/04/01/drbd-notes-2/</guid>
+      <description>DRBD 9 出了一个套件，叫 drbdmanage，提供了配置分发、re-balancing 等功能。由于依赖存放在 Sourceforge 的 DocBook 样式文件，编译生成 rpm 包的整个过</description>
+    </item>
+    <item>
+      <title>DRBD Notes (1)</title>
+      <link>https://live4thee.github.io/2017/03/31/drbd-notes-1/</link>
+      <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/31/drbd-notes-1/</guid>
+      <description>最近开始接触 DRBD，具体来说，DRDB 9 - 这是一个 CentOS 7.2 还没有第三方 rpm 的版本，也就是说要自己编译。呵呵，C, Makefile, autotools, Kernel Module，十年前就磨练</description>
+    </item>
+  </channel>
+</rss>

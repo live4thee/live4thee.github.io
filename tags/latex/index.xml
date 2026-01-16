@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latex on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/latex/</link>
+    <description>Recent content in Latex on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Aug 2023 10:55:04 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimized PDF</title>
+      <link>https://live4thee.github.io/posts/2023-08-23-optimized-pdf/</link>
+      <pubDate>Wed, 23 Aug 2023 10:55:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-08-23-optimized-pdf/</guid>
+      <description>无意中，看到生成出来的 pdf 文件的属性中有这么一段： Optimized: No 这好奇心和强迫症一下就升腾上来了。我呕心沥血写的 Xelatex 文本，仔仔细细地修复了 Underfull 和 Overfull 报警，为啥</description>
+    </item>
+    <item>
+      <title>PNG and Poppler</title>
+      <link>https://live4thee.github.io/posts/2022-02-08-png-and-poppler/</link>
+      <pubDate>Tue, 08 Feb 2022 18:34:16 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-02-08-png-and-poppler/</guid>
+      <description>前段时间碰到一个问题：xelatex 生成出来的 pdf，用阅读器（atril）打开， 图片看不见。 编译的时候，有报警信息如： Overfull \hbox (170.25pt too wide) in paragraph at lines 2169--2170</description>
+    </item>
+    <item>
+      <title>LaTeX Watermarks</title>
+      <link>https://live4thee.github.io/2017/07/12/LaTeX-Watermarks/</link>
+      <pubDate>Wed, 12 Jul 2017 17:26:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/07/12/LaTeX-Watermarks/</guid>
+      <description>前几天，同事问我中文省略号怎么输入。我说我用 org-mode 都是直接插入 LaTeX 标记 \ldots。其实中文输入状态下，按 shift-6 即可。想起来，如果是在中文环境下输入笑</description>
+    </item>
+  </channel>
+</rss>

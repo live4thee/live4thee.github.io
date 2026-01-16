@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/vim/</link>
+    <description>Recent content in Vim on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Habits</title>
+      <link>https://live4thee.github.io/2017/03/05/habits/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/05/habits/</guid>
+      <description>折腾了一把 vscode + markdown 后，还是回到了 Emacs + orgmode 的老路。可谓“积习难改”。 Emacs with git 🔗我的 orgmode 文档通过远程 git 仓库同步。Windows 下面我装了一个GitHub</description>
+    </item>
+    <item>
+      <title>Display Chinese in Vim/Emacs</title>
+      <link>https://live4thee.github.io/2016/12/20/display-chinese-in-vimemacs/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/12/20/display-chinese-in-vimemacs/</guid>
+      <description>碰到一个问题，某个 TXT 文件用 Vim/Emacs 打开均为乱码。vim 下修改一下配置即可： set fileencodings=utf-8,cp936 改为 set fileencodings=utf-8,gb18030 cp936 是微软的简体中文字符集标准，几乎等同于 GB 2312。现在中国</description>
+    </item>
+    <item>
+      <title>A Few Tips</title>
+      <link>https://live4thee.github.io/2016/04/01/a-few-tips/</link>
+      <pubDate>Fri, 01 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/01/a-few-tips/</guid>
+      <description>&amp;lsquo;godef&amp;rsquo; 不能定位到系统函数源代码 🔗godef 突然不能定位到 golang 自己的源代码。研究了一下，我的机器里装有golang-src 和 golang-1.6-s</description>
+    </item>
+    <item>
+      <title>vim-go with pathogen</title>
+      <link>https://live4thee.github.io/2016/01/25/vim-go-with-pathogen/</link>
+      <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/01/25/vim-go-with-pathogen/</guid>
+      <description>本地的 Fedora 虚拟机里面设置了用pathogen加载vim-go，一直工作得很好。而我远程一台 Ubuntu 14.04 LTS 则不工作，虽然.vimrc的内容一模一样，且p</description>
+    </item>
+  </channel>
+</rss>

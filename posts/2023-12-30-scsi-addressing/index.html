@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SCSI Addressing | Life of a Programmer</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="HBTL 经常容易和 LaTeX 图片位置 htbp 记岔，好记性不如烂笔头。记录一下。内容主要翻译自RedHat文档。 HBTL 🔗HBTL - Host:Bus:Target:LUN 也被称为 HCIL 寻址。1 SCSI 设备热插拔前后">
+<meta name="generator" content="Hugo 0.131.0">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">SCSI Addressing</h1>
+
+    <div class="tip">
+        <time datetime="2023-12-30 17:06:39 &#43;0800 CST">Dec 30, 2023</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1177 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          3 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hbtl">HBTL</a></li>
+    <li><a href="#scsi-地址图例">SCSI 地址图例</a></li>
+    <li><a href="#多路径">多路径</a></li>
+    <li><a href="#wwn--naa">WWN &amp; NAA</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>HBTL 经常容易和 LaTeX 图片位置 <code>htbp</code> 记岔，好记性不如烂笔头。记录一下。内容主要翻译自<a href="https://access.redhat.com/articles/17628" target="_blank" rel="noopener">RedHat</a>文档。</p>
+<h2 id="hbtl">HBTL <a href="#hbtl" class="anchor">🔗</a></h2><p>HBTL - Host:Bus:Target:LUN 也被称为 HCIL 寻址。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> SCSI 设备热插拔前后对应的块设备名可能会发生变化，比如 <code>/dev/sda</code> 变成 <code>/dev/sdb</code>，但是设备的 HBTL 地址不换槽位就不会变。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H</td>
+<td>SCSI Host ID 是 SCSI Host Bus Adapter (HBA) 卡的 ID. 该 ID 是内核发现 HBA 卡后分配的。</td>
+</tr>
+<tr>
+<td>B</td>
+<td>B 对应 HBA 卡内的 Bus(也叫 Channel) ID，也是内核分配的。大部分 SCSI 控制器只有一个 bus/channel，因此对应的 ID 大都为 0;</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Target 是 Bus 内的设备 ID，和 H 以及 B 一样也是内核分配的。</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Logical Unit Number (LUN) SCSI target 内的一块逻辑磁盘，一个磁带设备等等。和 H、B、T不一样，这个数字是存储设备自己分配的。</td>
+</tr>
+</tbody>
+</table>
+<p>命令示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cat /proc/scsi/scsi
+</span></span><span style="display:flex;"><span>Attached devices:
+</span></span><span style="display:flex;"><span>Host: scsi0 Channel: <span style="color:#ae81ff">00</span> Id: <span style="color:#ae81ff">00</span> Lun: <span style="color:#ae81ff">00</span>
+</span></span><span style="display:flex;"><span>  Vendor: ATA      Model: SSDSC2KG019T8R   Rev: DL63
+</span></span><span style="display:flex;"><span>  Type:   Direct-Access                    ANSI  SCSI revision: <span style="color:#ae81ff">05</span>
+</span></span><span style="display:flex;"><span>Host: scsi1 Channel: <span style="color:#ae81ff">00</span> Id: <span style="color:#ae81ff">00</span> Lun: <span style="color:#ae81ff">00</span>
+</span></span><span style="display:flex;"><span>  Vendor: ATA      Model: ST2000NM000A-2J2 Rev: TN01
+</span></span><span style="display:flex;"><span>  Type:   Direct-Access                    ANSI  SCSI revision: <span style="color:#ae81ff">05</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ lsscsi -N
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>0:0:0:0<span style="color:#f92672">]</span>    disk    ATA      SSDSC2KG019T8R   DL63  /dev/sda
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>1:0:0:0<span style="color:#f92672">]</span>    disk    ATA      ST2000NM000A-2J2 TN01  /dev/sdb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ sg_map -x
+</span></span><span style="display:flex;"><span>/dev/sg0  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span>  /dev/sda
+</span></span><span style="display:flex;"><span>/dev/sg1  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span>  /dev/sdb
+</span></span><span style="display:flex;"><span>      ^   H:B:T:L  ^        ^
+</span></span><span style="display:flex;"><span>	  |            |        |
+</span></span><span style="display:flex;"><span>	  |            |        <span style="color:#e6db74">`</span>---- SCSI upper layer device
+</span></span><span style="display:flex;"><span>	  |            <span style="color:#e6db74">`</span>-- type
+</span></span><span style="display:flex;"><span>	  |
+</span></span><span style="display:flex;"><span>	  <span style="color:#e6db74">`</span>-- SCSI generic device
+</span></span></code></pre></div><p>其中，<code>SCSI device type</code> 在头文件中定义如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/* file: /usr/include/scsi/scsi.h */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_DISK           0x00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_TAPE           0x01
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_PROCESSOR      0x03    </span><span style="color:#75715e">/* HP scanners use this */</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_WORM           0x04    </span><span style="color:#75715e">/* Treated as ROM by our system */</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_ROM            0x05
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_SCANNER        0x06
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_MOD            0x07    </span><span style="color:#75715e">/* Magneto-optical disk -
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                     * - treated as TYPE_DISK */</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_MEDIUM_CHANGER 0x08
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_ENCLOSURE      0x0d    </span><span style="color:#75715e">/* Enclosure Services Device */</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define TYPE_NO_LUN         0x7f
+</span></span></span></code></pre></div><p>常见的 SCSI upper layer 设备类型、设备名以及内核模块对应关系：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>设备名</th>
+<th>内核模块</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disk</td>
+<td>/dev/sda</td>
+<td>sd_mod.ko</td>
+</tr>
+<tr>
+<td>cd/dvd</td>
+<td>/dev/sr0</td>
+<td>sr_mod.ko</td>
+</tr>
+<tr>
+<td>tape</td>
+<td>/dev/st0</td>
+<td>st_mod.ko</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scsi-地址图例">SCSI 地址图例 <a href="#scsi-%e5%9c%b0%e5%9d%80%e5%9b%be%e4%be%8b" class="anchor">🔗</a></h2><p>HBTL 寻址其实是一种 routing 方法。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>   HBA (Host Bus Adapter)                                                     SCSI
+</span></span><span style="display:flex;"><span> e.g. PCI storage controller                                                  address
+</span></span><span style="display:flex;"><span>+---------------------------+              +----------------------------+     h:b:t:l
+</span></span><span style="display:flex;"><span>| SCSI      | Bus/Channel(0)+-------------&gt;+ SCSI Target (0) |  LUN 0   |  &lt;&lt; 0:0:0:0
+</span></span><span style="display:flex;"><span>| Host (0)  +---------------+              |                 +----------+
+</span></span><span style="display:flex;"><span>|           | Bus/Channel(1)+------+       |                 |  LUN 1   |  &lt;&lt; 0:0:0:1
+</span></span><span style="display:flex;"><span>+---------------------------+      |       |                 +----------+
+</span></span><span style="display:flex;"><span>                                   |       |                 :          |
+</span></span><span style="display:flex;"><span>                                   |       |                 +----------+
+</span></span><span style="display:flex;"><span>                                   |       |                 |  LUN n   |  &lt;&lt; 0:0:0:n
+</span></span><span style="display:flex;"><span>                                   |       +----------------------------+
+</span></span><span style="display:flex;"><span>                                   |
+</span></span><span style="display:flex;"><span>                                   |
+</span></span><span style="display:flex;"><span>                                   |       +----------------------------+
+</span></span><span style="display:flex;"><span>                                   +------&gt;+ SCSI Target (0) |  LUN 0   |  &lt;&lt; 0:1:0:0
+</span></span><span style="display:flex;"><span>                                           |                 +----------+
+</span></span><span style="display:flex;"><span>                                           |                 |  LUN 1   |  &lt;&lt; 0:1:0:1
+</span></span><span style="display:flex;"><span>                                           |                 +----------+
+</span></span><span style="display:flex;"><span>                                           |                 |  LUN 2   |  &lt;&lt; 0:1:0:2
+</span></span><span style="display:flex;"><span>                                           |                 +----------+
+</span></span><span style="display:flex;"><span>                                           |                 :          |
+</span></span><span style="display:flex;"><span>                                           |                 +----------+
+</span></span><span style="display:flex;"><span>                                           |                 |  LUN n   |  &lt;&lt; 0:1:0:n
+</span></span><span style="display:flex;"><span>                                           +----------------------------+
+</span></span></code></pre></div><h2 id="多路径">多路径 <a href="#%e5%a4%9a%e8%b7%af%e5%be%84" class="anchor">🔗</a></h2><p>一个 LUN 可以有多个寻址方式。比如，下面是 FC 的例子：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>   HBA (Host Bus Adapter)
+</span></span><span style="display:flex;"><span> e.g. PCI storage controller                                                SCSI
+</span></span><span style="display:flex;"><span>+--------------------------+   +-----+   +-------------------------+      Addresses
+</span></span><span style="display:flex;"><span>| SCSI     | Bus/Channel(0)+--&gt;+  F  +--&gt;+ SCSI Target (n) | LUN 0 | &lt;&lt; 0:0:0:0 AND 1:0:2:0
+</span></span><span style="display:flex;"><span>| Host (0) |               |   |  C  |   |                 +-------+
+</span></span><span style="display:flex;"><span>|          |               |   |     |   |                 | LUN 1 | &lt;&lt; 0:0:0:1 AND 1:0:2:1
+</span></span><span style="display:flex;"><span>+--------------------------+   |  S  |   |                 +-------+
+</span></span><span style="display:flex;"><span>                               |  w  |   |                 :       |
+</span></span><span style="display:flex;"><span>+--------------------------+   |  i  |   |                 +-------+
+</span></span><span style="display:flex;"><span>| SCSI     | Bus/Channel(0)+--&gt;+  t  |   |                 | LUN n | &lt;&lt; 0:0:0:n AND 1:0:2:n
+</span></span><span style="display:flex;"><span>| Host (1) |               |   |  c  |   +-------------------------+
+</span></span><span style="display:flex;"><span>|          |               |   |  h  |
+</span></span><span style="display:flex;"><span>+--------------------------+   +-----+
+</span></span></code></pre></div><p>怎么知道上面的 0:0:0:0 和 1:0:2:0 最终寻址到同一个 LUN 呢？查 WWN 或者 SCSI ID. <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ lsscsi -i | grep sda
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>0:0:0:0<span style="color:#f92672">]</span>    disk    ATA    SSDSC2KG019T8R   DL63  /dev/sda   355cd2e41507fe2a0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ lsscsi -w | grep sda
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>0:0:0:0<span style="color:#f92672">]</span>    disk    ATA    SSDSC2KG019T8R   DL63  0x55cd2e41507fe2a0              /dev/sda
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ /lib/udev/scsi_id -g -u /dev/sda
+</span></span><span style="display:flex;"><span>355cd2e41507fe2a0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ sg_inq -p 0x83 /dev/sda
+</span></span><span style="display:flex;"><span>VPD INQUIRY: Device Identification page
+</span></span><span style="display:flex;"><span>  Designation descriptor number 1, descriptor length: <span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>    designator_type: vendor specific <span style="color:#f92672">[</span>0x0<span style="color:#f92672">]</span>,  code_set: ASCII
+</span></span><span style="display:flex;"><span>    associated with the Addressed logical unit
+</span></span><span style="display:flex;"><span>      vendor specific:   PHYG908301LF1P9DGN
+</span></span><span style="display:flex;"><span>  Designation descriptor number 2, descriptor length: <span style="color:#ae81ff">72</span>
+</span></span><span style="display:flex;"><span>    designator_type: T10 vendor identification,  code_set: ASCII
+</span></span><span style="display:flex;"><span>    associated with the Addressed logical unit
+</span></span><span style="display:flex;"><span>      vendor id: ATA
+</span></span><span style="display:flex;"><span>      vendor specific: SSDSC2KG019T8R                            PHYG908301LF1P9DGN
+</span></span><span style="display:flex;"><span>  Designation descriptor number 3, descriptor length: <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>    designator_type: NAA,  code_set: Binary
+</span></span><span style="display:flex;"><span>    associated with the Addressed logical unit
+</span></span><span style="display:flex;"><span>      NAA 5, IEEE Company_id: 0x5cd2e4
+</span></span><span style="display:flex;"><span>      Vendor Specific Identifier: 0x1507fe2a0
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">[</span>0x55cd2e41507fe2a0<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>如果配置了多路径，也可以 <code>multipath -l /dev/mappe/mpathX</code> 查询。</p>
+<h2 id="wwn--naa">WWN &amp; NAA <a href="#wwn--naa" class="anchor">🔗</a></h2><p>对比上面的命令输出，可以看到 WWN<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 相比 SCSI ID 少了一个最前面的 ‘3’. 这个前缀 ‘3’ 表示后面跟着的 ID 来自设备的 VPD page 0x83，符合 NAA 规范。</p>
+<p>其中，&lsquo;55cd2e41507fe2a0&rsquo; 是个八字节的 ID，第一个 ‘5’ 表示 NAA type 5
+格式。如果第一个字符是 ‘6’，则代表 NAA type 6 格式，占用 16 字节。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>55cd2e41507fe2a0
+</span></span><span style="display:flex;"><span>               Vendor
+</span></span><span style="display:flex;"><span>NAA  OUI       Specific
+</span></span><span style="display:flex;"><span>  5  5c-d2-e4  1507fe2a0
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>6000097123456789abcdeffedcba9876
+</span></span><span style="display:flex;"><span>               Vendor    Vendor
+</span></span><span style="display:flex;"><span>NAA  OUI       Specific  Specific Ext.
+</span></span><span style="display:flex;"><span>  6  00-00-97  123456789 abcdeffedcba9876
+</span></span></code></pre></div><p>OUI - Organizationally Unique Identifier.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<ul>
+<li>5c:d2:e4 - Intel Corporate</li>
+<li>00:00:97 - DeLL EMC.</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Host, Channel, Id, Lun.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>但是一个 SCSI 设备可能有多个路径。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://access.redhat.com/solutions/474593" target="_blank" rel="noopener">How to find the WWID of storage disk</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://en.wikipedia.org/wiki/World_Wide_Name" target="_blank" rel="noopener">World Wide Name</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://www.wireshark.org/tools/oui-lookup.html" target="_blank" rel="noopener">OUI lookup tool</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://live4thee.github.io/tags/storage">storage</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "live4thee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://www.facebook.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-152.000000, -43.000000)">
+            <g id="Facebook" transform="translate(152.000000, 43.000000)">
+                <rect id="Rounded" fill="#bbbbbb" x="0" y="0" width="72" height="72" rx="8"></rect>
+                <path d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://github.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://twitter.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.536px" height="438.536px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;"
+	 xml:space="preserve">
+<g>
+	<path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
+		C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126
+		h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225
+		C438.532,59.576,430.49,40.204,414.41,24.123z M335.471,168.735c0.191,1.713,0.288,4.278,0.288,7.71
+		c0,15.989-2.334,32.025-6.995,48.104c-4.661,16.087-11.8,31.504-21.416,46.254c-9.606,14.749-21.074,27.791-34.396,39.115
+		c-13.325,11.32-29.311,20.365-47.968,27.117c-18.648,6.762-38.637,10.143-59.953,10.143c-33.116,0-63.76-8.952-91.931-26.836
+		c4.568,0.568,9.329,0.855,14.275,0.855c27.6,0,52.439-8.565,74.519-25.7c-12.941-0.185-24.506-4.179-34.688-11.991
+		c-10.185-7.803-17.273-17.699-21.271-29.691c4.947,0.76,8.658,1.137,11.132,1.137c4.187,0,9.042-0.76,14.56-2.279
+		c-13.894-2.669-25.598-9.562-35.115-20.697c-9.519-11.136-14.277-23.84-14.277-38.114v-0.571
+		c10.085,4.755,19.602,7.229,28.549,7.422c-17.321-11.613-25.981-28.265-25.981-49.963c0-10.66,2.758-20.747,8.278-30.264
+		c15.035,18.464,33.311,33.213,54.816,44.252c21.507,11.038,44.54,17.227,69.092,18.558c-0.95-3.616-1.427-8.186-1.427-13.704
+		c0-16.562,5.853-30.692,17.56-42.399c11.703-11.706,25.837-17.561,42.394-17.561c17.515,0,32.079,6.283,43.688,18.846
+		c13.134-2.474,25.892-7.33,38.26-14.56c-4.757,14.652-13.613,25.788-26.55,33.402c12.368-1.716,23.88-4.95,34.537-9.708
+		C357.458,149.793,347.462,160.166,335.471,168.735z"/>
+</g>
+</svg>
+
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2026 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       live4thee
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>

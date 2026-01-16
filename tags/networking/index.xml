@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/networking/</link>
+    <description>Recent content in Networking on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Sep 2024 09:42:27 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IBV_WC_RETRY_EXC_ERR</title>
+      <link>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</link>
+      <pubDate>Sat, 14 Sep 2024 09:42:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</guid>
+      <description>记得休假前跑通了 RDMA 网络, 并在组内做了演示。看着环境 A 屏幕上飞快滚动的日志，颇为欣喜。当时的性能数据略有点奇怪 &amp;ndash; 因为开着 DEBUG 信息，并未太放在心上</description>
+    </item>
+    <item>
+      <title>MSG_ZEROCOPY (2)</title>
+      <link>https://live4thee.github.io/posts/2024-09-04-msg-zerocopy-2/</link>
+      <pubDate>Wed, 04 Sep 2024 20:29:47 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-04-msg-zerocopy-2/</guid>
+      <description>不服输的F老师兴冲冲地告诉我可以稳定复现零拷贝的效果，并演示了一下， 果然很稳。mpstat 也很有说服力。 我拿出我的 50 GbE 环境，向F老师演示了一</description>
+    </item>
+    <item>
+      <title>MSG_ZEROCOPY</title>
+      <link>https://live4thee.github.io/posts/2024-08-30-msg-zerocopy/</link>
+      <pubDate>Fri, 30 Aug 2024 16:56:38 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-08-30-msg-zerocopy/</guid>
+      <description>之前听F老师说，手动修改代码后，本机 Qemu 热升级打开零拷贝支持后效果非常好。因此拿内核代码树里的测试代码试了试， 却发现几乎没啥区别：并且每次都报</description>
+    </item>
+    <item>
+      <title>Into Seastar</title>
+      <link>https://live4thee.github.io/posts/2024-06-26-into-seastar/</link>
+      <pubDate>Wed, 26 Jun 2024 14:40:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-26-into-seastar/</guid>
+      <description>在Seastar的海洋里扑腾，喘口气。 增加了一个 HTTP handler, 用 curl 测试了一下能工作。所用的 Seastar 版本只有 http_server, 没有 http_client，不得不照猫画虎写了个</description>
+    </item>
+    <item>
+      <title>RDMA Networking - Message TX</title>
+      <link>https://live4thee.github.io/posts/2024-06-12-rdma-networking-message-tx/</link>
+      <pubDate>Wed, 12 Jun 2024 14:31:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-12-rdma-networking-message-tx/</guid>
+      <description>书接上文RDMA简介， 看看 CPU、网卡和 PCIe fabric 是怎么配合实现消息传递的。 背景知识 🔗Verbs API - slow &amp;amp; fast 🔗Verbs API 有两类： 初始化和配置等低频</description>
+    </item>
+    <item>
+      <title>RDMA Networking - Intro</title>
+      <link>https://live4thee.github.io/posts/2024-06-12-rdma-networking-intro/</link>
+      <pubDate>Wed, 12 Jun 2024 09:59:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-12-rdma-networking-intro/</guid>
+      <description>前言 🔗最近给Seastar增加 RDMA 网络支持， 接触了一堆资料。比如： futurewei 的 chogori-seastar bRPC 的 RDMA 支持 spdk 的 RDMA 相关代码 文档、示例比较全面的 rdma-core 最后，Dotan Bara</description>
+    </item>
+    <item>
+      <title>Networking Tips (1)</title>
+      <link>https://live4thee.github.io/2016/06/03/networking-tips-1/</link>
+      <pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/06/03/networking-tips-1/</guid>
+      <description>The Port 0 Trick 🔗经常在 go 的网络库测试代码中，看见如下片段： ln, err := Listen(&amp;#34;tcp&amp;#34;, &amp;#34;127.0.0.1:0&amp;#34;) if err != nil { t.Fatal(err) } 绑定 0 号套接字端口时，操作系统会自动分配一个 1024 号以上某个可用端口</description>
+    </item>
+    <item>
+      <title>Debrick my Router</title>
+      <link>https://live4thee.github.io/2016/03/13/debrick-my-router/</link>
+      <pubDate>Sun, 13 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/13/debrick-my-router/</guid>
+      <description>前天晚上升级路由器里面的软件包时，一不小心把路由器给弄挂了，然后家里就断网了。这个世界，饭可以少吃一顿，但是 Wi-Fi 却不可以断线一分钟啊！就算要搜</description>
+    </item>
+    <item>
+      <title>Using OpenWrt</title>
+      <link>https://live4thee.github.io/2015/07/05/using-openwrt/</link>
+      <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/05/using-openwrt/</guid>
+      <description>之前做路由器方面的工作的时候，老大给我发来了两款还算比较强劲的路由器。其中一款当时OpenWrt还没有正式支持，自己尝试编译了DD-Wrt和</description>
+    </item>
+  </channel>
+</rss>

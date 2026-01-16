@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on Life of a Programmer</title>
+    <link>https://live4thee.github.io/categories/emacs/</link>
+    <description>Recent content in Emacs on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fonts</title>
+      <link>https://live4thee.github.io/2017/03/16/fonts/</link>
+      <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/16/fonts/</guid>
+      <description>用 orgmode + xelatex 输出 pdf 的时候，偶尔发现中英文混排的情况下， 会碰到中文断行出错的情况。现象就是一行中文超出边框很长也不段行。我的LATEX_HEADE</description>
+    </item>
+    <item>
+      <title>org export to latex</title>
+      <link>https://live4thee.github.io/2017/03/10/org-export-to-latex/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/10/org-export-to-latex/</guid>
+      <description>最近写 orgmode 笔记的时候碰到几个问题： code block 没有语法高亮； 输出的 pdf 文件中，python 代码对齐出错； 输出的 pdf 文件中，源代码没有高亮。 解决办法如下： ;;</description>
+    </item>
+    <item>
+      <title>An Emacs Tip</title>
+      <link>https://live4thee.github.io/2016/03/22/an-emacs-tip/</link>
+      <pubDate>Tue, 22 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/22/an-emacs-tip/</guid>
+      <description>用 orgmode 写完文档后，C-x C-c 提示退出失败，出错信息为：eshell-save-some-history: Text is read-only. 切换到 eshell buffer 后输入 exit，果然又提</description>
+    </item>
+    <item>
+      <title>orgmode</title>
+      <link>https://live4thee.github.io/2015/07/05/orgmode/</link>
+      <pubDate>Sun, 05 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/07/05/orgmode/</guid>
+      <description>用Emacs的orgmode写文档，至今仍是我的最爱。 今天碰到一个问题，当我用了#+BEGIN_SRC去渲染一块代码区域时，将文档输出到HT</description>
+    </item>
+  </channel>
+</rss>

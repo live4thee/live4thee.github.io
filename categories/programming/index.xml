@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Life of a Programmer</title>
+    <link>https://live4thee.github.io/categories/programming/</link>
+    <description>Recent content in Programming on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Sep 2024 09:42:27 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IBV_WC_RETRY_EXC_ERR</title>
+      <link>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</link>
+      <pubDate>Sat, 14 Sep 2024 09:42:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-14-ibv-wc-retry-exc-err/</guid>
+      <description>记得休假前跑通了 RDMA 网络, 并在组内做了演示。看着环境 A 屏幕上飞快滚动的日志，颇为欣喜。当时的性能数据略有点奇怪 &amp;ndash; 因为开着 DEBUG 信息，并未太放在心上</description>
+    </item>
+    <item>
+      <title>ASAN Report Before Program Exits</title>
+      <link>https://live4thee.github.io/posts/2024-08-13-asan-report-before-program-exits/</link>
+      <pubDate>Tue, 13 Aug 2024 10:40:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-08-13-asan-report-before-program-exits/</guid>
+      <description>Address Sanitizer (ASAN) 是个非常好用的工具，其子集 Leak Sanitizer (LSAN) 也非常好用。用 GCC 编译的时候：1 -fsanitize=address # 启用 ASAN -fsanitize=leak # 启用 LSAN 现实应用中，很多业务都以守护进程 daemon 的形式运行，因此进</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;11 Lambda Capture</title>
+      <link>https://live4thee.github.io/posts/2024-07-24-cpp-11-lambda-capture/</link>
+      <pubDate>Wed, 24 Jul 2024 17:49:39 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-24-cpp-11-lambda-capture/</guid>
+      <description>好记性不如烂笔头，内容来自cppreference.com. 语法 🔗c++11 的 lambda capture 大概有如下语法： identifier (1) identifier ... (2) identifier initializer (3) (since C++14) &amp;amp; identifier (4) &amp;amp; identifier ... (5) &amp;amp; identifier initializer (6)</description>
+    </item>
+    <item>
+      <title>Into Seastar</title>
+      <link>https://live4thee.github.io/posts/2024-06-26-into-seastar/</link>
+      <pubDate>Wed, 26 Jun 2024 14:40:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-26-into-seastar/</guid>
+      <description>在Seastar的海洋里扑腾，喘口气。 增加了一个 HTTP handler, 用 curl 测试了一下能工作。所用的 Seastar 版本只有 http_server, 没有 http_client，不得不照猫画虎写了个</description>
+    </item>
+    <item>
+      <title>RDMA Networking - Message TX</title>
+      <link>https://live4thee.github.io/posts/2024-06-12-rdma-networking-message-tx/</link>
+      <pubDate>Wed, 12 Jun 2024 14:31:25 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-12-rdma-networking-message-tx/</guid>
+      <description>书接上文RDMA简介， 看看 CPU、网卡和 PCIe fabric 是怎么配合实现消息传递的。 背景知识 🔗Verbs API - slow &amp;amp; fast 🔗Verbs API 有两类： 初始化和配置等低频</description>
+    </item>
+    <item>
+      <title>RDMA Networking - Intro</title>
+      <link>https://live4thee.github.io/posts/2024-06-12-rdma-networking-intro/</link>
+      <pubDate>Wed, 12 Jun 2024 09:59:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-06-12-rdma-networking-intro/</guid>
+      <description>前言 🔗最近给Seastar增加 RDMA 网络支持， 接触了一堆资料。比如： futurewei 的 chogori-seastar bRPC 的 RDMA 支持 spdk 的 RDMA 相关代码 文档、示例比较全面的 rdma-core 最后，Dotan Bara</description>
+    </item>
+    <item>
+      <title>Meta Defcon</title>
+      <link>https://live4thee.github.io/posts/2024-04-12-meta-defcon/</link>
+      <pubDate>Fri, 12 Apr 2024 14:39:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-12-meta-defcon/</guid>
+      <description>一起读论文：Defcon: Preventing Overload with Graceful Feature Degradation 复杂系统中，一旦有故障发生，则往往容易发展成为Cascading Failures. 为了防止系统过载影响产品使用，Met</description>
+    </item>
+    <item>
+      <title>[zz] All Concurrency Models Suck</title>
+      <link>https://live4thee.github.io/posts/2024-04-03-all-concurrency-models-suck/</link>
+      <pubDate>Wed, 03 Apr 2024 09:37:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-03-all-concurrency-models-suck/</guid>
+      <description>本文内容转载自webarchive, 2013/11/15. 作者是 Kenton Varda, 前 CloudFlare 工程师，cap&amp;rsquo;n proto的主要作者之一。原始讨论包含一些其他内容，不在 webarchive</description>
+    </item>
+    <item>
+      <title>Future &amp; Promise</title>
+      <link>https://live4thee.github.io/posts/2023-11-21-future-and-promise/</link>
+      <pubDate>Tue, 21 Nov 2023 11:46:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-21-future-and-promise/</guid>
+      <description>基于异步事件的编程框架基本上都有 Future 和 Promise 的概念。比如， 主流编程语言中 C++11 有std::future 和std::promise, 而 Java 1.5 开始有Futu</description>
+    </item>
+    <item>
+      <title>What Does s.t. Mean?</title>
+      <link>https://live4thee.github.io/posts/2022-07-19-what-does-st-mean/</link>
+      <pubDate>Tue, 19 Jul 2022 21:56:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-07-19-what-does-st-mean/</guid>
+      <description>看 atc15 论文的时候，算法描述看见一个 s.t. 符号，不明其意。后来在 stackexchange 上找到了答案: Usually, the acronym s.t. means `such that&amp;#39;. In the context of optimization, it means `subject to&amp;#39;. Also note that `such that&amp;#39; does *not* have the same meaning as `so that&amp;#39;. - Such that, describes</description>
+    </item>
+    <item>
+      <title>Coyote Notes - 3</title>
+      <link>https://live4thee.github.io/posts/2021-11-23-coyote-notes-3/</link>
+      <pubDate>Tue, 23 Nov 2021 11:22:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-11-23-coyote-notes-3/</guid>
+      <description>内容来自官网。 Actors and StateMachine 🔗上篇提到，Coyote 提供了异步 Actor 编程模型。Coyote 框架提供了一种特殊的 Actor 类型, 叫StateMachine ，这种 Actor</description>
+    </item>
+    <item>
+      <title>Pony Language</title>
+      <link>https://live4thee.github.io/posts/2021-05-10-pony-language/</link>
+      <pubDate>Mon, 10 May 2021 20:25:57 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-05-10-pony-language/</guid>
+      <description>某天电子邮箱里躺了一封关于 Pony 的问答。手贱点了进去，然后深受“广度优先”之害。 这篇文章来自 Pony 的设计者 Sylvan Clebsch 的口述 Pony 早期历史 ，原文读下来颇有点 Coders at</description>
+    </item>
+    <item>
+      <title>.Net Core on Linux - 2</title>
+      <link>https://live4thee.github.io/posts/2021-02-09-dotnet-core-on-linux-2/</link>
+      <pubDate>Tue, 09 Feb 2021 15:48:42 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-02-09-dotnet-core-on-linux-2/</guid>
+      <description>dotnet publish 🔗dotnet publish - Publishes the application and its dependencies to a folder for deployment to a hosting system. 试验了一下打包应用，放到别的 Linux 机器（没有.Net 运行时）上跑。 自包含应用 🔗$ dotnet publish -h ... -f, --framework</description>
+    </item>
+    <item>
+      <title>Coyote Notes - 2</title>
+      <link>https://live4thee.github.io/posts/2021-02-02-coyote-notes-2/</link>
+      <pubDate>Tue, 02 Feb 2021 15:57:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-02-02-coyote-notes-2/</guid>
+      <description>Actors 🔗Coyote 提供了两大编程模型，其中一个就是 Asynchronous Actors. Actor 模型 有几个特征： 创建 Actor 以及向 actor 发送消息是非阻塞的； Actor 对消息的处理是顺序的，因此处理逻辑</description>
+    </item>
+    <item>
+      <title>.Net Core on Linux</title>
+      <link>https://live4thee.github.io/posts/2021-01-27-dotnet-core-on-linux/</link>
+      <pubDate>Wed, 27 Jan 2021 22:22:51 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-01-27-dotnet-core-on-linux/</guid>
+      <description>因为要学 coyote，又不想用 Windows，于是在本机 Xubuntu 20.04 上装了一个 .Net Core，没想到体验还挺不错。我在 Fedora 33 以及 Windows 2012 R2 虚拟机里测试了也可以</description>
+    </item>
+    <item>
+      <title>Coyote Notes - 1</title>
+      <link>https://live4thee.github.io/posts/2021-01-27-coyote-notes/</link>
+      <pubDate>Wed, 27 Jan 2021 15:35:50 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-01-27-coyote-notes/</guid>
+      <description>这几天在学 coyote，做个笔记。 入口 🔗测试入口函数必须 带有属性[Microsoft.Coyote.SystematicTesting.Te</description>
+    </item>
+    <item>
+      <title>MySQL/Mariadb Notes - 1</title>
+      <link>https://live4thee.github.io/posts/2020-03-28-mysql-mariadb-notes-1/</link>
+      <pubDate>Sat, 28 Mar 2020 14:31:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-28-mysql-mariadb-notes-1/</guid>
+      <description>MySQL 8 🔗跑部署脚本的时候，一直报错： ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &amp;#39;IDENTIFIED BY &amp;#39;secret&amp;#39; at line 1 啥，语法错？看了一下执行的 SQL 语句，很正</description>
+    </item>
+    <item>
+      <title>stdout*deferred</title>
+      <link>https://live4thee.github.io/posts/2020-01-28-stdout-deferred/</link>
+      <pubDate>Tue, 28 Jan 2020 20:12:07 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-01-28-stdout-deferred/</guid>
+      <description>跑 maven test 的时候，发现 /tmp 目录下多了一堆命名模式为stdoutdeferred* 的文件，居然把根盘的空间（总共 6 GB）给消耗光了。 查了一下，原来是</description>
+    </item>
+    <item>
+      <title>Python Inspection</title>
+      <link>https://live4thee.github.io/posts/2019-11-05-python-inspection/</link>
+      <pubDate>Tue, 05 Nov 2019 10:42:28 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-11-05-python-inspection/</guid>
+      <description>作为程序员，经常有查看源代码的需求。如果没有代码，能反汇编也不至于两眼摸黑。Python 这方面的支持做的挺不错。 inspect 🔗inspect 定义了很多</description>
+    </item>
+    <item>
+      <title>Python &#39;if&#39;</title>
+      <link>https://live4thee.github.io/posts/2019-10-14-python-if/</link>
+      <pubDate>Mon, 14 Oct 2019 19:41:03 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-10-14-python-if/</guid>
+      <description>前两天掉进了一个 Python 的坑。 import xml.etree.ElementTree as ET s = &amp;#34;&amp;#34;&amp;#34;&amp;lt;disk type=&amp;#39;file&amp;#39; device=&amp;#39;disk&amp;#39;&amp;gt; &amp;lt;driver name=&amp;#39;qemu&amp;#39; type=&amp;#39;qcow2&amp;#39; cache=&amp;#39;directsync&amp;#39; io=&amp;#39;native&amp;#39;/&amp;gt; &amp;lt;source file=&amp;#39;/vms/test/centos76-efi&amp;#39;/&amp;gt; &amp;lt;target dev=&amp;#39;vda&amp;#39; bus=&amp;#39;virtio&amp;#39;/&amp;gt; &amp;lt;/disk&amp;gt;&amp;#34;&amp;#34;&amp;#34; ele = etree.fromstring(s) t = ele.find(&amp;#39;target&amp;#39;) # &amp;lt;Element &amp;#39;target&amp;#39; at 0x249dc90&amp;gt; if t: ele.remove(t) 然后发现，&amp;rsquo;ele.remove(t</description>
+    </item>
+    <item>
+      <title>UnboundLocalError</title>
+      <link>https://live4thee.github.io/posts/2019-10-14-unboundlocalerror/</link>
+      <pubDate>Mon, 14 Oct 2019 09:36:10 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-10-14-unboundlocalerror/</guid>
+      <description>最近碰到个 &amp;lsquo;UnboundLocalError&amp;rsquo;, 初看不可思议，知道原理后就释然了。 # file: test.py def e(x): print(x) def g(): e(1) e = 1 g() 运行一下： $ python test.py Traceback (most recent call last): File &amp;#34;test.py&amp;#34;, line 7, in &amp;lt;module&amp;gt; g() File &amp;#34;test.py&amp;#34;, line 4, in g e(1) UnboundLocalError: local variable &amp;#39;e&amp;#39; referenced before assignment</description>
+    </item>
+    <item>
+      <title>Buffering</title>
+      <link>https://live4thee.github.io/posts/2018-05-18-buffering/</link>
+      <pubDate>Fri, 18 May 2018 20:47:37 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-18-buffering/</guid>
+      <description>最近碰到一个行缓冲(line buffering)方面的问题，有点意思。 背景 🔗某段 golang 代码中，需要解析 virsh event --loop 的输出，大概就是用bufio 里的 Scanner 来</description>
+    </item>
+    <item>
+      <title>Java Thread States</title>
+      <link>https://live4thee.github.io/posts/2018-05-11-java-thread-states/</link>
+      <pubDate>Fri, 11 May 2018 19:12:23 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-11-java-thread-states/</guid>
+      <description>根据 Oracle 的官方文档 ，Java 线程有如下状态： 状态 描述 NEW 刚创建的新线程 RUNNABLE 线程正在JVM内执行 BLOCKED 线程阻塞在 monitor lock WAITING 线程无限等待其他线程的某个特定动作</description>
+    </item>
+    <item>
+      <title>Deadlock in Groovy 2.4.8</title>
+      <link>https://live4thee.github.io/posts/2018-05-11-deadlock-in-groovy-2-4-8/</link>
+      <pubDate>Fri, 11 May 2018 18:39:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-11-deadlock-in-groovy-2-4-8/</guid>
+      <description>前段时间，为了解决 GroovyShell 中的一个内存泄漏问题，把 groovy 从 2.4.7 升级到了 2.4.8，没想到 2.4.8 中解决内存泄漏的时候，引入了一个高危bug：会导致线程死锁。 c.f.</description>
+    </item>
+    <item>
+      <title>Meet JVM OOM - cont&#39;d</title>
+      <link>https://live4thee.github.io/posts/2018-05-02-meet-jvm-oom-2/</link>
+      <pubDate>Wed, 02 May 2018 20:10:46 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-05-02-meet-jvm-oom-2/</guid>
+      <description>接上篇。 Groovy 🔗内存泄漏的原因还是因为不当使用了GroovyShell，因为需要动态的加载并执行生成的 groovy 脚本。Groovy是一门动态语言，每个方</description>
+    </item>
+    <item>
+      <title>Meet JVM OOM</title>
+      <link>https://live4thee.github.io/posts/2018-04-24-meet-jvm-oom/</link>
+      <pubDate>Tue, 24 Apr 2018 23:12:09 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-04-24-meet-jvm-oom/</guid>
+      <description>今天做了一次 Java 进程的 OOM 分析，记录一下过程。 初次怀疑 🔗有同事最近反应 Java 进程没有响应，kill -3抓了一下catalina.out， 结果发现里面</description>
+    </item>
+    <item>
+      <title>Go Pitfalls (1)</title>
+      <link>https://live4thee.github.io/2017/10/03/go-pitfalls-1/</link>
+      <pubDate>Tue, 03 Oct 2017 22:48:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/03/go-pitfalls-1/</guid>
+      <description>用 golang 以来，遇到过一些坑，这里搜集了三个坑的比较惨的例子。 Variable Shadowing 🔗这个非常容易中招，比如，下面其实是个死循环。 package main import &amp;#34;fmt&amp;#34; func getNextCursor(cursor int) (int, error) { return cursor + 1, nil } func</description>
+    </item>
+    <item>
+      <title>LaTeX Watermarks</title>
+      <link>https://live4thee.github.io/2017/07/12/LaTeX-Watermarks/</link>
+      <pubDate>Wed, 12 Jul 2017 17:26:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/07/12/LaTeX-Watermarks/</guid>
+      <description>前几天，同事问我中文省略号怎么输入。我说我用 org-mode 都是直接插入 LaTeX 标记 \ldots。其实中文输入状态下，按 shift-6 即可。想起来，如果是在中文环境下输入笑</description>
+    </item>
+    <item>
+      <title>Quorum</title>
+      <link>https://live4thee.github.io/2017/05/03/quorum/</link>
+      <pubDate>Wed, 03 May 2017 23:20:44 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/03/quorum/</guid>
+      <description>最近在看 consul 资料的时候，又碰到了之前研究 DRBD 9 时碰到的一个概念：quorum. Quorum 的中文直译是 法定人数 - 所谓“法定人数”是指选举制度下，参与选举的</description>
+    </item>
+    <item>
+      <title>Modern C&#43;&#43;</title>
+      <link>https://live4thee.github.io/2016/10/18/modern-cpp/</link>
+      <pubDate>Tue, 18 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/10/18/modern-cpp/</guid>
+      <description>一点笔记，来自 Modern C++ 最重要的一点：不要直接用指针。因为它直接暴露了内存区域，且不能传达出所有者相关语义。Pointers must NOT own resources. 以下是一些例子</description>
+    </item>
+    <item>
+      <title>Networking Tips (1)</title>
+      <link>https://live4thee.github.io/2016/06/03/networking-tips-1/</link>
+      <pubDate>Fri, 03 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/06/03/networking-tips-1/</guid>
+      <description>The Port 0 Trick 🔗经常在 go 的网络库测试代码中，看见如下片段： ln, err := Listen(&amp;#34;tcp&amp;#34;, &amp;#34;127.0.0.1:0&amp;#34;) if err != nil { t.Fatal(err) } 绑定 0 号套接字端口时，操作系统会自动分配一个 1024 号以上某个可用端口</description>
+    </item>
+    <item>
+      <title>Debugging Go Programs</title>
+      <link>https://live4thee.github.io/2016/04/07/debugging-go-program/</link>
+      <pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/04/07/debugging-go-program/</guid>
+      <description>调试 golang 程序的体验不是很好，虽然很多时候加一些打印语句也能解决问题。 gdb 🔗 设置 gdb 的启动脚本，以正确解析符号（以前开发 SGX SDK 的时候也干过）。 add-auto-load-safe-path /usr/share/go-1.6/src/runtime/runtime-gdb.py 在需</description>
+    </item>
+    <item>
+      <title>Meet JS</title>
+      <link>https://live4thee.github.io/2016/02/04/meet-js/</link>
+      <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/02/04/meet-js/</guid>
+      <description>这两天修复了一个前同事遗留下来的bug，也因此（几乎）首次接触了JavaScript以及 WebUI 方面的东西。我一直避免接触任何 UI 相关的事情， 因为总</description>
+    </item>
+    <item>
+      <title>Log Processing</title>
+      <link>https://live4thee.github.io/2015/08/03/log-processing/</link>
+      <pubDate>Mon, 03 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/03/log-processing/</guid>
+      <description>这几天需要分析一些Web服务器的日志，比如从 Apache 服务器日志中找出产生流量总数最高的10个文件。日志文件大小：21G，68044641行，其中包</description>
+    </item>
+    <item>
+      <title>Another OData Pitfall</title>
+      <link>https://live4thee.github.io/2015/06/17/another-odata-pitfall/</link>
+      <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/06/17/another-odata-pitfall/</guid>
+      <description>今天又碰到 OData 一个坑，那就是，枚举类型在 JSON 格式中表现为字符串， 而非数值。其文档 中有如下描述： Values of type enumValue are represented as JSON strings using the enumerationMember, defined in [OData-ABNF], where available. 而我用 Json.Net 将对象序</description>
+    </item>
+    <item>
+      <title>A Bug</title>
+      <link>https://live4thee.github.io/2015/05/11/a-bug/</link>
+      <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/11/a-bug/</guid>
+      <description>今天碰到一个单元测试中的 bug，有点意思，不妨记录如下。 我有一个 Azure CloudTable，用来存放一些需要后台执行的操作内容。其 PartitionKey 和 RowKey 分别设为</description>
+    </item>
+    <item>
+      <title>A Show case of LINQ</title>
+      <link>https://live4thee.github.io/2015/04/13/a-show-case-of-linq/</link>
+      <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/04/13/a-show-case-of-linq/</guid>
+      <description>As a long-time Linux programmer, I barely got a laughter from my wife, when offered a few praises to the productivity of C#. It is interesting - we are apt to believe that what we&amp;rsquo;ve already known are the best, even we don&amp;rsquo;t have any convincing evidence. We are pretty much biased.&#xA;I do like the feature Language-Integrated Query, aka. LINQ, introduced since .Net 3.5. And here is a show case.</description>
+    </item>
+    <item>
+      <title>OData Pitfalls</title>
+      <link>https://live4thee.github.io/2015/03/25/odata-pitfalls/</link>
+      <pubDate>Wed, 25 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/25/odata-pitfalls/</guid>
+      <description>I have been writing WebApi with OData v4 these days. While it is really fast, and convenient, I experienced a few pitfalls which costs me several hours.&#xA;URL Sensitivity 🔗The path segment etc. are case sensitive by default. Thus, you would probably receive an HTTP 404 when GET ~/api/customers instead of~/api/Customers.&#xA;String Parameter Issue 🔗Assuming that I have a bound function GetCustomerX for the entity type Customer, and it is indexed with a string identifier.</description>
+    </item>
+  </channel>
+</rss>

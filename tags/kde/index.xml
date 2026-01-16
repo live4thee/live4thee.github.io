@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KDE on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/kde/</link>
+    <description>Recent content in KDE on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 Mar 2020 12:31:18 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/kde/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubuntu 20.04</title>
+      <link>https://live4thee.github.io/posts/2020-03-07-kubuntu-20-04/</link>
+      <pubDate>Sat, 07 Mar 2020 12:31:18 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-03-07-kubuntu-20-04/</guid>
+      <description>没忍住，提前升级到了 20.04. 输入法 🔗升级后自动安装上了 ibus, 切换中文有点问题。删掉 ibus 保留 fcitx 就好。一个手快，多删了下面两个包，导致使用 gtk 的程序没法切换输</description>
+    </item>
+    <item>
+      <title>AppImage to Rescue!</title>
+      <link>https://live4thee.github.io/posts/2019-04-17-appimage-to-rescue/</link>
+      <pubDate>Wed, 17 Apr 2019 22:37:48 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2019-04-17-appimage-to-rescue/</guid>
+      <description>最近开始用钉钉写周报。因为没有 Linux 客户端，之前一直用的网页版。无奈之下，在某个 Windows 虚拟机里面装了一个， 通过远程桌面访问。体验不是太好。 想起之前看</description>
+    </item>
+    <item>
+      <title>Bionic Beaver</title>
+      <link>https://live4thee.github.io/posts/2018-03-18-bionic-beaver/</link>
+      <pubDate>Sun, 18 Mar 2018 00:01:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-18-bionic-beaver/</guid>
+      <description>把用了两年的 Kubuntu 16.04 升级到了 18.04 Bionic Beaver. 基本上所有的东西都工作得很好，除了 Chromium（依赖GTK）, LibreOffice（依赖 Java） 以及 d</description>
+    </item>
+    <item>
+      <title>Linux Desktop (2)</title>
+      <link>https://live4thee.github.io/2018/02/12/linux-desktop-2/</link>
+      <pubDate>Mon, 12 Feb 2018 16:42:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/2018/02/12/linux-desktop-2/</guid>
+      <description>输入法 🔗之前一直用 ibus-pinyin 以及后来的 ibus-libpinyin，无法摆脱的苦恼是词库。选了自带的词库后感觉输入还是不接地气。看热闹不嫌事大的同事</description>
+    </item>
+    <item>
+      <title>Solve KDE5 Slow Login</title>
+      <link>https://live4thee.github.io/2016/07/29/kde5-slow-login/</link>
+      <pubDate>Fri, 29 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/07/29/kde5-slow-login/</guid>
+      <description>为了Okular改用了KDE，但是KDE5有个大bug， 导致输入密码到桌面可用需要30秒时间。一个绕过该问题的方法 是把默认的Splash Sc</description>
+    </item>
+    <item>
+      <title>KDE Notes</title>
+      <link>https://live4thee.github.io/2016/05/31/kde-notes/</link>
+      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/05/31/kde-notes/</guid>
+      <description>为了 Okular，把系统从 xfce 切换到了 kde。以下是遇到的各种问题，以及解决办法。 Konsole 🔗KDE 默认的终端模拟器 Konsole 只能支持很少一部分字体，很不幸的</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 12 Apr 2024 14:21:12 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo: Ref Not Found</title>
+      <link>https://live4thee.github.io/posts/2024-04-12-hugo-ref-not-found/</link>
+      <pubDate>Fri, 12 Apr 2024 14:21:12 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-04-12-hugo-ref-not-found/</guid>
+      <description>在 Mac 上也用 brew 装了一个 hugo. 不过，把自己的 gh-pages 抓到本地后，生成静态网页时总是报错 Ref_Not_Found. 把报错的文件路径粘贴出来检查了一下，对应的文件却又实实在在地在磁盘</description>
+    </item>
+    <item>
+      <title>New Year New Theme</title>
+      <link>https://live4thee.github.io/posts/2024-01-11-new-year-new-theme/</link>
+      <pubDate>Thu, 11 Jan 2024 14:02:35 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-01-11-new-year-new-theme/</guid>
+      <description>更新了一下主题，支持目录和数学排版。 常读常新 🔗Linux VFS 的文档之前没认真读过，应该花个半小时好好读一下。 彩蛋 🔗非常喜欢Linux Kernel Block I/O St</description>
+    </item>
+    <item>
+      <title>Jekyll to Hugo</title>
+      <link>https://live4thee.github.io/2017/04/13/Jekyll-to-Hugo/</link>
+      <pubDate>Thu, 13 Apr 2017 20:56:03 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/04/13/Jekyll-to-Hugo/</guid>
+      <description>花了点时间从 Jekyll 切换到了Hugo，好处是：不用维护一个 Ruby 环境，这样可以方便的写笔记，而不用太关心平台问题。 又写了一个简单的脚本自动创建新帖子：</description>
+    </item>
+  </channel>
+</rss>

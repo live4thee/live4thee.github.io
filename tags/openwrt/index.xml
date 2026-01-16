@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenWrt on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/openwrt/</link>
+    <description>Recent content in OpenWrt on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Mar 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debrick my Router</title>
+      <link>https://live4thee.github.io/2016/03/13/debrick-my-router/</link>
+      <pubDate>Sun, 13 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/13/debrick-my-router/</guid>
+      <description>前天晚上升级路由器里面的软件包时，一不小心把路由器给弄挂了，然后家里就断网了。这个世界，饭可以少吃一顿，但是 Wi-Fi 却不可以断线一分钟啊！就算要搜</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sched on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/sched/</link>
+    <description>Recent content in Sched on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 May 2024 10:27:34 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/sched/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Strange Latency Issue</title>
+      <link>https://live4thee.github.io/posts/2024-05-13-strange-latency/</link>
+      <pubDate>Mon, 13 May 2024 10:27:34 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-05-13-strange-latency/</guid>
+      <description>最近碰到一个奇怪的问题。有个多线程应用，其中一个线程中的伪代码如下： gettimeofday(&amp;amp;begin, NULL); foo(); // 同步过程调用 gettimeofday(&amp;amp;end, NULL); usleep(N); 其中，end-begin 得到 foo() 的耗时 T. 目前可以</description>
+    </item>
+  </channel>
+</rss>

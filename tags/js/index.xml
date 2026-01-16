@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Js on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/js/</link>
+    <description>Recent content in Js on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 04 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Meet JS</title>
+      <link>https://live4thee.github.io/2016/02/04/meet-js/</link>
+      <pubDate>Thu, 04 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/02/04/meet-js/</guid>
+      <description>这两天修复了一个前同事遗留下来的bug，也因此（几乎）首次接触了JavaScript以及 WebUI 方面的东西。我一直避免接触任何 UI 相关的事情， 因为总</description>
+    </item>
+  </channel>
+</rss>
