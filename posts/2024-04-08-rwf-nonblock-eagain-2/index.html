@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RWF_NONBLOCK &amp; EAGAIN (2) | Life of a Programmer</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="先交代一下上文的实验环境： kernel: 4.18.0-425.19.2 (CentOS Stream 8) filesystem: Ext4 测试动作：向一个 Ext4 上的文件发一个 4k 非阻塞异步写请求。 RWF_NOWAIT 🔗重新回顾一下 io_submit(2) 的手册里交代了设置 RWF_NOWAIT 后出现 -EAGAIN 的">
+<meta name="generator" content="Hugo 0.131.0">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">RWF_NONBLOCK &amp; EAGAIN (2)</h1>
+
+    <div class="tip">
+        <time datetime="2024-04-08 11:00:58 &#43;0800 CST">Apr 8, 2024</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1794 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          4 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#rwf_nowait">RWF_NOWAIT</a>
+      <ul>
+        <li><a href="#file-block-allocation">file block allocation</a></li>
+        <li><a href="#dirty-page-flush">dirty page flush</a></li>
+        <li><a href="#mutex-locks">mutex locks</a></li>
+        <li><a href="#congested-block-device">congested block device</a></li>
+      </ul>
+    </li>
+    <li><a href="#ext4_file_write_iter">ext4_file_write_iter()</a>
+      <ul>
+        <li><a href="#ext4_overwrite_io">ext4_overwrite_io()</a></li>
+        <li><a href="#ext4_map_blocks">ext4_map_blocks()</a></li>
+        <li><a href="#fallocate">fallocate</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#dd">dd？</a>
+      <ul>
+        <li><a href="#-529-揭秘">-529 揭秘</a></li>
+      </ul>
+    </li>
+    <li><a href="#附---bpftrace-脚本">附 - bpftrace 脚本</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>先交代一下<a href="https://live4thee.github.io/posts/2024-04-03-rwf-nonblock-eagain/">上文</a>的实验环境：</p>
+<ul>
+<li>kernel: 4.18.0-425.19.2 (CentOS Stream 8)</li>
+<li>filesystem: Ext4</li>
+</ul>
+<p>测试动作：向一个 Ext4 上的文件发一个 4k 非阻塞异步写请求。</p>
+<h2 id="rwf_nowait">RWF_NOWAIT <a href="#rwf_nowait" class="anchor">🔗</a></h2><p>重新回顾一下 <em>io_submit(2)</em> 的手册里交代了设置 <em>RWF_NOWAIT</em> 后出现 <em>-EAGAIN</em> 的几个场景：</p>
+<ul>
+<li>file block allocation;</li>
+<li>dirty page flush;</li>
+<li>mutex locks;</li>
+<li>congested block device.</li>
+</ul>
+<p>如果内核发现当前 I/O 还须完成上述操作，则会直接返回 <em>-EAGAIN</em>.</p>
+<h3 id="file-block-allocation">file block allocation <a href="#file-block-allocation" class="anchor">🔗</a></h3><p>代码中，被写文件是通过 <em>posix_fallocate()</em> 预先分配的空间。手动测试通过 <em>fallocate</em> 命令创建文件。</p>
+<h3 id="dirty-page-flush">dirty page flush <a href="#dirty-page-flush" class="anchor">🔗</a></h3><p>对照了 <em>libaio</em> 的测试<a href="https://pagure.io/libaio/blob/master/f/harness/cases/21.t" target="_blank" rel="noopener">用例</a>,
+当前环境不存在该情景。</p>
+<h3 id="mutex-locks">mutex locks <a href="#mutex-locks" class="anchor">🔗</a></h3><p>对照内核代码中 <em>ext4_file_write_iter()</em> 的实现，该场景待排查。不过，该文件只有一个写入线程（测试程序），等待互斥锁的可能性也不高。</p>
+<h3 id="congested-block-device">congested block device <a href="#congested-block-device" class="anchor">🔗</a></h3><p>同上，测试程序的 I/O 可控。目前就算只发一个写请求，也会有 <em>-EAGAIN</em>.</p>
+<p>看起来，进入了死胡同。因此，比较可信、可行的方法是用 <em>bpftrace</em> 跟踪确认上述场景。</p>
+<h2 id="ext4_file_write_iter">ext4_file_write_iter() <a href="#ext4_file_write_iter" class="anchor">🔗</a></h2><p>该函数可能返回 <em>-EAGAIN</em> 的场景有以下四个出口：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (iocb<span style="color:#f92672">-&gt;</span>ki_flags <span style="color:#f92672">&amp;</span> IOCB_NOWAIT) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">inode_trylock</span>(inode))
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>EAGAIN;       <span style="color:#75715e">/* 出口1 */</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inode_lock</span>(inode);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ret <span style="color:#f92672">=</span> <span style="color:#a6e22e">ext4_write_checks</span>(iocb, from);  <span style="color:#75715e">/* 出口2 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (ret <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">goto</span> out;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 中间省略部分代码 */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Check whether we do a DIO overwrite or not */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (o_direct <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>unaligned_aio) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ext4_overwrite_io</span>(inode, iocb<span style="color:#f92672">-&gt;</span>ki_pos, <span style="color:#a6e22e">iov_iter_count</span>(from))) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ext4_should_dioread_nolock</span>(inode))
+</span></span><span style="display:flex;"><span>			overwrite <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (iocb<span style="color:#f92672">-&gt;</span>ki_flags <span style="color:#f92672">&amp;</span> IOCB_NOWAIT) {
+</span></span><span style="display:flex;"><span>		ret <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>EAGAIN;      <span style="color:#75715e">/* 出口3 */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">goto</span> out;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ret <span style="color:#f92672">=</span> <span style="color:#a6e22e">__generic_file_write_iter</span>(iocb, from); <span style="color:#75715e">/* 出口4 */</span>
+</span></span></code></pre></div><p>首先，通过 kretprobe 跟踪 <em>ext4_write_checks()</em> 发现该函数返回 4096,
+因此排除了出口1、出口2. 而 <em>kretprobe:__generic_file_write_iter</em> 没有被触发，因此：必然是出口3.</p>
+<h3 id="ext4_overwrite_io">ext4_overwrite_io() <a href="#ext4_overwrite_io" class="anchor">🔗</a></h3><p>该函数比较短，不妨全文复制如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/* Is IO overwriting allocated and initialized blocks? */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ext4_overwrite_io</span>(<span style="color:#66d9ef">struct</span> inode <span style="color:#f92672">*</span>inode, <span style="color:#66d9ef">loff_t</span> pos, <span style="color:#66d9ef">loff_t</span> len)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">struct</span> ext4_map_blocks map;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> blkbits <span style="color:#f92672">=</span> inode<span style="color:#f92672">-&gt;</span>i_blkbits;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> err, blklen;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (pos <span style="color:#f92672">+</span> len <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">i_size_read</span>(inode))
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	map.m_lblk <span style="color:#f92672">=</span> pos <span style="color:#f92672">&gt;&gt;</span> blkbits;
+</span></span><span style="display:flex;"><span>	map.m_len <span style="color:#f92672">=</span> <span style="color:#a6e22e">EXT4_MAX_BLOCKS</span>(len, pos, blkbits);
+</span></span><span style="display:flex;"><span>	blklen <span style="color:#f92672">=</span> map.m_len;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	err <span style="color:#f92672">=</span> <span style="color:#a6e22e">ext4_map_blocks</span>(NULL, inode, <span style="color:#f92672">&amp;</span>map, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * &#39;err==len&#39; means that all of the blocks have been preallocated,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * regardless of whether they have been initialized or not. To exclude
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * unwritten extents, we need to check m_flags.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> err <span style="color:#f92672">==</span> blklen <span style="color:#f92672">&amp;&amp;</span> (map.m_flags <span style="color:#f92672">&amp;</span> EXT4_MAP_MAPPED);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>通过 bpftrace 跟踪得到：</p>
+<ul>
+<li>err = 1</li>
+<li>blklen = 1</li>
+<li>map.m_flags = 0x1000</li>
+</ul>
+<p>对照代码，可以得到：</p>
+<ul>
+<li><em>EXT4_MAP_MAPPED</em> = 0x20</li>
+<li><em>EXT4_MAP_UNWRITTEN</em> = 0x1000</li>
+</ul>
+<p>这也印证了 <em>ext4_overwrite_io()</em> 返回了 false, 因此导致上面的代码走到了出口3. 那么，为何 <em>fallocate</em> 出来的文件，会返回<em>EXT4_MAP_UNWRITTEN</em> 呢？</p>
+<h3 id="ext4_map_blocks">ext4_map_blocks() <a href="#ext4_map_blocks" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * The ext4_map_blocks() function tries to look up the requested blocks,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * and returns if the blocks are already mapped.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * /* 省略部分注释 */</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">*</span> On success, it returns the number of blocks being mapped or allocated.  <span style="color:#66d9ef">if</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">*</span> create<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> and the blocks are pre<span style="color:#f92672">-</span>allocated and unwritten, the resulting <span style="color:#960050;background-color:#1e0010">@</span>map
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">*</span> is marked as unwritten. If the create <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>, it will mark <span style="color:#960050;background-color:#1e0010">@</span>map as mapped.
+</span></span><span style="display:flex;"><span> <span style="color:#960050;background-color:#1e0010">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">ext4_map_blocks</span>(<span style="color:#66d9ef">handle_t</span> <span style="color:#f92672">*</span>handle, <span style="color:#66d9ef">struct</span> inode <span style="color:#f92672">*</span>inode,
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">struct</span> ext4_map_blocks <span style="color:#f92672">*</span>map, <span style="color:#66d9ef">int</span> flags)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* 省略部分代码 */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* Lookup extent status tree firstly */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ext4_es_lookup_extent</span>(inode, map<span style="color:#f92672">-&gt;</span>m_lblk, <span style="color:#f92672">&amp;</span>es)) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ext4_es_is_written</span>(<span style="color:#f92672">&amp;</span>es) <span style="color:#f92672">||</span> <span style="color:#a6e22e">ext4_es_is_unwritten</span>(<span style="color:#f92672">&amp;</span>es)) {
+</span></span><span style="display:flex;"><span>			map<span style="color:#f92672">-&gt;</span>m_pblk <span style="color:#f92672">=</span> <span style="color:#a6e22e">ext4_es_pblock</span>(<span style="color:#f92672">&amp;</span>es) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>							map<span style="color:#f92672">-&gt;</span>m_lblk <span style="color:#f92672">-</span> es.es_lblk;
+</span></span><span style="display:flex;"><span>			map<span style="color:#f92672">-&gt;</span>m_flags <span style="color:#f92672">|=</span> <span style="color:#a6e22e">ext4_es_is_written</span>(<span style="color:#f92672">&amp;</span>es) <span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>							EXT4_MAP_MAPPED : EXT4_MAP_UNWRITTEN;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>考虑到 <em>m_flags</em> 的值为 <em>EXT4_MAP_UNWRITTEN</em>, 因此结合 bpftrace 的跟踪结果可知： <em>ext4_es_is_unwritten(&amp;es)</em> 返回了 true.</p>
+<p><em>ext4_es_is_unwritten(&amp;es)</em> 传入的参数是 <em>struct extent_status es</em> 的指针，
+其内容是通过函数 <em>ext4_es_lookup_extent()</em> 查找得来。也就是说，<em>fallocate</em> 出来的文件在 Ext4 上的 extent 对应的状态是 <em>EXT4_MAP_UNWRITTEN</em>.</p>
+<h3 id="fallocate">fallocate <a href="#fallocate" class="anchor">🔗</a></h3><p>用 filefrag 检查一下 fallocate 创建出来的文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ fallocate -l 4m file.dat
+</span></span><span style="display:flex;"><span>$ filefrag -v file.dat
+</span></span><span style="display:flex;"><span>Filesystem type is: ef53
+</span></span><span style="display:flex;"><span>File size of file.dat is <span style="color:#ae81ff">4194304</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">1024</span> blocks of <span style="color:#ae81ff">4096</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> ext:  logical_offset:    physical_offset: length:  expected: flags:
+</span></span><span style="display:flex;"><span>   0:     0..    1023:  82944..     83967:   1024:            last,unwritten,eof
+</span></span><span style="display:flex;"><span>file.dat: <span style="color:#ae81ff">1</span> extent found
+</span></span></code></pre></div><p>果然是有个 <em>unwritten</em> 标志。那么，写零处理一下，可以吗？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ fallocate -z -l 4m file.dat
+</span></span><span style="display:flex;"><span>$ Filesystem type is: ef53
+</span></span><span style="display:flex;"><span>File size of file.dat is <span style="color:#ae81ff">4194304</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">1024</span> blocks of <span style="color:#ae81ff">4096</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> ext:  logical_offset:    physical_offset: length:  expected: flags:
+</span></span><span style="display:flex;"><span>   0:     0..    1023:  82944..     83967:   1024:            last,unwritten,eof
+</span></span><span style="display:flex;"><span>file.dat: <span style="color:#ae81ff">1</span> extent found
+</span></span></code></pre></div><p>没有变化。这个可以从 <em>fallocate(1)</em> 手册中得到解释：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>-z, --zero-range
+</span></span><span style="display:flex;"><span>	... 省略部分 ...
+</span></span><span style="display:flex;"><span>	Zeroing  is done within the filesystem preferably by converting
+</span></span><span style="display:flex;"><span>	the range into unwritten extents.  This approach means that the
+</span></span><span style="display:flex;"><span>	specified range will not be physically zeroed out on the device
+</span></span><span style="display:flex;"><span>	(except  for partial blocks at the either end of the range), and
+</span></span><span style="display:flex;"><span>	I/O is (otherwise) required only to update metadata.
+</span></span></code></pre></div><p>也就是说，</p>
+<ul>
+<li><em>fallocate</em> 的写零只是元数据层面的事情；</li>
+<li><em>fallocate</em> 的分配也只是元数据层面的事情（但保证了后续实际分配物理块不会失败）。</li>
+</ul>
+<h2 id="总结">总结 <a href="#%e6%80%bb%e7%bb%93" class="anchor">🔗</a></h2><p>对于支持 <em>fallocate</em> 系统调用的文件系统（比如 XFS, Ext4），它们只是在文件系统的元数据层面将分配的块标记为未初始化状态。既不实际进行物理块的分配，也不会对物理块填零。它仅仅保证后续的物理块分配不会失败。</p>
+<p>对于 <em>io_submit</em> 指定 <em>RWF_NOWAIT</em> 后的行为，所谓：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Don&#39;t  wait  if the I/O will block for operations such as file block
+</span></span><span style="display:flex;"><span>allocations,
+</span></span></code></pre></div><p>这里的 <em>file block allocations</em> 指的是实际的物理块的已分配。</p>
+<h2 id="dd">dd？ <a href="#dd" class="anchor">🔗</a></h2><p>用 dd 创建一个文件测试怎么样？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>file.dat oflag<span style="color:#f92672">=</span>direct bs<span style="color:#f92672">=</span>4M count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>1+0 records in
+</span></span><span style="display:flex;"><span>1+0 records out
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4194304</span> bytes <span style="color:#f92672">(</span>4.2 MB, 4.0 MiB<span style="color:#f92672">)</span> copied, 0.0118739 s, <span style="color:#ae81ff">353</span> MB/s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ filefrag -v file.dat
+</span></span><span style="display:flex;"><span>Filesystem type is: ef53
+</span></span><span style="display:flex;"><span>File size of file.dat is <span style="color:#ae81ff">4194304</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">1024</span> blocks of <span style="color:#ae81ff">4096</span> bytes<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> ext:  logical_offset:    physical_offset: length:  expected: flags:
+</span></span><span style="display:flex;"><span>   0:     0..    1023:  83456..     84479:   1024:            last,eof
+</span></span><span style="display:flex;"><span>file.dat: <span style="color:#ae81ff">1</span> extent found
+</span></span></code></pre></div><p>果然，<em>flags</em> 里不再有 <em>unwritten</em> 标记。继续手动测试发现，<em>ext4_map_blocks()</em> 返回后，<em>map.m_flags</em> 从 0x1000 变成了 0x20, 即 <em>EXT4_MAP_MAPPED</em>. 但最终还会得到 <strong>-529</strong>.
+但是测试程序的 <em>io_getevents(2)</em> 的 <em>event.res</em> 字段为 0.</p>
+<p>注意，<code>dd</code> 的 <code>oflag</code> 参数指定了 <code>direct</code>，这样不会因为 <code>page cache</code> 的存在导致 <code>-EAGAIN</code>.
+否则，需要先释放 <code>page cache</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ echo <span style="color:#ae81ff">1</span> &gt; /proc/sys/vm/drop_caches
+</span></span></code></pre></div><h3 id="-529-揭秘">-529 揭秘 <a href="#-529-%e6%8f%ad%e7%a7%98" class="anchor">🔗</a></h3><p>通过 bpftrace 跟踪得知，之前的出口4会返回 -529, 正是之前迷惑不解的地方。对照后面的代码可知，
+这个 -529 正是  *-EIOCBQUEUED. 由于此时提交的是个对齐的异步 I/O, 因此后面直接 <code>return ret</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>ret <span style="color:#f92672">=</span> <span style="color:#a6e22e">__generic_file_write_iter</span>(iocb, from); <span style="color:#75715e">/* 出口4 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Unaligned direct AIO must be the only IO in flight. Otherwise
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * overlapping aligned IO after unaligned might result in data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * corruption.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (ret <span style="color:#f92672">==</span> <span style="color:#f92672">-</span>EIOCBQUEUED <span style="color:#f92672">&amp;&amp;</span> unaligned_aio)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ext4_unwritten_wait</span>(inode);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">inode_unlock</span>(inode);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (ret <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    ret <span style="color:#f92672">=</span> <span style="color:#a6e22e">generic_write_sync</span>(iocb, ret);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> ret;
+</span></span></code></pre></div><h2 id="附---bpftrace-脚本">附 - bpftrace 脚本 <a href="#%e9%99%84---bpftrace-%e8%84%9a%e6%9c%ac" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/fs.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/uio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/rbtree_types.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> ext4_map_blocks {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> m_pblk;
+</span></span><span style="display:flex;"><span>		__u32 m_lblk;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> m_len;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> m_flags;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> extent_status {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">struct</span> rb_node rb_node;
+</span></span><span style="display:flex;"><span>		__u32 es_lblk;
+</span></span><span style="display:flex;"><span>		__u32 es_len;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> es_pblk;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kretprobe:generic_file_direct_write,
+</span></span><span style="display:flex;"><span>kretprobe:__generic_file_write_iter,
+</span></span><span style="display:flex;"><span>kretprobe:ext4_write_checks,
+</span></span><span style="display:flex;"><span>kretprobe:ext4_es_lookup_extent
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%-6d %-16s: %lld [%s]</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, pid, comm, retval, probe);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kprobe:ext4_es_lookup_extent
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">@</span>args[pid, <span style="color:#e6db74">&#34;es&#34;</span>]  <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> extent_status<span style="color:#f92672">*</span>) arg2;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kprobe:ext4_file_write_iter
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">$</span>iocb <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> kiocb <span style="color:#f92672">*</span>)arg0;
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">$</span>n <span style="color:#f92672">=</span> ((<span style="color:#66d9ef">struct</span> iov_iter <span style="color:#f92672">*</span>) arg1)<span style="color:#f92672">-&gt;</span>count;
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">@</span>args[pid, <span style="color:#e6db74">&#34;priv&#34;</span>] <span style="color:#f92672">=</span> ((<span style="color:#66d9ef">struct</span> kiocb <span style="color:#f92672">*</span>)arg0)<span style="color:#f92672">-&gt;</span>private;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%-6d %-16s: [%s]: ki_flags=0x%x, ki_pos=0x%x, #iov=%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>					pid, comm, probe,
+</span></span><span style="display:flex;"><span>					<span style="color:#960050;background-color:#1e0010">$</span>iocb<span style="color:#f92672">-&gt;</span>ki_flags, <span style="color:#960050;background-color:#1e0010">$</span>iocb<span style="color:#f92672">-&gt;</span>ki_pos, <span style="color:#960050;background-color:#1e0010">$</span>n);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kprobe:ext4_map_blocks
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">$</span>inode <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> inode <span style="color:#f92672">*</span>)arg1;
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">@</span>args[pid, <span style="color:#e6db74">&#34;emap&#34;</span>] <span style="color:#f92672">=</span>  (<span style="color:#66d9ef">struct</span> ext4_map_blocks <span style="color:#f92672">*</span>) arg2;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%-6d %-16s: blkbits=0x%x [%s]</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>				   pid, comm, <span style="color:#960050;background-color:#1e0010">$</span>inode<span style="color:#f92672">-&gt;</span>i_blkbits, probe);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kretprobe:ext4_map_blocks
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">$</span>map <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> ext4_map_blocks <span style="color:#f92672">*</span>)<span style="color:#960050;background-color:#1e0010">@</span>args[pid, <span style="color:#e6db74">&#34;emap&#34;</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">$</span>es <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> extent_status<span style="color:#f92672">*</span>)<span style="color:#960050;background-color:#1e0010">@</span>args[pid, <span style="color:#e6db74">&#34;es&#34;</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%-6d %-16s: %lld, pblk=%lld,m_flags=0x%x, m_len=%d [%s]</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>				   pid, comm, retval,
+</span></span><span style="display:flex;"><span>				   <span style="color:#960050;background-color:#1e0010">$</span>es<span style="color:#f92672">-&gt;</span>es_pblk,
+</span></span><span style="display:flex;"><span>				   <span style="color:#960050;background-color:#1e0010">$</span>map<span style="color:#f92672">-&gt;</span>m_flags, <span style="color:#960050;background-color:#1e0010">$</span>map<span style="color:#f92672">-&gt;</span>m_len, probe);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>END { <span style="color:#a6e22e">clear</span>(<span style="color:#960050;background-color:#1e0010">@</span>args); }
+</span></span></code></pre></div>
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://live4thee.github.io/tags/storage">storage</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "live4thee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://www.facebook.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-152.000000, -43.000000)">
+            <g id="Facebook" transform="translate(152.000000, 43.000000)">
+                <rect id="Rounded" fill="#bbbbbb" x="0" y="0" width="72" height="72" rx="8"></rect>
+                <path d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://github.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://twitter.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.536px" height="438.536px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;"
+	 xml:space="preserve">
+<g>
+	<path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
+		C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126
+		h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225
+		C438.532,59.576,430.49,40.204,414.41,24.123z M335.471,168.735c0.191,1.713,0.288,4.278,0.288,7.71
+		c0,15.989-2.334,32.025-6.995,48.104c-4.661,16.087-11.8,31.504-21.416,46.254c-9.606,14.749-21.074,27.791-34.396,39.115
+		c-13.325,11.32-29.311,20.365-47.968,27.117c-18.648,6.762-38.637,10.143-59.953,10.143c-33.116,0-63.76-8.952-91.931-26.836
+		c4.568,0.568,9.329,0.855,14.275,0.855c27.6,0,52.439-8.565,74.519-25.7c-12.941-0.185-24.506-4.179-34.688-11.991
+		c-10.185-7.803-17.273-17.699-21.271-29.691c4.947,0.76,8.658,1.137,11.132,1.137c4.187,0,9.042-0.76,14.56-2.279
+		c-13.894-2.669-25.598-9.562-35.115-20.697c-9.519-11.136-14.277-23.84-14.277-38.114v-0.571
+		c10.085,4.755,19.602,7.229,28.549,7.422c-17.321-11.613-25.981-28.265-25.981-49.963c0-10.66,2.758-20.747,8.278-30.264
+		c15.035,18.464,33.311,33.213,54.816,44.252c21.507,11.038,44.54,17.227,69.092,18.558c-0.95-3.616-1.427-8.186-1.427-13.704
+		c0-16.562,5.853-30.692,17.56-42.399c11.703-11.706,25.837-17.561,42.394-17.561c17.515,0,32.079,6.283,43.688,18.846
+		c13.134-2.474,25.892-7.33,38.26-14.56c-4.757,14.652-13.613,25.788-26.55,33.402c12.368-1.716,23.88-4.95,34.537-9.708
+		C357.458,149.793,347.462,160.166,335.471,168.735z"/>
+</g>
+</svg>
+
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2026 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       live4thee
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>

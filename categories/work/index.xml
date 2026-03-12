@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Work on Life of a Programmer</title>
+    <link>https://live4thee.github.io/categories/work/</link>
+    <description>Recent content in Work on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 12 Mar 2026 16:59:08 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/categories/work/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI (4)</title>
+      <link>https://live4thee.github.io/posts/2026-03-12-ai-4/</link>
+      <pubDate>Thu, 12 Mar 2026 16:59:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2026-03-12-ai-4/</guid>
+      <description>在 AI 的辅助下，做 perf 分析，也就是常见的：测试 → 分析 → 修改 → 再测试循环。 某次小修改后，AI 给出如下分析建议： 1. 核心对比：新引入的严重问题 —— FOO 2.</description>
+    </item>
+    <item>
+      <title>AI (3)</title>
+      <link>https://live4thee.github.io/posts/2026-03-11-ai-3/</link>
+      <pubDate>Wed, 11 Mar 2026 18:07:56 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2026-03-11-ai-3/</guid>
+      <description>上午开车去公司的路上突然有一顿悟：“懂得很多道理,却依然过不好这一生” 其实是极其正常的。因为人生具有非遍历性 &amp;ndash; 每个人的人生都只能自己走一遍，</description>
+    </item>
+    <item>
+      <title>AI (2)</title>
+      <link>https://live4thee.github.io/posts/2026-03-03-ai-2/</link>
+      <pubDate>Tue, 03 Mar 2026 15:48:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2026-03-03-ai-2/</guid>
+      <description>年前同事做 SSD Discard 优化，稳态性能的改进效果非常好。突然想起内核缓存也有类似的问题 - 去年尝试过 POSIX_FADV_DONTNEED, 实现的比较粗糙，导致了副优化，就去掉了补丁。 不甘心</description>
+    </item>
+    <item>
+      <title>Layoff</title>
+      <link>https://live4thee.github.io/posts/2025-10-10-layoff/</link>
+      <pubDate>Fri, 10 Oct 2025 19:07:01 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-10-10-layoff/</guid>
+      <description>一个国庆长假回来，前东家的研发团队来了一次大裁员。虽然并不意外，然而感官上，灰犀牛来得比想象的猛列一些。</description>
+    </item>
+    <item>
+      <title>Recap</title>
+      <link>https://live4thee.github.io/posts/2025-02-05-recap/</link>
+      <pubDate>Wed, 05 Feb 2025 11:00:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2025-02-05-recap/</guid>
+      <description>又是新的一年，记录一下去年碰到、但尚未解决的问题。 悬而未决 🔗fsync(2) 🔗假设有以下代码： int fd1, fd2; fd1 = open(&amp;#34;file&amp;#34;, O_CREAT|O_RDWR); do_write(fd1); close(fd1); fd2 = open(&amp;#34;file&amp;#34;, O_CREAT|O_RDWR); fsync(fd2); fsync(fd2) 会回写因 fd1 而写入</description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://live4thee.github.io/posts/2024-09-18-ai/</link>
+      <pubDate>Wed, 18 Sep 2024 18:42:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-18-ai/</guid>
+      <description>碰到问题的时候，基本上还是靠 Google 搜索引擎。不过，最近有两次都是 AI 表现得更好。一次是关于 RDMA 重试错误，一次是关于某个 Seastar 报错。搜索引擎其实早就搜到了</description>
+    </item>
+    <item>
+      <title>RDP w/ Admin</title>
+      <link>https://live4thee.github.io/posts/2024-08-27-rdp-without-admin/</link>
+      <pubDate>Tue, 27 Aug 2024 13:19:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-08-27-rdp-without-admin/</guid>
+      <description>我的 Windows 环境一直跑在虚拟机里，主要为了使用钉钉和上网。默认用的管理员账号做 rdp 登录。 添加了一个普通账户后，用 xfreerdp 登录，报错 connect reset. 目测权限问题 &amp;ndash; 搜索了</description>
+    </item>
+    <item>
+      <title>Communication</title>
+      <link>https://live4thee.github.io/posts/2024-07-10-communication/</link>
+      <pubDate>Wed, 10 Jul 2024 09:18:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-07-10-communication/</guid>
+      <description>不知道什么时候开始，钉钉的工作聊天的开始是一段光秃秃的转发的聊天记录。想要表达什么内容？自己猜。很有“可意会不可言传”的艺术性。这种风格在早</description>
+    </item>
+    <item>
+      <title>Parallel All the Time</title>
+      <link>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</link>
+      <pubDate>Tue, 05 Dec 2023 13:35:33 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-05-parallel-all-the-time/</guid>
+      <description>一起读论文：Parallel All The Time, 2019。该论文有一个改进版本，发表在 IEEE TPDS 2020 的九月刊。标题也有所更改，强调充分利用并发，去掉了“All The T</description>
+    </item>
+    <item>
+      <title>SSD 101 Plus</title>
+      <link>https://live4thee.github.io/posts/2023-12-04-ssd-intro/</link>
+      <pubDate>Mon, 04 Dec 2023 15:39:20 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-12-04-ssd-intro/</guid>
+      <description>简介 🔗读 NAND SSD 相关资料的时候，一般会遇到下面这张图： 相应解释是：1 一块 NAND Flash 包含多个 LUN（Logic Unit Number）； 每个 LUN 又包含多个 Plane; 每个 Plane</description>
+    </item>
+    <item>
+      <title>`O_DIRECT&#39; undeclared</title>
+      <link>https://live4thee.github.io/posts/2023-11-14-o-direct-undeclared/</link>
+      <pubDate>Tue, 14 Nov 2023 15:08:58 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-14-o-direct-undeclared/</guid>
+      <description>用 gcc 编译代码时报错：&#39;O_DIRECT&#39; undeclared. 看操作历史，之前一直用的 g++ 没报错。感觉有点奇怪。加上参数 -E 导出预处理过程对比了一下： 处理的文件都一</description>
+    </item>
+    <item>
+      <title>A Little C&#43;&#43;</title>
+      <link>https://live4thee.github.io/posts/2023-11-10-a-little-cpp/</link>
+      <pubDate>Fri, 10 Nov 2023 11:30:45 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-10-a-little-cpp/</guid>
+      <description>好久没用 C++ 了，当项目里重度使用现代 C++（c++11 以及后续标准） 的新特性时，就有点力不从心 &amp;ndash; 书到用时方恨少。 template &amp;lt;typename... A&amp;gt; void set(A&amp;amp;&amp;amp;... a) noexcept { assert(_u.st == state::future); new (this) future_state(ready_future_marker(), std::forward&amp;lt;A&amp;gt;(a)...);</description>
+    </item>
+    <item>
+      <title>(Old) Seastar and C&#43;&#43;17</title>
+      <link>https://live4thee.github.io/posts/2023-11-01-old-seastar-and-cpp-17/</link>
+      <pubDate>Wed, 01 Nov 2023 15:26:01 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-11-01-old-seastar-and-cpp-17/</guid>
+      <description>在 CentOS Stream 8 上编译老版本 Seastar 时碰到两个问题，记录一下。 cannot deduce template arguments for ‘tuple’ from () 🔗编译 sharded.hh 报错，用最新的代码也还是错，于是手动修改如下： --- include/seastar/core/sharded.hh.orig 2023-11-01 15:22:58.800059019 +0800</description>
+    </item>
+    <item>
+      <title>Optimized PDF</title>
+      <link>https://live4thee.github.io/posts/2023-08-23-optimized-pdf/</link>
+      <pubDate>Wed, 23 Aug 2023 10:55:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2023-08-23-optimized-pdf/</guid>
+      <description>无意中，看到生成出来的 pdf 文件的属性中有这么一段： Optimized: No 这好奇心和强迫症一下就升腾上来了。我呕心沥血写的 Xelatex 文本，仔仔细细地修复了 Underfull 和 Overfull 报警，为啥</description>
+    </item>
+    <item>
+      <title>Work From Home (2) </title>
+      <link>https://live4thee.github.io/posts/2022-03-31-work-from-home-2/</link>
+      <pubDate>Thu, 31 Mar 2022 14:15:34 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2022-03-31-work-from-home-2/</guid>
+      <description>自上次居家办公以来， 目前本次居家已超三个星期。然而生活的不易，却远较上次艰辛。 工作 🔗作为程序员，居家基本不影响工作。坏处是生活和工作的界限变</description>
+    </item>
+    <item>
+      <title>5 Years</title>
+      <link>https://live4thee.github.io/posts/2021-03-29-5-years/</link>
+      <pubDate>Mon, 29 Mar 2021 19:42:40 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-03-29-5-years/</guid>
+      <description>以“创业者”的身份做为打工人，已五年矣！ 五年间，经常缠绕心头的一句话是“泯然众人矣”！那份叹息，仿佛有穿越千年的力量。 不由自主地，突然又想起</description>
+    </item>
+    <item>
+      <title>Random Bits (3)</title>
+      <link>https://live4thee.github.io/posts/2020-06-12-random-bits-3/</link>
+      <pubDate>Fri, 12 Jun 2020 00:04:43 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-06-12-random-bits-3/</guid>
+      <description>最近救了两场火，聊以记录。 Vyos on ARM64 🔗同学终于搞出可用的 Vyos ARM64 镜像，但 commit 总是报错。上去看了一下， 默认的 Perl 版本和 perl-modules 版本不一样。重新编译了 Vyatta 相关的包，</description>
+    </item>
+    <item>
+      <title>Work From Home</title>
+      <link>https://live4thee.github.io/posts/2020-02-11-work-from-home/</link>
+      <pubDate>Tue, 11 Feb 2020 23:10:55 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2020-02-11-work-from-home/</guid>
+      <description>相应号召，最近在家工作，不免总结一番。 作息 🔗每天夫人先起床，早餐差不多了，小朋友起床。小朋友的起床后兴致勃勃的任务之一是叫我起床。一家三口，</description>
+    </item>
+    <item>
+      <title>Random Bits (3)</title>
+      <link>https://live4thee.github.io/posts/2018-11-22-random-bits-3/</link>
+      <pubDate>Thu, 22 Nov 2018 19:36:41 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-11-22-random-bits-3/</guid>
+      <description>今天是小雪。魔都阳光明媚。 最近手上处理了几个诡异的问题，这里简单记录一下。 &amp;ldquo;Too many open files&amp;rdquo; 🔗售前同事说，某客户的环境里，出现了 &amp;ldquo;Too many open files&amp;rdquo;. 一般来说，这种</description>
+    </item>
+    <item>
+      <title>An Accident</title>
+      <link>https://live4thee.github.io/posts/2018-10-16-an-accident/</link>
+      <pubDate>Tue, 16 Oct 2018 23:42:59 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-10-16-an-accident/</guid>
+      <description>今天几乎酿成一起发布事故。《红楼梦》开篇有言：愧则有馀,悔又无益。 有诗为证： “险些酿大错，老脸没处搁。捶胸又顿足，还来平余波。”</description>
+    </item>
+    <item>
+      <title>Late Again</title>
+      <link>https://live4thee.github.io/posts/2018-03-28-late-again/</link>
+      <pubDate>Wed, 28 Mar 2018 23:37:15 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-28-late-again/</guid>
+      <description>晚上11点到家。 桌子上有一幅小朋友画的“超人”。 孩子妈说，小朋友睡前把他那最爱的米老鼠放在了我枕头上，说让我和米老鼠睡。之前小朋友睡觉时经常</description>
+    </item>
+    <item>
+      <title>Going Home Late at Night</title>
+      <link>https://live4thee.github.io/posts/2018-03-26-going-home-late-at-night/</link>
+      <pubDate>Mon, 26 Mar 2018 23:27:05 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2018-03-26-going-home-late-at-night/</guid>
+      <description>都市夜归人。 回到家已经很晚，肚子很饿。搜来搜去，只有水果和坚果，提不起兴趣。目光落在了桌子上剩下的一点白葡萄酒和一只咸鸭蛋。 金圣叹说“豆腐干</description>
+    </item>
+    <item>
+      <title>Second Life</title>
+      <link>https://live4thee.github.io/2017/11/04/second-life/</link>
+      <pubDate>Sat, 04 Nov 2017 20:28:51 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/11/04/second-life/</guid>
+      <description>标题想表达的意思是“两世为人”，不知道英文怎么表达比较贴切。 局域网 🔗最近局域网的趋势越来越明显，而手机上的app要么下架，要么无法更新。折腾</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (7)</title>
+      <link>https://live4thee.github.io/2017/10/15/hunting-a-bug/</link>
+      <pubDate>Sun, 15 Oct 2017 22:07:53 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/15/hunting-a-bug/</guid>
+      <description>最近几天被一个 bug 折磨得不要不要的，经过诸多分析后，最终发现它藏在CherryPy 的代码里，如下： 该函数在最新版本里至今仍一行未改：传送门 这段</description>
+    </item>
+    <item>
+      <title>Pain of OSS</title>
+      <link>https://live4thee.github.io/2017/10/14/pain-of-oss/</link>
+      <pubDate>Sat, 14 Oct 2017 22:00:18 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/10/14/pain-of-oss/</guid>
+      <description>题记 🔗老同志说：“你要回到Windows的正道上来。” 年轻人说，“用Mac，省心。” 我要吐槽 🔗吐槽一下 Linux 下各种不爽的坑。 关于投影 🔗之前投影在</description>
+    </item>
+    <item>
+      <title>First Visit</title>
+      <link>https://live4thee.github.io/2017/07/28/first-visit/</link>
+      <pubDate>Fri, 28 Jul 2017 19:18:53 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/07/28/first-visit/</guid>
+      <description>第一次拜访客户。地点是之前刚去过的某商场邻座的写字楼。 事前没有什么准备。虽然有我司一号扛霸子在场，我还是比较集中精神，提出问题、分析问题。不</description>
+    </item>
+    <item>
+      <title>DRBD Split-Brain</title>
+      <link>https://live4thee.github.io/2017/06/30/DRBD-Split-Brain/</link>
+      <pubDate>Fri, 30 Jun 2017 20:40:31 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/06/30/DRBD-Split-Brain/</guid>
+      <description>上午正在聚精会神写代码的时候，QA团队的同事说，一个测试环境的DRBD集群貌似出了问题，数据不一致。心里一个惊，真是怕啥来啥。一边疑惑着“不</description>
+    </item>
+    <item>
+      <title>Demo after Staying Late</title>
+      <link>https://live4thee.github.io/2017/05/15/Demo-after-Staying-Late/</link>
+      <pubDate>Mon, 15 May 2017 21:03:52 +0800</pubDate>
+      <guid>https://live4thee.github.io/2017/05/15/Demo-after-Staying-Late/</guid>
+      <description>此前立下军令状，两个礼拜出demo，今天终于赶上。然而demo的时候出了意想不到的问题：虚拟机启动后很快就自动关机了。后来demo结束后修复</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (6)</title>
+      <link>https://live4thee.github.io/2017/04/11/hunting-a-bug/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/04/11/hunting-a-bug/</guid>
+      <description>今天调试一个 bug 的过程非常有趣，起承转合很像央视《走近科学》的风格。故障代码类似于这样： if (mgr.getSomeObj().getSomeField() != null) { hostnum = mgr.getSomeObj().getSomeField(); } else { // ... } 断点成功断在第一行，单步进</description>
+    </item>
+    <item>
+      <title>A Few Notes</title>
+      <link>https://live4thee.github.io/2017/03/23/a-few-notes/</link>
+      <pubDate>Thu, 23 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/23/a-few-notes/</guid>
+      <description>深水区的bug修复起来有点老眼昏花，有时候也有点欲哭无泪。 真相有时候很残酷 🔗这一周的调试生活从测试团队刚报的一个问题开始，极端情况下物理机器</description>
+    </item>
+    <item>
+      <title>Occam&#39;s Razor</title>
+      <link>https://live4thee.github.io/2017/03/17/occams-razor/</link>
+      <pubDate>Fri, 17 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/17/occams-razor/</guid>
+      <description>今天在解决issue #2259的过程中， 突然发现，该问题的现象能够很容易地解释issue #1235。而#1235 曾经被认为是一个不可思议的一</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (5)</title>
+      <link>https://live4thee.github.io/2017/03/14/hunting-a-bug-5/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/03/14/hunting-a-bug-5/</guid>
+      <description>最近研究 zstack1 中一个比较诡异的bug，现象是：并发创建大量虚拟机的时候，kvmagent 偶尔会报告 iptables 操作失败，最终导致少数虚拟机创建失败。 Another app is</description>
+    </item>
+    <item>
+      <title>2016 Recap</title>
+      <link>https://live4thee.github.io/2017/01/18/2016-recap/</link>
+      <pubDate>Wed, 18 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2017/01/18/2016-recap/</guid>
+      <description>晚上在家，孩子妈忽然问，“公司有 Surface 员工价哎，粑粑要不要？” 我心里一惊，这两天刚好写了个简单的电子产品 wish list，其中就有 Surface，不会</description>
+    </item>
+    <item>
+      <title>LINQPad Table Driver for Azure China</title>
+      <link>https://live4thee.github.io/2016/03/21/linqpad-table-driver-for-azure-china/</link>
+      <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/21/linqpad-table-driver-for-azure-china/</guid>
+      <description>在 Azure 的 PaaS 上构建云服务，很少有不用到 Cloud Storage 的。一般来说， 查看 Cloud Storage 中的数据主要有两个工具： Azure Table Explorer LINQPad，加上Azure Table Storage Driver 前者的最新版本</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (4)</title>
+      <link>https://live4thee.github.io/2016/03/14/hunting-a-bug-4/</link>
+      <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/14/hunting-a-bug-4/</guid>
+      <description>上午到公司还没出电梯，手机里就蹦出一封邮件，某客户询问某些文件未能及时上传的原因。当时觉得有点不可思议，因为相关服务已经好几个月没出过问题了</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (3)</title>
+      <link>https://live4thee.github.io/2015/12/02/hunting-a-bug-3/</link>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/12/02/hunting-a-bug-3/</guid>
+      <description>使用第三方服务API总是会有各种从未想到的边界条件，不断颠覆各种假设。然而这几天发现的一个bug却非常有意思。 我有段代码是抓取友商的日志文件</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (2)</title>
+      <link>https://live4thee.github.io/2015/11/24/hunting-a-bug-2/</link>
+      <pubDate>Tue, 24 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/11/24/hunting-a-bug-2/</guid>
+      <description>最近一周一直被一个IOException异常所困扰。异常消息的内容为Not enough space on the disk，搜索后发现，Azure Cloud Service 的磁盘用量是有配额限制</description>
+    </item>
+    <item>
+      <title>Hunting a Bug</title>
+      <link>https://live4thee.github.io/2015/09/17/hunting-a-bug/</link>
+      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/17/hunting-a-bug/</guid>
+      <description>这两天在追踪一个非常不可思议的bug - 我们的系统里会定时收到报警邮件说： 数据表是空的。而且，这个报警的内容和条件都是我设定的。 我的算法逻辑很</description>
+    </item>
+    <item>
+      <title>Problem Solved</title>
+      <link>https://live4thee.github.io/2015/09/14/problem-solved/</link>
+      <pubDate>Mon, 14 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/14/problem-solved/</guid>
+      <description>折腾了四五天的Unity的问题，今天终于搞定了。 做了各种尝试，最后发现是因为自己对IIS的运行时环境不够了解。简单来说， 我有点把Azure的</description>
+    </item>
+    <item>
+      <title>Pitfalls after Pitfalls</title>
+      <link>https://live4thee.github.io/2015/09/11/pitfalls-after-pitfalls/</link>
+      <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/11/pitfalls-after-pitfalls/</guid>
+      <description>一坑又一坑。 很惭愧，我负责的那部分工作还没能上线，对不起老板和PM。自踏上程序猿这条不归路以来，很少有过delay。这周一直在和bug较劲，</description>
+    </item>
+    <item>
+      <title>A CertMngr Pitfall</title>
+      <link>https://live4thee.github.io/2015/08/05/a-certmngr-pitfall/</link>
+      <pubDate>Wed, 05 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/08/05/a-certmngr-pitfall/</guid>
+      <description>这两天碰到一个比较坑的问题，对于一个证书，用CertMngr导入进去后，我在自己的机器上可以导出为pfx，而实习生的机器上死活不行。上午出手</description>
+    </item>
+    <item>
+      <title>An Issue with Visual Studio 2012 and Later</title>
+      <link>https://live4thee.github.io/2015/05/05/an-issue-with-visual-studio-2012-and-later/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/05/an-issue-with-visual-studio-2012-and-later/</guid>
+      <description>这几天跑单元测试代码的时候，遇到一个奇怪的问题。我有一个单元测试项目， 单独运行的时候，全都通过。但是，和整个 solution 下的其它单元测试一起跑的时候，</description>
+    </item>
+    <item>
+      <title>Some Frustration</title>
+      <link>https://live4thee.github.io/2015/03/24/some-frustration/</link>
+      <pubDate>Tue, 24 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/24/some-frustration/</guid>
+      <description>I had some frustration these days. Two programming issues consumed more than three work days.&#xA;The first one is related with DLL versions. One of my VS 2012 project is created by VS 2013, but unfortunately they have different SDK versions. And, what is worse - our production code does not useNuGet to resolve dependencies. They are done manually. It is a huge pain for VS novices like me.&#xA;The second, comes from theUnity.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>.Net Core on Linux - 2 | Life of a Programmer</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="dotnet publish 🔗dotnet publish - Publishes the application and its dependencies to a folder for deployment to a hosting system. 试验了一下打包应用，放到别的 Linux 机器（没有.Net 运行时）上跑。 自包含应用 🔗$ dotnet publish -h ... -f, --framework">
+<meta name="generator" content="Hugo 0.131.0">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">.Net Core on Linux - 2</h1>
+
+    <div class="tip">
+        <time datetime="2021-02-09 15:48:42 &#43;0800 CST">Feb 9, 2021</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          817 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          2 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#dotnet-publish">dotnet publish</a>
+      <ul>
+        <li><a href="#自包含应用">自包含应用</a></li>
+        <li><a href="#自包含单体应用">自包含单体应用</a></li>
+        <li><a href="#upx-uclhttpsupxgithubio"><a href="https://upx.github.io/">upx-ucl</a></a></li>
+        <li><a href="#自包含单体应用---瘦身">自包含单体应用 - 瘦身</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <h2 id="dotnet-publish">dotnet publish <a href="#dotnet-publish" class="anchor">🔗</a></h2><p><code>dotnet publish</code> - Publishes the application and its dependencies to a folder for deployment to a hosting system.</p>
+<p>试验了一下打包应用，放到别的 Linux 机器（没有.Net 运行时）上跑。</p>
+<h3 id="自包含应用">自包含应用 <a href="#%e8%87%aa%e5%8c%85%e5%90%ab%e5%ba%94%e7%94%a8" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ dotnet publish -h
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>-f, --framework &lt;FRAMEWORK&gt;           The target framework to publish <span style="color:#66d9ef">for</span>.
+</span></span><span style="display:flex;"><span>-r, --runtime &lt;RUNTIME_IDENTIFIER&gt;    The target runtime to publish <span style="color:#66d9ef">for</span>.
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>--self-contained    Publish the .NET runtime with your application so the runtime
+</span></span><span style="display:flex;"><span>                    does not need to be installed on the target machine.
+</span></span><span style="display:flex;"><span>                    The default is <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#66d9ef">if</span> a runtime identifier is specified.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ dotnet publish -r linux-x64 -f net5.0 -o ./linux-publish
+</span></span><span style="display:flex;"><span>$ du -sh linux-publish/
+</span></span><span style="display:flex;"><span>76M     linux-publish/
+</span></span><span style="display:flex;"><span>$ ls -1 linux-publish/*.dll | wc -l
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">193</span>
+</span></span></code></pre></div><p>看了一下 <code>dotnet publish -h</code> 的输出，有一个 <code>--self-contained</code> 选项，
+可以用来打包自包含应用，且 <code>-r</code> 指定了目标运行时的话就隐含了自包含。打包的结果是个文件夹，包含了应用本身以及依赖的库。</p>
+<h3 id="自包含单体应用">自包含单体应用 <a href="#%e8%87%aa%e5%8c%85%e5%90%ab%e5%8d%95%e4%bd%93%e5%ba%94%e7%94%a8" class="anchor">🔗</a></h3><p>显然，这没有 <code>go build</code> 生成出来一个单体应用方便。网上搜了一下，有个额外参数 <code>-p:PublishSingleFile=true</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ dotnet publish -r linux-x64 -f net5.0 -p:PublishSingleFile<span style="color:#f92672">=</span>true -o ./linux-publish
+</span></span><span style="display:flex;"><span>$ du -sh linux-publish/
+</span></span><span style="display:flex;"><span>64M     linux-publish/
+</span></span><span style="display:flex;"><span>$ ls linux-publish/
+</span></span><span style="display:flex;"><span>MyApp  MyApp.pdb
+</span></span><span style="display:flex;"><span>$ file linux-publish/MyApp
+</span></span><span style="display:flex;"><span>linux-publish/MyApp: ELF 64-bit LSB shared object, x86-64, version <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>SYSV<span style="color:#f92672">)</span>,
+</span></span><span style="display:flex;"><span>dynamically linked, interpreter/lib64/ld-linux-x86-64.so.2, <span style="color:#66d9ef">for</span> GNU/Linux 2.6.32,
+</span></span><span style="display:flex;"><span>BuildID<span style="color:#f92672">[</span>sha1<span style="color:#f92672">]=</span>42c923debe410c089a93997a66ef968f8574a077, stripped, too many notes <span style="color:#f92672">(</span>256<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>是个已经去掉符号表的可执行程序，虽然 64MB 比之前 76MB 小一点，但还是偏大。</p>
+<h3 id="upx-uclhttpsupxgithubio"><a href="https://upx.github.io/" target="_blank" rel="noopener">upx-ucl</a> <a href="#upx-uclhttpsupxgithubio" class="anchor">🔗</a></h3><p>拿 <code>upx-ucl</code> 压缩一下？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ upx-ucl MyApp
+</span></span><span style="display:flex;"><span>                       Ultimate Packer <span style="color:#66d9ef">for</span> eXecutables
+</span></span><span style="display:flex;"><span>                          Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">1996</span> - <span style="color:#ae81ff">2018</span>
+</span></span><span style="display:flex;"><span>UPX 3.95        Markus Oberhumer, Laszlo Molnar &amp; John Reiser   Aug 26th <span style="color:#ae81ff">2018</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        File size         Ratio      Format      Name
+</span></span><span style="display:flex;"><span>   --------------------   ------   -----------   -----------
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">66467643</span> -&gt;  <span style="color:#ae81ff">27944636</span>   42.04%   linux/amd64   MyApp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Packed <span style="color:#ae81ff">1</span> file.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ du -h MyApp
+</span></span><span style="display:flex;"><span>27M     MyApp
+</span></span></code></pre></div><p>64 MB 压缩到 27 MB，很可观。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> ./MyApp
+</span></span><span style="display:flex;"><span>Failure processing application bundle; possible file corruption.
+</span></span><span style="display:flex;"><span>Arithmetic overflow <span style="color:#66d9ef">while</span> reading bundle.
+</span></span><span style="display:flex;"><span>A fatal error occured <span style="color:#66d9ef">while</span> processing application bundle
+</span></span></code></pre></div><p>又有什么用？</p>
+<h3 id="自包含单体应用---瘦身">自包含单体应用 - 瘦身 <a href="#%e8%87%aa%e5%8c%85%e5%90%ab%e5%8d%95%e4%bd%93%e5%ba%94%e7%94%a8---%e7%98%a6%e8%ba%ab" class="anchor">🔗</a></h3><p>去<a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish" target="_blank" rel="noopener">官网</a>查看<code>PublishSingleFile</code>的文档，查到了两个信息：</p>
+<h4 id="-ppublishsinglefiletrue">-p:PublishSingleFile=true <a href="#-ppublishsinglefiletrue" class="anchor">🔗</a></h4><p>Packages the app into a platform-specific single-file executable. The
+executable is self-extracting and contains all dependencies (including
+native) that are required to run the app. When the app is first run,
+the application is extracted to a directory based on the app name and
+build identifier. Startup is faster when the application is run
+again. The application doesn&rsquo;t need to extract itself a second time
+unless a new version is used. Available since .NET Core 3.0 SDK.</p>
+<p>For more information about single-file publishing, see the<a href="https://github.com/dotnet/designs/blob/master/accepted/2020/single-file/design.md" target="_blank" rel="noopener">single-file bundler design document</a>.</p>
+<p>We recommend that you specify this option in a publish profile rather
+than on the command line. For more information, see <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish#msbuild" target="_blank" rel="noopener">MSBuild</a>.</p>
+<h4 id="-ppublishtrimmedtrue">-p:PublishTrimmed=true <a href="#-ppublishtrimmedtrue" class="anchor">🔗</a></h4><p>Trims unused libraries to reduce the deployment size of an app when
+publishing a self-contained executable. For more information, see<a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/trim-self-contained" target="_blank" rel="noopener">Trim self-contained deployments and executables</a>. Available since .NET Core
+3.0 SDK as a preview feature.</p>
+<p>We recommend that you specify this option in a publish profile rather
+than on the command line. For more information, see <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish#msbuild" target="_blank" rel="noopener">MSBuild</a>.</p>
+<p>首先，single-file executable 其实是个打包了依赖的自解压程序；另外其实有 <code>PublishTrimmed</code> 来做这个瘦身工作。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ dotnet publish -r linux-x64 -f net5.0 -p:PublishSingleFile<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -p:PublishTrimmed<span style="color:#f92672">=</span>true -o ./linux-publish
+</span></span><span style="display:flex;"><span>$ du -sh linux-publish/
+</span></span><span style="display:flex;"><span>34M     linux-publish/
+</span></span></code></pre></div><p>64 MB 瘦身到 34 MB，但明显运行耗时长很多。<code>Single-file publish</code>的设计<a href="https://github.com/dotnet/designs/blob/main/accepted/2020/single-file/design.md" target="_blank" rel="noopener">文档</a>
+里提到：bundler 里面其实打包了 PEImage Loader. 因此，Linux下这个单体程序其实是个披着 ELF 外壳的 PE 程序。</p>
+
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://live4thee.github.io/tags/.net">.Net</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "live4thee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://www.facebook.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-152.000000, -43.000000)">
+            <g id="Facebook" transform="translate(152.000000, 43.000000)">
+                <rect id="Rounded" fill="#bbbbbb" x="0" y="0" width="72" height="72" rx="8"></rect>
+                <path d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://github.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://twitter.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.536px" height="438.536px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;"
+	 xml:space="preserve">
+<g>
+	<path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
+		C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126
+		h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225
+		C438.532,59.576,430.49,40.204,414.41,24.123z M335.471,168.735c0.191,1.713,0.288,4.278,0.288,7.71
+		c0,15.989-2.334,32.025-6.995,48.104c-4.661,16.087-11.8,31.504-21.416,46.254c-9.606,14.749-21.074,27.791-34.396,39.115
+		c-13.325,11.32-29.311,20.365-47.968,27.117c-18.648,6.762-38.637,10.143-59.953,10.143c-33.116,0-63.76-8.952-91.931-26.836
+		c4.568,0.568,9.329,0.855,14.275,0.855c27.6,0,52.439-8.565,74.519-25.7c-12.941-0.185-24.506-4.179-34.688-11.991
+		c-10.185-7.803-17.273-17.699-21.271-29.691c4.947,0.76,8.658,1.137,11.132,1.137c4.187,0,9.042-0.76,14.56-2.279
+		c-13.894-2.669-25.598-9.562-35.115-20.697c-9.519-11.136-14.277-23.84-14.277-38.114v-0.571
+		c10.085,4.755,19.602,7.229,28.549,7.422c-17.321-11.613-25.981-28.265-25.981-49.963c0-10.66,2.758-20.747,8.278-30.264
+		c15.035,18.464,33.311,33.213,54.816,44.252c21.507,11.038,44.54,17.227,69.092,18.558c-0.95-3.616-1.427-8.186-1.427-13.704
+		c0-16.562,5.853-30.692,17.56-42.399c11.703-11.706,25.837-17.561,42.394-17.561c17.515,0,32.079,6.283,43.688,18.846
+		c13.134-2.474,25.892-7.33,38.26-14.56c-4.757,14.652-13.613,25.788-26.55,33.402c12.368-1.716,23.88-4.95,34.537-9.708
+		C357.458,149.793,347.462,160.166,335.471,168.735z"/>
+</g>
+</svg>
+
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2026 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       live4thee
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>

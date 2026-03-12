@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/unity/</link>
+    <description>Recent content in Unity on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 14 Sep 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Problem Solved</title>
+      <link>https://live4thee.github.io/2015/09/14/problem-solved/</link>
+      <pubDate>Mon, 14 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/14/problem-solved/</guid>
+      <description>折腾了四五天的Unity的问题，今天终于搞定了。 做了各种尝试，最后发现是因为自己对IIS的运行时环境不够了解。简单来说， 我有点把Azure的</description>
+    </item>
+    <item>
+      <title>Pitfalls after Pitfalls</title>
+      <link>https://live4thee.github.io/2015/09/11/pitfalls-after-pitfalls/</link>
+      <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/11/pitfalls-after-pitfalls/</guid>
+      <description>一坑又一坑。 很惭愧，我负责的那部分工作还没能上线，对不起老板和PM。自踏上程序猿这条不归路以来，很少有过delay。这周一直在和bug较劲，</description>
+    </item>
+    <item>
+      <title>Some Frustration</title>
+      <link>https://live4thee.github.io/2015/03/24/some-frustration/</link>
+      <pubDate>Tue, 24 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/24/some-frustration/</guid>
+      <description>I had some frustration these days. Two programming issues consumed more than three work days.&#xA;The first one is related with DLL versions. One of my VS 2012 project is created by VS 2013, but unfortunately they have different SDK versions. And, what is worse - our production code does not useNuGet to resolve dependencies. They are done manually. It is a huge pain for VS novices like me.&#xA;The second, comes from theUnity.</description>
+    </item>
+  </channel>
+</rss>
