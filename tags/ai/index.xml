@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/ai/</link>
+    <description>Recent content in AI on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Mar 2026 16:55:32 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI (5)</title>
+      <link>https://live4thee.github.io/posts/2026-03-20-ai-5/</link>
+      <pubDate>Fri, 20 Mar 2026 16:55:32 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2026-03-20-ai-5/</guid>
+      <description>最近在 HN 看到好几篇讨论 AI 的文章（个人最喜欢第三篇），本文稍作总结。 On The Need For Understanding Grief and the AI Split A sufficiently detailed spec is code 趋势一直在，只是有加快。 🔗早些年 Gerald Sussman 就把 SICP</description>
+    </item>
+    <item>
+      <title>AI (4)</title>
+      <link>https://live4thee.github.io/posts/2026-03-12-ai-4/</link>
+      <pubDate>Thu, 12 Mar 2026 16:59:08 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2026-03-12-ai-4/</guid>
+      <description>在 AI 的辅助下，做 perf 分析，也就是常见的：测试 → 分析 → 修改 → 再测试循环。 某次小修改后，AI 给出如下分析建议： 1. 核心对比：新引入的严重问题 —— FOO 2.</description>
+    </item>
+    <item>
+      <title>AI (3)</title>
+      <link>https://live4thee.github.io/posts/2026-03-11-ai-3/</link>
+      <pubDate>Wed, 11 Mar 2026 18:07:56 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2026-03-11-ai-3/</guid>
+      <description>上午开车去公司的路上突然有一顿悟：“懂得很多道理,却依然过不好这一生” 其实是极其正常的。因为人生具有非遍历性 &amp;ndash; 每个人的人生都只能自己走一遍，</description>
+    </item>
+    <item>
+      <title>AI (2)</title>
+      <link>https://live4thee.github.io/posts/2026-03-03-ai-2/</link>
+      <pubDate>Tue, 03 Mar 2026 15:48:04 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2026-03-03-ai-2/</guid>
+      <description>年前同事做 SSD Discard 优化，稳态性能的改进效果非常好。突然想起内核缓存也有类似的问题 - 去年尝试过 POSIX_FADV_DONTNEED, 实现的比较粗糙，导致了副优化，就去掉了补丁。 不甘心</description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://live4thee.github.io/posts/2024-09-18-ai/</link>
+      <pubDate>Wed, 18 Sep 2024 18:42:00 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2024-09-18-ai/</guid>
+      <description>碰到问题的时候，基本上还是靠 Google 搜索引擎。不过，最近有两次都是 AI 表现得更好。一次是关于 RDMA 重试错误，一次是关于某个 Seastar 报错。搜索引擎其实早就搜到了</description>
+    </item>
+  </channel>
+</rss>
