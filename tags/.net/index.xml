@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.Net on Life of a Programmer</title>
+    <link>https://live4thee.github.io/tags/.net/</link>
+    <description>Recent content in .Net on Life of a Programmer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Nov 2021 11:22:27 +0800</lastBuildDate>
+    <atom:link href="https://live4thee.github.io/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coyote Notes - 3</title>
+      <link>https://live4thee.github.io/posts/2021-11-23-coyote-notes-3/</link>
+      <pubDate>Tue, 23 Nov 2021 11:22:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-11-23-coyote-notes-3/</guid>
+      <description>内容来自官网。 Actors and StateMachine 🔗上篇提到，Coyote 提供了异步 Actor 编程模型。Coyote 框架提供了一种特殊的 Actor 类型, 叫StateMachine ，这种 Actor</description>
+    </item>
+    <item>
+      <title>.Net Core on Linux - 2</title>
+      <link>https://live4thee.github.io/posts/2021-02-09-dotnet-core-on-linux-2/</link>
+      <pubDate>Tue, 09 Feb 2021 15:48:42 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-02-09-dotnet-core-on-linux-2/</guid>
+      <description>dotnet publish 🔗dotnet publish - Publishes the application and its dependencies to a folder for deployment to a hosting system. 试验了一下打包应用，放到别的 Linux 机器（没有.Net 运行时）上跑。 自包含应用 🔗$ dotnet publish -h ... -f, --framework</description>
+    </item>
+    <item>
+      <title>Coyote Notes - 2</title>
+      <link>https://live4thee.github.io/posts/2021-02-02-coyote-notes-2/</link>
+      <pubDate>Tue, 02 Feb 2021 15:57:27 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-02-02-coyote-notes-2/</guid>
+      <description>Actors 🔗Coyote 提供了两大编程模型，其中一个就是 Asynchronous Actors. Actor 模型 有几个特征： 创建 Actor 以及向 actor 发送消息是非阻塞的； Actor 对消息的处理是顺序的，因此处理逻辑</description>
+    </item>
+    <item>
+      <title>.Net Core on Linux</title>
+      <link>https://live4thee.github.io/posts/2021-01-27-dotnet-core-on-linux/</link>
+      <pubDate>Wed, 27 Jan 2021 22:22:51 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-01-27-dotnet-core-on-linux/</guid>
+      <description>因为要学 coyote，又不想用 Windows，于是在本机 Xubuntu 20.04 上装了一个 .Net Core，没想到体验还挺不错。我在 Fedora 33 以及 Windows 2012 R2 虚拟机里测试了也可以</description>
+    </item>
+    <item>
+      <title>Coyote Notes - 1</title>
+      <link>https://live4thee.github.io/posts/2021-01-27-coyote-notes/</link>
+      <pubDate>Wed, 27 Jan 2021 15:35:50 +0800</pubDate>
+      <guid>https://live4thee.github.io/posts/2021-01-27-coyote-notes/</guid>
+      <description>这几天在学 coyote，做个笔记。 入口 🔗测试入口函数必须 带有属性[Microsoft.Coyote.SystematicTesting.Te</description>
+    </item>
+    <item>
+      <title>Hunting a Bug (4)</title>
+      <link>https://live4thee.github.io/2016/03/14/hunting-a-bug-4/</link>
+      <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2016/03/14/hunting-a-bug-4/</guid>
+      <description>上午到公司还没出电梯，手机里就蹦出一封邮件，某客户询问某些文件未能及时上传的原因。当时觉得有点不可思议，因为相关服务已经好几个月没出过问题了</description>
+    </item>
+    <item>
+      <title>Pitfalls after Pitfalls</title>
+      <link>https://live4thee.github.io/2015/09/11/pitfalls-after-pitfalls/</link>
+      <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/09/11/pitfalls-after-pitfalls/</guid>
+      <description>一坑又一坑。 很惭愧，我负责的那部分工作还没能上线，对不起老板和PM。自踏上程序猿这条不归路以来，很少有过delay。这周一直在和bug较劲，</description>
+    </item>
+    <item>
+      <title>Another OData Pitfall</title>
+      <link>https://live4thee.github.io/2015/06/17/another-odata-pitfall/</link>
+      <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/06/17/another-odata-pitfall/</guid>
+      <description>今天又碰到 OData 一个坑，那就是，枚举类型在 JSON 格式中表现为字符串， 而非数值。其文档 中有如下描述： Values of type enumValue are represented as JSON strings using the enumerationMember, defined in [OData-ABNF], where available. 而我用 Json.Net 将对象序</description>
+    </item>
+    <item>
+      <title>A Bug</title>
+      <link>https://live4thee.github.io/2015/05/11/a-bug/</link>
+      <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/05/11/a-bug/</guid>
+      <description>今天碰到一个单元测试中的 bug，有点意思，不妨记录如下。 我有一个 Azure CloudTable，用来存放一些需要后台执行的操作内容。其 PartitionKey 和 RowKey 分别设为</description>
+    </item>
+    <item>
+      <title>A Show case of LINQ</title>
+      <link>https://live4thee.github.io/2015/04/13/a-show-case-of-linq/</link>
+      <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/04/13/a-show-case-of-linq/</guid>
+      <description>As a long-time Linux programmer, I barely got a laughter from my wife, when offered a few praises to the productivity of C#. It is interesting - we are apt to believe that what we&amp;rsquo;ve already known are the best, even we don&amp;rsquo;t have any convincing evidence. We are pretty much biased.&#xA;I do like the feature Language-Integrated Query, aka. LINQ, introduced since .Net 3.5. And here is a show case.</description>
+    </item>
+    <item>
+      <title>Some Frustration</title>
+      <link>https://live4thee.github.io/2015/03/24/some-frustration/</link>
+      <pubDate>Tue, 24 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://live4thee.github.io/2015/03/24/some-frustration/</guid>
+      <description>I had some frustration these days. Two programming issues consumed more than three work days.&#xA;The first one is related with DLL versions. One of my VS 2012 project is created by VS 2013, but unfortunately they have different SDK versions. And, what is worse - our production code does not useNuGet to resolve dependencies. They are done manually. It is a huge pain for VS novices like me.&#xA;The second, comes from theUnity.</description>
+    </item>
+  </channel>
+</rss>

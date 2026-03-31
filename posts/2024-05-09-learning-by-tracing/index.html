@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Learning by Tracing | Life of a Programmer</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="用 bpftrace 跟踪一个 Direct I/O 在 polling 和非 polling 模式下的处理逻辑。为了减少无关的 I/O 干扰，限定了 comm == &quot;a.out&quot; &ndash; 这个 a.out 是我的测试程序。 内核是 4.18, 关键代码相对比较好找，在 fs/block_dev.c: static void">
+<meta name="generator" content="Hugo 0.131.0">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">Learning by Tracing</h1>
+
+    <div class="tip">
+        <time datetime="2024-05-09 18:41:54 &#43;0800 CST">May 9, 2024</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          404 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+
+
+    
+
+
+    <div class="content">
+      <p>用 <code>bpftrace</code> 跟踪一个 Direct I/O 在 polling 和非 polling 模式下的处理逻辑。为了减少无关的 I/O 干扰，限定了 <code>comm == &quot;a.out&quot;</code> &ndash; 这个 <code>a.out</code>
+是我的测试程序。</p>
+<p>内核是 4.18, 关键代码相对比较好找，在 <code>fs/block_dev.c</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">blkdev_bio_end_io_simple</span>(<span style="color:#66d9ef">struct</span> bio <span style="color:#f92672">*</span>bio)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> task_struct <span style="color:#f92672">*</span>waiter <span style="color:#f92672">=</span> bio<span style="color:#f92672">-&gt;</span>bi_private;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">WRITE_ONCE</span>(bio<span style="color:#f92672">-&gt;</span>bi_private, NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">blk_wake_io_task</span>(waiter);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">ssize_t</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">__blkdev_direct_IO_simple</span>(<span style="color:#66d9ef">struct</span> kiocb <span style="color:#f92672">*</span>iocb, <span style="color:#66d9ef">struct</span> iov_iter <span style="color:#f92672">*</span>iter,
+</span></span><span style="display:flex;"><span>                         <span style="color:#66d9ef">int</span> nr_pages)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    bio.bi_private <span style="color:#f92672">=</span> current;
+</span></span><span style="display:flex;"><span>    bio.bi_end_io <span style="color:#f92672">=</span> blkdev_bio_end_io_simple;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 省略无关部分
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    qc <span style="color:#f92672">=</span> <span style="color:#a6e22e">submit_bio</span>(<span style="color:#f92672">&amp;</span>bio);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (;;) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">set_current_state</span>(TASK_UNINTERRUPTIBLE);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">READ_ONCE</span>(bio.bi_private))
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(iocb<span style="color:#f92672">-&gt;</span>ki_flags <span style="color:#f92672">&amp;</span> IOCB_HIPRI) <span style="color:#f92672">||</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">!</span><span style="color:#a6e22e">blk_poll</span>(<span style="color:#a6e22e">bdev_get_queue</span>(bdev), qc, true))
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">blk_io_schedule</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">__set_current_state</span>(TASK_RUNNING);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>上面的 for 循环中，如果没有设置 <code>IOCB_HIPRI</code> （非 polling 模式）, 则直接进入 <code>blk_io_schedule()</code>，等待被 <code>blkdev_bio_end_io_simple()</code> 唤醒。否则，进入 <code>blk_poll()</code> 逻辑，进行忙等或者 hybrid 等待。</p>
+<p>跟踪 <code>bio_endio()</code> 得到的 <code>kstack</code> 和代码非常一致，如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>kprobe:bio_endio: opf=0x800000, hipri requires: 0x800000, comm=&#39;a.out&#39;, kstack:
+</span></span><span style="display:flex;"><span>        bio_endio+1
+</span></span><span style="display:flex;"><span>        blk_update_request+544
+</span></span><span style="display:flex;"><span>        blk_mq_end_request+26
+</span></span><span style="display:flex;"><span>        nvme_poll+482
+</span></span><span style="display:flex;"><span>        blk_poll+282
+</span></span><span style="display:flex;"><span>        __blkdev_direct_IO_simple+520
+</span></span><span style="display:flex;"><span>        kretprobe_trampoline+0
+</span></span></code></pre></div><p>去掉 <code>RWF_HIPRI</code> 后发现，<code>bio_endio()</code> 怎么也触发不到，像是泥牛入海。</p>
+<p>冷静一下。</p>
+<p>问题出在 <code>/comm == &quot;a.out&quot;/</code> 这个过滤器。中断模式下，执行<code>bio_endio()</code> 时的 <code>comm</code> 是 <code>swapper/N</code>，甚至也有可能是 <code>sshd</code>! 因为处于中断上下文（严格来说，是下文 - <code>bottom-half</code>）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>kprobe:bio_endio: opf=0x0, hipri requires: 0x800000, comm=&#39;swapper/0&#39;, kstack:
+</span></span><span style="display:flex;"><span>        bio_endio+1
+</span></span><span style="display:flex;"><span>        blk_update_request+544
+</span></span><span style="display:flex;"><span>        blk_mq_end_request+26
+</span></span><span style="display:flex;"><span>        nvme_irq+295
+</span></span><span style="display:flex;"><span>        __handle_irq_event_percpu+64
+</span></span><span style="display:flex;"><span>        handle_irq_event_percpu+48
+</span></span><span style="display:flex;"><span>        handle_irq_event+54
+</span></span><span style="display:flex;"><span>        handle_edge_irq+130
+</span></span><span style="display:flex;"><span>        handle_irq+28
+</span></span><span style="display:flex;"><span>        do_IRQ+73
+</span></span><span style="display:flex;"><span>        ret_from_intr+0
+</span></span><span style="display:flex;"><span>        native_safe_halt+14
+</span></span><span style="display:flex;"><span>        __cpuidle_text_start+10
+</span></span><span style="display:flex;"><span>        default_idle_call+64
+</span></span><span style="display:flex;"><span>        do_idle+500
+</span></span><span style="display:flex;"><span>        cpu_startup_entry+111
+</span></span><span style="display:flex;"><span>        start_kernel+1309
+</span></span><span style="display:flex;"><span>        secondary_startup_64_no_verify+194
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">irqreturn_t</span> <span style="color:#a6e22e">nvme_irq</span>(<span style="color:#66d9ef">int</span> irq, <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>data)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> nvme_queue <span style="color:#f92672">*</span>nvmeq <span style="color:#f92672">=</span> data;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nvme_process_cq</span>(nvmeq))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> IRQ_HANDLED;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> IRQ_NONE;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Certified by <a href="https://pi.ai/talk" target="_blank" rel="noopener">AI</a>. ;-)<p class="markdown-image">
+  <img src="/media/disk-bh.png" alt="disk-bh"  />
+</p></p>
+
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://live4thee.github.io/tags/storage">storage</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "live4thee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://www.facebook.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-152.000000, -43.000000)">
+            <g id="Facebook" transform="translate(152.000000, 43.000000)">
+                <rect id="Rounded" fill="#bbbbbb" x="0" y="0" width="72" height="72" rx="8"></rect>
+                <path d="M60.4641463,13.4173171 L60.4641463,22.7278049 L54.9382927,22.7421951 C50.6068293,22.7421951 49.7721951,24.8 49.7721951,27.807561 L49.7721951,34.4702439 L60.09,34.4702439 L58.7517073,44.8887805 L49.7721951,44.8887805 L49.7721951,72 L39.0097317,72 L39.0097317,44.8887805 L30,44.8887805 L30,34.4702439 L39.0097317,34.4702439 L39.0097317,26.7858537 C39.0097317,17.8639024 44.4478049,13 52.42,13 C56.2204634,13 59.5,13.2878049 60.4641463,13.4173171 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://github.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+    <a class="symbol" href="https://twitter.com/live4thee" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="438.536px" height="438.536px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;"
+	 xml:space="preserve">
+<g>
+	<path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
+		C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126
+		h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225
+		C438.532,59.576,430.49,40.204,414.41,24.123z M335.471,168.735c0.191,1.713,0.288,4.278,0.288,7.71
+		c0,15.989-2.334,32.025-6.995,48.104c-4.661,16.087-11.8,31.504-21.416,46.254c-9.606,14.749-21.074,27.791-34.396,39.115
+		c-13.325,11.32-29.311,20.365-47.968,27.117c-18.648,6.762-38.637,10.143-59.953,10.143c-33.116,0-63.76-8.952-91.931-26.836
+		c4.568,0.568,9.329,0.855,14.275,0.855c27.6,0,52.439-8.565,74.519-25.7c-12.941-0.185-24.506-4.179-34.688-11.991
+		c-10.185-7.803-17.273-17.699-21.271-29.691c4.947,0.76,8.658,1.137,11.132,1.137c4.187,0,9.042-0.76,14.56-2.279
+		c-13.894-2.669-25.598-9.562-35.115-20.697c-9.519-11.136-14.277-23.84-14.277-38.114v-0.571
+		c10.085,4.755,19.602,7.229,28.549,7.422c-17.321-11.613-25.981-28.265-25.981-49.963c0-10.66,2.758-20.747,8.278-30.264
+		c15.035,18.464,33.311,33.213,54.816,44.252c21.507,11.038,44.54,17.227,69.092,18.558c-0.95-3.616-1.427-8.186-1.427-13.704
+		c0-16.562,5.853-30.692,17.56-42.399c11.703-11.706,25.837-17.561,42.394-17.561c17.515,0,32.079,6.283,43.688,18.846
+		c13.134-2.474,25.892-7.33,38.26-14.56c-4.757,14.652-13.613,25.788-26.55,33.402c12.368-1.716,23.88-4.95,34.537-9.708
+		C357.458,149.793,347.462,160.166,335.471,168.735z"/>
+</g>
+</svg>
+
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2026 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       live4thee
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-mini'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>
